@@ -27,3 +27,6 @@ Run `maven site`
 ### Ardy Zwanenburg
 Student number 4856848
 
+    Jari van den Broek
+Student number 4932749
+
