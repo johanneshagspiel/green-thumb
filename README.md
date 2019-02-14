@@ -21,3 +21,9 @@ Run `maven install` ([Intellij](https://www.jetbrains.com/help/idea/2016.3/getti
 
 **Checkstyle**:  
 Run `maven site`
+
+## Names and student numbers
+
+### Ardy Zwanenburg
+Student number 4856848
+
