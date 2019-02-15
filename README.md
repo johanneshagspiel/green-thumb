@@ -31,4 +31,4 @@ Student number 4856848
 Student number 4932749
 
 Johannes Hagspiel
-Student number 4910109
+Student number 4910109 <img src=jhagspiel_photo.JPG alt="Photo of Johannes Hagspiel" width="253"  height="327">
