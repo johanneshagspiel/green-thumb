@@ -25,10 +25,12 @@ Run `maven site`
 ## Names and student numbers
 
 ### Ardy Zwanenburg
-Student number 4856848
+Student number: 4856848 ![Ardy Zwanenburg](img/aZwanenburg.jpg)
+With this project I want to improve my programming skills and my problem solving skills. Also I want to be there for my group if they need help with working in a group. The most important thing I want to learn from this project is how to set up a working server so that multiple people can acces it from different locations.
 
-    Jari van den Broek
-Student number 4932749
+
+### Jari van den Broek
+Student number: 4932749
 
 Johannes Hagspiel
 Student number 4910109 <img src=jhagspiel_photo.JPG alt="Photo of Johannes Hagspiel" width="253"  height="327">
