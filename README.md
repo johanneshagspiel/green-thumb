@@ -37,7 +37,7 @@ I would like to improve my programming skills and to build my first real desktop
 ### Johannes Hagspiel
 Student number 4910109
 
-My goal is to learn about server-client communication and about project management skills, particularly Scrum. Additionally, I want to try to include all the things we have learned previously like the database and the web technology aspects.  My weaknesses are explaining things and my impatience. I hope that I can use we I have previously learned about project management for this project. 
+My goal is to learn about server-client communication and about Scrum. Additionally, I want to try to include all the things that I have learned previously like the database and the web technology aspects. My weaknesses are explaining things and my impatience. I hope that I can use what I have previously learned about project management for this project. To learn more about server-client communication and Scrum, I want to volunteer for these parts. These goals are important to me because I think project management skills are valuable and rare. Server-client communication is a key element of modern software and thus being proficient in using it is why I want to learn more about it. Overall, learning more about the various tools and programs used in Java software engineering is what I want to focus on. 
 <p> <img src=img/jhagspiel_photo.JPG alt="Photo of Johannes Hagspiel" width="253"  height="327"> </p>
 
 ### Lukas Zimmerhackl
