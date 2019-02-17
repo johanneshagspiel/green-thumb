@@ -42,3 +42,7 @@ Student number 4910109 <img src=jhagspiel_photo.JPG alt="Photo of Johannes Hagsp
 Student number: 4904176
 ![Lukas Zimmerhackl](img/lZimmerhackl.jpg)
 I want to learn how to work in a group environment, learn to work with git and I want to learn how to create bigger applications
+
+### Nick van Riet
+Student number: 4868900
+With this project, my main goal is to gain experience with working as a team, including any tools (GitLab, etc.). Furthermore, I also want to further develop my programming skills and broaden my knowledge of existing resources (libraries, software, etc.). To achieve these goals, I will do my best to actively communicate with my team: helping others when I can and asking for help when needed.
