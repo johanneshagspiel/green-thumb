@@ -31,7 +31,19 @@ With this project I want to improve my programming skills and my problem solving
 
 ### Jari van den Broek
 Student number: 4932749
-I would like to improve my programming skills and to build my first real desktop application, I think learning about how the server and client communicate and how you setup such communication is very valuable.
+I think my two strong points are oversight and communication, I like to keep track of everything and this is always a valuable part of teamwork.
+I think my two weak points are overal knowledge and skills with coding, this will make getting into the flow and getting started with new coding quite hard.
+It will really be a challenge for me actually code a real application.
+Goals:
+I hope to learn how to connect the server with an application and I want to see how I can make a nice GUI.
+I will have succeeded in this goal, when we have a nicely working GUI and good server communication.
+Reality:
+Looking at a lot of video's and a lot of code on these subjects
+Options:
+I think Google and Youtube will be my biggest friends these coming weeks to actually make my goals.
+Will:
+I am going to try and work with my team to improve my coding skills the coming weeks and ill be focusing on this during the weekends and the project hours
+The first concrete step I can take is attenting all project hours.
 <p> <img src=img/Jari.jpg alt="Photo of Jari van den broek" width="300" height="400"> </p>
 
 ### Johannes Hagspiel
