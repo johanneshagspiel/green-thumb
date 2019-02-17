@@ -36,6 +36,7 @@ I would like to improve my programming skills and to build my first real desktop
 
 ### Johannes Hagspiel
 Student number 4910109
+
 My goal is to learn about server-client communication and about project management skills, particularly Scrum. Additionally, I want to try to include all the things we have learned previously like the database and the web technology aspects.  My weaknesses are explaining things and my impatience. I hope that I can use we I have previously learned about project management for this project. 
 <p> <img src=img/jhagspiel_photo.JPG alt="Photo of Johannes Hagspiel" width="253"  height="327"> </p>
 
