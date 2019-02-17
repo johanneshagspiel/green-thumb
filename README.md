@@ -38,3 +38,5 @@ Student number 4910109 <img src=jhagspiel_photo.JPG alt="Photo of Johannes Hagsp
 
 ### Lukas Zimmerhackl
 Student number: 4904176
+![Lukas Zimmerhackl](img/lZimmerhackl.jpg)
+I want to learn how to work in a group environment, learn to work with git and I want to learn how to create bigger applications
