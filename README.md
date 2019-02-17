@@ -32,18 +32,18 @@ With this project I want to improve my programming skills and my problem solving
 ### Jari van den Broek
 Student number: 4932749
 I would like to improve my programming skills and to build my first real desktop application, I think learning about how the server and client communicate and how you setup such communication is very valuable.
-<p> <img src=Jari.jpg alt="Photo of Jari van den broek" width="300" height="400"> </p>
+<p> <img src=img/Jari.jpg alt="Photo of Jari van den broek" width="300" height="400"> </p>
 
-Johannes Hagspiel
+### Johannes Hagspiel
 Student number 4910109 
 <p> <img src=img/jhagspiel_photo.JPG alt="Photo of Johannes Hagspiel" width="253"  height="327"> </p>
 
 ### Lukas Zimmerhackl
 Student number: 4904176
-![Lukas Zimmerhackl](img/lZimmerhackl.jpg)
 I want to learn how to work in a group environment, learn to work with git and I want to learn how to create bigger applications
+<p> <img src=img/lZimmerhackl.jpg alt="Photo of Lukas Zimmerhackl" width="300" height="400"> </p>
 
 ### Nick van Riet
 Student number: 4868900
-![Nick van Riet](img/NickvanRiet.jpg)
 With this project, my main goal is to gain experience with working as a team, including any tools (GitLab, etc.). Furthermore, I also want to further develop my programming skills and broaden my knowledge of existing resources (libraries, software, etc.). To achieve these goals, I will do my best to actively communicate with my team: helping others when I can and asking for help when needed.
+<p> <img src=img/NickvanRiet.jpg alt="Photo of Nick van Riet" width="300" height="400"> </p>
