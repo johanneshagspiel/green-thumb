@@ -1,4 +1,4 @@
-package Login_Sys;
+package Login;
 
 import java.awt.EventQueue;
 
@@ -120,3 +120,4 @@ public class Login_S {
 		frame.getContentPane().add(separator_1);
 	}
 }
+
