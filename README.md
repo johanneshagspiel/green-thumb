@@ -64,4 +64,4 @@ O - Options - One option is to keep doing as I'm doing, which is experimenting o
 Both options are of interest to me, and the only thing stopping me is myself.
 W - Will - I am going to work harder, study harder, and communicate better, ASAP, and a good first step is to check in with my group to make sure my Development Plan is approved by them. They can help me with their opinions. \
 Some concrete steps for attaining my goals are, each week, to plan working time, schedule some of it with my team, and make sure that I stick to it.
-<p> <img src=img/NathanOrdonez alt="Photo of Nathan Ordonez" width="300" height="400"> </p>
+<p> <img src=img/NathanOrdonez.jpg alt="Photo of Nathan Ordonez" width="300" height="400"> </p>
