@@ -48,7 +48,7 @@ I want to learn how to work in a group environment, learn to work with git and I
 ### Nick van Riet
 Student number: 4868900
 With this project, my main goal is to gain experience with working as a team, including any tools (GitLab, etc.). Furthermore, I also want to further develop my programming skills and broaden my knowledge of existing resources (libraries, software, etc.). To achieve these goals, I will do my best to actively communicate with my team: helping others when I can and asking for help when needed.
-<p> <img src=img/NickvanRiet.jpg alt="Photo of Nick van Riet" width="300" height="400"> </p>
+<p> <img src=img/NickvanRiet.jpg alt="Photo of Nick van Riet" width="300" height="400"> </p> 
 
 ### Nathan Ordonez
 Student number: 4936205
