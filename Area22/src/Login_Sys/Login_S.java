@@ -72,6 +72,19 @@ public class Login_S {
 		frame.getContentPane().add(txtPassword);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				@SuppressWarnings("deprecation")
+				String password = txtPassword.getText();
+				String username = textField_1.getText();
+				if(username.contains("Bob") && password.contains("Cookie")) {
+					textField_1.setText(null);
+					txtPassword.setText(null);
+				}else{
+					JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		btnLogin.setBounds(206, 202, 85, 21);
 		frame.getContentPane().add(btnLogin);
 		
