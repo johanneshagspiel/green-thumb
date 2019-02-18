@@ -42,7 +42,7 @@ My goal is to learn about server-client communication and about Scrum. Additiona
 
 ### Lukas Zimmerhackl
 Student number: 4904176
-I want to learn how to work in a group environment, learn to work with git and I want to learn how to create bigger applications
+I want to learn how to work in a group environment, learn to work with git and I want to learn how to create real application. I also want to learn to stick to a schedule, since that is something i have had difficulty with. Im trying to achieve this by sticking to the schedule we make during the lab sessions and i think I still need to improve more. My teammates can help me achieve this by making concrete goals and telling me that i don't do well if i dont make an appiontment. I've tried multiple times in highschool to stick to a scedule, but found out I could also make it not using a scedule. Since this course grades you on using a scedule I am going to have to improve.
 <p> <img src=img/lZimmerhackl.jpg alt="Photo of Lukas Zimmerhackl" width="300" height="400"> </p>
 
 ### Nick van Riet
