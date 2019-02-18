@@ -26,7 +26,21 @@ Run `maven site`
 
 ### Ardy Zwanenburg
 Student number: 4856848
-With this project I want to improve my programming skills and my problem solving skills. Also I want to be there for my group if they need help with working in a group. The most important thing I want to learn from this project is how to set up a working server so that multiple people can acces it from different locations.
+<p>In my opinion orginasation and control are my strongest points. I like to start a new projet and than while doing it and it becomes bigger than others slowly take
+some task over from me so that I do not do too much myself. In groups work this mostly shows up at the start of the project and in the end it will look like I did
+less.</p>
+<p>One of my weaker points is than of course given tasks away. Most of the times I will end up doing every task I came up with myself in stead of giving it to one of
+the other team mebers.</p>
+<p>As a core quadrant example: If I take too many taks for myself some will end up not done and that will end up in a worse project result. If I do not give enhough tasks
+I am afraid the other just wait and sit out until the last day and then all start last moment speedcoding with a lot of mistakes.<p/>
+<p>G - Goal: My goal is to be a better lazier programmer, everything has been done before so why inventing the wheel again if someone else already did it. I also want to
+learn how to program better thinking about growing. Like a bycicle store that later also wants to sell scooters. In that way I become a better and well orginised programmer.
+The goal is a succes if we put down a usable product without not using any liberys. R - Reality: I am activily looking for information how other programmers use a server and
+a client in their application and how I can use some of it in my own program. In that way I am getting to my goal. O - Options: With stack overflow there is a lot of code, most
+of it is usefull something. Now I have to investigate wich one is doing the trick for me. That is also the hard part, not everything that is there is usefull for me. W - Will 
+My main will is that I want to work on the project the same amount as time as my team mates. It is a teameffort and in my opinion we should work all the same amount of time. Not
+how much one did, but how long. So that if you get stuck you not automatically did less, because he tried. My team mates can help me reaching this goal to openly say what they
+are doing and how long it took.</p>
 <p> <img src=img/aZwanenburg.jpg alt="Photo of Ardy Zwanenburg" width="300" height="400"> </p>
 
 ### Jari van den Broek
