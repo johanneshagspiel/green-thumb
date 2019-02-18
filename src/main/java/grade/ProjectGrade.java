@@ -11,7 +11,7 @@ public class ProjectGrade {
      * @param grade grade calculated from the rubric
      * @return grade
      */
-    public static double calculateGrade(boolean usedGit, boolean compilems, double grade) {
+    public static double calculateGrade(boolean usedGit, boolean compiles, double grade) {
         if (!usedGit || !compiles) {
             return 1.0;
         }
