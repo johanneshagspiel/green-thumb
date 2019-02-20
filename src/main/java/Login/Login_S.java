@@ -10,6 +10,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 
 public class Login_S {
@@ -17,6 +20,7 @@ public class Login_S {
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
+	public boolean access =  false;
 
 	/**
 	 * Launch the application.
@@ -77,10 +81,42 @@ public class Login_S {
 				@SuppressWarnings("deprecation")
 				String password = txtPassword.getText();
 				String username = textField_1.getText();
-				if(username.contains("Bob") && password.contains("Cookie")) {
+				
+				try {
+					Scanner filescanner = new Scanner(new File("loginDetails.txt"));
+					while(filescanner.hasNextLine()) {
+						Scanner linescanner = new Scanner(filescanner.nextLine());
+						linescanner.useDelimiter("; ");
+						
+						String tryname = linescanner.next();
+						String trypassword = linescanner.next();
+						
+						if(tryname.equals(username) && trypassword.equals(password)) {
+							access = true;
+						}
+						
+						linescanner.close();
+					}
+					
+					filescanner.close();
+					
+				} catch (FileNotFoundException e) {
+					JOptionPane.showMessageDialog(null, "There was an error when trying to read the logindetails database file", "Read file error" ,  JOptionPane.ERROR_MESSAGE);
+					e.printStackTrace();
+				}
+				
+				/*if(username.contains("Bob") && password.contains("Cookie")) {
 					textField_1.setText(null);
 					txtPassword.setText(null);
-				}else{
+				}*/
+				
+				if(access == true) {
+					textField_1.setText(null);
+					txtPassword.setText(null);
+					JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.ERROR_MESSAGE);
+				}
+				
+				if(access == false){
 					JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
 				}
 			}
