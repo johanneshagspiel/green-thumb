@@ -1,3 +1,4 @@
+package Login;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.*;
@@ -16,7 +17,7 @@ import java.util.Scanner;
 * */
 
 
-public class ServerTest {
+public class BasicServer {
 
     //Variables
     public static String name = "nameless";
@@ -43,7 +44,8 @@ public class ServerTest {
             serverPrintOut.println("Hello!" +
                     "\nThese are the available commands:" +
                     "\n1. 'end' to end the connection" +
-                    "\n2. 'login' to get random shit");
+                    "\n2. 'login' to get gui screen" +
+                    "\n3. 'name' to change your name (not officially)");
 
             //Have the server take input from the client and echo it back
             //This should be placed in a loop that listens for a terminator text e.g. bye
@@ -59,12 +61,8 @@ public class ServerTest {
                 switch (line) {
                     case "name": nameChange(scanner, serverPrintOut); break;
                     case "end": done = true; break;
-                    case "login": Login_S.main();
+                    case "login": Login_S.main(null);  
                     default: serverPrintOut.println("Unknown command"); break;
-                }
-
-                if(line.toLowerCase().trim().equals("login")) {
-                    serverPrintOut.println(testmethod.onePlus(5));
                 }
 
             }
