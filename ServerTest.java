@@ -16,8 +16,10 @@ import java.util.Scanner;
 * */
 
 
-
 public class ServerTest {
+
+    //Variables
+    public static String name = "nameless";
 
     //Main method for connecting to server
     public static void main(String[] args){
@@ -38,19 +40,30 @@ public class ServerTest {
             Scanner scanner = new Scanner(inputToServer, "UTF-8");
             PrintWriter serverPrintOut = new PrintWriter(new OutputStreamWriter(outputFromServer, "UTF-8"), true);
 
-            serverPrintOut.println("Hello! Enter Peace to exit.");
+            serverPrintOut.println("Hello!" +
+                    "\nThese are the available commands:" +
+                    "\n1. 'end' to end the connection" +
+                    "\n2. 'login' to get random shit");
 
             //Have the server take input from the client and echo it back
             //This should be placed in a loop that listens for a terminator text e.g. bye
             boolean done = false;
 
-
+            //While loop waiting and checking for user input
             while(!done && scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                serverPrintOut.println("Echo from <Your name Here> Server: " + line);
+                serverPrintOut.println(name + " says: " + line);
 
-                if(line.toLowerCase().trim().equals("peace")) {
+                if(line.toLowerCase().trim().equals("end")) {
                     done = true;
+                }
+
+                if(line.toLowerCase().trim().equals("login")) {
+                    serverPrintOut.println(testmethod.onePlus(5));
+                }
+
+                if(line.toLowerCase().trim().equals("name")) {
+                    nameChange(scanner, serverPrintOut);
                 }
             }
 
@@ -58,5 +71,16 @@ public class ServerTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
+
+    public static void nameChange(Scanner scanner, PrintWriter serverPrintOut) {
+        serverPrintOut.println("Please, enter your name:");
+        name = scanner.nextLine();
+        serverPrintOut.println("Your name is: " + name);
+        return;
+    }
+
+
 }
