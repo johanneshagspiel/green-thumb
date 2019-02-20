@@ -53,18 +53,20 @@ public class ServerTest {
             while(!done && scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 serverPrintOut.println(name + " says: " + line);
+                line = line.toLowerCase().trim();
 
-                if(line.toLowerCase().trim().equals("end")) {
-                    done = true;
+                //Switches between commands
+                switch (line) {
+                    case "name": nameChange(scanner, serverPrintOut); break;
+                    case "end": done = true; break;
+                    case "login": Login_S.main();
+                    default: serverPrintOut.println("Unknown command"); break;
                 }
 
                 if(line.toLowerCase().trim().equals("login")) {
                     serverPrintOut.println(testmethod.onePlus(5));
                 }
 
-                if(line.toLowerCase().trim().equals("name")) {
-                    nameChange(scanner, serverPrintOut);
-                }
             }
 
 
@@ -75,6 +77,7 @@ public class ServerTest {
 
     }
 
+    //Method used to change the user name
     public static void nameChange(Scanner scanner, PrintWriter serverPrintOut) {
         serverPrintOut.println("Please, enter your name:");
         name = scanner.nextLine();
