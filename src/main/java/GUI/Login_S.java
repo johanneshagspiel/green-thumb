@@ -20,7 +20,7 @@ public class Login_S {
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
-	public boolean access =  false;
+	//public static boolean access =  false; //variable that can be used for access control
 
 	/**
 	 * Launch the application.
@@ -78,47 +78,14 @@ public class Login_S {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				//Getting user input from username and password textfields
 				@SuppressWarnings("deprecation")
 				String password = txtPassword.getText();
 				String username = textField_1.getText();
 				
-				try {
-					Scanner filescanner = new Scanner(new File("loginDetails.txt"));
-					while(filescanner.hasNextLine()) {
-						Scanner linescanner = new Scanner(filescanner.nextLine());
-						linescanner.useDelimiter("; ");
-						
-						String tryname = linescanner.next();
-						String trypassword = linescanner.next();
-						
-						if(tryname.equals(username) && trypassword.equals(password)) {
-							access = true;
-						}
-						
-						linescanner.close();
-					}
-					
-					filescanner.close();
-					
-				} catch (FileNotFoundException e) {
-					JOptionPane.showMessageDialog(null, "There was an error when trying to read the logindetails database file", "Read file error" ,  JOptionPane.ERROR_MESSAGE);
-					e.printStackTrace();
-				}
-				
-				/*if(username.contains("Bob") && password.contains("Cookie")) {
-					textField_1.setText(null);
-					txtPassword.setText(null);
-				}*/
-				
-				if(access == true) {
-					textField_1.setText(null);
-					txtPassword.setText(null);
-					JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.INFORMATION_MESSAGE);
-				}
-				
-				if(access == false){
-					JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
-				}
+				//Using the user input to check for valid credentials and granting access if valid
+				checkLogin(textField_1, txtPassword, username, password);
 			}
 		});
 		btnLogin.setBounds(206, 202, 85, 21);
@@ -155,5 +122,50 @@ public class Login_S {
 		separator_1.setBounds(33, 68, 416, 4);
 		frame.getContentPane().add(separator_1);
 	}
+	
+	//Method that is used to determine if the user entered (in)valid login details 
+	public static boolean checkLogin(JTextField textField_1, JPasswordField txtPassword, String username, String password) {
+		boolean access = false; //Control variable
+		
+		try {
+			//Reading the databases file line by line to check for corresponding credentials and giving access accordingly
+			Scanner filescanner = new Scanner(new File("loginDetails.txt"));
+			while(filescanner.hasNextLine()) {
+				Scanner linescanner = new Scanner(filescanner.nextLine());
+				linescanner.useDelimiter("; ");
+				
+				String tryname = linescanner.next();
+				String trypassword = linescanner.next();
+				
+				if(tryname.equals(username) && trypassword.equals(password)) {
+					access = true;
+				}
+				
+				linescanner.close();
+			}
+			
+			filescanner.close();
+			
+		} catch (FileNotFoundException e) { //This will execute when there is an error reading the database file
+			JOptionPane.showMessageDialog(null, "There was an error when trying to read the logindetails database file", "Read file error" ,  JOptionPane.ERROR_MESSAGE);
+			e.printStackTrace();
+		}
+		
+		//If credentials are okay and access is granted, this will be executed
+		if(access == true) {
+			//textField_1.setText(null);
+			//txtPassword.setText(null);
+			JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.INFORMATION_MESSAGE);
+			return true;
+		}
+		
+		//If credentials don't correspond and access is not granted, this will be executed
+		if(access == false){
+			JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		return false; //Is never really executed
+	}
+	
 }
 
