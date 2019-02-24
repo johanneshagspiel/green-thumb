@@ -1,4 +1,4 @@
-package Login;
+package GUI;
 
 import java.awt.EventQueue;
 
@@ -113,7 +113,7 @@ public class Login_S {
 				if(access == true) {
 					textField_1.setText(null);
 					txtPassword.setText(null);
-					JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				if(access == false){
