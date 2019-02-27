@@ -63,8 +63,9 @@ public class BasicServer {
 
     public static void selectCommand(Scanner scanner, PrintWriter serverPrintOut) {
     	//Have the server take input from the client and echo it back
-        //This should be placed in a loop that listens for a terminator text e.g. bye
-        boolean done = false;
+        //This should be placed in a loop that listens for a terminator text e.g. bye    	
+    	
+    	boolean done = false;
 
         //While loop waiting and checking for user input
         while(!done && scanner.hasNextLine()) {
@@ -81,6 +82,7 @@ public class BasicServer {
             }
 
         }
+        
     }
     
     //Method used to change the user name

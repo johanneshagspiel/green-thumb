@@ -37,6 +37,25 @@ public class BasicServerTest {
 		assertEquals("Name change doesn't work correctly", BasicServer.name, "Nick");
 	} 
 	
+	/*
+	//Test name command
+	@Test
+	public void testCommandName() throws FileNotFoundException {
+	BasicServer.name = "NotNick";
+	
+	ByteArrayInputStream in = new ByteArrayInputStream("name".getBytes());
+	System.setIn(in);	
+	Scanner scanner = new Scanner(System.in);	
+		
+	PrintWriter serverPrintOut = new PrintWriter(new File("testwrites.txt")); //How can I initialize this correctly?
+	BasicServer.selectCommand(scanner, serverPrintOut);
+	
+	in = new ByteArrayInputStream("Nick".getBytes());
+	System.setIn(in);
+	
+	assertEquals("The name command doesn't work correctly", BasicServer.name, "Nick");
+	} */
+	
 	//Test end command
 	@Test
 	public void testCommandEnd() throws FileNotFoundException {

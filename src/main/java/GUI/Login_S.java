@@ -12,6 +12,9 @@ import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
 
@@ -68,11 +71,11 @@ public class Login_S {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(187, 94, 104, 28);
+		textField_1.setBounds(187, 94, 181, 28);
 		frame.getContentPane().add(textField_1);
 		
 		txtPassword = new JPasswordField();
-		txtPassword.setBounds(187, 142, 104, 28);
+		txtPassword.setBounds(187, 142, 181, 28);
 		frame.getContentPane().add(txtPassword);
 		
 		JButton btnLogin = new JButton("Login");
@@ -91,14 +94,13 @@ public class Login_S {
 		btnLogin.setBounds(206, 202, 85, 21);
 		frame.getContentPane().add(btnLogin);
 		
-		JButton btnReset = new JButton("Reset");
+		JButton btnReset = new JButton("Add Account");
 		btnReset.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				textField_1.setText(null);
-				txtPassword.setText(null);
+			public void actionPerformed(ActionEvent arg0) {		
+				addAccount(textField_1, txtPassword);
 			}
 		});
-		btnReset.setBounds(111, 202, 85, 21);
+		btnReset.setBounds(62, 202, 134, 21);
 		frame.getContentPane().add(btnReset);
 		
 		JButton btnExit = new JButton("Exit");
@@ -153,8 +155,6 @@ public class Login_S {
 		
 		//If credentials are okay and access is granted, this will be executed
 		if(access == true) {
-			//textField_1.setText(null);
-			//txtPassword.setText(null);
 			JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.INFORMATION_MESSAGE);
 			return true;
 		}
@@ -167,5 +167,31 @@ public class Login_S {
 		return false; //Is never really executed
 	}
 	
+	public static void addAccount(JTextField textField_1, JPasswordField txtPassword) {
+		//Getting user input from username and password textfields
+		@SuppressWarnings("deprecation")
+		String password = txtPassword.getText();
+		String username = textField_1.getText();
+		
+		if(password != "" && username != "") {
+			try { //Writing entered credentials to L=loginDetails.txt
+				PrintWriter fileWriter = new PrintWriter(new FileWriter("loginDetails.txt",true));
+				fileWriter.write("\n" + username + "; " + password);
+				fileWriter.close();
+				JOptionPane.showMessageDialog(null, "Your account has been created successfully!", "Account created" ,  JOptionPane.INFORMATION_MESSAGE);
+			} catch (IOException e) {
+			e.printStackTrace();
+			}
+		
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password", "Create account" ,  JOptionPane.INFORMATION_MESSAGE);
+		}
+				
+		textField_1.setText(null);
+		txtPassword.setText(null);
+	}
+	
+
 }
 
