@@ -6,10 +6,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import Login.Login_addAccount;
+import Login.Login_request;
+
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -20,10 +27,10 @@ import java.awt.event.ActionEvent;
 
 public class Login_S {
 
+	// Fields
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
-	//public static boolean access =  false; //variable that can be used for access control
 
 	/**
 	 * Launch the application.
@@ -52,63 +59,85 @@ public class Login_S {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		// Create the frame
 		frame = new JFrame();
 		frame.setBounds(200, 200, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+		frame.setFocusable(true);
+
+		// Add a key listener to the Enter
+		KeyListener formSubmitKeyListener = new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent event) {
+				if (event.getKeyCode() == KeyEvent.VK_ENTER) {
+
+					// Get the filled in username and password
+					@SuppressWarnings("deprecation")
+					String password = txtPassword.getText();
+					String username = textField_1.getText();
+
+					Login_request.Login_request(username, password, textField_1, txtPassword, frame);
+				}
+			}
+		};
+		frame.addKeyListener(formSubmitKeyListener);
+
+		// Labels
 		JLabel lblLogin = new JLabel("Login");
 		lblLogin.setBounds(187, 28, 104, 30);
 		frame.getContentPane().add(lblLogin);
-		
+
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setBounds(89, 92, 61, 30);
 		frame.getContentPane().add(lblUsername);
-		
+
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setBounds(87, 141, 63, 28);
 		frame.getContentPane().add(lblPassword);
-		
+
+		// Text fields
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(187, 94, 181, 28);
 		frame.getContentPane().add(textField_1);
-		
+		textField_1.addKeyListener(formSubmitKeyListener);
+
 		txtPassword = new JPasswordField();
 		txtPassword.setBounds(187, 142, 181, 28);
 		frame.getContentPane().add(txtPassword);
-		
+		txtPassword.addKeyListener(formSubmitKeyListener);
+
+		//Buttons
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//Getting user input from username and password textfields
+				//Get the filled in username and password
 				@SuppressWarnings("deprecation")
 				String password = txtPassword.getText();
 				String username = textField_1.getText();
 				
-				//Using the user input to check for valid credentials and granting access if valid
-				checkLogin(textField_1, txtPassword, username, password);
+				Login_request.Login_request(username, password, textField_1, txtPassword, frame);
 			}
 		});
 		btnLogin.setBounds(206, 202, 85, 21);
 		frame.getContentPane().add(btnLogin);
-		
+
 		JButton btnReset = new JButton("Add Account");
 		btnReset.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {		
-				addAccount(textField_1, txtPassword);
+			public void actionPerformed(ActionEvent arg0) {
+				Login_addAccount.addAccount(textField_1, txtPassword);
 			}
 		});
 		btnReset.setBounds(62, 202, 134, 21);
 		frame.getContentPane().add(btnReset);
-		
+
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame = new JFrame("Exit");
-				if(JOptionPane.showConfirmDialog(frame, "confirm if you want to exit", "Login Systems",
-						JOptionPane.YES_NO_OPTION)== JOptionPane.YES_NO_OPTION) {
+				if (JOptionPane.showConfirmDialog(frame, "confirm if you want to exit", "Login Systems",
+						JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
 					System.exit(0);
 				}
 			}
@@ -116,82 +145,14 @@ public class Login_S {
 		btnExit.setBounds(301, 202, 85, 21);
 		frame.getContentPane().add(btnExit);
 		
+		// Separators
 		JSeparator separator = new JSeparator();
 		separator.setBounds(33, 188, 416, 4);
 		frame.getContentPane().add(separator);
-		
+
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(33, 68, 416, 4);
 		frame.getContentPane().add(separator_1);
 	}
-	
-	//Method that is used to determine if the user entered (in)valid login details 
-	public static boolean checkLogin(JTextField textField_1, JPasswordField txtPassword, String username, String password) {
-		boolean access = false; //Control variable
-		
-		try {
-			//Reading the databases file line by line to check for corresponding credentials and giving access accordingly
-			Scanner filescanner = new Scanner(new File("loginDetails.txt"));
-			while(filescanner.hasNextLine()) {
-				Scanner linescanner = new Scanner(filescanner.nextLine());
-				linescanner.useDelimiter("; ");
-				
-				String tryname = linescanner.next();
-				String trypassword = linescanner.next();
-				
-				if(tryname.equals(username) && trypassword.equals(password)) {
-					access = true;
-				}
-				
-				linescanner.close();
-			}
-			
-			filescanner.close();
-			
-		} catch (FileNotFoundException e) { //This will execute when there is an error reading the database file
-			JOptionPane.showMessageDialog(null, "There was an error when trying to read the logindetails database file", "Read file error" ,  JOptionPane.ERROR_MESSAGE);
-			e.printStackTrace();
-		}
-		
-		//If credentials are okay and access is granted, this will be executed
-		if(access == true) {
-			JOptionPane.showMessageDialog(null, "Login is succesful!", "Valid Login" ,  JOptionPane.INFORMATION_MESSAGE);
-			return true;
-		}
-		
-		//If credentials don't correspond and access is not granted, this will be executed
-		if(access == false){
-			JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
-			return false;
-		}
-		return false; //Is never really executed
-	}
-	
-	public static void addAccount(JTextField textField_1, JPasswordField txtPassword) {
-		//Getting user input from username and password textfields
-		@SuppressWarnings("deprecation")
-		String password = txtPassword.getText();
-		String username = textField_1.getText();
-		
-		if(password != "" && username != "") {
-			try { //Writing entered credentials to L=loginDetails.txt
-				PrintWriter fileWriter = new PrintWriter(new FileWriter("loginDetails.txt",true));
-				fileWriter.write("\n" + username + "; " + password);
-				fileWriter.close();
-				JOptionPane.showMessageDialog(null, "Your account has been created successfully!", "Account created" ,  JOptionPane.INFORMATION_MESSAGE);
-			} catch (IOException e) {
-			e.printStackTrace();
-			}
-		
-		}
-		else {
-			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password", "Create account" ,  JOptionPane.INFORMATION_MESSAGE);
-		}
-				
-		textField_1.setText(null);
-		txtPassword.setText(null);
-	}
-	
 
 }
-
