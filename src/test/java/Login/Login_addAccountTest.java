@@ -74,5 +74,12 @@ public class Login_addAccountTest {
 		Login_r.Login_request(username, password, textField_1, textPassword, frame);
 		assertTrue(textField_1.getText().equals(empty));
 		assertTrue(textPassword.getText().equals(empty));
+		
+		//Deletes the Neok account after the test
+		
+	}
+	
+	public void deleteNewUser() {
+		
 	}
 }
