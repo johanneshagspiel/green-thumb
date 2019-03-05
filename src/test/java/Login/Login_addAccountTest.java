@@ -36,5 +36,25 @@ public class Login_addAccountTest {
 		JPasswordField textPassword = new JPasswordField(password);
 		MessageClicker.main(null);
 		Login_addAccount.addAccount(textField_1, textPassword);
-	}	
+	}
+	
+	@Test
+	public void testKnownUsername() throws AWTException, InterruptedException {
+		String username = "Ardy";
+		String password = "Cook";
+		JTextField textField_1 = new JTextField(username);
+		JPasswordField textPassword = new JPasswordField(password);
+		MessageClicker.main(null);
+		Login_addAccount.addAccount(textField_1, textPassword);
+	}
+	
+	@Test
+	public void testNewUser() throws AWTException, InterruptedException {
+		String username = "Neok";
+		String password = "Koen";
+		JTextField textField_1 = new JTextField(username);
+		JPasswordField textPassword = new JPasswordField(password);
+		MessageClicker.main(null);
+		Login_addAccount.addAccount(textField_1, textPassword);
+	}
 }
