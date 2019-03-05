@@ -60,6 +60,7 @@ public class Login_r {
 				return true;
 			}else{
 				JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
+				txtPassword.setText(null);
 				return false;
 			}
 		}

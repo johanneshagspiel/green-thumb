@@ -17,7 +17,7 @@ import javax.swing.border.SoftBevelBorder;
 
 public class GUI_App {
 
-	private static JFrame frame;
+	private JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -45,9 +45,10 @@ public class GUI_App {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	static void initialize() {
+	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1920, 1080);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JMenuBar menuBar = new JMenuBar();
