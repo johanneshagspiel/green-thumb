@@ -20,17 +20,17 @@ public class Login_addAccount {
 	 * Result - Username and Password are stored in "loginDetails.txt"
 	 */
 
-	public static boolean addAccount(JTextField textField_1, JPasswordField txtPassword) {
+	public static boolean addAccount(JTextField txtUsername, JPasswordField txtPassword) {
 		// Getting user input from username and password textfields
 		@SuppressWarnings("deprecation")
 		String password = txtPassword.getText();
-		String username = textField_1.getText();
+		String username = txtUsername.getText();
 
 		// Check if password and username textfields are not empty
 		if (password.isEmpty() || username.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
 					"Create account", JOptionPane.ERROR_MESSAGE);
-			textField_1.setText(null);
+			txtUsername.setText(null);
 			txtPassword.setText(null);
 			return false;
 		}
@@ -48,12 +48,13 @@ public class Login_addAccount {
 					linescanner.useDelimiter("; ");
 					if ((linescanner.next()).equals(username)) {
 						alreadyExists = true;
-						textField_1.setText(null);
+						txtUsername.setText(null);
 						txtPassword.setText(null);
 						break; // Don't check the rest of the database after the same username has been found
 					}
 					linescanner.close();
 				}
+				filescanner.close();
 
 				// If username already exists, show message and cancel account creation
 				if (alreadyExists == true) {
