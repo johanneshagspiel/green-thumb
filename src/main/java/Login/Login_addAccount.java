@@ -37,6 +37,7 @@ public class Login_addAccount {
 		// If both textfields contain characters, execute the following
 		else {
 			try { // Checking if username already exists
+				@SuppressWarnings("resource")
 				Scanner filescanner = new Scanner(new File("loginDetails.txt"));
 				boolean alreadyExists = false;
 

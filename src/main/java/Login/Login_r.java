@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 import GUI.GUI_App;
 
-public class Login_request {
+public class Login_r {
 
 		//fields
 		public static boolean access;

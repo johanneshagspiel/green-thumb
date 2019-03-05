@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Login.Login_addAccount;
-import Login.Login_request;
+import Login.Login_r;
 
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -77,7 +77,7 @@ public class Login_S {
 					String password = txtPassword.getText();
 					String username = textField_1.getText();
 
-					Login_request.Login_request(username, password, textField_1, txtPassword, frame);
+					Login_r.Login_request(username, password, textField_1, txtPassword, frame);
 				}
 			}
 		};
@@ -117,7 +117,7 @@ public class Login_S {
 				String password = txtPassword.getText();
 				String username = textField_1.getText();
 				
-				Login_request.Login_request(username, password, textField_1, txtPassword, frame);
+				Login_r.Login_request(username, password, textField_1, txtPassword, frame);
 			}
 		});
 		btnLogin.setBounds(206, 202, 85, 21);
