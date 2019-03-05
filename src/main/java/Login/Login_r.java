@@ -18,7 +18,7 @@ public class Login_r {
 		/**
 		 * Handles the login request.
 		 */
-		public static void Login_request(String username, String password, JTextField textField_1, JTextField txtPassword, JFrame frame) {
+		public static boolean Login_request(String username, String password, JTextField textField_1, JTextField txtPassword, JFrame frame) {
 
 			//Check the data base for account
 			try {
@@ -57,8 +57,10 @@ public class Login_r {
 				txtPassword.setText(null);
 				GUI_App.main(null);
 				frame.setVisible(false);
+				return true;
 			}else{
 				JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
+				return false;
 			}
 		}
 }

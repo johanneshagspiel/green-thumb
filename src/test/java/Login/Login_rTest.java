@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 
 import org.junit.Test;
 
-public class Login_requestTest {
+public class Login_rTest {
 	
 	@Test
 	public void testEmpty() {
@@ -16,9 +16,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, null);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, null);
 		assertTrue(textField_1.getText().equals(username));
 		assertTrue(textPassword.getText().equals(password));
+		assertFalse(test);
 	}
 	
 	@Test
@@ -28,9 +29,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, null);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, null);
 		assertTrue(textField_1.getText().equals(username));
 		assertTrue(textPassword.getText().equals(password));
+		assertFalse(test);
 	}
 	
 	@Test
@@ -40,9 +42,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, null);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, null);
 		assertTrue(textField_1.getText().equals(username));
 		assertTrue(textPassword.getText().equals(password));
+		assertFalse(test);
 	}
 	
 	@Test
@@ -52,9 +55,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, null);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, null);
 		assertTrue(textField_1.getText().equals(username));
 		assertTrue(textPassword.getText().equals(password));
+		assertFalse(test);
 	}
 	
 	@Test
@@ -64,9 +68,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, null);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, null);
 		assertTrue(textField_1.getText().equals(username));
 		assertTrue(textPassword.getText().equals(password));
+		assertFalse(test);
 	}
 	
 	@Test
@@ -78,9 +83,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, frame);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, frame);
 		assertTrue(textField_1.getText().equals(empty));
 		assertTrue(textPassword.getText().equals(empty));
+		assertTrue(test);
 	}
 	
 	@Test
@@ -92,9 +98,10 @@ public class Login_requestTest {
 		JTextField textField_1 = new JTextField(username);
 		JTextField textPassword = new JTextField(password);
 		MessageClicker.main(null);
-		Login_r.Login_request(username, password, textField_1, textPassword, frame);
+		boolean test = Login_r.Login_request(username, password, textField_1, textPassword, frame);
 		assertTrue(textField_1.getText().equals(empty));
 		assertTrue(textPassword.getText().equals(empty));
+		assertTrue(test);
 	}
 
 }

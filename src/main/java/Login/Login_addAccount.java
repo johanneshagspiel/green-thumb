@@ -20,7 +20,7 @@ public class Login_addAccount {
 	 * Result - Username and Password are stored in "loginDetails.txt"
 	 */
 
-	public static void addAccount(JTextField textField_1, JPasswordField txtPassword) {
+	public static boolean addAccount(JTextField textField_1, JPasswordField txtPassword) {
 		// Getting user input from username and password textfields
 		@SuppressWarnings("deprecation")
 		String password = txtPassword.getText();
@@ -32,6 +32,7 @@ public class Login_addAccount {
 					"Create account", JOptionPane.ERROR_MESSAGE);
 			textField_1.setText(null);
 			txtPassword.setText(null);
+			return false;
 		}
 
 		// If both textfields contain characters, execute the following
@@ -58,7 +59,7 @@ public class Login_addAccount {
 				if (alreadyExists == true) {
 					JOptionPane.showMessageDialog(null, "Your username already exists. Please choose a different one",
 							"Username already exists", JOptionPane.ERROR_MESSAGE);
-					return;
+					return false;
 				}
 
 			} catch (FileNotFoundException e) {
@@ -76,5 +77,6 @@ public class Login_addAccount {
 				e.printStackTrace();
 			}
 		}
+		return true;
 	}
 }
