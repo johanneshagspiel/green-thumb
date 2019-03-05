@@ -16,8 +16,13 @@ public class Login_addAccount {
 		String password = txtPassword.getText();
 		String username = textField_1.getText();
 
-		if (password != "" && username != "") {
-			try { // Writing entered credentials to L=loginDetails.txt
+		if(password.isEmpty() || username.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
+					"Create account", JOptionPane.ERROR_MESSAGE);
+		}
+		
+		else {
+			try { // Writing entered credentials to loginDetails.txt
 				PrintWriter fileWriter = new PrintWriter(new FileWriter("loginDetails.txt", true));
 				fileWriter.write("\n" + username + "; " + password);
 				fileWriter.close();
@@ -26,10 +31,6 @@ public class Login_addAccount {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
-		} else {
-			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
-					"Create account", JOptionPane.INFORMATION_MESSAGE);
 		}
 
 		textField_1.setText(null);
