@@ -12,6 +12,13 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Login_addAccount {
+	
+	/**
+	 * Creates a new account
+	 * Pre    - Username is not used yet
+	 *        - Username and Password are not empty
+	 * Result - Username and Password are stored in "loginDetails.txt"
+	 */
 
 	public static void addAccount(JTextField textField_1, JPasswordField txtPassword) {
 		// Getting user input from username and password textfields
@@ -23,6 +30,8 @@ public class Login_addAccount {
 		if (password.isEmpty() || username.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
 					"Create account", JOptionPane.ERROR_MESSAGE);
+			textField_1.setText(null);
+			txtPassword.setText(null);
 		}
 
 		// If both textfields contain characters, execute the following
@@ -37,6 +46,8 @@ public class Login_addAccount {
 					linescanner.useDelimiter("; ");
 					if ((linescanner.next()).equals(username)) {
 						alreadyExists = true;
+						textField_1.setText(null);
+						txtPassword.setText(null);
 						break; // Don't check the rest of the database after the same username has been found
 					}
 					linescanner.close();
@@ -64,9 +75,5 @@ public class Login_addAccount {
 				e.printStackTrace();
 			}
 		}
-
-		textField_1.setText(null);
-		txtPassword.setText(null);
-		return; // End of method
 	}
 }
