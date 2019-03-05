@@ -1,8 +1,11 @@
 package Login;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -16,13 +19,42 @@ public class Login_addAccount {
 		String password = txtPassword.getText();
 		String username = textField_1.getText();
 
-		if(password.isEmpty() || username.isEmpty()) {
+		// Check if password and username textfields are not empty
+		if (password.isEmpty() || username.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
 					"Create account", JOptionPane.ERROR_MESSAGE);
 		}
-		
+
+		// If both textfields contain characters, execute the following
 		else {
-			try { // Writing entered credentials to loginDetails.txt
+			try { // Checking if username already exists
+				Scanner filescanner = new Scanner(new File("loginDetails.txt"));
+				boolean alreadyExists = false;
+
+				// Check every line to see if username already exists
+				while (filescanner.hasNextLine()) {
+					Scanner linescanner = new Scanner(filescanner.nextLine());
+					linescanner.useDelimiter("; ");
+					if ((linescanner.next()).equals(username)) {
+						alreadyExists = true;
+						break; // Don't check the rest of the database after the same username has been found
+					}
+					linescanner.close();
+				}
+
+				// If username already exists, show message and cancel account creation
+				if (alreadyExists == true) {
+					JOptionPane.showMessageDialog(null, "Your username already exists. Please choose a different one",
+							"Username already exists", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+
+			// Writing entered credentials to loginDetails.txt
+			try {
 				PrintWriter fileWriter = new PrintWriter(new FileWriter("loginDetails.txt", true));
 				fileWriter.write("\n" + username + "; " + password);
 				fileWriter.close();
@@ -35,5 +67,6 @@ public class Login_addAccount {
 
 		textField_1.setText(null);
 		txtPassword.setText(null);
+		return; // End of method
 	}
 }
