@@ -13,10 +13,14 @@ import GUI.GUI_App;
 public class Login_r {
 
 		//fields
-		public static boolean access;
+//		public static boolean access;
 
 		/**
 		 * Handles the login request.
+		 * Pre    - Username is not empty and in database
+	     *        - Username and Password are in our database
+	     * Result - Access to new frame
+	     * Return - Access boolean 
 		 */
 		@SuppressWarnings("resource")
 		public static boolean Login_request(String username, String password, JTextField textField_1, JTextField txtPassword, JFrame frame) {
@@ -36,6 +40,8 @@ public class Login_r {
 					//Look if the given password equals password in document 
 					//Look if the given username equals username in document
 					if(tryname.equals(username) && trypassword.equals(password)) {
+						
+						//Makes the Login_s frame empty, starts the GUI_App frame and returns true (for testing purpose)
 						textField_1.setText(null);
 						txtPassword.setText(null);
 						GUI_App.main(null);
@@ -59,17 +65,6 @@ public class Login_r {
 			JOptionPane.showMessageDialog(null,  "Invalid Login Details", "Login Error",  JOptionPane.ERROR_MESSAGE);
 			txtPassword.setText(null);
 			return false;
-			
-			//If access is true give access to next frame
-			//else denied access
-//		if(access) {
-//				textField_1.setText(null);
-//				txtPassword.setText(null);
-//				GUI_App.main(null);
-//				frame.setVisible(false);
-//				return true;
-//			}else{
-//			}
-//			return false;
+
 		}
 }

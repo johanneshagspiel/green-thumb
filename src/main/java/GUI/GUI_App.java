@@ -46,20 +46,25 @@ public class GUI_App {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		// Create the frame
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1920, 1080);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		// Creates the menu-bar
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
+		// Creates the "My Profile" in menu-bar
 		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
 		menuBar.add(mntmMyProfile);
 
+		// Creates the "My Friends" in menu-bar
 		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
 		menuBar.add(mntmMyFriends);
 
+		// Creates the "Log out" in menu-bar
 		JMenuItem mntmLogOut = new JMenuItem("Log out");
 		mntmLogOut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -72,6 +77,7 @@ public class GUI_App {
 		});
 		menuBar.add(mntmLogOut);
 
+		// Test with labels
 		JLabel lblWelcome = new JLabel("Welcome");
 		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 26));
 		lblWelcome.setBackground(new Color(50, 205, 50));

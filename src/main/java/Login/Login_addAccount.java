@@ -18,9 +18,11 @@ public class Login_addAccount {
 	 * Pre    - Username is not used yet
 	 *        - Username and Password are not empty
 	 * Result - Username and Password are stored in "loginDetails.txt"
+	 * Return - Created account boolean
 	 */
 
 	public static boolean addAccount(JTextField txtUsername, JPasswordField txtPassword) {
+		
 		// Getting user input from username and password textfields
 		@SuppressWarnings("deprecation")
 		String password = txtPassword.getText();
@@ -37,7 +39,8 @@ public class Login_addAccount {
 
 		// If both textfields contain characters, execute the following
 		else {
-			try { // Checking if username already exists
+			try { 
+				// Checking if username already exists
 				@SuppressWarnings("resource")
 				Scanner filescanner = new Scanner(new File("loginDetails.txt"));
 				boolean alreadyExists = false;
