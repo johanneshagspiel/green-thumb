@@ -12,9 +12,6 @@ import GUI.GUI_App;
 
 public class Login_r {
 
-		//fields
-//		public static boolean access;
-
 		/**
 		 * Handles the login request.
 		 * Pre    - Username is not empty and in database
@@ -44,7 +41,7 @@ public class Login_r {
 						//Makes the Login_s frame empty, starts the GUI_App frame and returns true (for testing purpose)
 						textField_1.setText(null);
 						txtPassword.setText(null);
-						GUI_App.hello(username);
+						GUI_App.application(username);
 						frame.setVisible(false);
 						return true;
 					}
