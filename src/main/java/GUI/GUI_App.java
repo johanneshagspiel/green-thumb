@@ -17,17 +17,31 @@ import javax.swing.border.SoftBevelBorder;
 
 public class GUI_App {
 
-	private JFrame frame;
+	private static JFrame frame;
+	private static String username;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					GUI_App window = new GUI_App(username);
+//					GUI_App.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+	}
+	
+	public static void hello(String username) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_App window = new GUI_App();
-					window.frame.setVisible(true);
+					GUI_App window = new GUI_App(username);
+					GUI_App.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,14 +52,15 @@ public class GUI_App {
 	/**
 	 * Create the application.
 	 */
-	public GUI_App() {
-		initialize();
+	public GUI_App(String username) {
+		this.username = username;
+		initialize(username);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public static void initialize(String username) {
 		// Create the frame
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1920, 1080);
@@ -78,7 +93,7 @@ public class GUI_App {
 		menuBar.add(mntmLogOut);
 
 		// Test with labels
-		JLabel lblWelcome = new JLabel("Welcome");
+		JLabel lblWelcome = new JLabel("Welkom " + username);
 		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 26));
 		lblWelcome.setBackground(new Color(50, 205, 50));
 		lblWelcome.transferFocusBackward();

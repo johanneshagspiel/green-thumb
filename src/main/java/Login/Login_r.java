@@ -44,7 +44,7 @@ public class Login_r {
 						//Makes the Login_s frame empty, starts the GUI_App frame and returns true (for testing purpose)
 						textField_1.setText(null);
 						txtPassword.setText(null);
-						GUI_App.main(null);
+						GUI_App.hello(username);
 						frame.setVisible(false);
 						return true;
 					}
