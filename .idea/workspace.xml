@@ -49,7 +49,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md.rej" />
+	<option value="$PROJECT_DIR$/README.md.rej" />
         <option value="$PROJECT_DIR$/fsd.jfd" />
         <option value="$PROJECT_DIR$/src/main/test" />
         <option value="$PROJECT_DIR$/src/main/java/Server.java" />
@@ -115,12 +115,13 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552316150349" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Documents/My Games/Sid Meier's Civilization 5/MODS/Reseed! (v 11)/Reseed! (v 11).modinfo" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -138,10 +139,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Server">
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="OOP-Project" />
+  <component name="RunManager">
+    <configuration name="ProjectGrade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="grade.ProjectGrade" />
+      <module name="main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,7 +213,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.ProjectGrade" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +305,9 @@
     <entry file="file://$PROJECT_DIR$/fsd.java" />
     <entry file="file://$PROJECT_DIR$/fsd.jfd" />
     <entry file="file://$PROJECT_DIR$/src/main/test" />
-    <entry file="file://$PROJECT_DIR$/README.md.rej" />
+    <entry file="file://$PROJECT_DIR$/README.md.rej">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/grade/ProjectGrade.java" />
     <entry file="file://$PROJECT_DIR$/OOP-Project.iml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -326,17 +335,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/GUI_App.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/main/grade/ProjectGrade.class" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="207">
+          <caret line="5864" column="42" selection-start-line="5864" selection-start-column="42" selection-end-line="5864" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Login_S.java">
+    <entry file="file://$PROJECT_DIR$/../Documents/My Games/Sid Meier's Civilization 5/MODS/Reseed! (v 11)/Reseed! (v 11).modinfo">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="630">
+          <caret line="65" column="71" selection-start-line="65" selection-start-column="71" selection-end-line="65" selection-end-column="71" />
         </state>
       </provider>
     </entry>
