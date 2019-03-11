@@ -17,7 +17,7 @@ public class MessageClicker implements Runnable {
 	thread.start();
 	}
 	
-	//A thread that will automatically click on messages, making testing easier
+	//A thread that will automaticly click on messages, making testing easier
 	public void run() {
         try {
         	Robot robot = new Robot();
