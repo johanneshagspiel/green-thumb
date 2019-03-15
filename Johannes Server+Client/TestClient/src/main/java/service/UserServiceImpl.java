@@ -31,13 +31,18 @@ public class UserServiceImpl  {
 		return null;
 	}
 
-	public User login(String user_name, String password) throws Exception{
-		RestTemplate restTemplate = new RestTemplate();
-		String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user/" + user_name +"/" + password;
-		ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
-		User user = restTemplate.getForObject( getResourceUrl, User.class);
-		System.out.println(user.toString());
-		return null;
+	public User login(String user_name, String password) {
+		try {
+			RestTemplate restTemplate = new RestTemplate();
+			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user/" + user_name +"/" + password;
+			ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
+			User user = restTemplate.getForObject( getResourceUrl, User.class);
+			System.out.println(user.toString());
+			return user;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			return null;
 	}
 
 	public void deleteUser(int theId) {
