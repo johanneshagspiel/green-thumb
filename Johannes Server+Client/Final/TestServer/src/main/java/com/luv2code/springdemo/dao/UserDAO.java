@@ -13,6 +13,6 @@ public interface UserDAO {
 
 	public void deleteUser(int theId);
 
-	public User getUser(String user_name, String password);
+	public User getUser2(String user_name, String password);
 	
 }

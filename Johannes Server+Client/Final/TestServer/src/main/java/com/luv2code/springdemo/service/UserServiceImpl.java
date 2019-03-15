@@ -44,9 +44,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional
-	public User getUser(String user_nameIn, String passwordIn) {
+	public User getUser2(String user_name, String password) {
 
-		return userDAO.getUser(user_nameIn, passwordIn);
+		return userDAO.getUser2(user_name, password);
 	}
 }
 

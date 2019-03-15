@@ -44,6 +44,18 @@ public class UserRestController {
 		
 		return theUser;
 	}
+
+	@GetMapping("/user/{user_name}/{password}")
+	public User getUser2(@PathVariable String user_name,@PathVariable String password) {
+
+		User theUser = userService.getUser2(user_name, password);
+
+		if (theUser == null) {
+			throw new UserNotFoundException("User  not found with the name " + user_name);
+		}
+
+		return theUser;
+	}
 	
 	// add mapping for POST /customers  - add new customer
 	

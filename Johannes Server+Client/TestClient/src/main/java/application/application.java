@@ -11,7 +11,12 @@ public class application {
         UserServiceImpl test = new UserServiceImpl();
 
         try {
-            test.getUser(1);
+            User test2 = new User();
+            test2.setUser_name("sderefs");
+            test2.setPassword("sdfsdf");
+            test2.setVegetarian("1000");
+            test2.setId(11);
+            test.updateUser(test2);
         } catch (Exception e) {
             e.printStackTrace();
         }

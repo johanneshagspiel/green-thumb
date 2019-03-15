@@ -16,31 +16,40 @@ public class UserServiceImpl  {
 		return null;
 	}
 
-	public void saveUser(User theUser) {
-
+	public void createUser(User theUser) {
+		RestTemplate restTemplate = new RestTemplate();
+		String postResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
+		User user = restTemplate.postForObject(postResourceUrl, theUser, User.class);
 	}
 
 	public User getUser(int theId) throws Exception{
 		RestTemplate restTemplate = new RestTemplate();
 		String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
-		ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl + "/1", String.class);
+		ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
 		User user = restTemplate.getForObject( getResourceUrl+ theId, User.class);
 		System.out.println(user.toString());
 		return null;
 	}
 
-
-	public void deleteUser(int theId) {
-
+	public User login(String user_name, String password) throws Exception{
+		RestTemplate restTemplate = new RestTemplate();
+		String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user/" + user_name +"/" + password;
+		ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
+		User user = restTemplate.getForObject( getResourceUrl, User.class);
+		System.out.println(user.toString());
+		return null;
 	}
 
-	public void addUser(User theUser) {
+	public void deleteUser(int theId) {
+		RestTemplate restTemplate = new RestTemplate();
+		String deleteResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/" + theId;
+		restTemplate.delete(deleteResourceUrl);
+	}
 
+	public void updateUser(User theUser) {
 		RestTemplate restTemplate = new RestTemplate();
 		String putResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
-
-		User user = restTemplate.postForObject(putResourceUrl, theUser, User.class);
-
+		restTemplate.put(putResourceUrl, theUser);
 	}
 
 

@@ -25,7 +25,7 @@ public class UserDAOImpl implements UserDAO {
 				
 		// create a query  ... sort by last name
 		Query<User> theQuery =
-				currentSession.createQuery("from User order by user_name",
+				currentSession.createQuery("from User order by id",
 						User.class);
 		
 		// execute query and get result list
@@ -73,19 +73,16 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUser(String user_nameIn, String passwordIn) {
+	public User getUser2(String user_name, String password) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		// get the object with primary key
-		Query theQuery =
-				currentSession.createQuery("select from User where user_name=:user_nameIn and password=:passwordIn");
+		Query query = currentSession.createSQLQuery("select * from user where user_name=:user_name and password=:password").addEntity(User.class).setParameter("user_name", user_name).setParameter("password", password);
 
-		// now retrieve/read from database using the primary key
-		List<User> users = theQuery.getResultList();
+		List<User> users = query.getResultList();
 
-		User theUser = users.get(1);
+		User theUser = users.get(0);
 
 		return theUser;
 	}
