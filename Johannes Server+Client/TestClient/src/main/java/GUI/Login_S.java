@@ -59,7 +59,6 @@ public class Login_S {
 		UserServiceImpl client = new UserServiceImpl();
 		User user = new User();
 
-
 		// Add a key listener to the Enter
 		KeyListener formSubmitKeyListener = new KeyAdapter() {
 			@Override

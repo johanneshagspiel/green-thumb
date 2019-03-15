@@ -24,7 +24,20 @@ public class User {
 	private String password;
 	
 	@Column(name="vegetarian")
-	private String vegetarian;
+	private int vegetarian;
+
+	@Column(name="produce")
+	private int produce;
+
+	@Column(name="transportation")
+	private int transportation;
+
+	@Column(name="temperature")
+	private int temperature;
+
+	@Column(name="solar")
+	private int solar;
+
 	
 	public User() {
 		
@@ -54,17 +67,49 @@ public class User {
 		this.password = password;
 	}
 
-	public String getVegetarian() {
+	public int getVegetarian() {
 		return vegetarian;
 	}
 
-	public void setVegetarian(String vegetarian) {
+	public void setVegetarian(int vegetarian) {
 		this.vegetarian = vegetarian;
+	}
+
+	public int getProduce() {
+		return produce;
+	}
+
+	public void setProduce(int produce) {
+		this.produce = produce;
+	}
+
+	public int getTransportation() {
+		return transportation;
+	}
+
+	public void setTransportation(int transportation) {
+		this.transportation = transportation;
+	}
+
+	public int getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(int temperature) {
+		this.temperature = temperature;
+	}
+
+	public int getSolar() {
+		return solar;
+	}
+
+	public void setSolar(int solar) {
+		this.solar = solar;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", user_name=" + user_name + ", password=" + password + ", vegetarian=" + vegetarian + "]";
+		return "User [id=" + id + ", user_name=" + user_name + ", password=" + password + ", vegetarian=" + vegetarian + ", produce=" + produce + ", transportation=" + transportation + ", temperature=" + temperature + ", solar=" + solar + "]";
 	}
 		
 }

@@ -28,8 +28,9 @@ public class Login_r extends Login_S {
 				//Makes the Login_s frame empty, starts the GUI_App frame and returns true (for testing purpose)
 				textField_1.setText(null);
 				txtPassword.setText(null);
-				GUI_App.application(username);
+				GUI_App.application(username, userIn, clientIn);
 				frame.setVisible(false);
+				System.out.println(userIn.getId());
 				return true;
 			} else {
 				//Username password is not in the file

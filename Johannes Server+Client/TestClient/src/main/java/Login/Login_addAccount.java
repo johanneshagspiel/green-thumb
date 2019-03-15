@@ -24,11 +24,7 @@ public class Login_addAccount extends Login_S {
 
 	@SuppressWarnings("resource")
 	public static boolean addAccount(String username, String password, User userIn, UserServiceImpl clientIn, JTextField txtUsername, JTextField txtPassword) {
-
-		userIn.setPassword(password);
-		userIn.setUser_name(username);
-		clientIn.createUser(userIn);
-
+		
 		// Check if password and username textfields are not empty
 		if (password.isEmpty() || username.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
