@@ -27,13 +27,30 @@ public class UserServiceImpl  {
 		}
 	}
 
-	public User getUser(int theId) throws Exception{
-		RestTemplate restTemplate = new RestTemplate();
-		String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
-		ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
-		User user = restTemplate.getForObject( getResourceUrl+ theId, User.class);
-		System.out.println(user.toString());
-		return null;
+	public User getUser(int theId) {
+		try {
+			RestTemplate restTemplate = new RestTemplate();
+			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
+			ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
+			User user = restTemplate.getForObject(getResourceUrl + theId, User.class);
+			System.out.println(user.toString());
+			return user;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} return null;
+	}
+
+	public User getUser2(String user_name) {
+		try {
+			RestTemplate restTemplate = new RestTemplate();
+			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user2/";
+			ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
+			User user = restTemplate.getForObject(getResourceUrl + user_name, User.class);
+			System.out.println(user.toString());
+			return user;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} return null;
 	}
 
 	public User login(String user_name, String password) {

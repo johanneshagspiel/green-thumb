@@ -25,7 +25,7 @@ public class FriendRestController {
 
     // add mapping for GET /customers
     @GetMapping("/friend/{user_name_entry}")
-    public List<Friend> getUsers(@PathVariable String user_name_entry) {
+    public List<Friend> getFriends(@PathVariable String user_name_entry) {
 
         return friendService.getFriends(user_name_entry);
 
@@ -33,7 +33,7 @@ public class FriendRestController {
 
     // add mapping for GET /customers
     @GetMapping("/friends")
-    public List<Friend> getUsers() {
+    public List<Friend> getFriends() {
 
         return friendService.getFriends();
 

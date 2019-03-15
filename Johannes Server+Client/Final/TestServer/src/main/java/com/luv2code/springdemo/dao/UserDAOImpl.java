@@ -87,6 +87,21 @@ public class UserDAOImpl implements UserDAO {
 		return theUser;
 	}
 
+	@Override
+	public User getUser3(String user_name) {
+
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Query query = currentSession.createSQLQuery("select * from user where user_name=:user_name").addEntity(User.class).setParameter("user_name", user_name);
+
+		List<User> users = query.getResultList();
+
+		User theUser = users.get(0);
+
+		return theUser;
+	}
+
 }
 
 

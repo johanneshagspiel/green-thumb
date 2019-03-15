@@ -14,5 +14,6 @@ public interface UserDAO {
 	public void deleteUser(int theId);
 
 	public User getUser2(String user_name, String password);
-	
+
+	public User getUser3(String user_name);
 }

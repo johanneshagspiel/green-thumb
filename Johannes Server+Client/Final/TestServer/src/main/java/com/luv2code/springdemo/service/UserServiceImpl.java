@@ -48,6 +48,13 @@ public class UserServiceImpl implements UserService {
 
 		return userDAO.getUser2(user_name, password);
 	}
+
+	@Override
+	@Transactional
+	public User getUser3(String user_name) {
+
+		return userDAO.getUser3(user_name);
+	}
 }
 
 
