@@ -70,6 +70,7 @@ public class GUI_App {
 		btnReset.setBounds(45, 170, 156, 30);
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				points += 100;
 				lblPoints.setText("Your points are " + points);
 			}

@@ -17,9 +17,14 @@ public class UserServiceImpl  {
 	}
 
 	public void createUser(User theUser) {
-		RestTemplate restTemplate = new RestTemplate();
-		String postResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
-		User user = restTemplate.postForObject(postResourceUrl, theUser, User.class);
+		try {
+			RestTemplate restTemplate = new RestTemplate();
+			String postResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
+			User user = restTemplate.postForObject(postResourceUrl, theUser, User.class);
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	public User getUser(int theId) throws Exception{

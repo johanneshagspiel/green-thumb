@@ -15,12 +15,16 @@ public class Login_S {
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
-	private User user = null;
+	private User user;
+	private UserServiceImpl client;
+
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		UserServiceImpl client = new UserServiceImpl();
+		User user = new User();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -35,7 +39,6 @@ public class Login_S {
 	
 	/**
 	 * Create the application.
-	 * @param user
 	 */
 	public Login_S() {
 		initialize();
@@ -52,8 +55,10 @@ public class Login_S {
 		frame.getContentPane().setLayout(null);
 		frame.setFocusable(true);
 
-		// Create other necessary elements such as the database entry and the client
+
 		UserServiceImpl client = new UserServiceImpl();
+		User user = new User();
+
 
 		// Add a key listener to the Enter
 		KeyListener formSubmitKeyListener = new KeyAdapter() {
@@ -66,7 +71,7 @@ public class Login_S {
 					String password = txtPassword.getText();
 					String username = textField_1.getText();
 
-					Login_r.Login_request(username, password, textField_1, txtPassword, frame);
+					Login_r.Login_request(username, password, user, client, textField_1, txtPassword, frame);
 				}
 			}
 		};
@@ -106,19 +111,35 @@ public class Login_S {
 				String password = txtPassword.getText();
 				String username = textField_1.getText();
 
-				user = client.login(username, password);
-				System.out.println(user.toString());
+				try {
+
+					Login_r.Login_request(username, password, user, client, textField_1, txtPassword, frame);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 
 			}
 		});
-
 		btnLogin.setBounds(206, 202, 85, 21);
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnReset = new JButton("Add Account");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Login_addAccount.addAccount(textField_1, txtPassword);
+
+				//Get the filled in username and password
+				@SuppressWarnings("deprecation")
+				String password = txtPassword.getText();
+				String username = textField_1.getText();
+
+				try
+				{
+					Login_addAccount.addAccount(username, password, user, client, textField_1, txtPassword);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+
 			}
 		});
 		btnReset.setBounds(62, 202, 134, 21);
