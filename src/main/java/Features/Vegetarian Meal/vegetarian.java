@@ -1,14 +1,21 @@
-import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class vegetarian {
+	
+	public String username;
 	private static ArrayList<list> arr;
-	 public static void main(String [] args) {
+	
+	public vegetarian(String username) {
+		this.username = username;
+	}
+	
+	public static void main(String [] args) {
 		 
 		 Scanner input = null;
 
@@ -24,13 +31,10 @@ public class vegetarian {
 				System.out.println("Parsing file...");
 
 				parseFile(input);
+				
 			}
 	      
 	    }
-	 public static String Username() {
-		 String username = "Ardy";
-		 return username;
-	 }
 	 
 	 public static void getCO2 (String username) {
 		 for(int i = 0; i < arr.size(); i++) {
@@ -44,8 +48,7 @@ public class vegetarian {
 	 
 	 public static void parseFile(Scanner input) {
 		 String line = "";
-			int counter = 1;
-
+		
 			while (input.hasNextLine()) {
 				line = input.nextLine();
 
@@ -53,7 +56,7 @@ public class vegetarian {
 					continue;
 				}
 
-				Scanner lineNames = new Scanner(line).useDelimiter(":");
+				Scanner lineNames = new Scanner(line).useDelimiter(": ");
 				String lineName = lineNames.next();
 				int value = lineNames.nextInt();
 				
@@ -61,5 +64,6 @@ public class vegetarian {
 				arr.add(array);
 				
 	 }
+			
 }
 }
