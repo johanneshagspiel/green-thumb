@@ -1,0 +1,7 @@
+https://www.ourstreetsmpls.org/does_bike_commuting_affect_your_carbon_footprint_and_how_much
+bike 16 grams of co2 per km
+car: 271 grams of co2 per km on average
+
+so on average you would save 255 grams of co2 per km on average.
+
+we could implement something that looks at the kind of car and its carbon emission for more accurate numbers.
