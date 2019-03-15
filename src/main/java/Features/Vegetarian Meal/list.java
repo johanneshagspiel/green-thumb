@@ -1,11 +1,10 @@
-
 public class list {
 	private String name;
 	private int value;
 	
 	public list(String name, int value) {
 		
-		this.username = name;
+		this.name = name;
 		this.value = value;
 	}
 
