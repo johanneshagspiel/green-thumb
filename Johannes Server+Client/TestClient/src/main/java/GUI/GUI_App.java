@@ -2,7 +2,7 @@ package GUI;
 
 import entity.User;
 import service.UserServiceImpl;
-
+import mainscreen.Profile;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -252,9 +252,8 @@ public class GUI_App extends Login_S{
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-		// Creates the "My Profile" in menu-bar
-		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
-		menuBar.add(mntmMyProfile);
+
+
 
 		// Creates the "My Friends" in menu-bar
 		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
@@ -272,6 +271,24 @@ public class GUI_App extends Login_S{
 			}
 		});
 		menuBar.add(mntmLogOut);
+
+		// Creates the "My Profile" in menu-bar
+		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
+		mntmMyProfile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+ 			Profile.application(userIn, clientIn);
+			}
+		});
+		menuBar.add(mntmMyProfile);
+
+
+
+
+
+
+
+
+
 	}
 
 	
