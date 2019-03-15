@@ -6,7 +6,11 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
@@ -14,6 +18,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
+
+import Login.Login_r;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
 
 public class GUI_App {
 
@@ -50,43 +60,47 @@ public class GUI_App {
 	private static void initialize(String username) {
 		// Create the frame
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1920, 1080);
-		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setBounds(200, 200, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setFocusable(true);
 
-		// Creates the menu-bar
-		JMenuBar menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
+		// Labels
+		JLabel lblLogin = new JLabel("Welcome " + username);
+		lblLogin.setBounds(187, 28, 104, 30);
+		frame.getContentPane().add(lblLogin);
 
-		// Creates the "My Profile" in menu-bar
-		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
-		menuBar.add(mntmMyProfile);
-
-		// Creates the "My Friends" in menu-bar
-		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
-		menuBar.add(mntmMyFriends);
-
-		// Creates the "Log out" in menu-bar
-		JMenuItem mntmLogOut = new JMenuItem("Log out");
-		mntmLogOut.addActionListener(new ActionListener() {
+		// Buttons
+		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "Log out",
+				
+			}
+		});
+		btnLogin.setBounds(206, 202, 85, 21);
+		frame.getContentPane().add(btnLogin);
+
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		btnReset.setBounds(111, 202, 85, 21);
+		frame.getContentPane().add(btnReset);
+
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFrame frame = new JFrame("Exit");
+				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "Login Systems",
 						JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
-					Login_S.main(null);
-					frame.setVisible(false);
+					System.exit(0);
 				}
 			}
 		});
-		menuBar.add(mntmLogOut);
-
-		// Test with labels
-		JLabel lblWelcome = new JLabel("Welcom " + username);
-		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-		lblWelcome.setBackground(new Color(50, 205, 50));
-		lblWelcome.transferFocusBackward();
-		lblWelcome.setBounds(100, 100, 1920, 100);
-		lblWelcome.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		frame.getContentPane().add(lblWelcome, BorderLayout.NORTH);
+		btnExit.setBounds(301, 202, 85, 21);
+		frame.getContentPane().add(btnExit);
 	}
 
 }
