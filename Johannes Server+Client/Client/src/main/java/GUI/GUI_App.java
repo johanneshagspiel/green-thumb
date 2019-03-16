@@ -2,9 +2,12 @@ package GUI;
 
 import entity.LeaderBoardEntry;
 import entity.User;
+import mainscreen.AddFriend;
 import mainscreen.FriendsProfile;
 import service.UserServiceImpl;
 import mainscreen.MyProfile;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -12,6 +15,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 
@@ -20,6 +27,7 @@ public class GUI_App extends Login_S {
 	private static JFrame frame;
 	private String username;
 	private static int points;
+	private static int level;
 
 	/**
 	 * Launch the application.
@@ -67,11 +75,20 @@ public class GUI_App extends Login_S {
 
 		points = userIn.getProduce() + userIn.getSolar() + userIn.getTemperature() + userIn.getTransportation() + userIn.getVegetarian();
 
+		//Information about CO2 saved
 		JLabel lblPoints = new JLabel("The amount of CO2 you have saved so far is " + points);
 		lblPoints.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblPoints.setBounds(10, 42, 1520, 50);
 		lblPoints.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblPoints);
+
+		// Information about level
+		level = points / 1000;
+		JLabel lblLevel = new JLabel("Your Level is " + level);
+		lblLevel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblLevel.setBounds(10, 74, 1520, 50);
+		lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblLevel);
 
 		// Leaderboard
 		JLabel lblLeaderboard = new JLabel("Leaderboard Top 10");
@@ -94,25 +111,24 @@ public class GUI_App extends Login_S {
 		btnAddFriend.setBounds(1250, 330, 200, 30);
 		btnAddFriend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				AddFriend.application(user, client);
 			}
 		});
 		frame.getContentPane().add(btnAddFriend);
 
-
-
-
-		JButton btnUpdateLeader = new JButton("Update Leaderboard");
-		btnUpdateLeader.setBounds(1250, 370, 200, 30);
-		btnUpdateLeader.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) { lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-			}
-		});
-		frame.getContentPane().add(btnUpdateLeader);
-
+		// Motivation
+		int pointsmissing  = 0;
+		if (points > 0) {
+			pointsmissing = 1000 % points;
+		}
+		String motivation = "You only need " + pointsmissing + " points to the next level!";
+		JLabel lblMotivation = new JLabel(motivation);
+		lblMotivation.setBounds(45, 300, 300, 30);
+		lblMotivation.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblMotivation);
 
 
 		// Vegetarian
-
 		//Labels
 		JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
 		lblWhatKindOf.setBounds(45, 140, 300, 30);
@@ -124,10 +140,14 @@ public class GUI_App extends Login_S {
 		btnVeg.setBounds(45, 170, 150, 30);
 		btnVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getVegetarian();
 				userIn.setVegetarian(temp + 100);
 				clientIn.updateUser(userIn);
@@ -142,6 +162,11 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getVegetarian();
 				userIn.setVegetarian(temp - 100);
 				clientIn.updateUser(userIn);
@@ -166,6 +191,11 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getProduce();
 				userIn.setProduce(temp + 100);
 				clientIn.updateUser(userIn);
@@ -180,6 +210,11 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getProduce();
 				userIn.setProduce(temp - 100);
 				clientIn.updateUser(userIn);
@@ -204,6 +239,11 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getTransportation();
 				userIn.setTransportation(temp + 100);
 				clientIn.updateUser(userIn);
@@ -218,6 +258,11 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getTransportation();
 				userIn.setTransportation(temp - 100);
 				clientIn.updateUser(userIn);
@@ -241,6 +286,11 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getTemperature();
 				userIn.setTemperature(temp + 100);
 				clientIn.updateUser(userIn);
@@ -255,6 +305,11 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getTemperature();
 				userIn.setTemperature(temp - 100);
 				clientIn.updateUser(userIn);
@@ -278,6 +333,11 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getSolar();
 				userIn.setSolar(temp + 100);
 				clientIn.updateUser(userIn);
@@ -292,6 +352,11 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+				int pointsmissing = 1000 % points;
+				String motivation = "You only need " + pointsmissing + " points to the next level!";
+				lblMotivation.setText(motivation);
+				level = points / 1000;
+				lblLevel.setText("Your Level is " + level);
 				int temp = userIn.getSolar();
 				userIn.setSolar(temp - 100);
 				clientIn.updateUser(userIn);
@@ -335,7 +400,6 @@ public class GUI_App extends Login_S {
 			}
 		});
 		menuBar.add(mntmMyFriends);
-
 
 
 	}

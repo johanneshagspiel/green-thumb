@@ -3,6 +3,7 @@ package GUI;
 import Login.Login_addAccount;
 import Login.Login_r;
 import entity.User;
+import service.FriendServiceImpl;
 import service.UserServiceImpl;
 
 import javax.swing.*;
@@ -15,8 +16,9 @@ public class Login_S {
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
-	private User user;
-	private UserServiceImpl client;
+	public static User user;
+	public static UserServiceImpl client;
+	public static FriendServiceImpl friendClient;
 
 
 	/**
