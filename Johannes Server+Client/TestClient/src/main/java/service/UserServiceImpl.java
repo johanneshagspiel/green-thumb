@@ -43,9 +43,9 @@ public class UserServiceImpl  {
 	public User getUser2(String user_name) {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
-			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user2/";
+			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user2/" + user_name;
 			ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, String.class);
-			User user = restTemplate.getForObject(getResourceUrl + user_name, User.class);
+			User user = restTemplate.getForObject(getResourceUrl, User.class);
 			System.out.println(user.toString());
 			return user;
 		} catch (Exception e) {

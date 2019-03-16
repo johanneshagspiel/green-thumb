@@ -6,20 +6,20 @@ import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
 
-public class Profile {
+public class FriendsProfile {
 
     private static JFrame frame2;
 
-    private Profile(User userIn, UserServiceImpl clientIn) {
-         initialize(userIn, clientIn);
+    private FriendsProfile(User userIn, UserServiceImpl clientIn) {
+        initialize(userIn, clientIn);
     }
 
     public static void application(User userIn, UserServiceImpl clientIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Profile window = new Profile(userIn, clientIn);
-                    Profile.frame2.setVisible(true);
+                    FriendsProfile window = new FriendsProfile(userIn, clientIn);
+                    FriendsProfile.frame2.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -36,13 +36,10 @@ public class Profile {
         frame2.setFocusable(true);
 
         // Labels
-        JLabel lblWelcome = new JLabel("My Profile");
+        JLabel lblWelcome = new JLabel("My Friends");
         lblWelcome.setBounds(120, 20, 150, 20);
         frame2.getContentPane().add(lblWelcome);
 
-        JLabel lblUsername = new JLabel("Your Username " + userIn.getUser_name());
-        lblUsername.setBounds(120, 10, 10, 20);
-        frame2.getContentPane().add(lblUsername);
 
 
     }

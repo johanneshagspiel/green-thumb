@@ -1,15 +1,21 @@
 package GUI;
 
+import entity.LeaderBoardEntry;
 import entity.User;
+import mainscreen.FriendsProfile;
 import service.UserServiceImpl;
-import mainscreen.Profile;
+import mainscreen.MyProfile;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.List;
 
 
-public class GUI_App extends Login_S{
+public class GUI_App extends Login_S {
 
 	private static JFrame frame;
 	private String username;
@@ -58,7 +64,7 @@ public class GUI_App extends Login_S{
 		lblWelcome.setBounds(10, 10, 1520, 59);
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblWelcome);
-		
+
 		points = userIn.getProduce() + userIn.getSolar() + userIn.getTemperature() + userIn.getTransportation() + userIn.getVegetarian();
 
 		JLabel lblPoints = new JLabel("The amount of CO2 you have saved so far is " + points);
@@ -66,6 +72,44 @@ public class GUI_App extends Login_S{
 		lblPoints.setBounds(10, 42, 1520, 50);
 		lblPoints.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblPoints);
+
+		// Leaderboard
+		JLabel lblLeaderboard = new JLabel("Leaderboard Top 10");
+		lblLeaderboard.setBounds(1200, 140, 300, 30);
+		lblLeaderboard.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblLeaderboard);
+
+		// Create the content for the leaderboard
+		String LeaderBoardContent = LeaderBoardEntry.createLeaderboard(points, username);
+
+		JLabel lblLeaderboardContent = new JLabel(LeaderBoardContent);
+		lblLeaderboardContent.setBounds(1250, 170, 200, 150);
+		lblLeaderboardContent.setHorizontalAlignment(SwingConstants.CENTER);
+		Border border = BorderFactory.createLineBorder(Color.GRAY, 2);
+		lblLeaderboardContent.setBorder(border);
+		frame.getContentPane().add(lblLeaderboardContent);
+
+		// Add friend button
+		JButton btnAddFriend = new JButton("Add a friend");
+		btnAddFriend.setBounds(1250, 330, 200, 30);
+		btnAddFriend.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		frame.getContentPane().add(btnAddFriend);
+
+
+
+
+		JButton btnUpdateLeader = new JButton("Update Leaderboard");
+		btnUpdateLeader.setBounds(1250, 370, 200, 30);
+		btnUpdateLeader.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) { lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
+			}
+		});
+		frame.getContentPane().add(btnUpdateLeader);
+
+
 
 		// Vegetarian
 
@@ -83,26 +127,27 @@ public class GUI_App extends Login_S{
 
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getVegetarian();
 				userIn.setVegetarian(temp + 100);
 				clientIn.updateUser(userIn);
 			}
 		});
 		frame.getContentPane().add(btnVeg);
-		
+
 		JButton btnNonVeg = new JButton("Carnivore meal");
 		btnNonVeg.setBounds(202, 170, 150, 30);
 		btnNonVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getVegetarian();
 				userIn.setVegetarian(temp - 100);
 				clientIn.updateUser(userIn);
 			}
 		});
 		frame.getContentPane().add(btnNonVeg);
-
 
 
 		// Produce
@@ -120,6 +165,7 @@ public class GUI_App extends Login_S{
 
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getProduce();
 				userIn.setProduce(temp + 100);
 				clientIn.updateUser(userIn);
@@ -133,13 +179,13 @@ public class GUI_App extends Login_S{
 			public void actionPerformed(ActionEvent arg0) {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getProduce();
 				userIn.setProduce(temp - 100);
 				clientIn.updateUser(userIn);
 			}
 		});
 		frame.getContentPane().add(btnGlobalProduce);
-
 
 
 		// Transportation
@@ -157,6 +203,7 @@ public class GUI_App extends Login_S{
 
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getTransportation();
 				userIn.setTransportation(temp + 100);
 				clientIn.updateUser(userIn);
@@ -170,6 +217,7 @@ public class GUI_App extends Login_S{
 			public void actionPerformed(ActionEvent arg0) {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getTransportation();
 				userIn.setTransportation(temp - 100);
 				clientIn.updateUser(userIn);
@@ -192,6 +240,7 @@ public class GUI_App extends Login_S{
 
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getTemperature();
 				userIn.setTemperature(temp + 100);
 				clientIn.updateUser(userIn);
@@ -205,6 +254,7 @@ public class GUI_App extends Login_S{
 			public void actionPerformed(ActionEvent arg0) {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getTemperature();
 				userIn.setTemperature(temp - 100);
 				clientIn.updateUser(userIn);
@@ -227,6 +277,7 @@ public class GUI_App extends Login_S{
 
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getSolar();
 				userIn.setSolar(temp + 100);
 				clientIn.updateUser(userIn);
@@ -240,6 +291,7 @@ public class GUI_App extends Login_S{
 			public void actionPerformed(ActionEvent arg0) {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
+				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
 				int temp = userIn.getSolar();
 				userIn.setSolar(temp - 100);
 				clientIn.updateUser(userIn);
@@ -252,12 +304,6 @@ public class GUI_App extends Login_S{
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-
-
-
-		// Creates the "My Friends" in menu-bar
-		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
-		menuBar.add(mntmMyFriends);
 
 		// Creates the "Log out" in menu-bar
 		JMenuItem mntmLogOut = new JMenuItem("Log out");
@@ -276,16 +322,19 @@ public class GUI_App extends Login_S{
 		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
 		mntmMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
- 			Profile.application(userIn, clientIn);
+				MyProfile.application(userIn, clientIn);
 			}
 		});
 		menuBar.add(mntmMyProfile);
 
-
-
-
-
-
+		// Creates the "My Friends" in menu-bar
+		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
+		mntmMyFriends.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FriendsProfile.application(userIn, clientIn);
+			}
+		});
+		menuBar.add(mntmMyFriends);
 
 
 
@@ -300,4 +349,5 @@ public class GUI_App extends Login_S{
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 }
