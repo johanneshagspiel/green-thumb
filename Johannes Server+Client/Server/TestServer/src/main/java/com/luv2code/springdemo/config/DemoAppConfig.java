@@ -21,100 +21,105 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+/**
+ * The type Demo app config.
+ */
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan("com.luv2code.springdemo")
 @PropertySource({ "classpath:persistence-mysql.properties" })
 public class DemoAppConfig implements WebMvcConfigurer {
-
+	/**
+	 * The environment variable.
+	 */
 	@Autowired
 	private Environment env;
-	
+	/**
+	 * The logger variable.
+	 */
 	private Logger logger = Logger.getLogger(getClass().getName());
-	
+
+	/**
+	 * My data source data source.
+	 *
+	 * @return the data source
+	 */
 	@Bean
 	public DataSource myDataSource() {
-		
-		// create connection pool
-		ComboPooledDataSource myDataSource = new ComboPooledDataSource();
-
-		// set the jdbc driver
+		ComboPooledDataSource myDataSource =
+		new ComboPooledDataSource();
 		try {
-			myDataSource.setDriverClass("com.mysql.jdbc.Driver");		
-		}
+			myDataSource.setDriverClass(
+					"com.mysql.jdbc.Driver");
+			}
 		catch (PropertyVetoException exc) {
 			throw new RuntimeException(exc);
-		}
-		
-		// for sanity's sake, let's log url and user ... just to make sure we are reading the data
+											}
 		logger.info("jdbc.url=" + env.getProperty("jdbc.url"));
 		logger.info("jdbc.user=" + env.getProperty("jdbc.user"));
-		
-		// set database connection props
 		myDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
 		myDataSource.setUser(env.getProperty("jdbc.user"));
 		myDataSource.setPassword(env.getProperty("jdbc.password"));
-		
-		// set connection pool props
 		myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
-		myDataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
-		myDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));		
-		myDataSource.setMaxIdleTime(getIntProperty("connection.pool.maxIdleTime"));
-
+		myDataSource.setMinPoolSize(
+				getIntProperty("connection.pool.minPoolSize"));
+		myDataSource.setMaxPoolSize(
+				getIntProperty("connection.pool.maxPoolSize"));
+		myDataSource.setMaxIdleTime(
+				getIntProperty("connection.pool.maxIdleTime"));
 		return myDataSource;
 	}
-	
+	/**
+	 * method to get the hibernate properties
+	 */
 	private Properties getHibernateProperties() {
-
-		// set hibernate properties
 		Properties props = new Properties();
-
-		props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
-		props.setProperty("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-		
-		return props;				
+		props.setProperty("hibernate.dialect",
+				env.getProperty("hibernate.dialect"));
+		props.setProperty("hibernate.show_sql",
+				env.getProperty("hibernate.show_sql"));
+		return props;
 	}
-
-	
-	// need a helper method 
-	// read environment property and convert to int
-	
+	/**
+	 * method to get the int properties
+	 */
 	private int getIntProperty(String propName) {
-		
 		String propVal = env.getProperty(propName);
-		
-		// now convert to int
 		int intPropVal = Integer.parseInt(propVal);
-		
 		return intPropVal;
-	}	
-	
+	}
+	/**
+	 * Session factory local session factory bean.
+	 *
+	 * @return the local session factory bean
+	 */
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
-		
-		// create session factorys
-		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-		
-		// set the properties
+		LocalSessionFactoryBean sessionFactory =
+				new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(myDataSource());
-		sessionFactory.setPackagesToScan(env.getProperty("hibernate.packagesToScan"));
-		sessionFactory.setHibernateProperties(getHibernateProperties());
-		
+		sessionFactory.setPackagesToScan(
+				env.getProperty("hibernate.packagesToScan"));
+		sessionFactory.setHibernateProperties(
+				getHibernateProperties());
 		return sessionFactory;
 	}
-	
+	/**
+	 * Transaction manager hibernate transaction manager.
+	 *
+	 * @param sessionFactory the session factory
+	 * @return the hibernate transaction manager
+	 */
 	@Bean
 	@Autowired
-	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
-		
-		// setup transaction manager based on session factory
-		HibernateTransactionManager txManager = new HibernateTransactionManager();
+	public HibernateTransactionManager transactionManager(
+			SessionFactory sessionFactory) {
+		HibernateTransactionManager txManager =
+				new HibernateTransactionManager();
 		txManager.setSessionFactory(sessionFactory);
-
 		return txManager;
-	}	
-	
+	}
 }
 
 

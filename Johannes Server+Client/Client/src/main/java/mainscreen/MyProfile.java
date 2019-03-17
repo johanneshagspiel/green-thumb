@@ -6,6 +6,9 @@ import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The type My profile.
+ */
 public class MyProfile {
 
     private static JFrame frame2;
@@ -14,6 +17,12 @@ public class MyProfile {
          initialize(userIn, clientIn);
     }
 
+    /**
+     * Application.
+     *
+     * @param userIn   the user in
+     * @param clientIn the client in
+     */
     public static void application(User userIn, UserServiceImpl clientIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -27,6 +36,12 @@ public class MyProfile {
         });
     }
 
+    /**
+     * Initialize.
+     *
+     * @param userIn   the user in
+     * @param clientIn the client in
+     */
     public static void initialize(User userIn, UserServiceImpl clientIn) {
 
         frame2 = new JFrame();

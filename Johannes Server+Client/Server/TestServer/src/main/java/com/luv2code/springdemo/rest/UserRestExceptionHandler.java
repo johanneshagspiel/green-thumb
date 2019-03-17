@@ -5,12 +5,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+/**
+ * The type User rest exception handler.
+ */
 @ControllerAdvice
 public class UserRestExceptionHandler {
 
 	// Add an exception handler for CustomerNotFoundException
-	
-	@ExceptionHandler
+
+    /**
+     * Handle exception response entity.
+     *
+     * @param exc the exc
+     * @return the response entity
+     */
+    @ExceptionHandler
 	public ResponseEntity<UserErrorResponse> handleException(UserNotFoundException exc) {
 		
 		// create CustomerErrorResponse
@@ -28,7 +37,13 @@ public class UserRestExceptionHandler {
 	
 	// Add another exception handler ... to catch any exception (catch all)
 
-	@ExceptionHandler
+    /**
+     * Handle exception response entity.
+     *
+     * @param exc the exc
+     * @return the response entity
+     */
+    @ExceptionHandler
 	public ResponseEntity<UserErrorResponse> handleException(Exception exc) {
 		
 		// create CustomerErrorResponse

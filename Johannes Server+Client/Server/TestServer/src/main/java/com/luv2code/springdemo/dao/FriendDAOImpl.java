@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import com.luv2code.springdemo.entity.Friend;
 
+/**
+ * The type Friend dao.
+ */
 @Repository
 public class FriendDAOImpl implements FriendDAO {
 

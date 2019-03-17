@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 
+/**
+ * The type User.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable {
 
@@ -17,71 +20,154 @@ public class User implements Serializable {
 	private int solar;
 
 
-	public User() {
+    /**
+     * Instantiates a new User.
+     */
+    public User() {
 
 	}
 
-	public int getId() {
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getUser_name() {
+    /**
+     * Gets user name.
+     *
+     * @return the user name
+     */
+    public String getUser_name() {
 		return user_name;
 	}
 
-	public void setUser_name(String user_name) {
+    /**
+     * Sets user name.
+     *
+     * @param user_name the user name
+     */
+    public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
 
-	public String getPassword() {
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public int getVegetarian() {
+    /**
+     * Gets vegetarian.
+     *
+     * @return the vegetarian
+     */
+    public int getVegetarian() {
 		return vegetarian;
 	}
 
-	public void setVegetarian(int vegetarian) {
+    /**
+     * Sets vegetarian.
+     *
+     * @param vegetarian the vegetarian
+     */
+    public void setVegetarian(int vegetarian) {
 		this.vegetarian = vegetarian;
 	}
 
-	public int getProduce() {
+    /**
+     * Gets produce.
+     *
+     * @return the produce
+     */
+    public int getProduce() {
 		return produce;
 	}
 
-	public void setProduce(int produce) {
+    /**
+     * Sets produce.
+     *
+     * @param produce the produce
+     */
+    public void setProduce(int produce) {
 		this.produce = produce;
 	}
 
-	public int getTransportation() {
+    /**
+     * Gets transportation.
+     *
+     * @return the transportation
+     */
+    public int getTransportation() {
 		return transportation;
 	}
 
-	public void setTransportation(int transportation) {
+    /**
+     * Sets transportation.
+     *
+     * @param transportation the transportation
+     */
+    public void setTransportation(int transportation) {
 		this.transportation = transportation;
 	}
 
-	public int getTemperature() {
+    /**
+     * Gets temperature.
+     *
+     * @return the temperature
+     */
+    public int getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(int temperature) {
+    /**
+     * Sets temperature.
+     *
+     * @param temperature the temperature
+     */
+    public void setTemperature(int temperature) {
 		this.temperature = temperature;
 	}
 
-	public int getSolar() {
+    /**
+     * Gets solar.
+     *
+     * @return the solar
+     */
+    public int getSolar() {
 		return solar;
 	}
 
-	public void setSolar(int solar) {
+    /**
+     * Sets solar.
+     *
+     * @param solar the solar
+     */
+    public void setSolar(int solar) {
 		this.solar = solar;
 	}
 

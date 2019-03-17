@@ -8,6 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.luv2code.springdemo.dao.FriendDAO;
 import com.luv2code.springdemo.entity.Friend;
 
+/**
+ * The type Friend service.
+ */
 @Service
 public class FriendServiceImpl implements FriendService {
 

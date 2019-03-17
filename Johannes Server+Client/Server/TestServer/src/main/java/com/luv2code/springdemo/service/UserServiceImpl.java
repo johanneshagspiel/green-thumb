@@ -8,6 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.luv2code.springdemo.dao.UserDAO;
 import com.luv2code.springdemo.entity.User;
 
+/**
+ * The type User service.
+ */
 @Service
 public class UserServiceImpl implements UserService {
 

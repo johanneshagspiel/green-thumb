@@ -6,6 +6,9 @@ import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The type Add friend.
+ */
 public class AddFriend {
 
     private static JFrame frame3;
@@ -14,6 +17,12 @@ public class AddFriend {
         initialize(userIn, clientIn);
     }
 
+    /**
+     * Application.
+     *
+     * @param userIn   the user in
+     * @param clientIn the client in
+     */
     public static void application(User userIn, UserServiceImpl clientIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -27,6 +36,12 @@ public class AddFriend {
         });
     }
 
+    /**
+     * Initialize.
+     *
+     * @param userIn   the user in
+     * @param clientIn the client in
+     */
     public static void initialize(User userIn, UserServiceImpl clientIn) {
 
         frame3 = new JFrame();
