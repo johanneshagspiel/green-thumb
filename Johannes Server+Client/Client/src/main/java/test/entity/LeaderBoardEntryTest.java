@@ -6,24 +6,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * The type Leader board entry test.
- */
 public class LeaderBoardEntryTest {
 
     private LeaderBoardEntry leaderBoardEntryUnderTest;
 
-    /**
-     * Sets up.
-     */
     @Before
     public void setUp() {
         leaderBoardEntryUnderTest = new LeaderBoardEntry("name", 0);
     }
 
-    /**
-     * Test to string.
-     */
     @Test
     public void testToString() {
         // Setup
@@ -36,9 +27,6 @@ public class LeaderBoardEntryTest {
         assertEquals(expectedResult, result);
     }
 
-    /**
-     * Test create leaderboard.
-     */
     @Test
     public void testCreateLeaderboard() {
         // Setup
@@ -51,5 +39,37 @@ public class LeaderBoardEntryTest {
 
         // Verify the results
         assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void getName() {
+        LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
+        assertEquals(test.getName(), "test");
+    }
+
+    @Test
+    public void setName() {
+        LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
+        LeaderBoardEntry test2 = new LeaderBoardEntry("test2", 1);
+        test2.setName("test");
+        assertEquals(test, test2);
+    }
+
+    @Test
+    public void getScore() {
+        LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
+        assertEquals(test.getScore(), 1);
+    }
+
+    @Test
+    public void setScore() {
+        LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
+        LeaderBoardEntry test2 = new LeaderBoardEntry("test", 2);
+        test2.setScore(1);
+        assertEquals(test, test2);
+    }
+
+    @Test
+    public void createLeaderboard() {
     }
 }
