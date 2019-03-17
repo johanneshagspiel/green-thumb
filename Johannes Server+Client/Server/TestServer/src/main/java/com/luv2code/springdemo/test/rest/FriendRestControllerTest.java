@@ -14,12 +14,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-<<<<<<< .merge_file_a15196
 /**
  * The type Friend rest controller test.
  */
-=======
->>>>>>> .merge_file_a08392
 public class FriendRestControllerTest {
 
     @Mock
@@ -28,23 +25,17 @@ public class FriendRestControllerTest {
     @InjectMocks
     private FriendRestController friendRestControllerUnderTest;
 
-<<<<<<< .merge_file_a15196
     /**
      * Sets up.
      */
-=======
->>>>>>> .merge_file_a08392
     @Before
     public void setUp() {
         initMocks(this);
     }
 
-<<<<<<< .merge_file_a15196
     /**
      * Test get friends.
      */
-=======
->>>>>>> .merge_file_a08392
     @Test
     public void testGetFriends() {
         // Setup
@@ -58,12 +49,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a15196
     /**
      * Test get friends 1.
      */
-=======
->>>>>>> .merge_file_a08392
     @Test
     public void testGetFriends1() {
         // Setup
@@ -76,12 +64,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a15196
     /**
      * Test add friend.
      */
-=======
->>>>>>> .merge_file_a08392
     @Test
     public void testAddFriend() {
         // Setup
@@ -95,12 +80,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a15196
     /**
      * Test update friend.
      */
-=======
->>>>>>> .merge_file_a08392
     @Test
     public void testUpdateFriend() {
         // Setup
@@ -114,12 +96,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a15196
     /**
      * Test delete friend.
      */
-=======
->>>>>>> .merge_file_a08392
     @Test
     public void testDeleteFriend() {
         // Setup

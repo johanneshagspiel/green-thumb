@@ -41,25 +41,12 @@ public class User {
 	@Column(name="solar")
 	private int solar;
 
-<<<<<<< .merge_file_a20348
 
 	/**
 	 * Instantiates a new User.
 	 */
 	public User() {
 		
-=======
-	
-	public User(int id, String user_name, String password, int vegetarian, int produce, int transportatation, int temperature, int solar) {
-		this.id = id;
-		this.user_name = user_name;
-		this.password = password;
-		this.vegetarian = vegetarian;
-		this.produce = produce;
-		this.transportation = transportatation;
-		this.temperature = temperature;
-		this.solar = solar;
->>>>>>> .merge_file_a18612
 	}
 
 	/**

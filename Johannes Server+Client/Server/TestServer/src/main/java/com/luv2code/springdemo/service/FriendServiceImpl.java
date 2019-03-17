@@ -8,12 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.luv2code.springdemo.dao.FriendDAO;
 import com.luv2code.springdemo.entity.Friend;
 
-<<<<<<< .merge_file_a11676
 /**
  * The type Friend service.
  */
-=======
->>>>>>> .merge_file_a19712
 @Service
 public class FriendServiceImpl implements FriendService {
 

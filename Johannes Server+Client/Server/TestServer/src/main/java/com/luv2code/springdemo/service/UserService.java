@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.luv2code.springdemo.entity.User;
 
-<<<<<<< .merge_file_a18824
 /**
  * The interface User service.
  */
@@ -55,19 +54,4 @@ public interface UserService {
      * @return the user 3
      */
     public User getUser3(String user_name);
-=======
-public interface UserService {
-
-	public List<User> getUsers();
-
-	public void saveUser(User theUser);
-
-	public User getUser(int theId);
-
-	public void deleteUser(int theId);
-
-	public User getUser2(String user_name, String password);
-
-	public User getUser3(String user_name);
->>>>>>> .merge_file_a01320
 }

@@ -10,33 +10,24 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-<<<<<<< .merge_file_a13180
 /**
  * The type Friend service impl test.
  */
-=======
->>>>>>> .merge_file_a10800
 public class FriendServiceImplTest {
 
     private FriendServiceImpl friendServiceImplUnderTest;
 
-<<<<<<< .merge_file_a13180
     /**
      * Sets up.
      */
-=======
->>>>>>> .merge_file_a10800
     @Before
     public void setUp() {
         friendServiceImplUnderTest = new FriendServiceImpl();
     }
 
-<<<<<<< .merge_file_a13180
     /**
      * Test get users.
      */
-=======
->>>>>>> .merge_file_a10800
     @Test
     public void testGetUsers() {
         // Setup
@@ -49,12 +40,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a13180
     /**
      * Test create friend.
      */
-=======
->>>>>>> .merge_file_a10800
     @Test
     public void testCreateFriend() {
         // Setup
@@ -66,12 +54,9 @@ public class FriendServiceImplTest {
         // Verify the results
     }
 
-<<<<<<< .merge_file_a13180
     /**
      * Test get friends.
      */
-=======
->>>>>>> .merge_file_a10800
     @Test
     public void testGetFriends() {
         // Setup
@@ -85,12 +70,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a13180
     /**
      * Test delete user.
      */
-=======
->>>>>>> .merge_file_a10800
     @Test
     public void testDeleteUser() {
         // Setup
@@ -102,12 +84,9 @@ public class FriendServiceImplTest {
         // Verify the results
     }
 
-<<<<<<< .merge_file_a13180
     /**
      * Test update user.
      */
-=======
->>>>>>> .merge_file_a10800
     @Test
     public void testUpdateUser() {
         // Setup

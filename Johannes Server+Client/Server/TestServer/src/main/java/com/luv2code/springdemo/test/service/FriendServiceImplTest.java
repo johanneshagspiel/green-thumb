@@ -14,12 +14,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-<<<<<<< .merge_file_a13996
 /**
  * The type Friend service impl test.
  */
-=======
->>>>>>> .merge_file_a17044
 public class FriendServiceImplTest {
 
     @Mock
@@ -28,23 +25,17 @@ public class FriendServiceImplTest {
     @InjectMocks
     private FriendServiceImpl friendServiceImplUnderTest;
 
-<<<<<<< .merge_file_a13996
     /**
      * Sets up.
      */
-=======
->>>>>>> .merge_file_a17044
     @Before
     public void setUp() {
         initMocks(this);
     }
 
-<<<<<<< .merge_file_a13996
     /**
      * Test get friends.
      */
-=======
->>>>>>> .merge_file_a17044
     @Test
     public void testGetFriends() {
         // Setup
@@ -58,12 +49,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a13996
     /**
      * Test get friends 1.
      */
-=======
->>>>>>> .merge_file_a17044
     @Test
     public void testGetFriends1() {
         // Setup
@@ -76,12 +64,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< .merge_file_a13996
     /**
      * Test save friend.
      */
-=======
->>>>>>> .merge_file_a17044
     @Test
     public void testSaveFriend() {
         // Setup
@@ -93,12 +78,9 @@ public class FriendServiceImplTest {
         // Verify the results
     }
 
-<<<<<<< .merge_file_a13996
     /**
      * Test delete friend.
      */
-=======
->>>>>>> .merge_file_a17044
     @Test
     public void testDeleteFriend() {
         // Setup

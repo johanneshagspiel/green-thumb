@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.luv2code.springdemo.entity.Friend;
 
-<<<<<<< .merge_file_a01828
 /**
  * The interface Friend service.
  */
@@ -37,16 +36,6 @@ public interface FriendService {
      *
      * @param theId the the id
      */
-=======
-public interface FriendService {
-
-    public List<Friend> getFriends(String user_name_entry);
-
-    public List<Friend> getFriends();
-
-    public void saveFriend(Friend theFriend);
-
->>>>>>> .merge_file_a08624
     public void deleteFriend(int theId);
 
 }

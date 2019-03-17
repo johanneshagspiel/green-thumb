@@ -15,12 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.luv2code.springdemo.entity.Friend;
 import com.luv2code.springdemo.service.FriendService;
 
-<<<<<<< .merge_file_a15044
 /**
  * The type Friend rest controller.
  */
-=======
->>>>>>> .merge_file_a13216
 @RestController
 @RequestMapping("/api")
 public class FriendRestController {
@@ -29,7 +26,6 @@ public class FriendRestController {
     @Autowired
     private FriendService friendService;
 
-<<<<<<< .merge_file_a15044
     /**
      * Gets friends.
      *
@@ -37,9 +33,6 @@ public class FriendRestController {
      * @return the friends
      */
 // add mapping for GET /customers
-=======
-    // add mapping for GET /customers
->>>>>>> .merge_file_a13216
     @GetMapping("/friend/{user_name_entry}")
     public List<Friend> getFriends(@PathVariable String user_name_entry) {
 
@@ -47,16 +40,12 @@ public class FriendRestController {
 
     }
 
-<<<<<<< .merge_file_a15044
     /**
      * Gets friends.
      *
      * @return the friends
      */
 // add mapping for GET /customers
-=======
-    // add mapping for GET /customers
->>>>>>> .merge_file_a13216
     @GetMapping("/friends")
     public List<Friend> getFriends() {
 
@@ -66,15 +55,12 @@ public class FriendRestController {
 
     // add mapping for POST /customers  - add new customer
 
-<<<<<<< .merge_file_a15044
     /**
      * Add friend friend.
      *
      * @param theFriend the the friend
      * @return the friend
      */
-=======
->>>>>>> .merge_file_a13216
     @PostMapping("/friends")
     public Friend addFriend(@RequestBody Friend theFriend) {
 
@@ -90,15 +76,12 @@ public class FriendRestController {
 
     // add mapping for PUT /customers - update existing customer
 
-<<<<<<< .merge_file_a15044
     /**
      * Update friend friend.
      *
      * @param theFriend the the friend
      * @return the friend
      */
-=======
->>>>>>> .merge_file_a13216
     @PutMapping("/friends")
     public Friend updateFriend(@RequestBody Friend theFriend) {
 
@@ -110,15 +93,12 @@ public class FriendRestController {
 
     // add mapping for DELETE /customers/{customerId} - delete customer
 
-<<<<<<< .merge_file_a15044
     /**
      * Delete friend string.
      *
      * @param userId the user id
      * @return the string
      */
-=======
->>>>>>> .merge_file_a13216
     @DeleteMapping("/friends/{userId}")
     public String deleteFriend(@PathVariable int userId) {
 

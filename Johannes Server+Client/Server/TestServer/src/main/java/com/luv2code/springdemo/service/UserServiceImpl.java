@@ -8,12 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.luv2code.springdemo.dao.UserDAO;
 import com.luv2code.springdemo.entity.User;
 
-<<<<<<< .merge_file_a07620
 /**
  * The type User service.
  */
-=======
->>>>>>> .merge_file_a17220
 @Service
 public class UserServiceImpl implements UserService {
 

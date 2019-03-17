@@ -10,12 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import com.luv2code.springdemo.entity.Friend;
 
-<<<<<<< .merge_file_a15712
 /**
  * The type Friend dao.
  */
-=======
->>>>>>> .merge_file_a20348
 @Repository
 public class FriendDAOImpl implements FriendDAO {
 

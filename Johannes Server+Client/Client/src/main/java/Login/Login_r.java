@@ -7,7 +7,6 @@ import entity.User;
 import service.UserServiceImpl;
 import javax.swing.*;
 
-<<<<<<< .merge_file_a19480
 /**
  * The type Login r.
  */
@@ -30,18 +29,6 @@ public class Login_r extends Login_S {
      * @return the boolean
      */
     @SuppressWarnings("resource")
-=======
-public class Login_r extends Login_S {
-
-	/**
-	 * Handles the login request.
-	 * Pre    - Username is not empty and in database
-	 * - Username and Password are in our database
-	 * Result - Access to new frame
-	 * Return - Access boolean
-	 */
-	@SuppressWarnings("resource")
->>>>>>> .merge_file_a02036
 	public static boolean Login_request(String username, String password, User userIn, UserServiceImpl clientIn, JTextField textField_1, JTextField txtPassword, JFrame frame) {
 
 		//Check the data base for account

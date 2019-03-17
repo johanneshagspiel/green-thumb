@@ -9,7 +9,6 @@ import javax.swing.*;
 
 import static org.junit.Assert.assertTrue;
 
-<<<<<<< .merge_file_a19432
 /**
  * The type Login r test.
  */
@@ -18,10 +17,6 @@ public class Login_rTest {
     /**
      * Test login request.
      */
-=======
-public class Login_rTest {
-
->>>>>>> .merge_file_a05776
     @Test
     public void testLogin_request() {
         // Setup

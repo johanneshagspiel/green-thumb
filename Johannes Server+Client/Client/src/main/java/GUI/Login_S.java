@@ -10,19 +10,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-<<<<<<< .merge_file_a18040
 /**
  * The type Login s.
  */
-=======
->>>>>>> .merge_file_a01520
 public class Login_S {
 
 	// Fields
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
-<<<<<<< .merge_file_a18040
     /**
      * The constant user.
      */
@@ -43,17 +39,6 @@ public class Login_S {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-=======
-	public static User user;
-	public static UserServiceImpl client;
-	public static FriendServiceImpl friendClient;
-
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
->>>>>>> .merge_file_a01520
 		UserServiceImpl client = new UserServiceImpl();
 		User user = new User();
 		EventQueue.invokeLater(new Runnable() {
@@ -67,19 +52,11 @@ public class Login_S {
 			}
 		});
 	}
-<<<<<<< .merge_file_a18040
 
     /**
      * Create the application.
      */
     public Login_S() {
-=======
-	
-	/**
-	 * Create the application.
-	 */
-	public Login_S() {
->>>>>>> .merge_file_a01520
 		initialize();
 	}
 

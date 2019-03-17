@@ -6,33 +6,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-<<<<<<< .merge_file_a18328
 /**
  * The type User test.
  */
-=======
->>>>>>> .merge_file_a00860
 public class UserTest {
 
     private User userUnderTest;
 
-<<<<<<< .merge_file_a18328
     /**
      * Sets up.
      */
-=======
->>>>>>> .merge_file_a00860
     @Before
     public void setUp() {
         userUnderTest = new User();
     }
 
-<<<<<<< .merge_file_a18328
     /**
      * Test to string.
      */
-=======
->>>>>>> .merge_file_a00860
     @Test
     public void testToString() {
         // Setup
@@ -44,7 +35,6 @@ public class UserTest {
         // Verify the results
         assertEquals(expectedResult, result);
     }
-<<<<<<< .merge_file_a18328
 
 
     @Test
@@ -116,6 +106,4 @@ public class UserTest {
     @Test
     public void setSolar() {
     }
-=======
->>>>>>> .merge_file_a00860
 }

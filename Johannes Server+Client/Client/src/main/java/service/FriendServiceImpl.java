@@ -10,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-<<<<<<< .merge_file_a14576
 /**
  * The type Friend service.
  */
@@ -22,24 +21,16 @@ public class FriendServiceImpl  {
      *
      * @return the users
      */
-=======
-@Service
-public class FriendServiceImpl  {
-
->>>>>>> .merge_file_a08956
     public List<Friend> getUsers() {
 
         return null;
     }
 
-<<<<<<< .merge_file_a14576
     /**
      * Create friend.
      *
      * @param theFriend the the friend
      */
-=======
->>>>>>> .merge_file_a08956
     public void createFriend(Friend theFriend) {
         try {
             RestTemplate restTemplate = new RestTemplate();
@@ -51,15 +42,12 @@ public class FriendServiceImpl  {
         }
     }
 
-<<<<<<< .merge_file_a14576
     /**
      * Gets friends.
      *
      * @param user_name_entry the user name entry
      * @return the friends
      */
-=======
->>>>>>> .merge_file_a08956
     public List<Friend> getFriends(String user_name_entry) {
         try {
             RestTemplate restTemplate = new RestTemplate();
@@ -79,28 +67,22 @@ public class FriendServiceImpl  {
         } return null;
     }
 
-<<<<<<< .merge_file_a14576
     /**
      * Delete user.
      *
      * @param theId the the id
      */
-=======
->>>>>>> .merge_file_a08956
     public void deleteUser(int theId) {
         RestTemplate restTemplate = new RestTemplate();
         String deleteResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/friends/" + theId;
         restTemplate.delete(deleteResourceUrl);
     }
 
-<<<<<<< .merge_file_a14576
     /**
      * Update user.
      *
      * @param theFriend the the friend
      */
-=======
->>>>>>> .merge_file_a08956
     public void updateUser(Friend theFriend) {
         RestTemplate restTemplate = new RestTemplate();
         String putResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/friends/";
