@@ -15,6 +15,9 @@ import javax.sql.DataSource;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+/**
+ * The type Demo app config test.
+ */
 public class DemoAppConfigTest {
 
     @Mock
@@ -23,11 +26,17 @@ public class DemoAppConfigTest {
     @InjectMocks
     private DemoAppConfig demoAppConfigUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+    /**
+     * Test my data source.
+     */
     @Test
     public void testMyDataSource() {
         // Setup
@@ -40,6 +49,9 @@ public class DemoAppConfigTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test session factory.
+     */
     @Test
     public void testSessionFactory() {
         // Setup
@@ -52,6 +64,9 @@ public class DemoAppConfigTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test transaction manager.
+     */
     @Test
     public void testTransactionManager() {
         // Setup

@@ -6,15 +6,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type User test.
+ */
 public class UserTest {
 
     private User userUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         userUnderTest = new User();
     }
 
+    /**
+     * Test to string.
+     */
     @Test
     public void testToString() {
         // Setup

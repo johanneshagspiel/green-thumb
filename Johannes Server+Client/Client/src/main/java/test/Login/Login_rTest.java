@@ -9,8 +9,14 @@ import javax.swing.*;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * The type Login r test.
+ */
 public class Login_rTest {
 
+    /**
+     * Test login request.
+     */
     @Test
     public void testLogin_request() {
         // Setup

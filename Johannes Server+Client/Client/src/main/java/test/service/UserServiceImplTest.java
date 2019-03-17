@@ -10,15 +10,24 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type User service impl test.
+ */
 public class UserServiceImplTest {
 
     private UserServiceImpl userServiceImplUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         userServiceImplUnderTest = new UserServiceImpl();
     }
 
+    /**
+     * Test get users.
+     */
     @Test
     public void testGetUsers() {
         // Setup
@@ -31,6 +40,9 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test create user.
+     */
     @Test
     public void testCreateUser() {
         // Setup
@@ -42,6 +54,9 @@ public class UserServiceImplTest {
         // Verify the results
     }
 
+    /**
+     * Test get user.
+     */
     @Test
     public void testGetUser() {
         // Setup
@@ -55,6 +70,9 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test get user 2.
+     */
     @Test
     public void testGetUser2() {
         // Setup
@@ -68,6 +86,9 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test login.
+     */
     @Test
     public void testLogin() {
         // Setup
@@ -82,6 +103,9 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test delete user.
+     */
     @Test
     public void testDeleteUser() {
         // Setup
@@ -93,6 +117,9 @@ public class UserServiceImplTest {
         // Verify the results
     }
 
+    /**
+     * Test update user.
+     */
     @Test
     public void testUpdateUser() {
         // Setup

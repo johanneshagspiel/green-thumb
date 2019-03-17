@@ -9,8 +9,14 @@ import javax.swing.*;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * The type Login add account test.
+ */
 public class Login_addAccountTest {
 
+    /**
+     * Test add account.
+     */
     @Test
     public void testAddAccount() {
         // Setup

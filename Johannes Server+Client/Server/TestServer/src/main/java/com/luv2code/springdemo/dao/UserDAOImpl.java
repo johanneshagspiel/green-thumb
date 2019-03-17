@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import com.luv2code.springdemo.entity.User;
 
+/**
+ * The type User dao.
+ */
 @Repository
 public class UserDAOImpl implements UserDAO {
 

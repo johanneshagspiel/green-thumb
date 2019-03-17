@@ -9,15 +9,24 @@ import org.springframework.http.ResponseEntity;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type User rest exception handler test.
+ */
 public class UserRestExceptionHandlerTest {
 
     private UserRestExceptionHandler userRestExceptionHandlerUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         userRestExceptionHandlerUnderTest = new UserRestExceptionHandler();
     }
 
+    /**
+     * Test handle exception.
+     */
     @Test
     public void testHandleException() {
         // Setup
@@ -31,6 +40,9 @@ public class UserRestExceptionHandlerTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test handle exception 1.
+     */
     @Test
     public void testHandleException1() {
         // Setup

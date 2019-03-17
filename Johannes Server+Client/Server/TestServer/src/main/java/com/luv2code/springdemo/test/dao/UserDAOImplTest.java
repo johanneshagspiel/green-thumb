@@ -14,6 +14,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+/**
+ * The type User dao impl test.
+ */
 public class UserDAOImplTest {
 
     @Mock
@@ -22,11 +25,17 @@ public class UserDAOImplTest {
     @InjectMocks
     private UserDAOImpl userDAOImplUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+    /**
+     * Test get users.
+     */
     @Test
     public void testGetUsers() {
         // Setup
@@ -39,6 +48,9 @@ public class UserDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test save user.
+     */
     @Test
     public void testSaveUser() {
         // Setup
@@ -50,6 +62,9 @@ public class UserDAOImplTest {
         // Verify the results
     }
 
+    /**
+     * Test get user.
+     */
     @Test
     public void testGetUser() {
         // Setup
@@ -63,6 +78,9 @@ public class UserDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test delete user.
+     */
     @Test
     public void testDeleteUser() {
         // Setup
@@ -74,6 +92,9 @@ public class UserDAOImplTest {
         // Verify the results
     }
 
+    /**
+     * Test get user 2.
+     */
     @Test
     public void testGetUser2() {
         // Setup
@@ -88,6 +109,9 @@ public class UserDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test get user 3.
+     */
     @Test
     public void testGetUser3() {
         // Setup

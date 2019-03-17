@@ -14,6 +14,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+/**
+ * The type Friend service impl test.
+ */
 public class FriendServiceImplTest {
 
     @Mock
@@ -22,11 +25,17 @@ public class FriendServiceImplTest {
     @InjectMocks
     private FriendServiceImpl friendServiceImplUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+    /**
+     * Test get friends.
+     */
     @Test
     public void testGetFriends() {
         // Setup
@@ -40,6 +49,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test get friends 1.
+     */
     @Test
     public void testGetFriends1() {
         // Setup
@@ -52,6 +64,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test save friend.
+     */
     @Test
     public void testSaveFriend() {
         // Setup
@@ -63,6 +78,9 @@ public class FriendServiceImplTest {
         // Verify the results
     }
 
+    /**
+     * Test delete friend.
+     */
     @Test
     public void testDeleteFriend() {
         // Setup

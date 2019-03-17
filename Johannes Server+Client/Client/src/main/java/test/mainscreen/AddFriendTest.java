@@ -5,8 +5,14 @@ import mainscreen.AddFriend;
 import org.junit.Test;
 import service.UserServiceImpl;
 
+/**
+ * The type Add friend test.
+ */
 public class AddFriendTest {
 
+    /**
+     * Test application.
+     */
     @Test
     public void testApplication() {
         // Setup
@@ -19,6 +25,9 @@ public class AddFriendTest {
         // Verify the results
     }
 
+    /**
+     * Test initialize.
+     */
     @Test
     public void testInitialize() {
         // Setup

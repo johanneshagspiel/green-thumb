@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.luv2code.springdemo.entity.User;
 import com.luv2code.springdemo.service.UserService;
 
+/**
+ * The type User rest controller.
+ */
 @RestController
 @RequestMapping("/api")
 public class UserRestController {
@@ -22,8 +25,13 @@ public class UserRestController {
 	// autowire the CustomerService
 	@Autowired
 	private UserService userService;
-	
-	// add mapping for GET /customers
+
+    /**
+     * Gets users.
+     *
+     * @return the users
+     */
+// add mapping for GET /customers
 	@GetMapping("/users")
 	public List<User> getUsers() {
 		
@@ -32,8 +40,14 @@ public class UserRestController {
 	}
 	
 	// add mapping for GET /customers/{customerId}
-	
-	@GetMapping("/users/{userId}")
+
+    /**
+     * Gets user.
+     *
+     * @param userId the user id
+     * @return the user
+     */
+    @GetMapping("/users/{userId}")
 	public User getUser(@PathVariable int userId) {
 		
 		User theUser = userService.getUser(userId);
@@ -45,7 +59,14 @@ public class UserRestController {
 		return theUser;
 	}
 
-	@GetMapping("/user/{user_name}/{password}")
+    /**
+     * Gets user 2.
+     *
+     * @param user_name the user name
+     * @param password  the password
+     * @return the user 2
+     */
+    @GetMapping("/user/{user_name}/{password}")
 	public User getUser2(@PathVariable String user_name,@PathVariable String password) {
 
 		User theUser = userService.getUser2(user_name, password);
@@ -57,7 +78,13 @@ public class UserRestController {
 		return theUser;
 	}
 
-	@GetMapping("/user2/{user_name}")
+    /**
+     * Gets user 3.
+     *
+     * @param user_name the user name
+     * @return the user 3
+     */
+    @GetMapping("/user2/{user_name}")
 	public User getUser3(@PathVariable String user_name) {
 
 		User theUser = userService.getUser3(user_name);
@@ -70,8 +97,14 @@ public class UserRestController {
 	}
 	
 	// add mapping for POST /customers  - add new customer
-	
-	@PostMapping("/users")
+
+    /**
+     * Add user user.
+     *
+     * @param theUser the the user
+     * @return the user
+     */
+    @PostMapping("/users")
 	public User addUser(@RequestBody User theUser) {
 		
 		// also just in case the pass an id in JSON ... set id to 0
@@ -85,8 +118,14 @@ public class UserRestController {
 	}
 	
 	// add mapping for PUT /customers - update existing customer
-	
-	@PutMapping("/users")
+
+    /**
+     * Update user user.
+     *
+     * @param theUser the the user
+     * @return the user
+     */
+    @PutMapping("/users")
 	public User updateUser(@RequestBody User theUser) {
 		
 		userService.saveUser(theUser);
@@ -96,8 +135,14 @@ public class UserRestController {
 	}
 	
 	// add mapping for DELETE /customers/{customerId} - delete customer
-	
-	@DeleteMapping("/users/{userId}")
+
+    /**
+     * Delete user string.
+     *
+     * @param userId the user id
+     * @return the string
+     */
+    @DeleteMapping("/users/{userId}")
 	public String deleteUser(@PathVariable int userId) {
 		
 		User tempCustomer = userService.getUser(userId);

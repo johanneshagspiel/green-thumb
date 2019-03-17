@@ -9,28 +9,57 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Leader board entry.
+ */
 public class LeaderBoardEntry {
 
     private String name;
     private int score;
 
+    /**
+     * Instantiates a new Leader board entry.
+     *
+     * @param name  the name
+     * @param score the score
+     */
     public LeaderBoardEntry(String name, int score) {
         this.name = name;
         this.score = score;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets score.
+     *
+     * @return the score
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     * Sets score.
+     *
+     * @param score the score
+     */
     public void setScore(int score) {
         this.score = score;
     }
@@ -40,6 +69,13 @@ public class LeaderBoardEntry {
         return name +", " + score;
     }
 
+    /**
+     * Create leaderboard string.
+     *
+     * @param pointsIn   the points in
+     * @param usernameIn the username in
+     * @return the string
+     */
     public static String createLeaderboard(int pointsIn, String usernameIn) {
 
 

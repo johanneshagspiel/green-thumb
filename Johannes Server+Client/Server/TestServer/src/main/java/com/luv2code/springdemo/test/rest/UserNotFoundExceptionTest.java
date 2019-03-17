@@ -6,6 +6,9 @@ import org.mockito.Mock;
 
 import static org.mockito.MockitoAnnotations.initMocks;
 
+/**
+ * The type User not found exception test.
+ */
 public class UserNotFoundExceptionTest {
 
     @Mock
@@ -13,6 +16,9 @@ public class UserNotFoundExceptionTest {
 
     private UserNotFoundException userNotFoundExceptionUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         initMocks(this);

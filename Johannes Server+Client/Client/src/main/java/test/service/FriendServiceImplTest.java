@@ -10,15 +10,24 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Friend service impl test.
+ */
 public class FriendServiceImplTest {
 
     private FriendServiceImpl friendServiceImplUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         friendServiceImplUnderTest = new FriendServiceImpl();
     }
 
+    /**
+     * Test get users.
+     */
     @Test
     public void testGetUsers() {
         // Setup
@@ -31,6 +40,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test create friend.
+     */
     @Test
     public void testCreateFriend() {
         // Setup
@@ -42,6 +54,9 @@ public class FriendServiceImplTest {
         // Verify the results
     }
 
+    /**
+     * Test get friends.
+     */
     @Test
     public void testGetFriends() {
         // Setup
@@ -55,6 +70,9 @@ public class FriendServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test delete user.
+     */
     @Test
     public void testDeleteUser() {
         // Setup
@@ -66,6 +84,9 @@ public class FriendServiceImplTest {
         // Verify the results
     }
 
+    /**
+     * Test update user.
+     */
     @Test
     public void testUpdateUser() {
         // Setup

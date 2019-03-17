@@ -14,6 +14,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+/**
+ * The type Friend rest controller test.
+ */
 public class FriendRestControllerTest {
 
     @Mock
@@ -22,11 +25,17 @@ public class FriendRestControllerTest {
     @InjectMocks
     private FriendRestController friendRestControllerUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+    /**
+     * Test get friends.
+     */
     @Test
     public void testGetFriends() {
         // Setup
@@ -40,6 +49,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test get friends 1.
+     */
     @Test
     public void testGetFriends1() {
         // Setup
@@ -52,6 +64,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test add friend.
+     */
     @Test
     public void testAddFriend() {
         // Setup
@@ -65,6 +80,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test update friend.
+     */
     @Test
     public void testUpdateFriend() {
         // Setup
@@ -78,6 +96,9 @@ public class FriendRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+    /**
+     * Test delete friend.
+     */
     @Test
     public void testDeleteFriend() {
         // Setup

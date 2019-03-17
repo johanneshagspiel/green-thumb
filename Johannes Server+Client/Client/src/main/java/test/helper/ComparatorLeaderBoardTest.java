@@ -7,15 +7,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Comparator leader board test.
+ */
 public class ComparatorLeaderBoardTest {
 
     private ComparatorLeaderBoard comparatorLeaderBoardUnderTest;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         comparatorLeaderBoardUnderTest = new ComparatorLeaderBoard();
     }
 
+    /**
+     * Test compare.
+     */
     @Test
     public void testCompare() {
         // Setup

@@ -5,8 +5,14 @@ import mainscreen.MyProfile;
 import org.junit.Test;
 import service.UserServiceImpl;
 
+/**
+ * The type My profile test.
+ */
 public class MyProfileTest {
 
+    /**
+     * Test application.
+     */
     @Test
     public void testApplication() {
         // Setup
@@ -19,6 +25,9 @@ public class MyProfileTest {
         // Verify the results
     }
 
+    /**
+     * Test initialize.
+     */
     @Test
     public void testInitialize() {
         // Setup

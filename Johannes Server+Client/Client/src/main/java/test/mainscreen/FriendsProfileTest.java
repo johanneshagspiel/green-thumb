@@ -5,8 +5,14 @@ import mainscreen.FriendsProfile;
 import org.junit.Test;
 import service.UserServiceImpl;
 
+/**
+ * The type Friends profile test.
+ */
 public class FriendsProfileTest {
 
+    /**
+     * Test application.
+     */
     @Test
     public void testApplication() {
         // Setup
@@ -19,6 +25,9 @@ public class FriendsProfileTest {
         // Verify the results
     }
 
+    /**
+     * Test initialize.
+     */
     @Test
     public void testInitialize() {
         // Setup

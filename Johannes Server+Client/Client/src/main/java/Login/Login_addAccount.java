@@ -12,17 +12,27 @@ import entity.User;
 import service.UserServiceImpl;
 import javax.swing.*;
 
+/**
+ * The type Login add account.
+ */
 public class Login_addAccount extends Login_S {
 
-	/**
-	 * Creates a new account
-	 * Pre    - Username is not used yet
-	 * - Username and Password are not empty
-	 * Result - Username and Password are stored in "loginDetails.txt"
-	 * Return - Created account boolean
-	 */
-
-	@SuppressWarnings("resource")
+    /**
+     * Creates a new account
+     * Pre    - Username is not used yet
+     * - Username and Password are not empty
+     * Result - Username and Password are stored in "loginDetails.txt"
+     * Return - Created account boolean
+     *
+     * @param username    the username
+     * @param password    the password
+     * @param userIn      the user in
+     * @param clientIn    the client in
+     * @param txtUsername the txt username
+     * @param txtPassword the txt password
+     * @return the boolean
+     */
+    @SuppressWarnings("resource")
 	public static boolean addAccount(String username, String password, User userIn, UserServiceImpl clientIn, JTextField txtUsername, JTextField txtPassword) {
 		
 		// Check if password and username textfields are not empty
