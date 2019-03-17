@@ -5,6 +5,7 @@ import mainscreen.MyProfile;
 import org.junit.Test;
 import service.UserServiceImpl;
 
+<<<<<<< .merge_file_a16280
 /**
  * The type My profile test.
  */
@@ -13,6 +14,10 @@ public class MyProfileTest {
     /**
      * Test application.
      */
+=======
+public class MyProfileTest {
+
+>>>>>>> .merge_file_a16296
     @Test
     public void testApplication() {
         // Setup
@@ -25,9 +30,12 @@ public class MyProfileTest {
         // Verify the results
     }
 
+<<<<<<< .merge_file_a16280
     /**
      * Test initialize.
      */
+=======
+>>>>>>> .merge_file_a16296
     @Test
     public void testInitialize() {
         // Setup

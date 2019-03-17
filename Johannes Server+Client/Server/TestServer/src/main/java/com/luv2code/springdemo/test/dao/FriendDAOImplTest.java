@@ -14,9 +14,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+<<<<<<< .merge_file_a08332
 /**
  * The type Friend dao impl test.
  */
+=======
+>>>>>>> .merge_file_a03024
 public class FriendDAOImplTest {
 
     @Mock
@@ -25,17 +28,23 @@ public class FriendDAOImplTest {
     @InjectMocks
     private FriendDAOImpl friendDAOImplUnderTest;
 
+<<<<<<< .merge_file_a08332
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a03024
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+<<<<<<< .merge_file_a08332
     /**
      * Test get friends.
      */
+=======
+>>>>>>> .merge_file_a03024
     @Test
     public void testGetFriends() {
         // Setup
@@ -49,9 +58,12 @@ public class FriendDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a08332
     /**
      * Test get friends 1.
      */
+=======
+>>>>>>> .merge_file_a03024
     @Test
     public void testGetFriends1() {
         // Setup
@@ -64,9 +76,12 @@ public class FriendDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a08332
     /**
      * Test save friend.
      */
+=======
+>>>>>>> .merge_file_a03024
     @Test
     public void testSaveFriend() {
         // Setup
@@ -78,9 +93,12 @@ public class FriendDAOImplTest {
         // Verify the results
     }
 
+<<<<<<< .merge_file_a08332
     /**
      * Test delete friend.
      */
+=======
+>>>>>>> .merge_file_a03024
     @Test
     public void testDeleteFriend() {
         // Setup

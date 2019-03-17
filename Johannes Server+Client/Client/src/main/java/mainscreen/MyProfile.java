@@ -6,9 +6,12 @@ import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
 
+<<<<<<< .merge_file_a05280
 /**
  * The type My profile.
  */
+=======
+>>>>>>> .merge_file_a10964
 public class MyProfile {
 
     private static JFrame frame2;
@@ -17,12 +20,15 @@ public class MyProfile {
          initialize(userIn, clientIn);
     }
 
+<<<<<<< .merge_file_a05280
     /**
      * Application.
      *
      * @param userIn   the user in
      * @param clientIn the client in
      */
+=======
+>>>>>>> .merge_file_a10964
     public static void application(User userIn, UserServiceImpl clientIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -36,12 +42,15 @@ public class MyProfile {
         });
     }
 
+<<<<<<< .merge_file_a05280
     /**
      * Initialize.
      *
      * @param userIn   the user in
      * @param clientIn the client in
      */
+=======
+>>>>>>> .merge_file_a10964
     public static void initialize(User userIn, UserServiceImpl clientIn) {
 
         frame2 = new JFrame();

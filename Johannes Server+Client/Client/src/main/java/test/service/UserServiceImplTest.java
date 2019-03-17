@@ -10,24 +10,33 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+<<<<<<< .merge_file_a18308
 /**
  * The type User service impl test.
  */
+=======
+>>>>>>> .merge_file_a11060
 public class UserServiceImplTest {
 
     private UserServiceImpl userServiceImplUnderTest;
 
+<<<<<<< .merge_file_a18308
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Before
     public void setUp() {
         userServiceImplUnderTest = new UserServiceImpl();
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test get users.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testGetUsers() {
         // Setup
@@ -40,9 +49,12 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test create user.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testCreateUser() {
         // Setup
@@ -54,9 +66,12 @@ public class UserServiceImplTest {
         // Verify the results
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test get user.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testGetUser() {
         // Setup
@@ -70,9 +85,12 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test get user 2.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testGetUser2() {
         // Setup
@@ -86,9 +104,12 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test login.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testLogin() {
         // Setup
@@ -103,9 +124,12 @@ public class UserServiceImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test delete user.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testDeleteUser() {
         // Setup
@@ -117,9 +141,12 @@ public class UserServiceImplTest {
         // Verify the results
     }
 
+<<<<<<< .merge_file_a18308
     /**
      * Test update user.
      */
+=======
+>>>>>>> .merge_file_a11060
     @Test
     public void testUpdateUser() {
         // Setup

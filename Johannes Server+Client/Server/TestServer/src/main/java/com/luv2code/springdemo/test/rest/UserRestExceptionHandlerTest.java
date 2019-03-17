@@ -9,24 +9,33 @@ import org.springframework.http.ResponseEntity;
 
 import static org.junit.Assert.assertEquals;
 
+<<<<<<< .merge_file_a07116
 /**
  * The type User rest exception handler test.
  */
+=======
+>>>>>>> .merge_file_a18964
 public class UserRestExceptionHandlerTest {
 
     private UserRestExceptionHandler userRestExceptionHandlerUnderTest;
 
+<<<<<<< .merge_file_a07116
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a18964
     @Before
     public void setUp() {
         userRestExceptionHandlerUnderTest = new UserRestExceptionHandler();
     }
 
+<<<<<<< .merge_file_a07116
     /**
      * Test handle exception.
      */
+=======
+>>>>>>> .merge_file_a18964
     @Test
     public void testHandleException() {
         // Setup
@@ -40,9 +49,12 @@ public class UserRestExceptionHandlerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a07116
     /**
      * Test handle exception 1.
      */
+=======
+>>>>>>> .merge_file_a18964
     @Test
     public void testHandleException1() {
         // Setup

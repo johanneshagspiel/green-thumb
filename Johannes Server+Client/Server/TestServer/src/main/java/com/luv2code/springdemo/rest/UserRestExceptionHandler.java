@@ -5,13 +5,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+<<<<<<< .merge_file_a02076
 /**
  * The type User rest exception handler.
  */
+=======
+>>>>>>> .merge_file_a17132
 @ControllerAdvice
 public class UserRestExceptionHandler {
 
 	// Add an exception handler for CustomerNotFoundException
+<<<<<<< .merge_file_a02076
 
     /**
      * Handle exception response entity.
@@ -20,6 +24,10 @@ public class UserRestExceptionHandler {
      * @return the response entity
      */
     @ExceptionHandler
+=======
+	
+	@ExceptionHandler
+>>>>>>> .merge_file_a17132
 	public ResponseEntity<UserErrorResponse> handleException(UserNotFoundException exc) {
 		
 		// create CustomerErrorResponse
@@ -37,6 +45,7 @@ public class UserRestExceptionHandler {
 	
 	// Add another exception handler ... to catch any exception (catch all)
 
+<<<<<<< .merge_file_a02076
     /**
      * Handle exception response entity.
      *
@@ -44,6 +53,9 @@ public class UserRestExceptionHandler {
      * @return the response entity
      */
     @ExceptionHandler
+=======
+	@ExceptionHandler
+>>>>>>> .merge_file_a17132
 	public ResponseEntity<UserErrorResponse> handleException(Exception exc) {
 		
 		// create CustomerErrorResponse

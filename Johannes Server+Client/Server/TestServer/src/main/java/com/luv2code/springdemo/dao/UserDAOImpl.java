@@ -10,9 +10,12 @@ import org.springframework.stereotype.Repository;
 
 import com.luv2code.springdemo.entity.User;
 
+<<<<<<< .merge_file_a02792
 /**
  * The type User dao.
  */
+=======
+>>>>>>> .merge_file_a17188
 @Repository
 public class UserDAOImpl implements UserDAO {
 

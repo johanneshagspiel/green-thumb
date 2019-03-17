@@ -6,9 +6,12 @@ import org.mockito.Mock;
 
 import static org.mockito.MockitoAnnotations.initMocks;
 
+<<<<<<< .merge_file_a15704
 /**
  * The type User not found exception test.
  */
+=======
+>>>>>>> .merge_file_a02796
 public class UserNotFoundExceptionTest {
 
     @Mock
@@ -16,9 +19,12 @@ public class UserNotFoundExceptionTest {
 
     private UserNotFoundException userNotFoundExceptionUnderTest;
 
+<<<<<<< .merge_file_a15704
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a02796
     @Before
     public void setUp() {
         initMocks(this);

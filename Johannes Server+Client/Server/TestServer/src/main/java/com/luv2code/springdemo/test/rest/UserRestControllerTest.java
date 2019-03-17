@@ -14,9 +14,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+<<<<<<< .merge_file_a13088
 /**
  * The type User rest controller test.
  */
+=======
+>>>>>>> .merge_file_a03488
 public class UserRestControllerTest {
 
     @Mock
@@ -25,17 +28,23 @@ public class UserRestControllerTest {
     @InjectMocks
     private UserRestController userRestControllerUnderTest;
 
+<<<<<<< .merge_file_a13088
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test get users.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testGetUsers() {
         // Setup
@@ -48,9 +57,12 @@ public class UserRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test get user.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testGetUser() {
         // Setup
@@ -64,9 +76,12 @@ public class UserRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test get user 2.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testGetUser2() {
         // Setup
@@ -81,9 +96,12 @@ public class UserRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test get user 3.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testGetUser3() {
         // Setup
@@ -97,9 +115,12 @@ public class UserRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test add user.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testAddUser() {
         // Setup
@@ -113,9 +134,12 @@ public class UserRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test update user.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testUpdateUser() {
         // Setup
@@ -129,9 +153,12 @@ public class UserRestControllerTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a13088
     /**
      * Test delete user.
      */
+=======
+>>>>>>> .merge_file_a03488
     @Test
     public void testDeleteUser() {
         // Setup

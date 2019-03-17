@@ -22,9 +22,12 @@ import java.net.URL;
 import java.util.List;
 
 
+<<<<<<< .merge_file_a13808
 /**
  * The type Gui app.
  */
+=======
+>>>>>>> .merge_file_a04860
 public class GUI_App extends Login_S {
 
 	private static JFrame frame;
@@ -32,6 +35,7 @@ public class GUI_App extends Login_S {
 	private static int points;
 	private static int level;
 
+<<<<<<< .merge_file_a13808
     /**
      * Launch the application.
      *
@@ -40,6 +44,12 @@ public class GUI_App extends Login_S {
      * @param clientIn the client in
      */
     public static void application(String username, User userIn, UserServiceImpl clientIn) {
+=======
+	/**
+	 * Launch the application.
+	 */
+	public static void application(String username, User userIn, UserServiceImpl clientIn) {
+>>>>>>> .merge_file_a04860
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -411,6 +421,7 @@ public class GUI_App extends Login_S {
 
 	}
 
+<<<<<<< .merge_file_a13808
 
     /**
      * Gets username.
@@ -418,16 +429,24 @@ public class GUI_App extends Login_S {
      * @return the username
      */
 //Getters and Setters username
+=======
+	
+	//Getters and Setters username
+>>>>>>> .merge_file_a04860
 	public String getUsername() {
 		return username;
 	}
 
+<<<<<<< .merge_file_a13808
     /**
      * Sets username.
      *
      * @param username the username
      */
     public void setUsername(String username) {
+=======
+	public void setUsername(String username) {
+>>>>>>> .merge_file_a04860
 		this.username = username;
 	}
 

@@ -14,9 +14,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+<<<<<<< .merge_file_a04848
 /**
  * The type User dao impl test.
  */
+=======
+>>>>>>> .merge_file_a19980
 public class UserDAOImplTest {
 
     @Mock
@@ -25,17 +28,23 @@ public class UserDAOImplTest {
     @InjectMocks
     private UserDAOImpl userDAOImplUnderTest;
 
+<<<<<<< .merge_file_a04848
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+<<<<<<< .merge_file_a04848
     /**
      * Test get users.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Test
     public void testGetUsers() {
         // Setup
@@ -48,9 +57,12 @@ public class UserDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a04848
     /**
      * Test save user.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Test
     public void testSaveUser() {
         // Setup
@@ -62,9 +74,12 @@ public class UserDAOImplTest {
         // Verify the results
     }
 
+<<<<<<< .merge_file_a04848
     /**
      * Test get user.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Test
     public void testGetUser() {
         // Setup
@@ -78,9 +93,12 @@ public class UserDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a04848
     /**
      * Test delete user.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Test
     public void testDeleteUser() {
         // Setup
@@ -92,9 +110,12 @@ public class UserDAOImplTest {
         // Verify the results
     }
 
+<<<<<<< .merge_file_a04848
     /**
      * Test get user 2.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Test
     public void testGetUser2() {
         // Setup
@@ -109,9 +130,12 @@ public class UserDAOImplTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a04848
     /**
      * Test get user 3.
      */
+=======
+>>>>>>> .merge_file_a19980
     @Test
     public void testGetUser3() {
         // Setup

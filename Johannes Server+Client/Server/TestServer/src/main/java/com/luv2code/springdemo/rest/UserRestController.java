@@ -15,9 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.luv2code.springdemo.entity.User;
 import com.luv2code.springdemo.service.UserService;
 
+<<<<<<< .merge_file_a02948
 /**
  * The type User rest controller.
  */
+=======
+>>>>>>> .merge_file_a19508
 @RestController
 @RequestMapping("/api")
 public class UserRestController {
@@ -25,6 +28,7 @@ public class UserRestController {
 	// autowire the CustomerService
 	@Autowired
 	private UserService userService;
+<<<<<<< .merge_file_a02948
 
     /**
      * Gets users.
@@ -32,6 +36,10 @@ public class UserRestController {
      * @return the users
      */
 // add mapping for GET /customers
+=======
+	
+	// add mapping for GET /customers
+>>>>>>> .merge_file_a19508
 	@GetMapping("/users")
 	public List<User> getUsers() {
 		
@@ -40,6 +48,7 @@ public class UserRestController {
 	}
 	
 	// add mapping for GET /customers/{customerId}
+<<<<<<< .merge_file_a02948
 
     /**
      * Gets user.
@@ -48,6 +57,10 @@ public class UserRestController {
      * @return the user
      */
     @GetMapping("/users/{userId}")
+=======
+	
+	@GetMapping("/users/{userId}")
+>>>>>>> .merge_file_a19508
 	public User getUser(@PathVariable int userId) {
 		
 		User theUser = userService.getUser(userId);
@@ -59,6 +72,7 @@ public class UserRestController {
 		return theUser;
 	}
 
+<<<<<<< .merge_file_a02948
     /**
      * Gets user 2.
      *
@@ -67,6 +81,9 @@ public class UserRestController {
      * @return the user 2
      */
     @GetMapping("/user/{user_name}/{password}")
+=======
+	@GetMapping("/user/{user_name}/{password}")
+>>>>>>> .merge_file_a19508
 	public User getUser2(@PathVariable String user_name,@PathVariable String password) {
 
 		User theUser = userService.getUser2(user_name, password);
@@ -78,6 +95,7 @@ public class UserRestController {
 		return theUser;
 	}
 
+<<<<<<< .merge_file_a02948
     /**
      * Gets user 3.
      *
@@ -85,6 +103,9 @@ public class UserRestController {
      * @return the user 3
      */
     @GetMapping("/user2/{user_name}")
+=======
+	@GetMapping("/user2/{user_name}")
+>>>>>>> .merge_file_a19508
 	public User getUser3(@PathVariable String user_name) {
 
 		User theUser = userService.getUser3(user_name);
@@ -97,6 +118,7 @@ public class UserRestController {
 	}
 	
 	// add mapping for POST /customers  - add new customer
+<<<<<<< .merge_file_a02948
 
     /**
      * Add user user.
@@ -105,6 +127,10 @@ public class UserRestController {
      * @return the user
      */
     @PostMapping("/users")
+=======
+	
+	@PostMapping("/users")
+>>>>>>> .merge_file_a19508
 	public User addUser(@RequestBody User theUser) {
 		
 		// also just in case the pass an id in JSON ... set id to 0
@@ -118,6 +144,7 @@ public class UserRestController {
 	}
 	
 	// add mapping for PUT /customers - update existing customer
+<<<<<<< .merge_file_a02948
 
     /**
      * Update user user.
@@ -126,6 +153,10 @@ public class UserRestController {
      * @return the user
      */
     @PutMapping("/users")
+=======
+	
+	@PutMapping("/users")
+>>>>>>> .merge_file_a19508
 	public User updateUser(@RequestBody User theUser) {
 		
 		userService.saveUser(theUser);
@@ -135,6 +166,7 @@ public class UserRestController {
 	}
 	
 	// add mapping for DELETE /customers/{customerId} - delete customer
+<<<<<<< .merge_file_a02948
 
     /**
      * Delete user string.
@@ -143,6 +175,10 @@ public class UserRestController {
      * @return the string
      */
     @DeleteMapping("/users/{userId}")
+=======
+	
+	@DeleteMapping("/users/{userId}")
+>>>>>>> .merge_file_a19508
 	public String deleteUser(@PathVariable int userId) {
 		
 		User tempCustomer = userService.getUser(userId);

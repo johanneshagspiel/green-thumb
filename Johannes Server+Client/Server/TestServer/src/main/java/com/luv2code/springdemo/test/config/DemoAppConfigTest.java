@@ -15,9 +15,12 @@ import javax.sql.DataSource;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+<<<<<<< .merge_file_a05528
 /**
  * The type Demo app config test.
  */
+=======
+>>>>>>> .merge_file_a02896
 public class DemoAppConfigTest {
 
     @Mock
@@ -26,17 +29,23 @@ public class DemoAppConfigTest {
     @InjectMocks
     private DemoAppConfig demoAppConfigUnderTest;
 
+<<<<<<< .merge_file_a05528
     /**
      * Sets up.
      */
+=======
+>>>>>>> .merge_file_a02896
     @Before
     public void setUp() {
         initMocks(this);
     }
 
+<<<<<<< .merge_file_a05528
     /**
      * Test my data source.
      */
+=======
+>>>>>>> .merge_file_a02896
     @Test
     public void testMyDataSource() {
         // Setup
@@ -49,9 +58,12 @@ public class DemoAppConfigTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a05528
     /**
      * Test session factory.
      */
+=======
+>>>>>>> .merge_file_a02896
     @Test
     public void testSessionFactory() {
         // Setup
@@ -64,9 +76,12 @@ public class DemoAppConfigTest {
         assertEquals(expectedResult, result);
     }
 
+<<<<<<< .merge_file_a05528
     /**
      * Test transaction manager.
      */
+=======
+>>>>>>> .merge_file_a02896
     @Test
     public void testTransactionManager() {
         // Setup

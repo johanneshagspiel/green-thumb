@@ -15,15 +15,19 @@
 
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+<<<<<<< .merge_file_a19812
 
 		<checkstyle.version>7.2</checkstyle.version>
 		<checkstyle.plugin.version>2.17</checkstyle.plugin.version>
 
 		<jacoco-maven-plugin.version>0.7.8</jacoco-maven-plugin.version>
+=======
+>>>>>>> .merge_file_a10292
 	</properties>
 
 	<dependencies>
 
+<<<<<<< .merge_file_a19812
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -31,6 +35,9 @@
 			<scope>test</scope>
 		</dependency>
 
+=======
+		<!-- Spring -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -49,30 +56,50 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
+<<<<<<< .merge_file_a19812
+=======
+		<!-- Add Jackson for JSON converters -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.5</version>
 		</dependency>
 
+<<<<<<< .merge_file_a19812
+=======
+		<!-- Hibernate -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
 
+<<<<<<< .merge_file_a19812
+=======
+		<!-- MySQL -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
 		</dependency>
 
+<<<<<<< .merge_file_a19812
+=======
+		<!-- C3PO -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>${c3po.version}</version>
 		</dependency>
 
+<<<<<<< .merge_file_a19812
+=======
+		<!-- Servlet+JSP+JSTL -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -85,11 +112,16 @@
 			<version>2.3.1</version>
 		</dependency>
 
+<<<<<<< .merge_file_a19812
+=======
+		<!-- to compensate for java 9+ not including jaxb -->
+>>>>>>> .merge_file_a10292
 		<dependency>
 		    <groupId>javax.xml.bind</groupId>
 		    <artifactId>jaxb-api</artifactId>
 		    <version>2.3.0</version>
 		</dependency>
+<<<<<<< .merge_file_a19812
 
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -111,6 +143,21 @@
         </dependency>
 
     </dependencies>
+=======
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>compile</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.23.4</version>
+		</dependency>
+
+	</dependencies>
+>>>>>>> .merge_file_a10292
 
 	<build>
 
@@ -118,13 +165,21 @@
 
 		<plugins>
 
+<<<<<<< .merge_file_a19812
 
 			<plugin>
+=======
+			<!-- Builds a Web Application Archive (WAR) file from the project output 
+				and its dependencies. -->
+			<plugin>
+				<!-- Add Maven coordinates (GAV) for: maven-war-plugin -->
+>>>>>>> .merge_file_a10292
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
 
+<<<<<<< .merge_file_a19812
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -210,5 +265,9 @@
 		</plugins>
 	</reporting>
 
+=======
+		</plugins>
+	</build>
+>>>>>>> .merge_file_a10292
 </project>
 

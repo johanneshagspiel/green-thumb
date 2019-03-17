@@ -6,9 +6,12 @@ import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
 
+<<<<<<< .merge_file_a10844
 /**
  * The type Add friend.
  */
+=======
+>>>>>>> .merge_file_a18884
 public class AddFriend {
 
     private static JFrame frame3;
@@ -17,12 +20,15 @@ public class AddFriend {
         initialize(userIn, clientIn);
     }
 
+<<<<<<< .merge_file_a10844
     /**
      * Application.
      *
      * @param userIn   the user in
      * @param clientIn the client in
      */
+=======
+>>>>>>> .merge_file_a18884
     public static void application(User userIn, UserServiceImpl clientIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -36,12 +42,15 @@ public class AddFriend {
         });
     }
 
+<<<<<<< .merge_file_a10844
     /**
      * Initialize.
      *
      * @param userIn   the user in
      * @param clientIn the client in
      */
+=======
+>>>>>>> .merge_file_a18884
     public static void initialize(User userIn, UserServiceImpl clientIn) {
 
         frame3 = new JFrame();

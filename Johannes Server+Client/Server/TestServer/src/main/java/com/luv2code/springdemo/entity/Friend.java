@@ -27,11 +27,18 @@ public class Friend {
     private String friend_name;
 
 
+<<<<<<< .merge_file_a15768
     /**
      * Instantiates a new Friend.
      */
     public Friend() {
 
+=======
+    public Friend(int id, String user_name_entry, String friend_name) {
+    	this.id = id;
+    	this.user_name_entry = user_name_entry;
+    	this.friend_name = friend_name;
+>>>>>>> .merge_file_a15752
     }
 
     /**
