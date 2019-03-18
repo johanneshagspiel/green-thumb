@@ -1,31 +1,14 @@
 package GUI;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
 import Login.Login_addAccount;
 import Login.Login_r;
+import entity.User;
+import service.FriendServiceImpl;
+import service.UserServiceImpl;
 
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import javax.swing.JSeparator;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.SystemColor;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextArea;
-import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-import javax.swing.UIManager;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Login_S {
 
@@ -33,11 +16,17 @@ public class Login_S {
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
+	public static User user;
+	public static UserServiceImpl client;
+	public static FriendServiceImpl friendClient;
+
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		UserServiceImpl client = new UserServiceImpl();
+		User user = new User();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -63,14 +52,14 @@ public class Login_S {
 	private void initialize() {
 		// Create the frame
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Login_S.class.getResource("/GUI/Images/Go Green Logo 50x50.jpg")));
-		frame.setResizable(false);
-		frame.setBackground(new Color(0, 255, 127));
-		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
 		frame.setBounds(200, 200, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setFocusable(true);
+
+
+		UserServiceImpl client = new UserServiceImpl();
+		User user = new User();
 
 		// Add a key listener to the Enter
 		KeyListener formSubmitKeyListener = new KeyAdapter() {
@@ -83,29 +72,23 @@ public class Login_S {
 					String password = txtPassword.getText();
 					String username = textField_1.getText();
 
-					Login_r.Login_request(username, password, textField_1, txtPassword, frame);
+					Login_r.Login_request(username, password, user, client, textField_1, txtPassword, frame);
 				}
 			}
 		};
 		frame.addKeyListener(formSubmitKeyListener);
 
 		// Labels
-		JLabel lblLogin = new JLabel("Go Green");
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setForeground(new Color(0, 102, 0));
-		lblLogin.setBackground(new Color(128, 128, 128));
-		lblLogin.setFont(new Font("Arial Black", Font.BOLD, 40));
-		lblLogin.setBounds(33, 13, 416, 50);
+		JLabel lblLogin = new JLabel("Login");
+		lblLogin.setBounds(187, 28, 104, 30);
 		frame.getContentPane().add(lblLogin);
 
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblUsername.setBounds(89, 92, 86, 30);
+		lblUsername.setBounds(89, 92, 61, 30);
 		frame.getContentPane().add(lblUsername);
 
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblPassword.setBounds(87, 141, 88, 28);
+		lblPassword.setBounds(87, 141, 63, 28);
 		frame.getContentPane().add(lblPassword);
 
 		// Text fields
@@ -122,38 +105,48 @@ public class Login_S {
 
 		//Buttons
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setForeground(new Color(245, 245, 245));
-		btnLogin.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnLogin.setBackground(new Color(50, 205, 50));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Get the filled in username and password
 				@SuppressWarnings("deprecation")
 				String password = txtPassword.getText();
 				String username = textField_1.getText();
-				
-				Login_r.Login_request(username, password, textField_1, txtPassword, frame);
+
+				try {
+
+					Login_r.Login_request(username, password, user, client, textField_1, txtPassword, frame);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
 			}
 		});
-		btnLogin.setBounds(307, 202, 142, 21);
+		btnLogin.setBounds(206, 202, 85, 21);
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnReset = new JButton("Add Account");
-		btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnReset.setForeground(new Color(255, 255, 255));
-		btnReset.setBackground(new Color(50, 205, 50));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Login_addAccount.addAccount(textField_1, txtPassword);
+
+				//Get the filled in username and password
+				@SuppressWarnings("deprecation")
+				String password = txtPassword.getText();
+				String username = textField_1.getText();
+
+				try
+				{
+					Login_addAccount.addAccount(username, password, user, client, textField_1, txtPassword);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+
 			}
 		});
-		btnReset.setBounds(145, 202, 150, 21);
+		btnReset.setBounds(62, 202, 134, 21);
 		frame.getContentPane().add(btnReset);
 
 		JButton btnExit = new JButton("Exit");
-		btnExit.setForeground(new Color(245, 245, 245));
-		btnExit.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnExit.setBackground(new Color(0, 102, 0));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame = new JFrame("Exit");
@@ -163,7 +156,7 @@ public class Login_S {
 				}
 			}
 		});
-		btnExit.setBounds(33, 202, 75, 21);
+		btnExit.setBounds(301, 202, 85, 21);
 		frame.getContentPane().add(btnExit);
 		
 		// Separators
@@ -174,10 +167,6 @@ public class Login_S {
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(33, 68, 416, 4);
 		frame.getContentPane().add(separator_1);
-		
-		JLabel Title_background = new JLabel("New label");
-		Title_background.setIcon(new ImageIcon(Login_S.class.getResource("/GUI/Images/Shape 416x50.png")));
-		Title_background.setBounds(33, 13, 416, 50);
-		frame.getContentPane().add(Title_background);
 	}
+
 }

@@ -6,7 +6,11 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
@@ -15,10 +19,18 @@ import javax.swing.JOptionPane;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 
+import Login.Login_r;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
 public class GUI_App {
 
 	private static JFrame frame;
 	private String username;
+	private static int points;
 
 	/**
 	 * Launch the application.
@@ -40,7 +52,7 @@ public class GUI_App {
 	 * Create the application.
 	 */
 	private GUI_App(String username) {
-		this.username = username;
+		this.setUsername(username);
 		initialize(username);
 	}
 
@@ -50,9 +62,55 @@ public class GUI_App {
 	private static void initialize(String username) {
 		// Create the frame
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1920, 1080);
-		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.getContentPane().setBackground(new Color(240, 240, 240));
+		frame.setBounds(200, 200, 1920, 1080);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setFocusable(true);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.getContentPane().setLayout(null);
+
+		// Labels
+		JLabel lblWelcome = new JLabel("Welcome " + username);
+		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+		lblWelcome.setBounds(10, 10, 1520, 59);
+		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblWelcome);
+		
+		points = 0;
+		JLabel lblPoints = new JLabel("Your points are " + points);
+		lblPoints.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPoints.setBounds(10, 42, 1520, 50);
+		lblPoints.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblPoints);
+
+		// Buttons
+		
+		// Vegetarian meal
+		JButton btnReset = new JButton("Vegetarian meal");
+		btnReset.setBounds(45, 170, 156, 30);
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				points += 100;
+				lblPoints.setText("Your points are " + points);
+			}
+		});
+		frame.getContentPane().add(btnReset);
+		
+		JButton button = new JButton("Non-Vegetarian meal");
+		button.setBounds(202, 170, 156, 30);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				points += -100;
+				lblPoints.setText("Your points are " + points);
+			}
+		});
+		frame.getContentPane().add(button);
+
+		//Labels
+		JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
+		lblWhatKindOf.setBounds(45, 140, 313, 30);
+		lblWhatKindOf.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblWhatKindOf);
 
 		// Creates the menu-bar
 		JMenuBar menuBar = new JMenuBar();
@@ -78,15 +136,15 @@ public class GUI_App {
 			}
 		});
 		menuBar.add(mntmLogOut);
-
-		// Test with labels
-		JLabel lblWelcome = new JLabel("Welcom " + username);
-		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-		lblWelcome.setBackground(new Color(50, 205, 50));
-		lblWelcome.transferFocusBackward();
-		lblWelcome.setBounds(100, 100, 1920, 100);
-		lblWelcome.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		frame.getContentPane().add(lblWelcome, BorderLayout.NORTH);
 	}
 
+	
+	//Getters and Setters username
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }
