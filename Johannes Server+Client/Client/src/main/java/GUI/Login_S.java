@@ -10,21 +10,35 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * The type Login s.
+ */
 public class Login_S {
 
 	// Fields
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
-	public static User user;
-	public static UserServiceImpl client;
-	public static FriendServiceImpl friendClient;
+    /**
+     * The constant user.
+     */
+    public static User user;
+    /**
+     * The constant client.
+     */
+    public static UserServiceImpl client;
+    /**
+     * The constant friendClient.
+     */
+    public static FriendServiceImpl friendClient;
 
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
+    /**
+     * Launch the application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
 		UserServiceImpl client = new UserServiceImpl();
 		User user = new User();
 		EventQueue.invokeLater(new Runnable() {
@@ -38,11 +52,11 @@ public class Login_S {
 			}
 		});
 	}
-	
-	/**
-	 * Create the application.
-	 */
-	public Login_S() {
+
+    /**
+     * Create the application.
+     */
+    public Login_S() {
 		initialize();
 	}
 

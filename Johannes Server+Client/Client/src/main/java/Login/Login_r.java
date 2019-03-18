@@ -7,16 +7,28 @@ import entity.User;
 import service.UserServiceImpl;
 import javax.swing.*;
 
+/**
+ * The type Login r.
+ */
 public class Login_r extends Login_S {
 
-	/**
-	 * Handles the login request.
-	 * Pre    - Username is not empty and in database
-	 * - Username and Password are in our database
-	 * Result - Access to new frame
-	 * Return - Access boolean
-	 */
-	@SuppressWarnings("resource")
+    /**
+     * Handles the login request.
+     * Pre    - Username is not empty and in database
+     * - Username and Password are in our database
+     * Result - Access to new frame
+     * Return - Access boolean
+     *
+     * @param username    the username
+     * @param password    the password
+     * @param userIn      the user in
+     * @param clientIn    the client in
+     * @param textField_1 the text field 1
+     * @param txtPassword the txt password
+     * @param frame       the frame
+     * @return the boolean
+     */
+    @SuppressWarnings("resource")
 	public static boolean Login_request(String username, String password, User userIn, UserServiceImpl clientIn, JTextField textField_1, JTextField txtPassword, JFrame frame) {
 
 		//Check the data base for account

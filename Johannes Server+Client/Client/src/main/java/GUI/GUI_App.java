@@ -22,6 +22,9 @@ import java.net.URL;
 import java.util.List;
 
 
+/**
+ * The type Gui app.
+ */
 public class GUI_App extends Login_S {
 
 	private static JFrame frame;
@@ -29,10 +32,14 @@ public class GUI_App extends Login_S {
 	private static int points;
 	private static int level;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void application(String username, User userIn, UserServiceImpl clientIn) {
+    /**
+     * Launch the application.
+     *
+     * @param username the username
+     * @param userIn   the user in
+     * @param clientIn the client in
+     */
+    public static void application(String username, User userIn, UserServiceImpl clientIn) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -404,13 +411,23 @@ public class GUI_App extends Login_S {
 
 	}
 
-	
-	//Getters and Setters username
+
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+//Getters and Setters username
 	public String getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
 		this.username = username;
 	}
 

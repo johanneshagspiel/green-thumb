@@ -1,42 +1,85 @@
 package com.luv2code.springdemo.rest;
 
+/**
+ * The type User error response.
+ */
 public class UserErrorResponse {
 
 	private int status;
 	private String message;
 	private long timeStamp;
-	
-	public UserErrorResponse() {
+
+    /**
+     * Instantiates a new User error response.
+     */
+    public UserErrorResponse() {
 		
 	}
 
-	public UserErrorResponse(int status, String message, long timeStamp) {
+    /**
+     * Instantiates a new User error response.
+     *
+     * @param status    the status
+     * @param message   the message
+     * @param timeStamp the time stamp
+     */
+    public UserErrorResponse(int status, String message, long timeStamp) {
 		this.status = status;
 		this.message = message;
 		this.timeStamp = timeStamp;
 	}
 
-	public int getStatus() {
+    /**
+     * Gets status.
+     *
+     * @return the status
+     */
+    public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+    /**
+     * Sets status.
+     *
+     * @param status the status
+     */
+    public void setStatus(int status) {
 		this.status = status;
 	}
 
-	public String getMessage() {
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
+    public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
+    /**
+     * Sets message.
+     *
+     * @param message the message
+     */
+    public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public long getTimeStamp() {
+    /**
+     * Gets time stamp.
+     *
+     * @return the time stamp
+     */
+    public long getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(long timeStamp) {
+    /**
+     * Sets time stamp.
+     *
+     * @param timeStamp the time stamp
+     */
+    public void setTimeStamp(long timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 	
