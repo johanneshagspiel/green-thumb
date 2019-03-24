@@ -1,3 +1,5 @@
+image: maven:3-jdk-7
+
 java:
   stage: test
   script:
@@ -6,3 +8,4 @@ java:
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml
+	- target/failsafe-reports/TEST-*.xml
