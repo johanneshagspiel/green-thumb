@@ -273,3 +273,5 @@ bin/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.
 /bin/
 .idea
 .settings
+src/Client/.idea
+src/Server/.idea
