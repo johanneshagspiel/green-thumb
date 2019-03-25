@@ -54,4 +54,11 @@ public interface UserService {
      * @return the user 3
      */
     public User getUser3(String user_name);
+
+    /**
+     * Get a user based on a password + username combination
+     *
+     * @param theUser the the user
+     */
+    public User getUserSafe(User theUser);
 }
