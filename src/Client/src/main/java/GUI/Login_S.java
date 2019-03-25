@@ -141,20 +141,13 @@ public class Login_S {
 		JButton btnReset = new JButton("Add Account");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-				//Get the filled in username and password
-				@SuppressWarnings("deprecation")
-				String password = txtPassword.getText();
-				String username = textField_1.getText();
-
 				try
 				{
-					Login_addAccount.addAccount(username, password, user, client, textField_1, txtPassword);
+					frame.setVisible(false);
+					Login_A.Login_A(client, user, frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
-
 			}
 		});
 		btnReset.setBounds(62, 202, 134, 21);
