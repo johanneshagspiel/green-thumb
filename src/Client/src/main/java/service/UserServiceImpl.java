@@ -2,11 +2,14 @@ package service;
 
 
 import entity.User;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The type User service.
@@ -85,7 +88,7 @@ public class UserServiceImpl  {
      * @param password  the password
      * @return the user
      */
-    public User login(String user_name, String password) {
+    public User loginOld(String user_name, String password) {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/user/" + user_name +"/" + password;
@@ -97,6 +100,36 @@ public class UserServiceImpl  {
 			e.printStackTrace();
 		}
 			return null;
+	}
+
+	public User login(String user_name, String password) {
+		try {
+
+			RestTemplate restTemplate = new RestTemplate();
+			User userToSend = new User();
+			userToSend.setPassword(password);
+			userToSend.setUser_name(user_name);
+			String putResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users3";
+
+
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			HttpEntity<User> entity = new HttpEntity<User>(userToSend);
+			ResponseEntity<User> response = restTemplate.exchange(putResourceUrl, HttpMethod.PUT, entity, User.class);
+			// check the response, e.g. Location header,  Status, and body
+			//response.getHeaders().getLocation();
+			//response.getStatusCode();
+			User userToReturn = response.getBody();
+
+			// User userToReturn = restTemplate.put(getResourceUrl, userToSend);
+			// ResponseEntity<String> response = restTemplate.getForEntity(getResourceUrl, User.class, userToSend);
+			// User userToReturn = restTemplate.getForObject(getResourceUrl, User.class);
+
+			return userToReturn;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
     /**

@@ -46,7 +46,6 @@ public class MyProfile {
 
         frame2 = new JFrame();
         frame2.setBounds(300, 500, 300, 500);
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame2.getContentPane().setLayout(null);
         frame2.setFocusable(true);
 
