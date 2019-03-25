@@ -1,11 +1,11 @@
-image: maven:3-jdk-7
+image: maven:3-jdk-8
 
-java:
+build:
+  script: "mvn clean install -B"
+test:
   stage: test
-  script:
-    - mvn verify
+  script: "mvn clean verify"
   artifacts:
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml
-	- target/failsafe-reports/TEST-*.xml
