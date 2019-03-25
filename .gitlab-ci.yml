@@ -4,7 +4,7 @@ build:
   script: "mvn clean install -B"
 test:
   stage: test
-  script: "mvn verify"
+  script: "mvn clean verify"
   artifacts:
     reports:
       junit:
