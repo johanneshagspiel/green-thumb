@@ -394,7 +394,7 @@ public class GUI_App extends Login_S {
 		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
 		mntmMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MyProfile.application(userIn, clientIn);
+				MyProfile.application(userIn, clientIn, username);
 			}
 		});
 		menuBar.add(mntmMyProfile);

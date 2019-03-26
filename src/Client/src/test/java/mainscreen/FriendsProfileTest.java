@@ -1,4 +1,4 @@
-package test.mainscreen;
+package mainscreen;
 
 import entity.User;
 import mainscreen.FriendsProfile;

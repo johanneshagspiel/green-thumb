@@ -34,7 +34,7 @@ public class Login_A {
      * Launch the application.
      */
 
-    public static boolean Login_A(UserServiceImpl client2, User user2, JFrame frame2) {
+    public static boolean Login_Add(UserServiceImpl client2, User user2, JFrame frame2) {
         Login_A.client = client2;
         Login_A.user = user2;
         Login_A.frame = frame2;
