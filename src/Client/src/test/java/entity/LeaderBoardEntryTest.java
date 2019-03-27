@@ -1,75 +1,51 @@
 package entity;
 
 import entity.LeaderBoardEntry;
-import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class LeaderBoardEntryTest {
-
-    private LeaderBoardEntry leaderBoardEntryUnderTest;
-
-    @Before
-    public void setUp() {
-        leaderBoardEntryUnderTest = new LeaderBoardEntry("name", 0);
-    }
-
-    @Test
-    public void testToString() {
-        // Setup
-        final String expectedResult = "result";
-
-        // Run the test
-        final String result = leaderBoardEntryUnderTest.toString();
-
-        // Verify the results
-        assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void testCreateLeaderboard() {
-        // Setup
-        final int pointsIn = 0;
-        final String usernameIn = "usernameIn";
-        final String expectedResult = "result";
-
-        // Run the test
-        final String result = LeaderBoardEntry.createLeaderboard(pointsIn, usernameIn);
-
-        // Verify the results
-        assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void getName() {
+	
+	@Test
+	public void test_Constructor() {
+		LeaderBoardEntry Ardy = new LeaderBoardEntry("Ardy", 9001);
+		assertNotNull(Ardy);
+	}
+	
+	@Test
+    public void test_getName() {
         LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
         assertEquals(test.getName(), "test");
     }
-
-    @Test
-    public void setName() {
+	
+	@Test
+    public void test_setName() {
         LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
-        LeaderBoardEntry test2 = new LeaderBoardEntry("test2", 1);
-        test2.setName("test");
-        assertEquals(test, test2);
+        test.setName("Ardy");
+        assertEquals(test.getName(), "Ardy");
     }
-
-    @Test
-    public void getScore() {
+	
+	@Test
+    public void test_getScore() {
         LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
         assertEquals(test.getScore(), 1);
     }
 
     @Test
-    public void setScore() {
+    public void test_setScore() {
         LeaderBoardEntry test = new LeaderBoardEntry("test", 1);
-        LeaderBoardEntry test2 = new LeaderBoardEntry("test", 2);
-        test2.setScore(1);
-        assertEquals(test, test2);
+        test.setScore(5);
+        assertEquals(test.getScore(), 5);
     }
+	
+	
 
     @Test
-    public void createLeaderboard() {
+    public void test_toString() {
+    	LeaderBoardEntry Ardy = new LeaderBoardEntry("Ardy", 9001);
+    	assertTrue(Ardy.toString().equals("Ardy, 9001"));
     }
+
+    
 }
