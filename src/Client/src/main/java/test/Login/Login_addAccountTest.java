@@ -1,4 +1,4 @@
-package test.Login;
+package Login;
 
 import Login.Login_addAccount;
 import entity.User;
@@ -26,9 +26,10 @@ public class Login_addAccountTest {
         final UserServiceImpl clientIn = null;
         final JTextField txtUsername = null;
         final JTextField txtPassword = null;
+        final JTextField txtRPassword = null;
 
         // Run the test
-        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword);
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword);
 
         // Verify the results
         assertTrue(result);

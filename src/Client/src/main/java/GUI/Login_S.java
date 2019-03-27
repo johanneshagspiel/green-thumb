@@ -1,6 +1,5 @@
 package GUI;
 
-import Login.Login_addAccount;
 import Login.Login_r;
 import entity.User;
 import service.FriendServiceImpl;
@@ -39,8 +38,8 @@ public class Login_S {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-		UserServiceImpl client = new UserServiceImpl();
-		User user = new User();
+		client = new UserServiceImpl();
+		user = new User();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -141,20 +140,13 @@ public class Login_S {
 		JButton btnReset = new JButton("Add Account");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-				//Get the filled in username and password
-				@SuppressWarnings("deprecation")
-				String password = txtPassword.getText();
-				String username = textField_1.getText();
-
 				try
 				{
-					Login_addAccount.addAccount(username, password, user, client, textField_1, txtPassword);
+					frame.setVisible(false);
+					Login_A.Login_Add(client, user, frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
-
 			}
 		});
 		btnReset.setBounds(62, 202, 134, 21);

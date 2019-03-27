@@ -33,13 +33,22 @@ public class Login_addAccount extends Login_S {
      * @return the boolean
      */
     @SuppressWarnings("resource")
-	public static boolean addAccount(String username, String password, User userIn, UserServiceImpl clientIn, JTextField txtUsername, JTextField txtPassword) {
+	public static boolean addAccount(String username, String password, User userIn, UserServiceImpl clientIn, JTextField txtUsername, JTextField txtPassword, JTextField txtRPassword) {
 		
 		// Check if password and username textfields are not empty
 		if (password.isEmpty() || username.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "To create an account, please enter an username and password",
 					"Create account", JOptionPane.ERROR_MESSAGE);
 			txtUsername.setText(null);
+			txtPassword.setText(null);
+			return false;
+		}
+
+		// Check if the username is available
+		if (clientIn.getUser2(username) != null){
+			JOptionPane.showMessageDialog(null, "This username is not available",
+					"Create account", JOptionPane.ERROR_MESSAGE);
+			txtRPassword.setText(null);
 			txtPassword.setText(null);
 			return false;
 		}
