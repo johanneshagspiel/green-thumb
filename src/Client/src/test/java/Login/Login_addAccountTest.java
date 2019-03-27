@@ -7,7 +7,7 @@ import service.UserServiceImpl;
 
 import javax.swing.*;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 /**
  * The type Login add account test.
@@ -18,10 +18,10 @@ public class Login_addAccountTest {
      * Test add account.
      */
     @Test
-    public void testAddAccount() {
+    public void testAddAccountEmpty() {
         // Setup
-        final String username = "username";
-        final String password = "password";
+        final String username = "";
+        final String password = "";
         final User userIn = null;
         final UserServiceImpl clientIn = null;
         final JTextField txtUsername = null;
@@ -32,6 +32,6 @@ public class Login_addAccountTest {
         final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword);
 
         // Verify the results
-        assertTrue(result);
+        assertFalse(result);
     }
 }

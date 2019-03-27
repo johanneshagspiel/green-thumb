@@ -1,14 +1,16 @@
-package mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
-import mainscreen.AddFriend;
+
 import org.junit.Test;
+
+import GUI_mainscreen.FriendsProfile;
 import service.UserServiceImpl;
 
 /**
- * The type Add friend test.
+ * The type Friends profile test.
  */
-public class AddFriendTest {
+public class FriendsProfileTest {
 
     /**
      * Test application.
@@ -20,7 +22,7 @@ public class AddFriendTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        AddFriend.application(userIn, clientIn);
+        FriendsProfile.application(userIn, clientIn);
 
         // Verify the results
     }
@@ -35,7 +37,7 @@ public class AddFriendTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        AddFriend.initialize(userIn, clientIn);
+        FriendsProfile.initialize(userIn, clientIn);
 
         // Verify the results
     }

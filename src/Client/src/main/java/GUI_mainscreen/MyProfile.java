@@ -1,4 +1,4 @@
-package mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
 import service.UserServiceImpl;

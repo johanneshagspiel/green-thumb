@@ -1,8 +1,10 @@
-package mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
-import mainscreen.MyProfile;
+
 import org.junit.Test;
+
+import GUI_mainscreen.MyProfile;
 import service.UserServiceImpl;
 
 /**
