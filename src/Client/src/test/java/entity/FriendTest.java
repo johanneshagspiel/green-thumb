@@ -1,82 +1,72 @@
 package entity;
 
 import entity.Friend;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The type Friend test.
  */
 public class FriendTest {
 
-    private Friend friendUnderTest;
+	/**
+	 * Test creates a Friend and tests if that is not null
+	 */
+	@Test
+	public void testConstructor() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		assertNotNull(test);
+	}
 
-    /**
-     * Sets up.
-     */
-    @Before
-    public void setUp() {
-        friendUnderTest = new Friend();
-    }
+	/**
+	 * Test to string.
+	 */
+	@Test
+	public void test_toString() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		assertTrue(test.toString().equals("Friend [id=1, user_name_entry=Ardy, friend_name=Johannes]"));
+	}
 
-    /**
-     * Test to string.
-     */
-    @Test
-    public void testToString() {
-        // Setup
-        final String expectedResult = "result";
+	@Test
+	public void test_getId() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		assertEquals(test.getId(), 1);
+	}
 
-        // Run the test
-        final String result = friendUnderTest.toString();
+	@Test
+	public void test_setId() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		test.setId(5);
+		assertEquals(test.getId(), 5);
+	}
 
-        // Verify the results
-        assertEquals(expectedResult, result);
-    }
+	@Test
+	public void test_getUser_name_entry() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		assertEquals(test.getUser_name_entry(), "Ardy");
+	}
+	
+	@Test
+	public void test_setUser_name_entry() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		test.setUser_name_entry("Nick");
+		assertEquals(test.getUser_name_entry(), "Nick");
+	}
 
-    @Test
-    public void getId() {
-        Friend test = new Friend();
-        test.setId(1);
-        assertEquals(test.getId(),1);
-    }
-
-    @Test
-    public void setId() {
-        Friend test = new Friend();
-        test.setId(1);
-        assertEquals(test.getId(),1);
-    }
-
-    @Test
-    public void getUser_name_entry() {
-        Friend test = new Friend();
-        test.setUser_name_entry("test");
-        assertEquals(test.getUser_name_entry(),"test");
-    }
-
-    @Test
-    public void setUser_name_entry() {
-        Friend test = new Friend();
-        test.setUser_name_entry("test");
-        assertEquals(test.getUser_name_entry(),"test");
-    }
-
-    @Test
-    public void getFriend_name() {
-        Friend test = new Friend();
-        test.setFriend_name("test");
-        assertEquals(test.getFriend_name(),"test");
-    }
-
-    @Test
-    public void setFriend_name() {
-        Friend test = new Friend();
-        test.setFriend_name("test");
-        assertEquals(test.getFriend_name(),"test");
-    }
-
+	@Test
+	public void test_getFriend_name() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		assertEquals(test.getFriend_name(), "Johannes");
+	}
+	
+	@Test
+	public void test_setFriend_name() {
+		Friend test = new Friend(1, "Ardy", "Johannes");
+		test.setFriend_name("Nick");
+		assertEquals(test.getFriend_name(), "Nick");
+	}
 
 }

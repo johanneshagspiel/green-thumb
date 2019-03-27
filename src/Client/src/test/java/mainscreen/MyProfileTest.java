@@ -20,7 +20,7 @@ public class MyProfileTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        MyProfile.application(userIn, clientIn);
+        MyProfile.application(userIn, clientIn, null);
 
         // Verify the results
     }
@@ -35,7 +35,7 @@ public class MyProfileTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        MyProfile.initialize(userIn, clientIn);
+        MyProfile.initialize(userIn, clientIn, null);
 
         // Verify the results
     }

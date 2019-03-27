@@ -7,6 +7,7 @@ import java.io.Serializable;
 /**
  * The type Friend.
  */
+@SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Friend implements Serializable {
 
@@ -18,8 +19,10 @@ public class Friend implements Serializable {
     /**
      * Instantiates a new Friend.
      */
-    public Friend() {
-
+    public Friend(int id, String user_name_entry, String friend_name) {
+    	this.id = id;
+    	this.user_name_entry = user_name_entry;
+    	this.friend_name = friend_name;
         }
 
     /**
