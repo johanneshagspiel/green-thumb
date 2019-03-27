@@ -53,4 +53,12 @@ public interface UserDAO {
      * @return the user 3
      */
     public User getUser3(String user_name);
+
+    /**
+     * Gets user 3.
+     *
+     * @param returns the User with the right username + password combination
+     * @return the user 3
+     */
+    public User getUserSafe(User theUser);
 }

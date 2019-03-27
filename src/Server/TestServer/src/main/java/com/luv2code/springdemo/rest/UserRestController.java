@@ -78,6 +78,28 @@ public class UserRestController {
 		return theUser;
 	}
 
+	@GetMapping("/users3")
+	public User getUserSafeNW(@RequestBody User theUser) {
+
+		// also just in case the pass an id in JSON ... set id to 0
+		// this is force a save of new item ... instead of update
+
+		User theUserReturn = userService.getUserSafe(theUser);
+
+		return theUserReturn;
+	}
+
+	@PutMapping("/users3")
+	public User getUserSafe(@RequestBody User theUser) {
+
+		// also just in case the pass an id in JSON ... set id to 0
+		// this is force a save of new item ... instead of update
+
+		User theUserReturn = userService.getUserSafe(theUser);
+
+		return theUserReturn;
+	}
+
     /**
      * Gets user 3.
      *
