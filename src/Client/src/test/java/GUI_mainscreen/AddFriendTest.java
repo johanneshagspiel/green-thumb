@@ -1,4 +1,4 @@
-package test.GUI_mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
 
