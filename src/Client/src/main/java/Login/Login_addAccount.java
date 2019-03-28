@@ -25,7 +25,7 @@ public class Login_addAccount extends Login_S {
 	 */
 	@SuppressWarnings("resource")
 	public static boolean addAccount(String username, String password, User userIn, UserServiceImpl clientIn,
-			JTextField txtUsername, JTextField txtPassword, JTextField txtRPassword) {
+			JTextField txtUsername, JTextField txtPassword, JTextField txtRPassword, JFrame frame) {
 
 		// Check if password and username textfields are not empty
 		if (password.isEmpty() || username.isEmpty()) {
@@ -51,6 +51,8 @@ public class Login_addAccount extends Login_S {
 				userIn.setPassword(password);
 				userIn.setUser_name(username);
 				clientIn.createUser(userIn);
+				frame.setVisible(false);
+				Login_S.main(null);
 				return true;
 
 			} catch (Exception e) {
