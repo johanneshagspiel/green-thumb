@@ -84,7 +84,7 @@ public class LeaderBoardEntry {
         LeaderBoardEntry user = new LeaderBoardEntry("You", pointsIn);
         listEntries.add(user);
 
-        // addign the friends
+        // adding the friends
         FriendServiceImpl clientFriend = new FriendServiceImpl();
         UserServiceImpl clientUser = new UserServiceImpl();
         List<Friend> friends = clientFriend.getFriends(usernameIn);

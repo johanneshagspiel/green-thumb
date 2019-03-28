@@ -2,6 +2,8 @@ package service;
 
 
 import entity.User;
+
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -76,6 +78,31 @@ public class UserServiceImpl  {
 			User user = restTemplate.getForObject(getResourceUrl, User.class);
 			System.out.println(user.toString());
 			return user;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} return null;
+	}
+    
+    
+    /**
+	 * Gets friends.
+	 *
+	 * @return all the users
+	 */
+	public List<User> getAllUsers() {
+		try {
+			RestTemplate restTemplate = new RestTemplate();
+			String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/users/";
+
+			ResponseEntity<List<User>> response = restTemplate.exchange(
+					getResourceUrl,
+					HttpMethod.GET,
+					null,
+					new ParameterizedTypeReference<List<User>>(){});
+			List<User> allUsers = response.getBody();
+
+			return allUsers;
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} return null;
