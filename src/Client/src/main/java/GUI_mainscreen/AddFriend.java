@@ -5,6 +5,8 @@ import entity.User;
 import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * The type Add friend.
@@ -71,6 +73,11 @@ public class AddFriend {
         
         JButton btnSearch = new JButton("Search");
         btnSearch.setBounds(155, 100, 85, 21);
+        btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				results();
+			}
+        });
         frame3.getContentPane().add(btnSearch);
         
         JLabel lblResults = new JLabel("Results");
@@ -81,8 +88,15 @@ public class AddFriend {
         JSeparator separator_1 = new JSeparator();
         separator_1.setBounds(20, 131, 256, 2);
         frame3.getContentPane().add(separator_1);
+        
+        frame3.setFocusable(true);
+        
+        results();
 
-        for(int i = 0; i<3; i++) {
+    }
+    
+    public static boolean results() {
+    	for(int i = 0; i<3; i++) {
         	JButton btnAdd = new JButton("Add");
             btnAdd.setBounds(191, 175+i*25, 85, 21);
             frame3.getContentPane().add(btnAdd);
@@ -92,8 +106,6 @@ public class AddFriend {
             labelAdd.setBounds(30, 175+i*25, 130, 19);
             frame3.getContentPane().add(labelAdd);
         }
-        
-        frame3.setFocusable(true);
-
+    	return false;
     }
 }
