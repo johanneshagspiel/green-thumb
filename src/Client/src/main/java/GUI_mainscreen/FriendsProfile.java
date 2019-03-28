@@ -52,15 +52,10 @@ public class FriendsProfile {
         frame2.setFocusable(true);
 
 		// Labels
-		JLabel lblWelcome = new JLabel("My Friends");
+		JLabel lblWelcome = new JLabel("Profile of My Friends");
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBounds(10, 10, 266, 20);
 		frame2.getContentPane().add(lblWelcome);
-
-		JLabel lblUsername = new JLabel("Your username " + userIn.getUser_name());
-		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsername.setBounds(10, 29, 266, 20);
-		frame2.getContentPane().add(lblUsername);
 		
 		// Creating a friend list
 		int length = 124;
