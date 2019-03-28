@@ -18,6 +18,30 @@ public class Login_S {
 	private JFrame frame;
 	private JTextField textField_1;
 	private JPasswordField txtPassword;
+<<<<<<< HEAD:Johannes Server+Client/Client/src/main/java/GUI/Login_S.java
+	/**
+	 * The constant user.
+	 */
+	public static User user;
+	/**
+	 * The constant client.
+	 */
+	public static UserServiceImpl client;
+	/**
+	 * The constant friendClient.
+	 */
+	public static FriendServiceImpl friendClient;
+
+
+	/**
+	 * Launch the application.
+	 *
+	 * @param args the input arguments
+	 */
+	public static void main(String[] args) {
+		UserServiceImpl client = new UserServiceImpl();
+		User user = new User();
+=======
     /**
      * The constant user.
      */
@@ -40,6 +64,7 @@ public class Login_S {
     public static void main(String[] args) {
 		client = new UserServiceImpl();
 		user = new User();
+>>>>>>> master:src/Client/src/main/java/GUI/Login_S.java
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -52,10 +77,10 @@ public class Login_S {
 		});
 	}
 
-    /**
-     * Create the application.
-     */
-    public Login_S() {
+	/**
+	 * Create the application.
+	 */
+	public Login_S() {
 		initialize();
 	}
 
@@ -65,6 +90,10 @@ public class Login_S {
 	private void initialize() {
 		// Create the frame
 		frame = new JFrame();
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Login_S.class.getResource("/GUI/Images/Go Green Logo 50x50.jpg")));
+		frame.setResizable(false);
+		frame.setBackground(new Color(0, 255, 127));
+		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
 		frame.setBounds(200, 200, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -92,16 +121,22 @@ public class Login_S {
 		frame.addKeyListener(formSubmitKeyListener);
 
 		// Labels
-		JLabel lblLogin = new JLabel("Login");
-		lblLogin.setBounds(187, 28, 104, 30);
+		JLabel lblLogin = new JLabel("Go Green");
+		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogin.setForeground(new Color(0, 102, 0));
+		lblLogin.setBackground(new Color(128, 128, 128));
+		lblLogin.setFont(new Font("Arial Black", Font.BOLD, 40));
+		lblLogin.setBounds(33, 13, 416, 50);
 		frame.getContentPane().add(lblLogin);
 
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setBounds(89, 92, 61, 30);
+		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblUsername.setBounds(89, 92, 86, 30);
 		frame.getContentPane().add(lblUsername);
 
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(87, 141, 63, 28);
+		lblPassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblPassword.setBounds(87, 141, 88, 28);
 		frame.getContentPane().add(lblPassword);
 
 		// Text fields
@@ -118,6 +153,9 @@ public class Login_S {
 
 		//Buttons
 		JButton btnLogin = new JButton("Login");
+		btnLogin.setForeground(new Color(245, 245, 245));
+		btnLogin.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		btnLogin.setBackground(new Color(50, 205, 50));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Get the filled in username and password
@@ -134,10 +172,13 @@ public class Login_S {
 
 			}
 		});
-		btnLogin.setBounds(206, 202, 85, 21);
+		btnLogin.setBounds(307, 202, 142, 21);
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnReset = new JButton("Add Account");
+		btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		btnReset.setForeground(new Color(255, 255, 255));
+		btnReset.setBackground(new Color(50, 205, 50));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try
@@ -149,10 +190,13 @@ public class Login_S {
 				}
 			}
 		});
-		btnReset.setBounds(62, 202, 134, 21);
+		btnReset.setBounds(145, 202, 150, 21);
 		frame.getContentPane().add(btnReset);
 
 		JButton btnExit = new JButton("Exit");
+		btnExit.setForeground(new Color(245, 245, 245));
+		btnExit.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		btnExit.setBackground(new Color(0, 102, 0));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame = new JFrame("Exit");
@@ -162,9 +206,9 @@ public class Login_S {
 				}
 			}
 		});
-		btnExit.setBounds(301, 202, 85, 21);
+		btnExit.setBounds(33, 202, 75, 21);
 		frame.getContentPane().add(btnExit);
-		
+
 		// Separators
 		JSeparator separator = new JSeparator();
 		separator.setBounds(33, 188, 416, 4);
@@ -173,6 +217,11 @@ public class Login_S {
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(33, 68, 416, 4);
 		frame.getContentPane().add(separator_1);
+
+		JLabel Title_background = new JLabel("");
+		//Title_background.setIcon(new ImageIcon(Login_S.class.getResource("/GUI/Images/Shape 416x50.png")));
+		Title_background.setBounds(33, 13, 416, 50);
+		frame.getContentPane().add(Title_background);
 	}
 
 }
