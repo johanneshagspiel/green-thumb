@@ -3,6 +3,7 @@ package entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * The type User.
@@ -19,6 +20,7 @@ public class User implements Serializable {
 	private int transportation;
 	private int temperature;
 	private int solar;
+	private List<Friend> friendlist;
 
 
     /**
@@ -163,7 +165,15 @@ public class User implements Serializable {
 		return solar;
 	}
 
-    /**
+	public List<Friend> getFriendlist() {
+		return friendlist;
+	}
+
+	public void setFriendlist(List<Friend> friendlist) {
+		this.friendlist = friendlist;
+	}
+
+	/**
      * Sets solar.
      *
      * @param solar the solar
