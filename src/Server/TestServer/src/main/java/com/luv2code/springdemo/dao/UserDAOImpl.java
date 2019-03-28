@@ -105,6 +105,23 @@ public class UserDAOImpl implements UserDAO {
 		return theUser;
 	}
 
+	@Override
+	public User getUserSafe(User theUser) {
+
+		String password = theUser.getPassword();
+		String user_name = theUser.getUser_name();
+
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Query query = currentSession.createSQLQuery("select * from user where user_name=:user_name and password=:password").addEntity(User.class).setParameter("user_name", user_name).setParameter("password", password);
+
+		List<User> users = query.getResultList();
+
+		User theUserReturn = users.get(0);
+
+		return theUserReturn;
+	}
+
 }
 
 

@@ -58,6 +58,13 @@ public class UserServiceImpl implements UserService {
 
 		return userDAO.getUser3(user_name);
 	}
+
+	@Override
+	@Transactional
+	public User getUserSafe(User theUser) {
+
+		return userDAO.getUserSafe(theUser);
+	}
 }
 
 
