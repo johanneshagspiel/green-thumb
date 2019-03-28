@@ -1,4 +1,4 @@
-package entity;
+package test.entity;
 
 import entity.LeaderBoardEntry;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package helper;
+package test.helper;
 
 import entity.LeaderBoardEntry;
 import helper.ComparatorLeaderBoard;

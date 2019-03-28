@@ -1,4 +1,4 @@
-package GUI;
+package test.GUI;
 
 import GUI.GUI_App;
 import entity.User;

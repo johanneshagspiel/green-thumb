@@ -1,4 +1,4 @@
-package service;
+package test.service;
 
 import entity.User;
 import org.junit.Before;

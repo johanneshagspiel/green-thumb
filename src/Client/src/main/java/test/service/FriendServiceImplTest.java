@@ -1,4 +1,4 @@
-package service;
+package test.service;
 
 import entity.Friend;
 import org.junit.Before;

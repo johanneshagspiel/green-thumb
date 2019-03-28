@@ -1,7 +1,6 @@
-package mainscreen;
+package test.mainscreen;
 
 import entity.User;
-import mainscreen.AddFriend;
 import org.junit.Test;
 import service.UserServiceImpl;
 
@@ -20,7 +19,7 @@ public class AddFriendTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        AddFriend.application(userIn, clientIn);
+       // AddFriend.application(userIn, clientIn);
 
         // Verify the results
     }
@@ -35,7 +34,7 @@ public class AddFriendTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        AddFriend.initialize(userIn, clientIn);
+     //   AddFriend.initialize(userIn, clientIn);
 
         // Verify the results
     }
