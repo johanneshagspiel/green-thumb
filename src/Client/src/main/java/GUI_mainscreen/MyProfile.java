@@ -12,8 +12,8 @@ public class MyProfile {
 
 	private static JFrame frame2;
 
-	private MyProfile(User userIn, UserServiceImpl clientIn, String username) {
-		initialize(userIn, clientIn, username);
+	private MyProfile(User userIn, UserServiceImpl clientIn) {
+		initialize(userIn, clientIn);
 	}
 
 	/**
@@ -26,7 +26,7 @@ public class MyProfile {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MyProfile window = new MyProfile(userIn, clientIn, username);
+					MyProfile window = new MyProfile(userIn, clientIn);
 					MyProfile.frame2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class MyProfile {
 	 * @param userIn   the user in
 	 * @param clientIn the client in
 	 */
-	public static void initialize(User userIn, UserServiceImpl clientIn, String username) {
+	public static void initialize(User userIn, UserServiceImpl clientIn) {
 
 		frame2 = new JFrame();
 		frame2.setBounds(300, 500, 300, 500);

@@ -179,23 +179,4 @@ public class UserRestController {
 		
 		return "Deleted user id - " + userId;
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

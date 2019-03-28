@@ -1,4 +1,4 @@
-package test.GUI_mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
 
@@ -37,7 +37,7 @@ public class MyProfileTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        MyProfile.initialize(userIn, clientIn, null);
+        MyProfile.initialize(userIn, clientIn);
 
         // Verify the results
     }
