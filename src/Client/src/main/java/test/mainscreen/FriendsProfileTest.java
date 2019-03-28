@@ -1,7 +1,7 @@
-package mainscreen;
+package test.mainscreen;
 
 import entity.User;
-import mainscreen.FriendsProfile;
+import GUI_mainscreen.FriendsProfile;
 import org.junit.Test;
 import service.UserServiceImpl;
 
