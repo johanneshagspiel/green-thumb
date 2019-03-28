@@ -7,6 +7,7 @@ import java.io.Serializable;
 /**
  * The type User.
  */
+@SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable {
 
@@ -24,7 +25,7 @@ public class User implements Serializable {
      * Instantiates a new User.
      */
     public User() {
-
+    
 	}
 
     /**

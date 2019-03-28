@@ -12,7 +12,8 @@ import java.util.function.ToLongFunction;
  * The type Comparator leader board.
  */
 public class ComparatorLeaderBoard implements Comparator<LeaderBoardEntry> {
-    public int compare(LeaderBoardEntry arg0, LeaderBoardEntry arg1) {
+    
+	public int compare(LeaderBoardEntry arg0, LeaderBoardEntry arg1) {
         return arg1.getScore() - arg0.getScore();
     }
 }

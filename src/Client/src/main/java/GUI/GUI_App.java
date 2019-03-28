@@ -2,24 +2,18 @@ package GUI;
 
 import entity.LeaderBoardEntry;
 import entity.User;
-import mainscreen.AddFriend;
-import mainscreen.FriendsProfile;
 import service.UserServiceImpl;
-import mainscreen.MyProfile;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+
+import GUI_mainscreen.AddFriend;
+import GUI_mainscreen.FriendsProfile;
+import GUI_mainscreen.MyProfile;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
 
 
 /**

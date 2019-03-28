@@ -1,151 +1,155 @@
 package entity;
 
 import entity.User;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The type User test.
  */
 public class UserTest {
 
-    private User userUnderTest;
-
-    /**
-     * Sets up.
-     */
-    @Before
-    public void setUp() {
-        userUnderTest = new User();
+    @Test
+    public void test_Constructor() {
+        User test = new User();
+        assertNotNull(test);
     }
 
-    /**
-     * Test to string.
-     */
     @Test
-    public void testToString() {
-        // Setup
-        final String expectedResult = "result";
-
-        // Run the test
-        final String result = userUnderTest.toString();
-
-        // Verify the results
-        assertEquals(expectedResult, result);
-    }
-
-
-    @Test
-    public void getId() {
+    public void test_getId() {
         User test = new User();
         test.setId(1);
         assertEquals(test.getId(), 1);
     }
 
     @Test
-    public void setId() {
+    public void test_setId() {
         User test = new User();
         test.setId(1);
         assertEquals(test.getId(), 1);
+        test.setId(5);
+        assertEquals(test.getId(), 5);
     }
 
     @Test
-    public void getUser_name() {
+    public void test_getUser_name() {
         User test = new User();
         test.setUser_name("Test");
         assertEquals(test.getUser_name(), "Test");
     }
 
     @Test
-    public void setUser_name() {
+    public void test_setUser_name() {
         User test = new User();
         test.setUser_name("Test");
         assertEquals(test.getUser_name(), "Test");
+        test.setUser_name("Passed");
+        assertEquals(test.getUser_name(), "Passed");
     }
 
     @Test
-    public void getPassword() {
+    public void test_getPassword() {
         User test = new User();
         test.setPassword("Test");
         assertEquals(test.getPassword(), "Test");
     }
 
     @Test
-    public void setPassword() {
+    public void test_setPassword() {
         User test = new User();
         test.setPassword("Test");
         assertEquals(test.getPassword(), "Test");
+        test.setPassword("Passed");
+        assertEquals(test.getPassword(), "Passed");
     }
 
     @Test
-    public void getVegetarian() {
+    public void test_getVegetarian() {
         User test = new User();
         test.setVegetarian(100);
         assertEquals(test.getVegetarian(), 100);
     }
 
     @Test
-    public void setVegetarian() {
+    public void test_setVegetarian() {
         User test = new User();
         test.setVegetarian(100);
         assertEquals(test.getVegetarian(), 100);
+        test.setVegetarian(50);
+        assertEquals(test.getVegetarian(), 50);
     }
 
     @Test
-    public void getProduce() {
+    public void test_getProduce() {
         User test = new User();
         test.setProduce(100);
         assertEquals(test.getProduce(), 100);
     }
 
     @Test
-    public void setProduce() {
+    public void test_setProduce() {
         User test = new User();
         test.setProduce(100);
         assertEquals(test.getProduce(), 100);
+        test.setProduce(50);
+        assertEquals(test.getProduce(), 50);
     }
 
     @Test
-    public void getTransportation() {
+    public void test_getTransportation() {
         User test = new User();
         test.setTransportation(100);
         assertEquals(test.getTransportation(), 100);
     }
 
     @Test
-    public void setTransportation() {
+    public void test_setTransportation() {
         User test = new User();
         test.setTransportation(100);
         assertEquals(test.getTransportation(), 100);
+        test.setTransportation(50);
+        assertEquals(test.getTransportation(), 50);
     }
 
     @Test
-    public void getTemperature() {
+    public void test_getTemperature() {
         User test = new User();
         test.setTemperature(100);
         assertEquals(test.getTemperature(), 100);
     }
 
     @Test
-    public void setTemperature() {
+    public void test_setTemperature() {
         User test = new User();
         test.setTemperature(100);
         assertEquals(test.getTemperature(), 100);
+        test.setTemperature(50);
+        assertEquals(test.getTemperature(), 50);
     }
 
     @Test
-    public void getSolar() {
+    public void test_getSolar() {
         User test = new User();
         test.setSolar(100);
         assertEquals(test.getSolar(), 100);
     }
 
     @Test
-    public void setSolar() {
+    public void test_setSolar() {
         User test = new User();
         test.setSolar(100);
         assertEquals(test.getSolar(), 100);
+        test.setSolar(50);
+        assertEquals(test.getSolar(), 50);
+    }
+    
+    @Test
+    public void test_toString() {
+    	User test = new User();
+    	System.out.println(test.toString());
+    	assertTrue(test.toString().equals("User [id=0, user_name=null, password=null, vegetarian=0, produce=0, transportation=0, temperature=0, solar=0]"));
     }
 }

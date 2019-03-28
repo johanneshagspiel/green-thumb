@@ -23,14 +23,48 @@ public class ComparatorLeaderBoardTest {
     }
 
     /**
-     * Test compare.
+     * Test compare equal
      */
     @Test
-    public void testCompare() {
+    public void testCompare1() {
         // Setup
-        final LeaderBoardEntry arg0 = null;
-        final LeaderBoardEntry arg1 = null;
+        final LeaderBoardEntry arg0 = new LeaderBoardEntry("Ardy", 50);
+        final LeaderBoardEntry arg1 = new LeaderBoardEntry("Ardy", 50);
         final int expectedResult = 0;
+
+        // Run the test
+        final int result = comparatorLeaderBoardUnderTest.compare(arg0, arg1);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+    
+    /**
+     * Test compare arg0 < arg1
+     */
+    @Test
+    public void testCompare2() {
+        // Setup
+        final LeaderBoardEntry arg0 = new LeaderBoardEntry("Ardy", 50);
+        final LeaderBoardEntry arg1 = new LeaderBoardEntry("Ardy", 150);
+        final int expectedResult = 100;
+
+        // Run the test
+        final int result = comparatorLeaderBoardUnderTest.compare(arg0, arg1);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+    
+    /**
+     * Test compare arg0 > arg1
+     */
+    @Test
+    public void testCompare3() {
+        // Setup
+        final LeaderBoardEntry arg0 = new LeaderBoardEntry("Ardy", 150);
+        final LeaderBoardEntry arg1 = new LeaderBoardEntry("Ardy", 50);
+        final int expectedResult = -100;
 
         // Run the test
         final int result = comparatorLeaderBoardUnderTest.compare(arg0, arg1);
