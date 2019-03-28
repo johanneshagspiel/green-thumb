@@ -272,3 +272,6 @@ bin/.metadata/.plugins/org.eclipse.egit.ui/dialog_settings.xml
 bin/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/local-history.lucene60/_0.si
 /bin/
 .idea
+.settings
+src/Client/.idea
+src/Server/.idea
