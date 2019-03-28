@@ -27,9 +27,10 @@ public class Login_addAccountTest {
         final JTextField txtUsername = null;
         final JTextField txtPassword = null;
         final JTextField txtRPassword = null;
+        final JFrame hello = null;
 
         // Run the test
-        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword);
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
 
         // Verify the results
         assertFalse(result);
