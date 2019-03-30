@@ -1,5 +1,7 @@
 package entity;
 
+import org.jetbrains.annotations.Contract;
+
 public class CO2_Supplier {
     /*
         THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE ROOT/DOC/FEATURES FOLDER
@@ -107,36 +109,42 @@ public class CO2_Supplier {
      * @param amountOfSolarPanels the amount of average size solar panels you have on your house.
      * @return  the amount of co2 those average solar panels would yield on an average day
      */
+
     public static double solarPanel(int amountOfSolarPanels){
+        if(amountOfSolarPanels < 0){
+            return 0;
+        }
         return 4.5 * amountOfSolarPanels * 0.300 * 0.558;
     }
+
 
     /**
      *
      * @param inhabitants   the amount of people living in your household
      * @param degreesLowered    the amount of degrees you have lowered your temperature compared to your average temperature
-     * @return  the amount of co2 you have saved by lowering your temperature
+     * @return  the amount of co2 you have saved.
      */
-    public static double temperature(int inhabitants, int degreesLowered){
-        if(inhabitants < 1){
-            return 0;
-        }
-        if(degreesLowered < 0){
-            return 0;
-        }
-        double kwh = 0;
-        if(inhabitants == 1){
-            kwh = 1800 / 365;
-        } else if(inhabitants == 2) {
-            kwh = 2900 / 365;
-        }else if(inhabitants == 3){
-            kwh = 4000 / 365;
-        }else if(inhabitants == 4){
-            kwh = 4600 / 365;
-        } else{
-            kwh = 5300 / 365;
-        }
 
+    public static double temperature(int inhabitants, int degreesLowered){
+        double kwh = getKWH(inhabitants, degreesLowered);
+        double temp = kwh;
+        //multiplying co2 *.92 for every degree lowered
+        for(int i = degreesLowered; i > 0; i--){
+            temp *= .92;
+        }
+        double co2 = (kwh - temp) *.558;
+        return co2;
+    }
+
+    /**
+     *
+     * @param inhabitants   The amount of people living in your house.
+     * @param degreesLowered    The amount of degrees you lowered your temperature.
+     * @return  The amount of co2 it cost.
+     */
+
+    public static double usedTemperature(int inhabitants, int degreesLowered){
+        double kwh = getKWH(inhabitants, degreesLowered);
         //multiplying co2 *.92 for every degree lowered
         for(int i = degreesLowered; i > 0; i--){
             kwh *= .92;
@@ -145,6 +153,34 @@ public class CO2_Supplier {
         return co2;
     }
 
+
+    /**
+     *
+     * @param inhabitants   The amount of people living in your house.
+     * @param degreesLowered    The amount of degrees you lowered your temperature.
+     * @return  The amount of KWH a average household uses.
+     */
+    public static double getKWH(int inhabitants, int degreesLowered){
+        if(inhabitants < 1){
+            return 0;
+        }
+        if(degreesLowered < 0){
+            return 0;
+        }
+        double kwh = 0;
+        if(inhabitants == 1){
+            kwh = 1800.0 / 365.0;
+        } else if(inhabitants == 2) {
+            kwh = 2900.0 / 365.0;
+        }else if(inhabitants == 3){
+            kwh = 4000.0 / 365.0;
+        }else if(inhabitants == 4){
+            kwh = 4600.0 / 365.0;
+        } else{
+            kwh = 5300.0 / 365.0;
+        }
+        return kwh;
+    }
     //returns the amount of co2
 
 }
