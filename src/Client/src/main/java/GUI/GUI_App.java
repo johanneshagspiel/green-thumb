@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 public class GUI_App extends Login_S {
 
 	private static JFrame frame;
-	private String username;
+	public static String username;
 	private static int points;
 	private static int level;
 
@@ -483,7 +483,7 @@ public class GUI_App extends Login_S {
 	 * @return the username
 	 */
 //Getters and Setters username
-	public String getUsername() {
+	public static String getUsername() {
 		return username;
 	}
 
