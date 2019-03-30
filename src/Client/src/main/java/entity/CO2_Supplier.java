@@ -1,7 +1,15 @@
 package entity;
 
 public class CO2_Supplier {
-    // returns the amount of kg CO2 you spent while cycling
+    /*
+        THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE ROOT/DOC/FEATURES FOLDER
+        OR ../../../../../../doc/features   (compared to the directory of this file)
+     */
+    /**
+     *
+     * @param km    The amount of kilometers traveled.
+     * @return  the amount of co2 it cost to drive x kilometers by bike.
+     */
     public static double bike(int km){
         if(km < 0){
             return 0;
@@ -9,7 +17,11 @@ public class CO2_Supplier {
         return 0.016*km;
     }
 
-    //returns the amount of kg co2 you spent while riding the average car
+    /**
+     *
+     * @param km    The amount of kilometers traveled.
+     * @return  the amount of co2 it cost to drive x kilometers in the average car.
+     */
     public static double car(int km){
         if(km < 0){
             return 0;
@@ -17,7 +29,11 @@ public class CO2_Supplier {
         return 0.271 * km;
     }
 
-    //returns the amount of co2 you spent taking the bus
+    /**
+     *
+     * @param km    The amount of kilometers traveled.
+     * @return  The amount of co2 it cost to travel x kilometers with the public transport.
+     */
     public static double publicTransport(int km){
         if (km < 0) {
             return 0;
@@ -25,24 +41,42 @@ public class CO2_Supplier {
         return .101 * km;
     }
 
-    //shows how much co2 you save taking the bike instead of the car
+    /**
+     *
+     * @param km    The amount of kilometers traveled.
+     * @return  The amount of co2 saved by cycling instead of riding your car.
+     */
     public static double bikeVsCar(int km){
         double difference = car(km) - bike(km);
         return difference;
     }
 
-    //shows how much co2 you save taking the pulbic transport instead of the car
+    /**
+     *
+     * @param km    The amount of kilometers traveled.
+     * @return  The amount of co2 saved by taking the public transport instead of riding your car.
+     */
     public static double publicTransportVsCar(int km){
         double difference = car(km) - publicTransport(km);
         return difference;
     }
 
-    //shows how much co2 you save taking the bike instead of the public transport
+    /**
+     *
+     * @param km    The amount of kilometers traveled.
+     * @return  The amount of co2 saved by cycling a distance instead of taking the buss.
+     */
     public static double bikeVsPulbicTransport(int km){
         double diffrence = publicTransport(km) - bike(km);
         return diffrence;
     }
 
+    /**
+     *
+     * @param vegetarian    Wheter your meal was vegetarian.
+     * @param localProduce  Wheter your meal was locally grown or produced.
+     * @return  The amount of co2 it cost to produce your meal.
+     */
     public static double meal(boolean vegetarian, boolean localProduce){
         double co2 = 0;
         if(vegetarian){
@@ -56,12 +90,33 @@ public class CO2_Supplier {
         return co2;
     }
 
-    //returns the amount of co2 saved by using solar panels
+    /**
+     *
+     * @param vegetarian    Wheter the meal you ate was vegetarian.
+     * @param localProduce  Wheter your meal was grown or produced locally.
+     * @return  The amount of co2 saved by eating in this way.
+     */
+    public static double mealDifference(boolean vegetarian, boolean localProduce){
+        double difference;
+        difference = meal(false, false) - meal(vegetarian, localProduce);
+        return difference;
+    }
+
+    /**
+     *
+     * @param amountOfSolarPanels the amount of average size solar panels you have on your house.
+     * @return  the amount of co2 those average solar panels would yield on an average day
+     */
     public static double solarPanel(int amountOfSolarPanels){
         return 4.5 * amountOfSolarPanels * 0.300 * 0.558;
     }
 
-    //returns the amount of co2 used by heating your room
+    /**
+     *
+     * @param inhabitants   the amount of people living in your household
+     * @param degreesLowered    the amount of degrees you have lowered your temperature compared to your average temperature
+     * @return  the amount of co2 you have saved by lowering your temperature
+     */
     public static double temperature(int inhabitants, int degreesLowered){
         if(inhabitants < 1){
             return 0;
