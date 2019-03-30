@@ -181,6 +181,4 @@ public class CO2_Supplier {
         }
         return kwh;
     }
-    //returns the amount of co2
-
 }

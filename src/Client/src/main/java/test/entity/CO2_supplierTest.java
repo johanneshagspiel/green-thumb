@@ -143,4 +143,16 @@ public class CO2_supplierTest {
         double result = (2900.0 /365.0) * .92 * .92 * .558;
         assertEquals("it should return the amount of CO2 saved", CO2_Supplier.usedTemperature(2,2), result, 0.001);
     }
+
+    @Test
+    public void testGetKWHNoInhabitants(){
+        double result = 0;
+        assertEquals("no inhabitants, no used KWH", CO2_Supplier.getKWH(0,0), 0, 0);
+    }
+
+    @Test
+    public void testGetKWHSevenInhabitants(){
+        double result = 5300.0/365.0;
+        assertEquals("should return result", CO2_Supplier.getKWH(7,0), result, 0);
+    }
 }
