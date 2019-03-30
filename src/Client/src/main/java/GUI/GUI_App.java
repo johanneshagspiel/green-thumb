@@ -211,131 +211,115 @@ public class GUI_App extends Login_S {
 		// Transportation
 
 		//Labels
-		JLabel lblTransportation = new JLabel("Did you use a bike instead of a car today?");
+		JLabel lblTransportation = new JLabel("How far did you travel today ?");
 		lblTransportation.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		lblTransportation.setBounds(445, 137, 369, 30);
 		lblTransportation.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTransportation);
 
-		JButton btnBike = new JButton("Yes");
-		btnBike.setForeground(Color.WHITE);
-		btnBike.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnBike.setBackground(new Color(0, 255, 127));
-		btnBike.setBounds(445, 170, 260, 40);
-		btnBike.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
-			}
-		});
-		frame.getContentPane().add(btnBike);
+		JTextField distanceTravelled = new JTextField();
+		distanceTravelled.setBounds(445, 170, 130, 100);
+		frame.getContentPane().add(distanceTravelled);
 
-		JButton btnCar = new JButton("No");
+		JLabel lblKM = new JLabel("km");
+		lblKM.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblKM.setBounds(580, 200, 260, 40);
+		lblKM.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblKM);
+
+		// Method of transportation
+		JLabel lblDidYouUse = new JLabel("What was the method of transportation?");
+		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
+		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblDidYouUse.setBounds(845, 140, 420, 30);
+		frame.getContentPane().add(lblDidYouUse);
+
+		JButton btnCar = new JButton("Car");
 		btnCar.setForeground(Color.WHITE);
 		btnCar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnCar.setBackground(new Color(102, 204, 153));
-		btnCar.setBounds(445, 225, 260, 40);
+		btnCar.setBackground(new Color(0, 255, 127));
+		btnCar.setBounds(845, 170, 280, 30);
 		btnCar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "Car1");
+
 			}
 		});
 		frame.getContentPane().add(btnCar);
 
+		JButton btnPublicTransport = new JButton("Public Transportation");
+		btnPublicTransport.setForeground(Color.WHITE);
+		btnPublicTransport.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnPublicTransport.setBackground(new Color(102, 204, 153));
+		btnPublicTransport.setBounds(845, 205, 280, 30);
+		btnPublicTransport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+			}
+		});
+		frame.getContentPane().add(btnPublicTransport);
+
+		JButton btnBike = new JButton("Bike");
+		btnBike.setForeground(Color.WHITE);
+		btnBike.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnBike.setBackground(new Color(0, 255, 204));
+		btnBike.setBounds(845, 240, 280, 30);
+		btnBike.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+			}
+		});
+		frame.getContentPane().add(btnBike);
+
 		// Temperature
 
 		//Labels
-		JLabel lblTemperature = new JLabel("Have you lowered your room temperature today?");
+		JLabel lblTemperature = new JLabel("What was the temperature in your room today?");
 		lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		lblTemperature.setBounds(445, 290, 388, 30);
 		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTemperature);
 
-		JButton btnLowered = new JButton("Yes");
-		btnLowered.setForeground(Color.WHITE);
-		btnLowered.setBackground(new Color(0, 255, 127));
-		btnLowered.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnLowered.setBounds(445, 319, 260, 40);
-		btnLowered.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "LowerTemp");
-			}
-		});
-		frame.getContentPane().add(btnLowered);
+		JTextField temperatureToday = new JTextField();
+		temperatureToday.setBounds(445, 319, 130, 100);
+		frame.getContentPane().add(temperatureToday);
 
-		JButton btnUnchanged = new JButton("No");
-		btnUnchanged.setForeground(Color.WHITE);
-		btnUnchanged.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnUnchanged.setBackground(new Color(102, 204, 153));
-		btnUnchanged.setBounds(445, 372, 260, 40);
-		btnUnchanged.addActionListener(new ActionListener() {
+		JButton btDegreeCelsius = new JButton("Degree Celsius");
+		btDegreeCelsius.setForeground(Color.WHITE);
+		btDegreeCelsius.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btDegreeCelsius.setBackground(new Color(102, 204, 153));
+		btDegreeCelsius.setBounds(580, 350, 200, 40);
+		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
+		btDegreeCelsius.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "HigherTemp");
 			}
 		});
-		frame.getContentPane().add(btnUnchanged);
+		frame.getContentPane().add(btDegreeCelsius);
 
 		// Solar
 
 		//Labels
-		JLabel lblSolar = new JLabel("Have you installed solar panels today?");
+		JLabel lblSolar = new JLabel("How many installed solar panels do you own?");
 		lblSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblSolar.setBounds(845, 290, 354, 30);
+		lblSolar.setBounds(845, 290, 500, 30);
 		lblSolar.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblSolar);
 
-		JButton btnSolar = new JButton("Yes");
-		btnSolar.setForeground(Color.WHITE);
-		btnSolar.setBackground(new Color(0, 255, 127));
-		btnSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnSolar.setBounds(845, 319, 260, 40);
-		btnSolar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "SolarYes");
-			}
-		});
-		frame.getContentPane().add(btnSolar);
+		JTextField numberSolarPanels = new JTextField();
+		numberSolarPanels.setBounds(845, 319, 130, 100);
+		frame.getContentPane().add(numberSolarPanels);
 
-		JButton btnNoSolar = new JButton("No");
+		JButton btnNoSolar = new JButton("Solar Panels");
 		btnNoSolar.setForeground(Color.WHITE);
 		btnNoSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		btnNoSolar.setBackground(new Color(102, 204, 153));
-		btnNoSolar.setBounds(845, 372, 260, 40);
+		btnNoSolar.setBounds(980, 350, 185, 40);
 		btnNoSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "SolarNo");
 			}
 		});
 		frame.getContentPane().add(btnNoSolar);
-
-		JLabel lblDidYouUse = new JLabel("Did you use public transport instead of a car today?");
-		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
-		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblDidYouUse.setBounds(845, 140, 420, 30);
-		frame.getContentPane().add(lblDidYouUse);
-
-		JButton btnPublicTransportYes = new JButton("Yes");
-		btnPublicTransportYes.setForeground(Color.WHITE);
-		btnPublicTransportYes.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnPublicTransportYes.setBackground(new Color(0, 255, 127));
-		btnPublicTransportYes.setBounds(845, 170, 260, 40);
-		btnPublicTransportYes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-			}
-		});
-		frame.getContentPane().add(btnPublicTransportYes);
-
-		JButton btnPublicTransportNo = new JButton("No");
-		btnPublicTransportNo.setForeground(Color.WHITE);
-		btnPublicTransportNo.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnPublicTransportNo.setBackground(new Color(102, 204, 153));
-		btnPublicTransportNo.setBounds(845, 223, 260, 40);
-		btnPublicTransportNo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-			}
-		});
-		frame.getContentPane().add(btnPublicTransportNo);
 
 
 		// Creates the menu-bar
