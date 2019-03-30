@@ -2,6 +2,7 @@ package GUI_mainscreen;
 
 import GUI.GUI_App;
 import entity.User;
+import service.FriendServiceImpl;
 import service.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
@@ -17,8 +18,8 @@ public class MyProfile {
 
 	private static JFrame frame2;
 
-	private MyProfile(User userIn, UserServiceImpl clientIn) {
-		initialize(userIn, clientIn);
+	private MyProfile(User userIn, UserServiceImpl clientIn, FriendServiceImpl clientFriend, JFrame frameIn) {
+		initialize(userIn, clientIn, clientFriend, frameIn);
 	}
 
 	/**
@@ -27,11 +28,11 @@ public class MyProfile {
 	 * @param userIn   the user in
 	 * @param clientIn the client in
 	 */
-	public static void application(User userIn, UserServiceImpl clientIn, String username) {
+	public static void application(User userIn, UserServiceImpl clientIn, String username, FriendServiceImpl clientFriend, JFrame frameIn) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MyProfile window = new MyProfile(userIn, clientIn);
+					MyProfile window = new MyProfile(userIn, clientIn, clientFriend, frameIn);
 					MyProfile.frame2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +47,7 @@ public class MyProfile {
 	 * @param userIn   the user in
 	 * @param clientIn the client in
 	 */
-	public static void initialize(User userIn, UserServiceImpl clientIn) {
+	public static void initialize(User userIn, UserServiceImpl clientIn, FriendServiceImpl clientFriend, JFrame frameIn) {
 
 		frame2 = new JFrame();
 		frame2.setBounds(300, 500, 300, 500);
@@ -66,7 +67,7 @@ public class MyProfile {
 		frame2.getContentPane().add(changeUserName);
 		changeUserName.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				Update.application(userIn, clientIn, userIn.getUser_name(), clientFriend, frameIn);
 			}
 		});
 
@@ -76,7 +77,7 @@ public class MyProfile {
 		frame2.getContentPane().add(changePassword);
 		changePassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				Update.application(userIn, clientIn, userIn.getPassword(), clientFriend, frameIn);
 			}
 		});
 

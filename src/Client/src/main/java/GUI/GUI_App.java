@@ -455,7 +455,10 @@ public class GUI_App extends Login_S {
 		mntmMyProfile.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		mntmMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MyProfile.application(userIn, clientIn, username);
+				MyProfile.application(userIn, clientIn, username, friendClient, frame);
+				setUsername(userIn.getUser_name());
+				lblWelcome.setText("Welcome " + userIn.getUser_name());
+				System.out.println(userIn.getUser_name());
 			}
 		});
 		menuBar.add(mntmMyProfile);
@@ -490,9 +493,9 @@ public class GUI_App extends Login_S {
 	/**
 	 * Sets username.
 	 *
-	 * @param username the username
+	 * @param usernameIn the username
 	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public static void setUsername(String usernameIn) {
+		username = usernameIn;
 	}
 }
