@@ -2,6 +2,7 @@ package GUI;
 
 import entity.LeaderBoardEntry;
 import entity.User;
+import helper.PointsMissing;
 import service.UserServiceImpl;
 
 import javax.swing.*;
@@ -155,7 +156,7 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -177,7 +178,7 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -210,7 +211,7 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -232,7 +233,7 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -265,7 +266,7 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -287,7 +288,7 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -319,7 +320,7 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -341,7 +342,7 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -373,7 +374,7 @@ public class GUI_App extends Login_S {
 				points += 100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
@@ -395,7 +396,7 @@ public class GUI_App extends Login_S {
 				points += -100;
 				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
 				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username, userIn));
-				int pointsmissing = 1000 % points;
+				int pointsmissing = PointsMissing.determiningPoints(points);
 				String motivation = "You only need " + pointsmissing + " points to the next level!";
 				lblMotivation.setText(motivation);
 				level = points / 1000;
