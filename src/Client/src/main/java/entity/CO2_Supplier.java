@@ -117,6 +117,21 @@ public class CO2_Supplier {
         return 4.5 * amountOfSolarPanels * 0.300 * 0.558;
     }
 
+    /**
+     *
+     * @param amountOfSolarPanels The amount of average size solar panels you have on your house.
+     * @param inhabitants   The amount of people living in your house.
+     * @return  The amount of CO2 you used, excluding what you saved with your solar panels.
+     */
+    public static double solarPanelUsed(int amountOfSolarPanels, int inhabitants){
+        if(amountOfSolarPanels < 0){
+            return 0;
+        }
+        double used = getKWH(inhabitants, 0) * .558;
+        double solar = solarPanel(amountOfSolarPanels);
+        return  used - solar;
+    }
+
 
     /**
      *

@@ -155,4 +155,10 @@ public class CO2_supplierTest {
         double result = 5300.0/365.0;
         assertEquals("should return result", CO2_Supplier.getKWH(7,0), result, 0);
     }
+
+    @Test
+    public void testSolarPanelUsed(){
+        double result = 2900.0 / 365.0 *.558 -  4.5 * 2 * 0.300 * 0.558;
+        assertEquals("The solare panels should have saved result amount", CO2_Supplier.solarPanelUsed(2, 2), result, 0);
+    }
 }
