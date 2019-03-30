@@ -71,14 +71,14 @@ public class CO2_supplierTest {
     @Test
     public void testBikeVsPublicTransportNegative(){
         int km = -10;
-        assertEquals("negative input should return 0", CO2_Supplier.bikeVsPulbicTransport(km), 0, 0);
+        assertEquals("negative input should return 0", CO2_Supplier.bikeVsPublicTransport(km), 0, 0);
     }
 
     @Test
     public void testBikeVsPublicTransportPositive(){
         int km = 10;
         double difference = .85;
-        assertEquals("should return .101*10 - .016*10", CO2_Supplier.bikeVsPulbicTransport(km), difference, 0);
+        assertEquals("should return .101*10 - .016*10", CO2_Supplier.bikeVsPublicTransport(km), difference, 0);
     }
 
     @Test

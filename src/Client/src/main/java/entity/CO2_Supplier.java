@@ -68,7 +68,7 @@ public class CO2_Supplier {
      * @param km    The amount of kilometers traveled.
      * @return  The amount of co2 saved by cycling a distance instead of taking the buss.
      */
-    public static double bikeVsPulbicTransport(int km){
+    public static double bikeVsPublicTransport(int km){
         double diffrence = publicTransport(km) - bike(km);
         return diffrence;
     }
