@@ -41,6 +41,30 @@ public class UpdatingLabels {
             int temp = userIn.getProduce();
             userIn.setProduce(temp - 100);
             clientIn.updateUser(userIn);
+        } else if (method.equals("Bike")) {
+            int temp = userIn.getTransportation();
+            userIn.setTransportation(temp + 100);
+            clientIn.updateUser(userIn);
+        } else if (method.equals("Car1")) {
+            int temp = userIn.getTransportation();
+            userIn.setTransportation(temp - 100);
+            clientIn.updateUser(userIn);
+        } else if (method.equals("LowerTemp")) {
+            int temp = userIn.getTemperature();
+            userIn.setTemperature(temp + 100);
+            clientIn.updateUser(userIn);
+        } else if (method.equals("HigherTemp")) {
+            int temp = userIn.getTemperature();
+            userIn.setTemperature(temp - 100);
+            clientIn.updateUser(userIn);
+        } else if (method.equals("SolarYes")) {
+            int temp = userIn.getSolar();
+            userIn.setSolar(temp + 100);
+            clientIn.updateUser(userIn);
+        } else if (method.equals("SolarNo")) {
+            int temp = userIn.getSolar();
+            userIn.setSolar(temp - 100);
+            clientIn.updateUser(userIn);
         }
     }
 }

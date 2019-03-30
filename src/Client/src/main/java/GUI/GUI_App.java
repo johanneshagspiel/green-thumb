@@ -224,7 +224,7 @@ public class GUI_App extends Login_S {
 		btnBike.setBounds(445, 170, 260, 40);
 		btnBike.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
 			}
 		});
 		frame.getContentPane().add(btnBike);
@@ -236,7 +236,7 @@ public class GUI_App extends Login_S {
 		btnCar.setBounds(445, 225, 260, 40);
 		btnCar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "Car1");
 			}
 		});
 		frame.getContentPane().add(btnCar);
@@ -257,7 +257,7 @@ public class GUI_App extends Login_S {
 		btnLowered.setBounds(445, 319, 260, 40);
 		btnLowered.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "LowerTemp");
 			}
 		});
 		frame.getContentPane().add(btnLowered);
@@ -269,7 +269,7 @@ public class GUI_App extends Login_S {
 		btnUnchanged.setBounds(445, 372, 260, 40);
 		btnUnchanged.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "HigherTemp");
 			}
 		});
 		frame.getContentPane().add(btnUnchanged);
@@ -290,7 +290,7 @@ public class GUI_App extends Login_S {
 		btnSolar.setBounds(845, 319, 260, 40);
 		btnSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "SolarYes");
 			}
 		});
 		frame.getContentPane().add(btnSolar);
@@ -302,7 +302,7 @@ public class GUI_App extends Login_S {
 		btnNoSolar.setBounds(845, 372, 260, 40);
 		btnNoSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "SolarNo");
 			}
 		});
 		frame.getContentPane().add(btnNoSolar);
