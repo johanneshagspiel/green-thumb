@@ -29,6 +29,7 @@ public class GUI_App extends Login_S {
 	private static int pointsSaved;
 	private static int level;
 	private static int pointsmissing;
+	private static String label;
 
 
 	/**
@@ -65,6 +66,14 @@ public class GUI_App extends Login_S {
 
 	public static void setPointsSaved(int pointsSaved) {
 		GUI_App.pointsSaved = pointsSaved;
+	}
+
+	public static String getLabel() {
+		return label;
+	}
+
+	public static void setLabel(String label) {
+		GUI_App.label = label;
 	}
 
 	/**
@@ -121,14 +130,15 @@ public class GUI_App extends Login_S {
 		frame.getContentPane().add(lblLevel);
 
 		// Leaderboard
-		JLabel lblLeaderboard = new JLabel("Leaderboard Top 10");
+		label = "Leaderboard Top 10 CO2 Used";
+		JLabel lblLeaderboard = new JLabel(label);
 		lblLeaderboard.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		lblLeaderboard.setBounds(1250, 140, 260, 30);
 		lblLeaderboard.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblLeaderboard);
 
 		// Create the content for the leaderboard
-		String LeaderBoardContent = LeaderBoardEntry.createLeaderboard(points, username, userIn);
+		String LeaderBoardContent = LeaderBoardEntry.createLeaderboard(userIn, label);
 
 		JLabel lblLeaderboardContent = new JLabel(LeaderBoardContent);
 		lblLeaderboardContent.setBackground(Color.WHITE);
@@ -138,12 +148,39 @@ public class GUI_App extends Login_S {
 		lblLeaderboardContent.setBorder(border);
 		frame.getContentPane().add(lblLeaderboardContent);
 
+		// Switch the leaderboard
+		JButton btnSwitchLeaderBoard = new JButton("Switch Leaderboard");
+		btnSwitchLeaderBoard.setForeground(Color.WHITE);
+		btnSwitchLeaderBoard.setBackground(new Color(0, 255, 127));
+		btnSwitchLeaderBoard.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnSwitchLeaderBoard.setBounds(1250, 388, 260, 40);
+		btnSwitchLeaderBoard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				if (label.equals("Leaderboard Top 10 CO2 Used"))
+				{
+					label = "Leaderboard Top 10 CO2 Saved";
+					lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+					lblLeaderboard.setText(label);
+
+				} else if (label.equals("Leaderboard Top 10 CO2 Saved"))
+
+				{
+					label = "Leaderboard Top 10 CO2 Used";
+					lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+					lblLeaderboard.setText(label);
+				}
+
+			}
+		});
+		frame.getContentPane().add(btnSwitchLeaderBoard);
+
 		// Add friend button
 		JButton btnAddFriend = new JButton("Add a friend");
 		btnAddFriend.setForeground(Color.WHITE);
-		btnAddFriend.setBackground(new Color(0, 255, 127));
+		btnAddFriend.setBackground(new Color(102, 204, 153));
 		btnAddFriend.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnAddFriend.setBounds(1250, 388, 260, 40);
+		btnAddFriend.setBounds(1250, 440, 260, 40);
 		btnAddFriend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				AddFriend.application(user, client);

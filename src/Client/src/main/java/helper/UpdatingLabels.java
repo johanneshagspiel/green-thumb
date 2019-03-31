@@ -64,7 +64,7 @@ public class UpdatingLabels {
 
         lblTotalCO2.setText("The total amount of CO2 you have used up so far is " + getPoints());
         lblCO2Saved.setText("The amount of CO2 you have saved so far is " + getPointsSaved());
-        lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(getPoints(), getUsername(), userIn));
+        lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, getLabel()));
         setPointsmissing(PointsMissing.determiningPoints(getPoints()));
         String motivation = "You only need " + getPointsmissing() + " points to the next level!";
         lblMotivation.setText(motivation);
@@ -140,7 +140,7 @@ public class UpdatingLabels {
 
         lblTotalCO2.setText("The total amount of CO2 you have used up so far is " + getPoints());
         lblCO2Saved.setText("The amount of CO2 you have saved so far is " + getPointsSaved());
-        lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(getPoints(), getUsername(), userIn));
+        lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, getLabel()));
         setPointsmissing(PointsMissing.determiningPoints(getPoints()));
         String motivation = "You only need " + getPointsmissing() + " points to the next level!";
         lblMotivation.setText(motivation);
