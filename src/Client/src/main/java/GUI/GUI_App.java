@@ -1,5 +1,6 @@
 package GUI;
 
+import GUI_mainscreen.LeaderBoardChoice;
 import entity.LeaderBoardEntry;
 import entity.User;
 import helper.PointsMissing;
@@ -133,7 +134,7 @@ public class GUI_App extends Login_S {
 		label = "Leaderboard Top 10 CO2 Used";
 		JLabel lblLeaderboard = new JLabel(label);
 		lblLeaderboard.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblLeaderboard.setBounds(1250, 140, 260, 30);
+		lblLeaderboard.setBounds(1220, 140, 300, 30);
 		lblLeaderboard.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblLeaderboard);
 
@@ -156,21 +157,7 @@ public class GUI_App extends Login_S {
 		btnSwitchLeaderBoard.setBounds(1250, 388, 260, 40);
 		btnSwitchLeaderBoard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-				if (label.equals("Leaderboard Top 10 CO2 Used"))
-				{
-					label = "Leaderboard Top 10 CO2 Saved";
-					lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
-					lblLeaderboard.setText(label);
-
-				} else if (label.equals("Leaderboard Top 10 CO2 Saved"))
-
-				{
-					label = "Leaderboard Top 10 CO2 Used";
-					lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
-					lblLeaderboard.setText(label);
-				}
-
+				LeaderBoardChoice.application(lblLeaderboardContent,lblLeaderboard, userIn);
 			}
 		});
 		frame.getContentPane().add(btnSwitchLeaderBoard);
