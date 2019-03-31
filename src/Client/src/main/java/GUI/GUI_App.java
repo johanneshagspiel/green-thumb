@@ -104,7 +104,7 @@ public class GUI_App extends Login_S {
 
 		//To avoid null pointer exception
 		if (points > 0) {
-			pointsmissing = 1000 % points;
+			pointsmissing = PointsMissing.determiningPoints(points);
 		}
 
 
