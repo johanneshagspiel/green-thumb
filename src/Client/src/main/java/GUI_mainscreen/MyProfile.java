@@ -91,30 +91,39 @@ public class MyProfile {
 		lblProduce.setBounds(10, 120, 266, 20);
 		frame2.getContentPane().add(lblProduce);
 
+		JLabel lblCar = new JLabel("Car Score: " + userIn.getCar());
+		lblCar.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCar.setBounds(10, 140, 266, 20);
+		frame2.getContentPane().add(lblCar);
+
+		JLabel lblPublic_transportation = new JLabel("Public Transportation Score: " + userIn.getPublic_transportation());
+		lblPublic_transportation.setHorizontalAlignment(SwingConstants.LEFT);
+		lblPublic_transportation.setBounds(10, 160, 266, 20);
+		frame2.getContentPane().add(lblPublic_transportation);
+
+		JLabel lblBike = new JLabel("Bike Score: " + userIn.getBike());
+		lblBike.setHorizontalAlignment(SwingConstants.LEFT);
+		lblBike.setBounds(10, 180, 266, 20);
+		frame2.getContentPane().add(lblBike);
+
 		JLabel lblTemperature = new JLabel("Temperature Score: " + userIn.getTemperature());
 		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTemperature.setBounds(10, 140, 266, 20);
+		lblTemperature.setBounds(10, 200, 266, 20);
 		frame2.getContentPane().add(lblTemperature);
 
 		JLabel lblSolar = new JLabel("Solar Score: " + userIn.getSolar());
 		lblSolar.setHorizontalAlignment(SwingConstants.LEFT);
-		lblSolar.setBounds(10, 160, 266, 20);
+		lblSolar.setBounds(10, 220, 266, 20);
 		frame2.getContentPane().add(lblSolar);
 
-		JLabel lblTransportation = new JLabel("Transportation Score: " + userIn.getTransportation());
-		lblTransportation.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTransportation.setBounds(10, 180, 266, 20);
-		frame2.getContentPane().add(lblTransportation);
+		JLabel lblSaved = new JLabel("Overall CO2 Saved: " + userIn.getTotal_saved());
+		lblSaved.setHorizontalAlignment(SwingConstants.LEFT);
+		lblSaved.setBounds(10, 240, 266, 20);
+		frame2.getContentPane().add(lblSaved);
 
-		JLabel lblTransportation2 = new JLabel("Transportation2 Score: " + userIn.getTransportation());
-		lblTransportation2.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTransportation2.setBounds(10, 200, 266, 20);
-		frame2.getContentPane().add(lblTransportation2);
-
-		Integer points = userIn.getProduce() + userIn.getSolar() + userIn.getTemperature() + userIn.getTransportation() + userIn.getVegetarian();
-		JLabel lblOverall = new JLabel("Overall Score: " + points);
+		JLabel lblOverall = new JLabel("Overall Score: " + userIn.getTotal());
 		lblOverall.setHorizontalAlignment(SwingConstants.LEFT);
-		lblOverall.setBounds(10, 220, 266, 20);
+		lblOverall.setBounds(10, 260, 266, 20);
 		frame2.getContentPane().add(lblOverall);
 	}
 }

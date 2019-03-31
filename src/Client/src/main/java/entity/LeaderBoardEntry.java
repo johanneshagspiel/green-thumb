@@ -94,7 +94,7 @@ public class LeaderBoardEntry {
             Friend temp = friends.get(i);
             String nameFriend = temp.getFriend_name();
             User friend = clientUser.getUser2(nameFriend);
-            int points = friend.getProduce() + friend.getSolar() + friend.getVegetarian() + friend.getTransportation() + friend.getTemperature();
+            int points = friend.getTotal_saved();
             listEntries.add(new LeaderBoardEntry(nameFriend, points));
         }
 

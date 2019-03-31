@@ -17,9 +17,14 @@ public class User implements Serializable {
 	private String password;
 	private int vegetarian;
 	private int produce;
-	private int transportation;
+	private int car;
+	private int public_transportation;
+	private int bike;
 	private int temperature;
 	private int solar;
+	private int total_saved;
+	private int total_used;
+	private int total;
 	private List<Friend> friendlist;
 
 
@@ -120,29 +125,6 @@ public class User implements Serializable {
 		this.produce = produce;
 	}
 
-    /**
-     * Gets transportation.
-     *
-     * @return the transportation
-     */
-    public int getTransportation() {
-		return transportation;
-	}
-
-    /**
-     * Sets transportation.
-     *
-     * @param transportation the transportation
-     */
-    public void setTransportation(int transportation) {
-		this.transportation = transportation;
-	}
-
-    /**
-     * Gets temperature.
-     *
-     * @return the temperature
-     */
     public int getTemperature() {
 		return temperature;
 	}
@@ -173,6 +155,54 @@ public class User implements Serializable {
 		this.friendlist = friendlist;
 	}
 
+	public int getCar() {
+		return car;
+	}
+
+	public void setCar(int car) {
+		this.car = car;
+	}
+
+	public int getPublic_transportation() {
+		return public_transportation;
+	}
+
+	public void setPublic_transportation(int public_transportation) {
+		this.public_transportation = public_transportation;
+	}
+
+	public int getBike() {
+		return bike;
+	}
+
+	public void setBike(int bike) {
+		this.bike = bike;
+	}
+
+	public int getTotal_saved() {
+		return total_saved;
+	}
+
+	public void setTotal_saved(int total_saved) {
+		this.total_saved = total_saved;
+	}
+
+	public int getTotal_used() {
+		return total_used;
+	}
+
+	public void setTotal_used(int total_used) {
+		this.total_used = total_used;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
 	/**
      * Sets solar.
      *
@@ -184,7 +214,7 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", user_name=" + user_name + ", password=" + password + ", vegetarian=" + vegetarian + ", produce=" + produce + ", transportation=" + transportation + ", temperature=" + temperature + ", solar=" + solar + "]";
+		return "User [id=" + id + ", user_name=" + user_name + ", password=" + password + ", vegetarian=" + vegetarian + ", produce=" + produce + ", car=" + car + ", public_transportation=" + public_transportation + ", bike=" + bike + ", temperature=" + temperature + ", solar =" + solar + ", total_saved=" + total_saved + ", total_used=" + total_used  + ", total=" + total + "]";
 	}
 
 }

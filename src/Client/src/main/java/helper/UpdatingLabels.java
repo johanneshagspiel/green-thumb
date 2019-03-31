@@ -42,12 +42,12 @@ public class UpdatingLabels {
             userIn.setProduce(temp - 100);
             clientIn.updateUser(userIn);
         } else if (method.equals("Bike")) {
-            int temp = userIn.getTransportation();
-            userIn.setTransportation(temp + 100);
+            int temp = userIn.getBike();
+            userIn.setBike(temp + 100);
             clientIn.updateUser(userIn);
-        } else if (method.equals("Car1")) {
-            int temp = userIn.getTransportation();
-            userIn.setTransportation(temp - 100);
+        } else if (method.equals("Car")) {
+            int temp = userIn.getCar();
+            userIn.setCar(temp - 100);
             clientIn.updateUser(userIn);
         } else if (method.equals("LowerTemp")) {
             int temp = userIn.getTemperature();

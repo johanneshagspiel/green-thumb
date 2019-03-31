@@ -26,6 +26,7 @@ public class GUI_App extends Login_S {
 	private static JFrame frame;
 	private static String username;
 	private static int points;
+	private static int pointsSaved;
 	private static int level;
 	private static int pointsmissing;
 
@@ -79,14 +80,29 @@ public class GUI_App extends Login_S {
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblWelcome);
 
-		points = userIn.getProduce() + userIn.getSolar() + userIn.getTemperature() + userIn.getTransportation() + userIn.getVegetarian();
+		//Setting up points
+		pointsSaved = userIn.getTotal_saved();
+		points = userIn.getTotal();
+
+		//To avoid null pointer exception
+		if (points > 0) {
+			pointsmissing = 1000 % points;
+		}
+
 
 		//Information about CO2 saved
-		JLabel lblPoints = new JLabel("The amount of CO2 you have saved so far is " + points);
-		lblPoints.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPoints.setBounds(10, 42, 1520, 50);
-		lblPoints.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblPoints);
+		JLabel lblPointsSaved = new JLabel("The amount of CO2 you have saved so far is " + pointsSaved);
+		lblPointsSaved.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPointsSaved.setBounds(130, 42, 1520, 50);
+		lblPointsSaved.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblPointsSaved);
+
+		//Information about CO2 saved
+		JLabel lblTotalCO2 = new JLabel("The total amount of CO2 you have used up so far is " + points);
+		lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTotalCO2.setBounds(450, 42, 1520, 50);
+		lblTotalCO2.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblTotalCO2);
 
 		// Information about level
 		level = points / 1000;
@@ -128,10 +144,6 @@ public class GUI_App extends Login_S {
 		frame.getContentPane().add(btnAddFriend);
 
 		// Motivation
-
-		if (points > 0) {
-			pointsmissing = 1000 % points;
-		}
 		String motivation = "You only need " + pointsmissing + " points to the next level!";
 		JLabel lblMotivation = new JLabel(motivation);
 		lblMotivation.setFont(new Font("Arial Black", Font.PLAIN, 13));
@@ -156,7 +168,7 @@ public class GUI_App extends Login_S {
 		btnVeg.setBounds(52, 170, 260, 40);
 		btnVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
+				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
 			}
 		});
 		frame.getContentPane().add(btnVeg);
@@ -168,7 +180,7 @@ public class GUI_App extends Login_S {
 		btnNonVeg.setBounds(52, 225, 260, 40);
 		btnNonVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
+				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
 			}
 		});
 		frame.getContentPane().add(btnNonVeg);
@@ -190,7 +202,7 @@ public class GUI_App extends Login_S {
 		btnLocalProduce.setBounds(52, 319, 260, 40);
 		btnLocalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "LocalProduce");
+				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "LocalProduce");
 			}
 		});
 		frame.getContentPane().add(btnLocalProduce);
@@ -202,7 +214,7 @@ public class GUI_App extends Login_S {
 		btnGlobalProduce.setBounds(52, 372, 260, 40);
 		btnGlobalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "GlobalProduce");
+				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "GlobalProduce");
 			}
 		});
 		frame.getContentPane().add(btnGlobalProduce);
@@ -291,7 +303,7 @@ public class GUI_App extends Login_S {
 		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
 		btDegreeCelsius.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "HigherTemp");
+				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "HigherTemp");
 			}
 		});
 		frame.getContentPane().add(btDegreeCelsius);
@@ -316,7 +328,7 @@ public class GUI_App extends Login_S {
 		btnNoSolar.setBounds(980, 350, 185, 40);
 		btnNoSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblPoints, lblLeaderboardContent, lblMotivation, lblLevel, "SolarNo");
+				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "SolarNo");
 			}
 		});
 		frame.getContentPane().add(btnNoSolar);
