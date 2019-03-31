@@ -72,65 +72,65 @@ public class UpdatingLabels {
 
         }
 
-    public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, int entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
+    public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, double entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
         int points = getPoints();
         int pointsSaved = getPointsSaved();
 
         //Depending on what is used
         if (method.equals("Car")) {
-            int additionalPoints = entry * 10;
+            double additionalPoints = entry * 10;
             userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + additionalPoints);
+            userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
             int temp = userIn.getCar();
-            userIn.setCar(additionalPoints);
+            userIn.setCar((int) additionalPoints);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Public Transportation")) {
-            int additionalPoints = entry * 10;
+            double additionalPoints = entry * 10;
             userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + additionalPoints);
+            userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
             int temp = userIn.getPublic_transportation();
-            userIn.setPublic_transportation(additionalPoints);
+            userIn.setPublic_transportation((int) additionalPoints);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Bike")) {
-            int additionalPoints = entry * 10;
+            double additionalPoints = entry * 10;
             userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + additionalPoints);
+            userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
             int temp = userIn.getBike();
-            userIn.setBike(additionalPoints);
+            userIn.setBike((int) additionalPoints);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Temperature")) {
-            int additionalPoints = entry * 10;
+            double additionalPoints = entry * 10;
             userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + additionalPoints);
+            userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
             int temp = userIn.getTemperature();
-            userIn.setTemperature(additionalPoints);
+            userIn.setTemperature((int) additionalPoints);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Solar")) {
-            int additionalPoints = entry * 10;
+            double additionalPoints = entry * 10;
             userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + additionalPoints);
+            userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
             int temp = userIn.getSolar();
-            userIn.setSolar(additionalPoints);
+            userIn.setSolar((int) additionalPoints);
             clientIn.updateUser(userIn);
         }
 

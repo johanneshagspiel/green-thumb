@@ -298,8 +298,22 @@ public class GUI_App extends Login_S {
 		btnCar.setBounds(845, 170, 280, 30);
 		btnCar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			int entry = Integer.parseInt(distanceTravelled.getText());
-			UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Car");
+				try {
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Car");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
 			}
 		});
 		frame.getContentPane().add(btnCar);
@@ -311,8 +325,22 @@ public class GUI_App extends Login_S {
 		btnPublicTransport.setBounds(845, 205, 280, 30);
 		btnPublicTransport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int entry = Integer.parseInt(distanceTravelled.getText());
-				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Public Transportation");
+				try {
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Public Transportation");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
 			}
 		});
 		frame.getContentPane().add(btnPublicTransport);
@@ -324,8 +352,22 @@ public class GUI_App extends Login_S {
 		btnBike.setBounds(845, 240, 280, 30);
 		btnBike.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int entry = Integer.parseInt(distanceTravelled.getText());
-				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
+				try {
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
 			}
 		});
 		frame.getContentPane().add(btnBike);
@@ -351,8 +393,22 @@ public class GUI_App extends Login_S {
 		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
 		btDegreeCelsius.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int entry = Integer.parseInt(temperatureToday.getText());
-				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Temperature");
+				try {
+					double entry = Double.parseDouble(temperatureToday.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						temperatureToday.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Temperature");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					temperatureToday.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					temperatureToday.setText(null);
+				}
 			}
 		});
 		frame.getContentPane().add(btDegreeCelsius);
@@ -377,8 +433,22 @@ public class GUI_App extends Login_S {
 		btnNoSolar.setBounds(980, 350, 185, 40);
 		btnNoSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int entry = Integer.parseInt(numberSolarPanels.getText());
-				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Solar");
+				try {
+					double entry = Double.parseDouble(numberSolarPanels.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						numberSolarPanels.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Solar");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					numberSolarPanels.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					numberSolarPanels.setText(null);
+				}
 			}
 		});
 		frame.getContentPane().add(btnNoSolar);
