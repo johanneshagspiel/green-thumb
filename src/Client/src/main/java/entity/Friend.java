@@ -7,6 +7,7 @@ import java.io.Serializable;
 /**
  * The type Friend.
  */
+@SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Friend implements Serializable {
 
@@ -19,7 +20,6 @@ public class Friend implements Serializable {
      * Instantiates a new Friend.
      */
     public Friend() {
-
         }
 
     /**

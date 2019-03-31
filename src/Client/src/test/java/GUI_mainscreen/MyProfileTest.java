@@ -1,14 +1,16 @@
-package mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
-import mainscreen.FriendsProfile;
+
 import org.junit.Test;
+
+import GUI_mainscreen.MyProfile;
 import service.UserServiceImpl;
 
 /**
- * The type Friends profile test.
+ * The type My profile test.
  */
-public class FriendsProfileTest {
+public class MyProfileTest {
 
     /**
      * Test application.
@@ -20,7 +22,7 @@ public class FriendsProfileTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        FriendsProfile.application(userIn, clientIn);
+        MyProfile.application(userIn, clientIn, null);
 
         // Verify the results
     }
@@ -35,7 +37,7 @@ public class FriendsProfileTest {
         final UserServiceImpl clientIn = null;
 
         // Run the test
-        FriendsProfile.initialize(userIn, clientIn);
+        MyProfile.initialize(userIn, clientIn);
 
         // Verify the results
     }

@@ -5,7 +5,6 @@ import service.FriendServiceImpl;
 import service.UserServiceImpl;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -76,7 +75,7 @@ public class LeaderBoardEntry {
      * @param usernameIn the username in
      * @return the string
      */
-    public static String createLeaderboard(int pointsIn, String usernameIn) {
+    public static String createLeaderboard(int pointsIn, String usernameIn, User userIn) {
 
 
         List<LeaderBoardEntry> listEntries = new ArrayList<LeaderBoardEntry>();
@@ -85,7 +84,7 @@ public class LeaderBoardEntry {
         LeaderBoardEntry user = new LeaderBoardEntry("You", pointsIn);
         listEntries.add(user);
 
-        // addign the friends
+        // adding the friends
         FriendServiceImpl clientFriend = new FriendServiceImpl();
         UserServiceImpl clientUser = new UserServiceImpl();
         List<Friend> friends = clientFriend.getFriends(usernameIn);
@@ -99,8 +98,11 @@ public class LeaderBoardEntry {
             listEntries.add(new LeaderBoardEntry(nameFriend, points));
         }
 
+
         // sort the list
         Collections.sort(listEntries, new ComparatorLeaderBoard());
+
+        userIn.setFriendlist(friends);
 
         String content = new String();
         for(int i =0; i < listEntries.size() & i <= 10; i++)

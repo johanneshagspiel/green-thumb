@@ -93,7 +93,7 @@ public class Login_A {
                         txtRPassword.setText(null);
                     } else if (password.equals(rpassword)) {
                         try {
-                            Login_addAccount.addAccount(username, password, user, client, txtUsername, txtPassword, txtRPassword);
+                            Login_addAccount.addAccount(username, password, user, client, txtUsername, txtPassword, txtRPassword, frame);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -163,7 +163,7 @@ public class Login_A {
                     txtRPassword.setText(null);
                 } else if (password.equals(rpassword)) {
                     try {
-                        Login_addAccount.addAccount(username, password, user, client, txtUsername, txtPassword, txtRPassword);
+                        Login_addAccount.addAccount(username, password, user, client, txtUsername, txtPassword, txtRPassword, frame);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
