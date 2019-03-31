@@ -6,12 +6,7 @@ public class PointsMissing {
 
         System.out.println(pointsIn);
 
-        while (pointsIn > 1000)
-        {
-            pointsIn = pointsIn - 1000;
-        }
-
-        Integer pointsOut = (pointsIn - 1000)*(-1);
+        int pointsOut = 1000 - (pointsIn % 1000);
 
         System.out.println(pointsOut);
 
