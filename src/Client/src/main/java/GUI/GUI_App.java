@@ -363,7 +363,7 @@ public class GUI_App extends Login_S {
 		// Temperature
 
 		//Labels
-		JLabel lblTemperature = new JLabel("What was the temperature in your room today?");
+		JLabel lblTemperature = new JLabel("By how much is your temperature lowered now?");
 		lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		lblTemperature.setBounds(445, 290, 388, 30);
 		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
