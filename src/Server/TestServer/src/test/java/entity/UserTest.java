@@ -108,14 +108,14 @@ public class UserTest {
     }
 
     @Test
-    public void getTransportation() {
+    public void getPublic_transportation() {
         User test = new User();
         test.setPublic_transportation(100);
         assertEquals(test.getPublic_transportation(), 100);
     }
 
     @Test
-    public void setTransportation() {
+    public void setPublic_transportation() {
         User test = new User();
         test.setPublic_transportation(100);
         assertEquals(test.getPublic_transportation(), 100);
