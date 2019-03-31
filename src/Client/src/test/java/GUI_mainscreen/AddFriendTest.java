@@ -1,9 +1,13 @@
-package mainscreen;
+package GUI_mainscreen;
 
 import entity.User;
-import mainscreen.AddFriend;
+
 import org.junit.Test;
+
+import GUI_mainscreen.AddFriend;
 import service.UserServiceImpl;
+
+import javax.swing.*;
 
 /**
  * The type Add friend test.
@@ -18,9 +22,10 @@ public class AddFriendTest {
         // Setup
         final User userIn = null;
         final UserServiceImpl clientIn = null;
+        final JFrame frameIn = null;
 
         // Run the test
-        AddFriend.application(userIn, clientIn);
+        AddFriend.application(userIn, clientIn, frameIn);
 
         // Verify the results
     }
@@ -33,9 +38,10 @@ public class AddFriendTest {
         // Setup
         final User userIn = null;
         final UserServiceImpl clientIn = null;
+        final JFrame frameIn = null;
 
         // Run the test
-        AddFriend.initialize(userIn, clientIn);
+        AddFriend.initialize(userIn, clientIn, frameIn);
 
         // Verify the results
     }

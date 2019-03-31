@@ -4,3 +4,17 @@ https://www.carbonfootprint.com/minimisecfp.html
 https://www.sciencedirect.com/science/article/pii/S1361920916307933
 1 kwh in the NL, equals  about 558 grams of co2
 558 gr co2 / kwh
+
+depends on:
+	how many people in your household,
+ 	how many degrees the temperature is lowered,
+	how much CO2 per kwh
+
+# of people	total average # of CO2		1 degree # CO2 saved
+1 person: 		1800 kwh		144kwh	= 80.3 kg of CO2		PER YEAR
+2 people: 		2900 kwh		232kwh	= 129.456 kg of CO2		PER YEAR	
+2 people + child: 	4000 kwh		320kwh	= 178.56 kg of CO2		PER YEAR
+2 people + 2 children: 	4600 kwh		368kwh	= 205.344 kg of CO2		PER YEAR	
+2 people + 3 children: 	5300 kwh		424kwh 	= 236.592 kg of CO2		PER YEAR(ANUALLY)
+
+these numbers are per year, so the daily amount of CO2 saved would have to be DEVIDED MY 365

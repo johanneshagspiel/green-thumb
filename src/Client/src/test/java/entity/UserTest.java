@@ -98,21 +98,6 @@ public class UserTest {
         assertEquals(test.getProduce(), 50);
     }
 
-    @Test
-    public void test_getTransportation() {
-        User test = new User();
-        test.setTransportation(100);
-        assertEquals(test.getTransportation(), 100);
-    }
-
-    @Test
-    public void test_setTransportation() {
-        User test = new User();
-        test.setTransportation(100);
-        assertEquals(test.getTransportation(), 100);
-        test.setTransportation(50);
-        assertEquals(test.getTransportation(), 50);
-    }
 
     @Test
     public void test_getTemperature() {

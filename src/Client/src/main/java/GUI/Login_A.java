@@ -178,6 +178,16 @@ public class Login_A {
         });
         btnReset.setBounds(187, 210, 134, 21);
         frame.getContentPane().add(btnReset);
+        
+        JButton btnBack = new JButton("Go Back");
+        btnBack.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+            	frame.setVisible(false);
+				Login_S.main(null);
+            }
+        });
+        btnBack.setBounds(75, 210, 100, 21);
+        frame.getContentPane().add(btnBack);
 
         // Separators
         JSeparator separator = new JSeparator();

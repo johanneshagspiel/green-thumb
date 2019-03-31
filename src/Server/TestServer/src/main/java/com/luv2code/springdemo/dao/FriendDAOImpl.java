@@ -65,13 +65,13 @@ public class FriendDAOImpl implements FriendDAO {
     }
 
     @Override
-    public void deleteFriend(int theId) {
+    public void deleteFriend(int id) {
 
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
         // delete object with primary key
-        Query query = currentSession.createSQLQuery("delete * from Friends where id=:userId").addEntity(Friend.class).setParameter("userId", theId);
+        Query query = currentSession.createSQLQuery("delete from friend where id=:id").addEntity(Friend.class).setParameter("id", id);
 
         query.executeUpdate();
     }

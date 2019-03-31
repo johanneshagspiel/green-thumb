@@ -102,7 +102,6 @@ public class FriendRestController {
     @DeleteMapping("/friends/{userId}")
     public String deleteFriend(@PathVariable int userId) {
 
-
         friendService.deleteFriend(userId);
 
         return "Deleted user id - " + userId;

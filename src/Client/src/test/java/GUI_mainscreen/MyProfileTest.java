@@ -4,13 +4,17 @@ import entity.User;
 
 import org.junit.Test;
 
-import GUI_mainscreen.AddFriend;
+import GUI_mainscreen.MyProfile;
+import org.springframework.format.datetime.joda.JodaTimeFormatterRegistrar;
+import service.FriendServiceImpl;
 import service.UserServiceImpl;
 
+import javax.swing.*;
+
 /**
- * The type Add friend test.
+ * The type My profile test.
  */
-public class AddFriendTest {
+public class MyProfileTest {
 
     /**
      * Test application.
@@ -20,9 +24,11 @@ public class AddFriendTest {
         // Setup
         final User userIn = null;
         final UserServiceImpl clientIn = null;
+        final FriendServiceImpl friendClientIn = null;
+        final JFrame frame = null;
 
         // Run the test
-        AddFriend.application(userIn, clientIn);
+        MyProfile.application(userIn, clientIn, null, friendClientIn, frame);
 
         // Verify the results
     }
@@ -35,9 +41,11 @@ public class AddFriendTest {
         // Setup
         final User userIn = null;
         final UserServiceImpl clientIn = null;
+        final FriendServiceImpl friendClientIn = null;
+        final JFrame frame = null;
 
         // Run the test
-        AddFriend.initialize(userIn, clientIn);
+        MyProfile.initialize(userIn, clientIn, friendClientIn, frame);
 
         // Verify the results
     }
