@@ -184,8 +184,9 @@ public class GUI_App extends Login_S {
 		frame.getContentPane().add(lblMotivation);
 
 
+		// Labels
+
 		// Vegetarian
-		//Labels
 		JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
 		lblWhatKindOf.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		lblWhatKindOf.setBounds(52, 140, 333, 30);
@@ -205,7 +206,7 @@ public class GUI_App extends Login_S {
 		});
 		frame.getContentPane().add(btnVeg);
 
-		JButton btnNonVeg = new JButton("Carnivore meal");
+		JButton btnNonVeg = new JButton("Non-vegetarian meal");
 		btnNonVeg.setBackground(new Color(102, 204, 153));
 		btnNonVeg.setForeground(Color.WHITE);
 		btnNonVeg.setFont(new Font("Arial Black", Font.PLAIN, 13));

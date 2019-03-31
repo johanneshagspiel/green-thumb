@@ -18,7 +18,7 @@ public class UpdatingLabels {
 
         //Depending on what is used
         if (method.equals("Vegetarian")) {
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + 100);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -28,7 +28,7 @@ public class UpdatingLabels {
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Carnivore")) {
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points - 100);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -38,7 +38,7 @@ public class UpdatingLabels {
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Local Produce")) {
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + 100);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -48,7 +48,7 @@ public class UpdatingLabels {
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Global Produce")) {
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points - 100);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -80,7 +80,7 @@ public class UpdatingLabels {
         //Depending on what is used
         if (method.equals("Car")) {
             double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -91,7 +91,7 @@ public class UpdatingLabels {
 
         } else if (method.equals("Public Transportation")) {
             double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -102,7 +102,7 @@ public class UpdatingLabels {
 
         } else if (method.equals("Bike")) {
             double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -113,7 +113,7 @@ public class UpdatingLabels {
 
         } else if (method.equals("Temperature")) {
             double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
@@ -124,7 +124,7 @@ public class UpdatingLabels {
 
         } else if (method.equals("Solar")) {
             double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal_saved(pointsSaved);
             userIn.setTotal(points + (int) additionalPoints);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
