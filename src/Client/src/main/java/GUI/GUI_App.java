@@ -170,7 +170,7 @@ public class GUI_App extends Login_S {
 		btnAddFriend.setBounds(1250, 440, 260, 40);
 		btnAddFriend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AddFriend.application(user, client);
+				AddFriend.application(userIn, clientIn, frame);
 			}
 		});
 		frame.getContentPane().add(btnAddFriend);
