@@ -59,6 +59,14 @@ public class GUI_App extends Login_S {
 		initialize(username, userIn, clientIn);
 	}
 
+	public static int getPointsSaved() {
+		return pointsSaved;
+	}
+
+	public static void setPointsSaved(int pointsSaved) {
+		GUI_App.pointsSaved = pointsSaved;
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -91,11 +99,11 @@ public class GUI_App extends Login_S {
 
 
 		//Information about CO2 saved
-		JLabel lblPointsSaved = new JLabel("The amount of CO2 you have saved so far is " + pointsSaved);
-		lblPointsSaved.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPointsSaved.setBounds(130, 42, 1520, 50);
-		lblPointsSaved.setHorizontalAlignment(SwingConstants.LEFT);
-		frame.getContentPane().add(lblPointsSaved);
+		JLabel lblCO2Saved = new JLabel("The amount of CO2 you have saved so far is " + pointsSaved);
+		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCO2Saved.setBounds(130, 42, 1520, 50);
+		lblCO2Saved.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblCO2Saved);
 
 		//Information about CO2 saved
 		JLabel lblTotalCO2 = new JLabel("The total amount of CO2 you have used up so far is " + points);
@@ -168,7 +176,7 @@ public class GUI_App extends Login_S {
 		btnVeg.setBounds(52, 170, 260, 40);
 		btnVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
 			}
 		});
 		frame.getContentPane().add(btnVeg);
@@ -180,7 +188,7 @@ public class GUI_App extends Login_S {
 		btnNonVeg.setBounds(52, 225, 260, 40);
 		btnNonVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
 			}
 		});
 		frame.getContentPane().add(btnNonVeg);
@@ -202,7 +210,7 @@ public class GUI_App extends Login_S {
 		btnLocalProduce.setBounds(52, 319, 260, 40);
 		btnLocalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "LocalProduce");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Local Produce");
 			}
 		});
 		frame.getContentPane().add(btnLocalProduce);
@@ -214,7 +222,7 @@ public class GUI_App extends Login_S {
 		btnGlobalProduce.setBounds(52, 372, 260, 40);
 		btnGlobalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "GlobalProduce");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Global Produce");
 			}
 		});
 		frame.getContentPane().add(btnGlobalProduce);
@@ -253,7 +261,8 @@ public class GUI_App extends Login_S {
 		btnCar.setBounds(845, 170, 280, 30);
 		btnCar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+			int entry = Integer.parseInt(distanceTravelled.getText());
+			UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Car");
 			}
 		});
 		frame.getContentPane().add(btnCar);
@@ -265,7 +274,8 @@ public class GUI_App extends Login_S {
 		btnPublicTransport.setBounds(845, 205, 280, 30);
 		btnPublicTransport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				int entry = Integer.parseInt(distanceTravelled.getText());
+				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Public Transportation");
 			}
 		});
 		frame.getContentPane().add(btnPublicTransport);
@@ -277,7 +287,8 @@ public class GUI_App extends Login_S {
 		btnBike.setBounds(845, 240, 280, 30);
 		btnBike.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				int entry = Integer.parseInt(distanceTravelled.getText());
+				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
 			}
 		});
 		frame.getContentPane().add(btnBike);
@@ -303,7 +314,8 @@ public class GUI_App extends Login_S {
 		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
 		btDegreeCelsius.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "HigherTemp");
+				int entry = Integer.parseInt(temperatureToday.getText());
+				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Temperature");
 			}
 		});
 		frame.getContentPane().add(btDegreeCelsius);
@@ -328,7 +340,8 @@ public class GUI_App extends Login_S {
 		btnNoSolar.setBounds(980, 350, 185, 40);
 		btnNoSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverything(userIn, clientIn, lblTotalCO2, lblLeaderboardContent, lblMotivation, lblLevel, "SolarNo");
+				int entry = Integer.parseInt(numberSolarPanels.getText());
+				UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Solar");
 			}
 		});
 		frame.getContentPane().add(btnNoSolar);

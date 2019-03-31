@@ -11,60 +11,141 @@ import static GUI.GUI_App.*;
 
 public class UpdatingLabels {
 
-    public static void updateEverything(User userIn, UserServiceImpl clientIn, JLabel lblPoints, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
-        //Update points
-        setPoints(getPoints() + 100);
-        setLevel(getPoints() / 1000);
+    public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
+
+        int points = getPoints();
+        int pointsSaved = getPointsSaved();
+
+        //Depending on what is used
+        if (method.equals("Vegetarian")) {
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + 100);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
+            int temp = userIn.getVegetarian();
+            userIn.setVegetarian(temp + 100);
+            clientIn.updateUser(userIn);
+
+        } else if (method.equals("Carnivore")) {
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points - 100);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
+            int temp = userIn.getVegetarian();
+            userIn.setVegetarian(temp - 100);
+            clientIn.updateUser(userIn);
+
+        } else if (method.equals("Local Produce")) {
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + 100);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
+            int temp = userIn.getProduce();
+            userIn.setProduce(temp + 100);
+            clientIn.updateUser(userIn);
+
+        } else if (method.equals("Global Produce")) {
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points - 100);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
+            int temp = userIn.getProduce();
+            userIn.setProduce(temp - 100);
+            clientIn.updateUser(userIn);
+        }
 
         //Update Labels
-        lblPoints.setText("The amount of CO2 you have saved so far is " + getPoints());
+        setPoints(userIn.getTotal());
+        setPointsSaved(userIn.getTotal_saved());
+
+        lblTotalCO2.setText("The total amount of CO2 you have used up so far is " + getPoints());
+        lblCO2Saved.setText("The amount of CO2 you have saved so far is " + getPointsSaved());
         lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(getPoints(), getUsername(), userIn));
         setPointsmissing(PointsMissing.determiningPoints(getPoints()));
         String motivation = "You only need " + getPointsmissing() + " points to the next level!";
         lblMotivation.setText(motivation);
         lblLevel.setText("Your Level is " + getLevel());
 
-        //
-        if (method.equals("Vegetarian")) {
-            int temp = userIn.getVegetarian();
-            userIn.setVegetarian(temp + 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("Carnivore")) {
-            int temp = userIn.getVegetarian();
-            userIn.setVegetarian(temp - 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("LocalProduce")) {
-            int temp = userIn.getProduce();
-            userIn.setProduce(temp + 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("GlobalProduce")) {
-            int temp = userIn.getProduce();
-            userIn.setProduce(temp - 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("Bike")) {
-            int temp = userIn.getBike();
-            userIn.setBike(temp + 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("Car")) {
+        }
+
+    public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, int entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
+
+        int points = getPoints();
+        int pointsSaved = getPointsSaved();
+
+        //Depending on what is used
+        if (method.equals("Car")) {
+            int additionalPoints = entry * 10;
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + additionalPoints);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
             int temp = userIn.getCar();
-            userIn.setCar(temp - 100);
+            userIn.setCar(additionalPoints);
             clientIn.updateUser(userIn);
-        } else if (method.equals("LowerTemp")) {
+
+        } else if (method.equals("Public Transportation")) {
+            int additionalPoints = entry * 10;
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + additionalPoints);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
+            int temp = userIn.getPublic_transportation();
+            userIn.setPublic_transportation(additionalPoints);
+            clientIn.updateUser(userIn);
+
+        } else if (method.equals("Bike")) {
+            int additionalPoints = entry * 10;
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + additionalPoints);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
+            int temp = userIn.getBike();
+            userIn.setBike(additionalPoints);
+            clientIn.updateUser(userIn);
+
+        } else if (method.equals("Temperature")) {
+            int additionalPoints = entry * 10;
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + additionalPoints);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
             int temp = userIn.getTemperature();
-            userIn.setTemperature(temp + 100);
+            userIn.setTemperature(additionalPoints);
             clientIn.updateUser(userIn);
-        } else if (method.equals("HigherTemp")) {
-            int temp = userIn.getTemperature();
-            userIn.setTemperature(temp - 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("SolarYes")) {
+
+        } else if (method.equals("Solar")) {
+            int additionalPoints = entry * 10;
+            userIn.setTotal_saved(pointsSaved + 0);
+            userIn.setTotal(points + additionalPoints);
+            int pointsTemp = getPoints();
+            setLevel(pointsTemp / 1000);
+
             int temp = userIn.getSolar();
-            userIn.setSolar(temp + 100);
-            clientIn.updateUser(userIn);
-        } else if (method.equals("SolarNo")) {
-            int temp = userIn.getSolar();
-            userIn.setSolar(temp - 100);
+            userIn.setSolar(additionalPoints);
             clientIn.updateUser(userIn);
         }
+
+        //Update Labels
+        setPoints(userIn.getTotal());
+        setPointsSaved(userIn.getTotal_saved());
+
+        lblTotalCO2.setText("The total amount of CO2 you have used up so far is " + getPoints());
+        lblCO2Saved.setText("The amount of CO2 you have saved so far is " + getPointsSaved());
+        lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(getPoints(), getUsername(), userIn));
+        setPointsmissing(PointsMissing.determiningPoints(getPoints()));
+        String motivation = "You only need " + getPointsmissing() + " points to the next level!";
+        lblMotivation.setText(motivation);
+        lblLevel.setText("Your Level is " + getLevel());
+
     }
 }
+
