@@ -78,7 +78,7 @@ public class FriendsProfile {
 				count++;
                 Friend.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent arg0) {
-                        MyProfile.application(friendUser, clientIn, test);
+                        MyProfile2.application(friendUser, clientIn, test);
                     }
                 });
 			}
