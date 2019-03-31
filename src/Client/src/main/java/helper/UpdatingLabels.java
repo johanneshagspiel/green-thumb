@@ -20,8 +20,8 @@ public class UpdatingLabels {
         //Depending on what is used
         if (method.equals("Vegetarian")) {
             //Initializing the values we are going to use.
-            int mealSaved = (int) CO2_Supplier.mealDifference(true, false);
-            int mealCost = (int) CO2_Supplier.meal(true, false);
+            int mealSaved = (int) (CO2_Supplier.mealDifference(true, false) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(true, false) * 100);
 
             //updating the totals.
             userIn.setTotal_saved(getPointsSaved() + mealSaved);
@@ -36,8 +36,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Carnivore")) {
             //Initializing the values we are going to use.
-            int mealSaved = (int) CO2_Supplier.mealDifference(false, false);
-            int mealCost = (int) CO2_Supplier.meal(false, false);
+            int mealSaved = (int) (CO2_Supplier.mealDifference(false, false) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(false, false) * 100);
 
             //updating the totals.
             userIn.setTotal_saved(getPointsSaved() + mealSaved);
@@ -52,8 +52,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Local Produce")) {
             //Initializing the values we are going to use.
-            int mealSaved = (int) CO2_Supplier.mealDifference(false, true);
-            int mealCost = (int) CO2_Supplier.meal(false, true);
+            int mealSaved = (int) (CO2_Supplier.mealDifference(false, true) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(false, true) * 100);
 
             //updating the totals.
             userIn.setTotal_saved(getPointsSaved() + mealSaved);
@@ -68,8 +68,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Global Produce")) {
             //Initializing the values we are going to use.
-            int mealSaved = (int) CO2_Supplier.mealDifference(false, false);
-            int mealCost = (int) CO2_Supplier.meal(false, false);
+            int mealSaved = (int) (CO2_Supplier.mealDifference(false, false) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(false, false) * 100);
 
             //updating the totals.
             userIn.setTotal_saved(getPointsSaved() + mealSaved);
@@ -105,7 +105,7 @@ public class UpdatingLabels {
         //Depending on what is used
         if (method.equals("Car")) {
             // Initializing the values we are going to use.
-            int producedCO2 = (int) CO2_Supplier.car((int) entry);
+            int producedCO2 = ((int) CO2_Supplier.car((int) entry) * 100);
 
             //Updating the totals.
             userIn.setTotal_saved(getPointsSaved());
@@ -122,8 +122,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Public Transportation")) {
             // Initializing the values we are going to use.
-            int producedCO2 = (int) CO2_Supplier.publicTransport((int) entry);
-            int savedCO2 = (int) CO2_Supplier.publicTransportVsCar((int) entry);
+            int producedCO2 = ((int) CO2_Supplier.publicTransport((int) entry) * 100);
+            int savedCO2 = ((int) CO2_Supplier.publicTransportVsCar((int) entry) * 100);
 
             //Updating the totals.
             userIn.setTotal_saved(getPointsSaved() + savedCO2);
@@ -138,8 +138,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Bike")) {
             // Initializing the values we are going to use.
-            int producedCO2 = (int) CO2_Supplier.bike((int) entry);
-            int savedCO2 = (int) CO2_Supplier.bikeVsCar((int) entry);
+            int producedCO2 = ((int) CO2_Supplier.bike((int) entry) * 100);
+            int savedCO2 = ((int) CO2_Supplier.bikeVsCar((int) entry) * 100);
 
             //Updating the totals.
             userIn.setTotal_saved(getPointsSaved() + savedCO2);
@@ -154,8 +154,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Temperature")) {
             // Initializing the values we are going to use.
-            int producedCO2 = (int) CO2_Supplier.usedTemperature(1, (int) entry);
-            int savedCO2 = (int) CO2_Supplier.temperature(1, (int) entry);
+            int producedCO2 = ((int) CO2_Supplier.usedTemperature(1, (int) entry) * 100);
+            int savedCO2 = ((int) CO2_Supplier.temperature(1, (int) entry) * 100);
 
             //Updating the totals.
             userIn.setTotal_saved(getPointsSaved() + savedCO2);
@@ -170,8 +170,8 @@ public class UpdatingLabels {
 
         } else if (method.equals("Solar")) {
             // Initializing the values we are going to use. (assuming one person for simplicity)
-            int producedCO2 = (int) CO2_Supplier.solarPanelUsed((int) entry, 1);
-            int savedCO2 = (int) CO2_Supplier.solarPanel((int) entry);
+            int producedCO2 = ((int) CO2_Supplier.solarPanelUsed((int) entry, 1) * 100);
+            int savedCO2 = ((int) CO2_Supplier.solarPanel((int) entry) * 100);
 
             //Updating the totals.
             userIn.setTotal_saved(getPointsSaved() + savedCO2);
