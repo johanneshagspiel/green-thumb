@@ -8,8 +8,4 @@ test:
   artifacts:
     reports:
       junit:
-<<<<<<< HEAD
         - target/surefire-reports/TEST-*.xml
-=======
-        - target/surefire-reports/TEST-*.xml
->>>>>>> Final_Report
