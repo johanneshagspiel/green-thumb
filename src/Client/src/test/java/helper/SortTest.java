@@ -6,6 +6,7 @@ package helper;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
@@ -39,7 +40,7 @@ public class SortTest {
 		test.add(Giel);
 		test.add(Leon);
 		
-		Sort.mergeSort(test);
+		Collections.sort(test, new Sort());
 		System.out.println(test.toString());
 		
 		assertTrue(test.get(0).getUser_name().equals("Ardy"));

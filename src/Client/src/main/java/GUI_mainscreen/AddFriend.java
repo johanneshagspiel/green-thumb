@@ -12,6 +12,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -123,7 +125,7 @@ public class AddFriend {
 						}
 					}
 					
-					Sort.mergeSort(result);
+					Collections.sort(result, new Sort());
 					
 					// Sorting the results
 //					for(int i = 0; i<result.size()-1; i++) {
