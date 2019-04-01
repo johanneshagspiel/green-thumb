@@ -11,10 +11,11 @@ public class CO2_Supplier {
      * @return  the amount of co2 it cost to drive x kilometers by bike.
      */
     public static double bike(int km) {
+        final double a = 0.016;
         if (km < 0) {
             return 0;
         }
-        return 0.016 * km;
+        return a * km;
     }
 
     /**
@@ -23,10 +24,11 @@ public class CO2_Supplier {
      * @return the amount of co2 to drive x kilometers in the average car.
      */
     public static double car(int km) {
+        final double a = 0.271;
         if (km < 0) {
             return 0;
         }
-        return 0.271 * km;
+        return a * km;
     }
 
     /**
@@ -35,10 +37,11 @@ public class CO2_Supplier {
      * @return  The amount of co2 to travel x kilometers with the public transport.
      */
     public static double publicTransport(int km) {
+        final double a = 0.101;
         if (km < 0) {
             return 0;
         }
-        return .101 * km;
+        return a * km;
     }
 
     /**
@@ -79,24 +82,27 @@ public class CO2_Supplier {
      */
     public static double meal(boolean vegetarian, boolean localProduce) {
         double co2 = 0;
+        final double a = 1.2700;
+        final double b = 1.8748;
+        final double c = 0.95;
         if (vegetarian) {
-            co2 = 1.2700;
+            co2 = a;
         } else {
-            co2 = 1.8748;
+            co2 = b;
         }
-        if(localProduce) {
-            co2 *= 0.95;
+        if (localProduce) {
+            co2 *= c;
         }
         return co2;
     }
 
     /**
      *
-     * @param vegetarian    Wheter the meal you ate was vegetarian.
+     * @param vegetarian Wheter the meal you ate was vegetarian.
      * @param localProduce  Wheter your meal was grown or produced locally.
      * @return  The amount of co2 saved by eating in this way.
      */
-    public static double mealDifference(boolean vegetarian, boolean localProduce) {
+    public static double mealDifference(final boolean vegetarian, final boolean localProduce) {
         double difference;
         difference = meal(false, false) - meal(vegetarian, localProduce);
         return difference;
@@ -108,24 +114,30 @@ public class CO2_Supplier {
      * @return  the amount of co2 those average solar panels would yield.
      */
 
-    public static double solarPanel(int amountOfSolarPanels) {
+    public static double solarPanel(final int amountOfSolarPanels) {
+        final double a = 4.5;
+        final double b = 0.300;
+        final double c = 0.558;
         if (amountOfSolarPanels < 0) {
             return 0;
         }
-        return 4.5 * amountOfSolarPanels * 0.300 * 0.558;
+        return a * amountOfSolarPanels * b * c;
     }
 
     /**
      *
-     * @param amountOfSolarPanels The amount of average size solar panels you have on your house.
+     * @param amountOfSolarPanels The amount of average size solar panels
+     * you have on your house
      * @param inhabitants   The amount of people living in your house.
-     * @return  The amount of CO2 you used, excluding what you saved with your solar panels.
+     * @return  The amount of CO2 you used, excluding what you saved
+     * with your solar panels.
      */
-    public static double solarPanelUsed(int amountOfSolarPanels, int inhabitants) {
+    public static double solarPanelUsed(final int amountOfSolarPanels, final int inhabitants) {
+        final double a = 0.558;
         if (amountOfSolarPanels < 0) {
             return 0;
         }
-        double used = getKWH(inhabitants, 0) * .558;
+        double used = getKWH(inhabitants, 0) * a;
         double solar = solarPanel(amountOfSolarPanels);
         return  used - solar;
     }
@@ -138,14 +150,16 @@ public class CO2_Supplier {
      * @return  the amount of co2 you have saved.
      */
 
-    public static double temperature(int inhabitants, int degreesLowered) {
+    public static double temperature(final int inhabitants, final int degreesLowered) {
         double kwh = getKWH(inhabitants, degreesLowered);
         double temp = kwh;
+        final double a = 0.92;
+        final double b = 0.558;
         //multiplying co2 *.92 for every degree lowered
         for (int i = degreesLowered; i > 0; i--) {
-            temp *= .92;
+            temp *= a;
         }
-        double co2 = (kwh - temp) *.558;
+        double co2 = (kwh - temp) * b;
         return co2;
     }
 
@@ -156,13 +170,16 @@ public class CO2_Supplier {
      * @return  The amount of co2 it cost.
      */
 
-    public static double usedTemperature(int inhabitants, int degreesLowered) {
+    public static double usedTemperature(final int inhabitants, final int degreesLowered) {
         double kwh = getKWH(inhabitants, degreesLowered);
+        final double a = 0.92;
+        final double b = 0.558;
         //multiplying co2 *.92 for every degree lowered
         for (int i = degreesLowered; i > 0; i--) {
-            kwh *= .92;
+            kwh *= a;
         }
-        double co2 = kwh * .558;
+        double co2 = kwh * b;
+        ;
         return co2;
     }
 
@@ -174,6 +191,16 @@ public class CO2_Supplier {
      * @return  The amount of KWH a average household uses.
      */
     public static double getKWH(int inhabitants, int degreesLowered) {
+        final double a = 365.0;
+        final double b = 1800.0;
+        final double c = 2900.0;
+        final double d = 4000.0;
+        final double e = 4600.0;
+        final double f = 5300.0;
+        final int one = 1;
+        final int two = 2;
+        final int three = 3;
+        final int four = 4;
         if (inhabitants < 1) {
             return 0;
         }
@@ -181,16 +208,16 @@ public class CO2_Supplier {
             return 0;
         }
         double kwh;
-        if (inhabitants == 1) {
-            kwh = 1800.0 / 365.0;
-        } else if (inhabitants == 2) {
-            kwh = 2900.0 / 365.0;
-        } else if (inhabitants == 3) {
-            kwh = 4000.0 / 365.0;
-        } else if (inhabitants == 4) {
-            kwh = 4600.0 / 365.0;
+        if (inhabitants == one) {
+            kwh = b / a;
+        } else if (inhabitants == two) {
+            kwh = c / a;
+        } else if (inhabitants == three) {
+            kwh = d / a;
+        } else if (inhabitants == four) {
+            kwh = e / a;
         } else {
-            kwh = 5300.0 / 365.0;
+            kwh = f / a;
         }
         return kwh;
     }
