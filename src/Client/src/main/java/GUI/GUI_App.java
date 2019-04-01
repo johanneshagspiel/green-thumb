@@ -207,7 +207,7 @@ public class  GUI_App extends Login_S {
 			pointsmissing = PointsMissing.determiningPoints(points);
 		}
 
-		
+
 		//Information about CO2 saved
 		JLabel lblCO2Saved
 				= new JLabel("The amount of CO2 you have saved"
@@ -235,7 +235,7 @@ public class  GUI_App extends Login_S {
 		lblLevel.setBounds(onezero, sevenfour, onefivetwozero, fivezero);
 		lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblLevel);
-		
+
 		// Leaderboard
 		label = "Leaderboard Top 10 CO2 Used";
 		JLabel lblLeaderboard = new JLabel(label);
@@ -249,7 +249,7 @@ public class  GUI_App extends Login_S {
 		// Create the content for the leaderboard
 		String LeaderBoardContent
 				= LeaderBoardEntry.createLeaderboard(userIn, label);
-		
+
 
 		JLabel lblLeaderboardContent = new JLabel(LeaderBoardContent);
 		lblLeaderboardContent.setBackground(Color.WHITE);
@@ -260,7 +260,7 @@ public class  GUI_App extends Login_S {
 		Border border = BorderFactory.createLineBorder(Color.GRAY, two);
 		lblLeaderboardContent.setBorder(border);
 		frame.getContentPane().add(lblLeaderboardContent);
-		
+
 		// Switch the leaderboard
 		JButton btnSwitchLeaderBoard = new JButton("Switch Leaderboard");
 		btnSwitchLeaderBoard.setForeground(Color.WHITE);
@@ -277,7 +277,7 @@ public class  GUI_App extends Login_S {
 			}
 		});
 		frame.getContentPane().add(btnSwitchLeaderBoard);
-		
+
 
 		// Add friend button
 		JButton btnAddFriend = new JButton("Add a friend");
@@ -293,7 +293,7 @@ public class  GUI_App extends Login_S {
 			}
 		});
 		frame.getContentPane().add(btnAddFriend);
-		
+
 		// Motivation
 		String motivation = "You only need "
 				+ pointsmissing + " points to the next level!";
@@ -306,7 +306,7 @@ public class  GUI_App extends Login_S {
 
 
 		// Labels
-		
+
 		// Vegetarian
 		JLabel lblWhatKindOf
 				= new JLabel("What kind of meal did you have today?");
@@ -330,7 +330,7 @@ public class  GUI_App extends Login_S {
 			}
 		});
 		frame.getContentPane().add(btnVeg);
-		
+
 		JButton btnNonVeg = new JButton("Non-vegetarian meal");
 		btnNonVeg.setBackground(new Color(onezerotwo,
 				twozerofour, onefivethree));
@@ -348,7 +348,7 @@ public class  GUI_App extends Login_S {
 
 
 		// Produce
-		
+
 		//Labels
 		JLabel lblProduce
 				= new JLabel("What type of produce did you buy today?");
@@ -390,7 +390,7 @@ public class  GUI_App extends Login_S {
 
 
 		// Transportation
-		
+
 		//Labels
 		JLabel lblTransportation
 				= new JLabel("How far did you travel today ?");
@@ -629,8 +629,8 @@ public class  GUI_App extends Login_S {
 					if (entry > onezerozerozerozero || entry <= 0)
 					{
 						JOptionPane.showMessageDialog(null,
-								"Please enter a valid " +
-										"number between 0 and 10,000",
+								"Please enter a valid " 
+									+	"number between 0 and 10,000",
 								"User Entry Error", JOptionPane.ERROR_MESSAGE);
 						numberSolarPanels.setText(null);
 					} else {
@@ -669,7 +669,7 @@ public class  GUI_App extends Login_S {
 		mntmLogOut.setBackground(new Color(twozerofour, twofivefive,
 				twofivefive));
 		mntmLogOut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				if (JOptionPane.showConfirmDialog(frame,
 						"Confirm if you want to exit", "Log out",
 						JOptionPane.YES_NO_OPTION)
@@ -702,7 +702,7 @@ public class  GUI_App extends Login_S {
 		mntmMyFriends.setBackground(new Color(0, twofivefive, twozerofour));
 		mntmMyFriends.setFont(new Font("Arial Black", Font.PLAIN, onethree));
 		mntmMyFriends.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				FriendsProfile.application(userIn, clientIn);
 			}
 		});
@@ -766,7 +766,7 @@ public class  GUI_App extends Login_S {
 
 	/**
 	 * Get Pointsmissing.
-	 * @return
+	 * @return points
 	 */
 	public static int getPointsmissing() {
 		return pointsmissing;
