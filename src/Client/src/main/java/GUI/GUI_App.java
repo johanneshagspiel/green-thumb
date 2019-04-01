@@ -3,10 +3,12 @@ package GUI;
 import GUI_mainscreen.LeaderBoardChoice;
 import entity.LeaderBoardEntry;
 import entity.User;
+import helper.CreateMotivationImage;
 import helper.PointsMissing;
 import helper.UpdatingLabels;
 import service.UserServiceImpl;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -17,6 +19,8 @@ import GUI_mainscreen.MyProfile;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 
 /**
@@ -184,6 +188,13 @@ public class GUI_App extends Login_S {
 		frame.getContentPane().add(lblMotivation);
 
 
+		// Motivation image
+			JLabel imgMotivation = new JLabel(new ImageIcon(CreateMotivationImage.createIcon()));
+			imgMotivation.setBounds(300, 500, 250, 300);
+			imgMotivation.setHorizontalAlignment(SwingConstants.CENTER);
+			frame.getContentPane().add(imgMotivation);
+
+
 		// Vegetarian
 		//Labels
 		JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
@@ -200,7 +211,7 @@ public class GUI_App extends Login_S {
 		btnVeg.setBounds(52, 170, 260, 40);
 		btnVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, "Vegetarian");
 			}
 		});
 		frame.getContentPane().add(btnVeg);
@@ -212,7 +223,7 @@ public class GUI_App extends Login_S {
 		btnNonVeg.setBounds(52, 225, 260, 40);
 		btnNonVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, "Carnivore");
 			}
 		});
 		frame.getContentPane().add(btnNonVeg);
@@ -234,7 +245,7 @@ public class GUI_App extends Login_S {
 		btnLocalProduce.setBounds(52, 319, 260, 40);
 		btnLocalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Local Produce");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,"Local Produce");
 			}
 		});
 		frame.getContentPane().add(btnLocalProduce);
@@ -246,7 +257,7 @@ public class GUI_App extends Login_S {
 		btnGlobalProduce.setBounds(52, 372, 260, 40);
 		btnGlobalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Global Produce");
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, "Global Produce");
 			}
 		});
 		frame.getContentPane().add(btnGlobalProduce);
@@ -292,7 +303,7 @@ public class GUI_App extends Login_S {
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Car");
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,"Car");
 					}
 				} catch (java.lang.NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
@@ -319,7 +330,7 @@ public class GUI_App extends Login_S {
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Public Transportation");
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, "Public Transportation");
 					}
 				} catch (java.lang.NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
@@ -346,7 +357,7 @@ public class GUI_App extends Login_S {
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,"Bike");
 					}
 				} catch (java.lang.NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
@@ -387,7 +398,7 @@ public class GUI_App extends Login_S {
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						temperatureToday.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Temperature");
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,"Temperature");
 					}
 				} catch (java.lang.NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
@@ -427,7 +438,7 @@ public class GUI_App extends Login_S {
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						numberSolarPanels.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Solar");
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, "Solar");
 					}
 				} catch (java.lang.NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);

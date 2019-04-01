@@ -108,20 +108,6 @@ public class UserTest {
     }
 
     @Test
-    public void getTransportation() {
-        User test = new User();
-        test.setTransportation(100);
-        assertEquals(test.getTransportation(), 100);
-    }
-
-    @Test
-    public void setTransportation() {
-        User test = new User();
-        test.setTransportation(100);
-        assertEquals(test.getTransportation(), 100);
-    }
-
-    @Test
     public void getTemperature() {
         User test = new User();
         test.setTemperature(100);
