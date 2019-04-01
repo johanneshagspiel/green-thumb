@@ -107,7 +107,7 @@ public class Login_S {
 
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblUsername.setBounds(89, 92, 86, 30);
+		lblUsername.setBounds(87, 92, 86, 30);
 		frame.getContentPane().add(lblUsername);
 
 		JLabel lblPassword = new JLabel("Password");
@@ -148,7 +148,7 @@ public class Login_S {
 
 			}
 		});
-		btnLogin.setBounds(307, 202, 142, 21);
+		btnLogin.setBounds(307, 202, 142, 30);
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnReset = new JButton("Add Account");
@@ -166,7 +166,7 @@ public class Login_S {
 				}
 			}
 		});
-		btnReset.setBounds(145, 202, 150, 21);
+		btnReset.setBounds(145, 202, 150, 30);
 		frame.getContentPane().add(btnReset);
 
 		JButton btnExit = new JButton("Exit");
@@ -182,7 +182,7 @@ public class Login_S {
 				}
 			}
 		});
-		btnExit.setBounds(33, 202, 75, 21);
+		btnExit.setBounds(33, 202, 75, 30);
 		frame.getContentPane().add(btnExit);
 
 		// Separators
