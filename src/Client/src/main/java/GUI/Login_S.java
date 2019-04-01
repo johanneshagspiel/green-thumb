@@ -5,12 +5,9 @@ import entity.User;
 import service.FriendServiceImpl;
 import service.UserServiceImpl;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 
 /**
  * The type Login s.
@@ -72,7 +69,7 @@ public class Login_S {
 		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Login_S.class.getResource("/GUI/Images/Go Green Logo 50x50.jpg")));
 		frame.setResizable(false);
 		frame.setBackground(new Color(0, 255, 127));
-		//frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
+		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
 		frame.setBounds(200, 200, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

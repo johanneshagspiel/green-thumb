@@ -12,7 +12,7 @@ import static GUI.GUI_App.*;
 
 public class UpdatingLabels {
 
-    public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, JLabel imgMotivation, String method) {
+    public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
         int points = getPoints();
         int pointsSaved = getPointsSaved();
@@ -94,11 +94,10 @@ public class UpdatingLabels {
         String motivation = "You only need " + getPointsmissing() + " points to the next level!";
         lblMotivation.setText(motivation);
         lblLevel.setText("Your Level is " + getLevel());
-        imgMotivation.setIcon(new ImageIcon(CreateMotivationImage.createIcon()));
 
         }
 
-    public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, double entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel,JLabel imgMotivation, String method) {
+    public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, double entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
         int points = getPoints();
         int pointsSaved = getPointsSaved();
@@ -197,7 +196,7 @@ public class UpdatingLabels {
         String motivation = "You only need " + getPointsmissing() + " points to the next level!";
         lblMotivation.setText(motivation);
         lblLevel.setText("Your Level is " + getLevel());
-        imgMotivation.setIcon(new ImageIcon(CreateMotivationImage.createIcon()));
+
     }
 }
 
