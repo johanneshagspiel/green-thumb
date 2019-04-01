@@ -1,7 +1,10 @@
 package GUI;
 
+import GUI_mainscreen.LeaderBoardChoice;
 import entity.LeaderBoardEntry;
 import entity.User;
+import helper.PointsMissing;
+import helper.UpdatingLabels;
 import service.UserServiceImpl;
 
 import javax.swing.*;
@@ -22,11 +25,15 @@ import java.awt.event.ActionListener;
 public class GUI_App extends Login_S {
 
 	private static JFrame frame;
-	private String username;
+	private static String username;
 	private static int points;
+	private static int pointsSaved;
 	private static int level;
+	private static int pointsmissing;
+	private static String label;
 
-    /**
+
+	/**
      * Launch the application.
      *
      * @param username the username
@@ -54,6 +61,22 @@ public class GUI_App extends Login_S {
 		initialize(username, userIn, clientIn);
 	}
 
+	public static int getPointsSaved() {
+		return pointsSaved;
+	}
+
+	public static void setPointsSaved(int pointsSaved) {
+		GUI_App.pointsSaved = pointsSaved;
+	}
+
+	public static String getLabel() {
+		return label;
+	}
+
+	public static void setLabel(String label) {
+		GUI_App.label = label;
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -75,14 +98,29 @@ public class GUI_App extends Login_S {
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblWelcome);
 
-		points = userIn.getProduce() + userIn.getSolar() + userIn.getTemperature() + userIn.getTransportation() + userIn.getVegetarian();
+		//Setting up points
+		pointsSaved = userIn.getTotal_saved();
+		points = userIn.getTotal();
+
+		//To avoid null pointer exception
+		if (points > 0) {
+			pointsmissing = PointsMissing.determiningPoints(points);
+		}
+
 
 		//Information about CO2 saved
-		JLabel lblPoints = new JLabel("The amount of CO2 you have saved so far is " + points);
-		lblPoints.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPoints.setBounds(10, 42, 1520, 50);
-		lblPoints.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblPoints);
+		JLabel lblCO2Saved = new JLabel("The amount of CO2 you have saved so far is " + pointsSaved);
+		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCO2Saved.setBounds(130, 42, 1520, 50);
+		lblCO2Saved.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblCO2Saved);
+
+		//Information about CO2 saved
+		JLabel lblTotalCO2 = new JLabel("The total amount of CO2 you have used up so far is " + points);
+		lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTotalCO2.setBounds(450, 42, 1520, 50);
+		lblTotalCO2.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblTotalCO2);
 
 		// Information about level
 		level = points / 1000;
@@ -93,14 +131,15 @@ public class GUI_App extends Login_S {
 		frame.getContentPane().add(lblLevel);
 
 		// Leaderboard
-		JLabel lblLeaderboard = new JLabel("Leaderboard Top 10");
+		label = "Leaderboard Top 10 CO2 Used";
+		JLabel lblLeaderboard = new JLabel(label);
 		lblLeaderboard.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblLeaderboard.setBounds(1250, 140, 260, 30);
+		lblLeaderboard.setBounds(1220, 140, 300, 30);
 		lblLeaderboard.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblLeaderboard);
 
 		// Create the content for the leaderboard
-		String LeaderBoardContent = LeaderBoardEntry.createLeaderboard(points, username);
+		String LeaderBoardContent = LeaderBoardEntry.createLeaderboard(userIn, label);
 
 		JLabel lblLeaderboardContent = new JLabel(LeaderBoardContent);
 		lblLeaderboardContent.setBackground(Color.WHITE);
@@ -110,24 +149,33 @@ public class GUI_App extends Login_S {
 		lblLeaderboardContent.setBorder(border);
 		frame.getContentPane().add(lblLeaderboardContent);
 
+		// Switch the leaderboard
+		JButton btnSwitchLeaderBoard = new JButton("Switch Leaderboard");
+		btnSwitchLeaderBoard.setForeground(Color.WHITE);
+		btnSwitchLeaderBoard.setBackground(new Color(0, 255, 127));
+		btnSwitchLeaderBoard.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnSwitchLeaderBoard.setBounds(1250, 388, 260, 40);
+		btnSwitchLeaderBoard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LeaderBoardChoice.application(lblLeaderboardContent,lblLeaderboard, userIn);
+			}
+		});
+		frame.getContentPane().add(btnSwitchLeaderBoard);
+
 		// Add friend button
 		JButton btnAddFriend = new JButton("Add a friend");
 		btnAddFriend.setForeground(Color.WHITE);
-		btnAddFriend.setBackground(new Color(0, 255, 127));
+		btnAddFriend.setBackground(new Color(102, 204, 153));
 		btnAddFriend.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnAddFriend.setBounds(1250, 388, 260, 40);
+		btnAddFriend.setBounds(1250, 440, 260, 40);
 		btnAddFriend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AddFriend.application(user, client);
+				AddFriend.application(userIn, clientIn, frame);
 			}
 		});
 		frame.getContentPane().add(btnAddFriend);
 
 		// Motivation
-		int pointsmissing  = 0;
-		if (points > 0) {
-			pointsmissing = 1000 % points;
-		}
 		String motivation = "You only need " + pointsmissing + " points to the next level!";
 		JLabel lblMotivation = new JLabel(motivation);
 		lblMotivation.setFont(new Font("Arial Black", Font.PLAIN, 13));
@@ -136,8 +184,9 @@ public class GUI_App extends Login_S {
 		frame.getContentPane().add(lblMotivation);
 
 
+		// Labels
+
 		// Vegetarian
-		//Labels
 		JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
 		lblWhatKindOf.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		lblWhatKindOf.setBounds(52, 140, 333, 30);
@@ -152,39 +201,19 @@ public class GUI_App extends Login_S {
 		btnVeg.setBounds(52, 170, 260, 40);
 		btnVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				points += 100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getVegetarian();
-				userIn.setVegetarian(temp + 100);
-				clientIn.updateUser(userIn);
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
 			}
 		});
 		frame.getContentPane().add(btnVeg);
 
-		JButton btnNonVeg = new JButton("Carnivore meal");
+		JButton btnNonVeg = new JButton("Non-vegetarian meal");
 		btnNonVeg.setBackground(new Color(102, 204, 153));
 		btnNonVeg.setForeground(Color.WHITE);
 		btnNonVeg.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		btnNonVeg.setBounds(52, 225, 260, 40);
 		btnNonVeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				points += -100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getVegetarian();
-				userIn.setVegetarian(temp - 100);
-				clientIn.updateUser(userIn);
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
 			}
 		});
 		frame.getContentPane().add(btnNonVeg);
@@ -206,18 +235,7 @@ public class GUI_App extends Login_S {
 		btnLocalProduce.setBounds(52, 319, 260, 40);
 		btnLocalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-				points += 100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getProduce();
-				userIn.setProduce(temp + 100);
-				clientIn.updateUser(userIn);
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Local Produce");
 			}
 		});
 		frame.getContentPane().add(btnLocalProduce);
@@ -229,17 +247,7 @@ public class GUI_App extends Login_S {
 		btnGlobalProduce.setBounds(52, 372, 260, 40);
 		btnGlobalProduce.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				points += -100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getProduce();
-				userIn.setProduce(temp - 100);
-				clientIn.updateUser(userIn);
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Global Produce");
 			}
 		});
 		frame.getContentPane().add(btnGlobalProduce);
@@ -248,184 +256,190 @@ public class GUI_App extends Login_S {
 		// Transportation
 
 		//Labels
-		JLabel lblTransportation = new JLabel("Did you use a bike instead of a car today?");
+		JLabel lblTransportation = new JLabel("How far did you travel today ?");
 		lblTransportation.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		lblTransportation.setBounds(445, 137, 369, 30);
 		lblTransportation.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTransportation);
 
-		JButton btnBike = new JButton("Yes");
-		btnBike.setForeground(Color.WHITE);
-		btnBike.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnBike.setBackground(new Color(0, 255, 127));
-		btnBike.setBounds(445, 170, 260, 40);
-		btnBike.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JTextField distanceTravelled = new JTextField();
+		distanceTravelled.setBounds(445, 170, 130, 100);
+		frame.getContentPane().add(distanceTravelled);
 
-				points += 100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getTransportation();
-				userIn.setTransportation(temp + 100);
-				clientIn.updateUser(userIn);
-			}
-		});
-		frame.getContentPane().add(btnBike);
+		JLabel lblKM = new JLabel("km");
+		lblKM.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblKM.setBounds(580, 200, 260, 40);
+		lblKM.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblKM);
 
-		JButton btnCar = new JButton("No");
-		btnCar.setForeground(Color.WHITE);
-		btnCar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnCar.setBackground(new Color(102, 204, 153));
-		btnCar.setBounds(445, 225, 260, 40);
-		btnCar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				points += -100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getTransportation();
-				userIn.setTransportation(temp - 100);
-				clientIn.updateUser(userIn);
-			}
-		});
-		frame.getContentPane().add(btnCar);
-
-		// Temperature
-
-		//Labels
-		JLabel lblTemperature = new JLabel("Have you lowered your room temperature today?");
-		lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblTemperature.setBounds(445, 290, 388, 30);
-		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
-		frame.getContentPane().add(lblTemperature);
-
-		JButton btnLowered = new JButton("Yes");
-		btnLowered.setForeground(Color.WHITE);
-		btnLowered.setBackground(new Color(0, 255, 127));
-		btnLowered.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnLowered.setBounds(445, 319, 260, 40);
-		btnLowered.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				points += 100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getTemperature();
-				userIn.setTemperature(temp + 100);
-				clientIn.updateUser(userIn);
-			}
-		});
-		frame.getContentPane().add(btnLowered);
-
-		JButton btnUnchanged = new JButton("No");
-		btnUnchanged.setForeground(Color.WHITE);
-		btnUnchanged.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnUnchanged.setBackground(new Color(102, 204, 153));
-		btnUnchanged.setBounds(445, 372, 260, 40);
-		btnUnchanged.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				points += -100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getTemperature();
-				userIn.setTemperature(temp - 100);
-				clientIn.updateUser(userIn);
-			}
-		});
-		frame.getContentPane().add(btnUnchanged);
-
-		// Solar
-
-		//Labels
-		JLabel lblSolar = new JLabel("Have you installed solar panels today?");
-		lblSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblSolar.setBounds(845, 290, 354, 30);
-		lblSolar.setHorizontalAlignment(SwingConstants.LEFT);
-		frame.getContentPane().add(lblSolar);
-
-		JButton btnSolar = new JButton("Yes");
-		btnSolar.setForeground(Color.WHITE);
-		btnSolar.setBackground(new Color(0, 255, 127));
-		btnSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnSolar.setBounds(845, 319, 260, 40);
-		btnSolar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				points += 100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getSolar();
-				userIn.setSolar(temp + 100);
-				clientIn.updateUser(userIn);
-			}
-		});
-		frame.getContentPane().add(btnSolar);
-
-		JButton btnNoSolar = new JButton("No");
-		btnNoSolar.setForeground(Color.WHITE);
-		btnNoSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnNoSolar.setBackground(new Color(102, 204, 153));
-		btnNoSolar.setBounds(845, 372, 260, 40);
-		btnNoSolar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				points += -100;
-				lblPoints.setText("The amount of CO2 you have saved so far is  " + points);
-				lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(points, username));
-				int pointsmissing = 1000 % points;
-				String motivation = "You only need " + pointsmissing + " points to the next level!";
-				lblMotivation.setText(motivation);
-				level = points / 1000;
-				lblLevel.setText("Your Level is " + level);
-				int temp = userIn.getSolar();
-				userIn.setSolar(temp - 100);
-				clientIn.updateUser(userIn);
-			}
-		});
-		frame.getContentPane().add(btnNoSolar);
-
-		JLabel lblDidYouUse = new JLabel("Did you use public transport instead of a car today?");
+		// Method of transportation
+		JLabel lblDidYouUse = new JLabel("What was the method of transportation?");
 		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		lblDidYouUse.setBounds(845, 140, 420, 30);
 		frame.getContentPane().add(lblDidYouUse);
 
-		JButton button = new JButton("Yes");
-		button.setForeground(Color.WHITE);
-		button.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		button.setBackground(new Color(0, 255, 127));
-		button.setBounds(845, 170, 260, 40);
-		frame.getContentPane().add(button);
+		JButton btnCar = new JButton("Car");
+		btnCar.setForeground(Color.WHITE);
+		btnCar.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnCar.setBackground(new Color(0, 255, 127));
+		btnCar.setBounds(845, 170, 280, 30);
+		btnCar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Car");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
+			}
+		});
+		frame.getContentPane().add(btnCar);
 
-		JButton button_1 = new JButton("No");
-		button_1.setForeground(Color.WHITE);
-		button_1.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		button_1.setBackground(new Color(102, 204, 153));
-		button_1.setBounds(845, 223, 260, 40);
-		frame.getContentPane().add(button_1);
+		JButton btnPublicTransport = new JButton("Public Transportation");
+		btnPublicTransport.setForeground(Color.WHITE);
+		btnPublicTransport.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnPublicTransport.setBackground(new Color(102, 204, 153));
+		btnPublicTransport.setBounds(845, 205, 280, 30);
+		btnPublicTransport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Public Transportation");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
+			}
+		});
+		frame.getContentPane().add(btnPublicTransport);
+
+		JButton btnBike = new JButton("Bike");
+		btnBike.setForeground(Color.WHITE);
+		btnBike.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnBike.setBackground(new Color(0, 255, 204));
+		btnBike.setBounds(845, 240, 280, 30);
+		btnBike.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
+			}
+		});
+		frame.getContentPane().add(btnBike);
+
+		// Temperature
+
+		//Labels
+		JLabel lblTemperature = new JLabel("By how much is your temperature lowered now?");
+		lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblTemperature.setBounds(445, 290, 388, 30);
+		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblTemperature);
+
+		JTextField temperatureToday = new JTextField();
+		temperatureToday.setBounds(445, 319, 130, 100);
+		frame.getContentPane().add(temperatureToday);
+
+		JButton btDegreeCelsius = new JButton("Degree Celsius");
+		btDegreeCelsius.setForeground(Color.WHITE);
+		btDegreeCelsius.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btDegreeCelsius.setBackground(new Color(102, 204, 153));
+		btDegreeCelsius.setBounds(580, 350, 200, 40);
+		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
+		btDegreeCelsius.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					double entry = Double.parseDouble(temperatureToday.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						temperatureToday.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Temperature");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					temperatureToday.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					temperatureToday.setText(null);
+				}
+			}
+		});
+		frame.getContentPane().add(btDegreeCelsius);
+
+		// Solar
+
+		//Labels
+		JLabel lblSolar = new JLabel("How many installed solar panels do you own?");
+		lblSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblSolar.setBounds(845, 290, 500, 30);
+		lblSolar.setHorizontalAlignment(SwingConstants.LEFT);
+		frame.getContentPane().add(lblSolar);
+
+		JTextField numberSolarPanels = new JTextField();
+		numberSolarPanels.setBounds(845, 319, 130, 100);
+		frame.getContentPane().add(numberSolarPanels);
+
+		JButton btnNoSolar = new JButton("Solar Panels");
+		btnNoSolar.setForeground(Color.WHITE);
+		btnNoSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnNoSolar.setBackground(new Color(102, 204, 153));
+		btnNoSolar.setBounds(980, 350, 185, 40);
+		btnNoSolar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					double entry = Double.parseDouble(numberSolarPanels.getText());
+					if(entry > 10000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						numberSolarPanels.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Solar");
+					}
+				} catch (java.lang.NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					numberSolarPanels.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					numberSolarPanels.setText(null);
+				}
+			}
+		});
+		frame.getContentPane().add(btnNoSolar);
 
 
 		// Creates the menu-bar
@@ -455,7 +469,10 @@ public class GUI_App extends Login_S {
 		mntmMyProfile.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		mntmMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MyProfile.application(userIn, clientIn, username);
+				MyProfile.application(userIn, clientIn, username, friendClient, frame);
+				setUsername(userIn.getUser_name());
+				lblWelcome.setText("Welcome " + userIn.getUser_name());
+				System.out.println(userIn.getUser_name());
 			}
 		});
 		menuBar.add(mntmMyProfile);
@@ -483,16 +500,40 @@ public class GUI_App extends Login_S {
 	 * @return the username
 	 */
 //Getters and Setters username
-	public String getUsername() {
+	public static String getUsername() {
 		return username;
 	}
 
 	/**
 	 * Sets username.
 	 *
-	 * @param username the username
+	 * @param usernameIn the username
 	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public static void setUsername(String usernameIn) {
+		username = usernameIn;
+	}
+
+	public static int getPoints() {
+		return points;
+	}
+
+	public static void setPoints(int points) {
+		GUI_App.points = points;
+	}
+
+	public static int getLevel() {
+		return level;
+	}
+
+	public static void setLevel(int level) {
+		GUI_App.level = level;
+	}
+
+	public static int getPointsmissing() {
+		return pointsmissing;
+	}
+
+	public static void setPointsmissing(int pointsmissing) {
+		GUI_App.pointsmissing = pointsmissing;
 	}
 }
