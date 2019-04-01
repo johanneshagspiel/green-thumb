@@ -59,13 +59,14 @@ public class AddFriend {
 	public static void initialize(User userIn, UserServiceImpl clientIn, JFrame frameIn) {
 
 		frame3 = new JFrame();
+		frame3.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
 		frame3.setBounds(300, 300, 300, 300);
 		frame3.getContentPane().setLayout(null);
 
 		JLabel lblAddFriend = new JLabel("Add Friend");
 		lblAddFriend.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAddFriend.setFont(new Font("Arial Black", Font.PLAIN, 16));
-		lblAddFriend.setBounds(10, 20, 266, 31);
+		lblAddFriend.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		lblAddFriend.setBounds(20, 13, 250, 31);
 		frame3.getContentPane().add(lblAddFriend);
 
 		JSeparator separator = new JSeparator();
@@ -73,7 +74,7 @@ public class AddFriend {
 		frame3.getContentPane().add(separator);
 
 		txtUsername = new JTextField();
-		txtUsername.setBounds(122, 71, 118, 19);
+		txtUsername.setBounds(122, 64, 154, 26);
 		frame3.getContentPane().add(txtUsername);
 		txtUsername.setColumns(10);
 
@@ -83,7 +84,10 @@ public class AddFriend {
 		frame3.getContentPane().add(lblUsername);
 
 		JButton btnSearch = new JButton("Search");
-		btnSearch.setBounds(155, 100, 85, 21);
+		btnSearch.setForeground(Color.WHITE);
+		btnSearch.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnSearch.setBackground(new Color(102, 204, 153));
+		btnSearch.setBounds(161, 98, 115, 26);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Get the filled in username
@@ -199,6 +203,9 @@ public class AddFriend {
 		frame3.setFocusable(true);
 
 		btnAdd1 = new JButton("Add");
+		btnAdd1.setBackground(new Color(0, 255, 127));
+		btnAdd1.setForeground(Color.WHITE);
+		btnAdd1.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		btnAdd1.setBounds(191, 175, 85, 21);
 		btnAdd1.setVisible(false);
 		btnAdd1.addActionListener(new ActionListener() {
@@ -225,6 +232,9 @@ public class AddFriend {
 		frame3.getContentPane().add(labelAdd1);
 
 		btnAdd2 = new JButton("Add");
+		btnAdd2.setForeground(Color.WHITE);
+		btnAdd2.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnAdd2.setBackground(new Color(0, 255, 127));
 		btnAdd2.setBounds(191, 200, 85, 21);
 		btnAdd2.setVisible(false);
 		btnAdd2.addActionListener(new ActionListener() {
@@ -251,6 +261,9 @@ public class AddFriend {
 		frame3.getContentPane().add(labelAdd2);
 
 		btnAdd3 = new JButton("Add");
+		btnAdd3.setForeground(Color.WHITE);
+		btnAdd3.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		btnAdd3.setBackground(new Color(0, 255, 127));
 		btnAdd3.setBounds(191, 225, 85, 21);
 		btnAdd3.setVisible(false);
 		btnAdd3.addActionListener(new ActionListener() {
