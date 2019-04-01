@@ -1,5 +1,6 @@
 package helper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import entity.User;
@@ -7,56 +8,42 @@ import entity.User;
 public class Sort {
 
 	@SuppressWarnings("null")
-	public static void mergeSort(List<User> arg) {
-		
-		int size = arg.size();
-		
-		if (size < 2 ) {
-			return;
-		}else if (size == 2) {
-			if(arg.get(0).getUser_name().compareTo(arg.get(1).getUser_name()) > 0) {
-				String temp = arg.get(0).getUser_name();
-				arg.get(0).setUser_name(arg.get(1).getUser_name());
-				arg.get(1).setUser_name(temp);
-			}else {
-				return;
-			}
-		}else {
-			List<User> left = null;
-			List<User> right = null;
-			for(int i = 0; i < size; i++) {
-				if (i < size/2) {
-					left.add(arg.get(i));
-				} else {
-					right.add(arg.get(i));
-				}
-			}
-			mergeSort(left); 
-			mergeSort(right);
+	public static List<User> mergeSort(List<User> Input) {
+		if (Input.size() == 1) {
+			return Input;
+		} else {
+			int mid = Input.size() / 2;
+			List<User> left = new ArrayList<User>(mid);
+			List<User> right = new ArrayList<User>(Input.size() - mid);
 
-			int j = 0;
-			int i = 0;
-			int h = 0;
-			boolean sorted = false;
-			arg = null;
-			
-			while (!sorted) {
-				if (left.get(i).getUser_name().compareTo(right.get(j).getUser_name()) > 0) {
-					arg.add(right.get(j));
-					j++;
-					h++;
-					if (h == size) {
-						sorted = true;
-					}
-				} else {
-					arg.add(right.get(i));
-					i++;
-					h++;
-					if (h == size) {
-						sorted = true;
-					}
-				}
+			for (int i = 0; i < mid; i++) {
+				left.add(Input.get(i));
+			}
+
+			for (int i = 0; i < Input.size() - mid; i++) {
+				right.add(Input.get(i));
+			}
+
+			left = mergeSort(left);
+			right = mergeSort(right);
+			Input = merge(left, right, Input);
+		}
+		return Input;
+	}
+
+	public static List<User> merge(List<User> left, List<User> right, List<User> Input) {
+		int i1 = 0;// left Index
+		int i2 = 0;// right Index
+		List<User> Input1 = new ArrayList<User>();
+
+		for (int i = 0; i < Input1.size(); i++) {
+			if (i2 >= right.size() || (i1 < left.size() && left.get(i).getUser_name().compareTo(right.get(i).getUser_name()) < 0)) {
+				Input1.add(left.get(i1));
+			} else {
+				Input1.add(right.get(i2));
 			}
 		}
+		return Input1;
 	}
+
 }

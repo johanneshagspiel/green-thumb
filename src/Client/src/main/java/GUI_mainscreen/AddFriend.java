@@ -2,6 +2,7 @@ package GUI_mainscreen;
 
 import GUI.GUI_App;
 import entity.User;
+import helper.Sort;
 import entity.Friend;
 import entity.LeaderBoardEntry;
 import service.FriendServiceImpl;
@@ -122,14 +123,16 @@ public class AddFriend {
 						}
 					}
 					
+					Sort.mergeSort(result);
+					
 					// Sorting the results
-					for(int i = 0; i<result.size()-1; i++) {
-						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
-							String temp = result.get(i).getUser_name();
-							result.get(i).setUser_name(result.get(i+1).getUser_name());
-							result.get(i+1).setUser_name(temp);
-						}
-					}
+//					for(int i = 0; i<result.size()-1; i++) {
+//						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
+//							String temp = result.get(i).getUser_name();
+//							result.get(i).setUser_name(result.get(i+1).getUser_name());
+//							result.get(i+1).setUser_name(temp);
+//						}
+//					}
 
 					System.out.println(userIn.getUser_name());
 
