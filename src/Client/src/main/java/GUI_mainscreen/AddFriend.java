@@ -2,6 +2,7 @@ package GUI_mainscreen;
 
 import GUI.GUI_App;
 import entity.User;
+import helper.Sort;
 import entity.Friend;
 import entity.LeaderBoardEntry;
 import service.FriendServiceImpl;
@@ -11,6 +12,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -122,14 +125,16 @@ public class AddFriend {
 						}
 					}
 					
+					Collections.sort(result, new Sort());
+					
 					// Sorting the results
-					for(int i = 0; i<result.size()-1; i++) {
-						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
-							String temp = result.get(i).getUser_name();
-							result.get(i).setUser_name(result.get(i+1).getUser_name());
-							result.get(i+1).setUser_name(temp);
-						}
-					}
+//					for(int i = 0; i<result.size()-1; i++) {
+//						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
+//							String temp = result.get(i).getUser_name();
+//							result.get(i).setUser_name(result.get(i+1).getUser_name());
+//							result.get(i+1).setUser_name(temp);
+//						}
+//					}
 
 					System.out.println(userIn.getUser_name());
 
