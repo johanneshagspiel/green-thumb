@@ -154,7 +154,7 @@ public class Login_A {
 
         // Buttons
         JButton btnReset = new JButton("Add Account");
-        btnReset.setBackground(new Color(0, 204, 0));
+        btnReset.setBackground(new Color(0, 255, 127));
         btnReset.setForeground(Color.WHITE);
         btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
         btnReset.addActionListener(new ActionListener() {
@@ -192,7 +192,7 @@ public class Login_A {
         frame.getContentPane().add(btnReset);
         
         JButton btnBack = new JButton("Go Back");
-        btnBack.setBackground(new Color(0, 102, 0));
+        btnBack.setBackground(new Color(102, 204, 153));
         btnBack.setForeground(Color.WHITE);
         btnBack.setFont(new Font("Arial Black", Font.PLAIN, 15));
         btnBack.addActionListener(new ActionListener() {

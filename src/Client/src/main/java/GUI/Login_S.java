@@ -131,7 +131,7 @@ public class Login_S {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setForeground(new Color(245, 245, 245));
 		btnLogin.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnLogin.setBackground(new Color(50, 205, 50));
+		btnLogin.setBackground(new Color(0, 255, 127));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Get the filled in username and password
@@ -154,7 +154,7 @@ public class Login_S {
 		JButton btnReset = new JButton("Add Account");
 		btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		btnReset.setForeground(new Color(255, 255, 255));
-		btnReset.setBackground(new Color(50, 205, 50));
+		btnReset.setBackground(new Color(0, 255, 127));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try
@@ -172,7 +172,7 @@ public class Login_S {
 		JButton btnExit = new JButton("Exit");
 		btnExit.setForeground(new Color(245, 245, 245));
 		btnExit.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnExit.setBackground(new Color(0, 102, 0));
+		btnExit.setBackground(new Color(102, 204, 153));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame = new JFrame("Exit");
