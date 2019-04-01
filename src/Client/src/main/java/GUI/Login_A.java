@@ -21,20 +21,32 @@ import service.UserServiceImpl;
 import javax.swing.SwingConstants;
 
 public class Login_A {
-
+/** Initialising Login Screen. */
     // Fields
+        /** Initialising the frame. */
     private static JFrame frame;
+    /** Initialising the txtUsername. */
     private static JTextField txtUsername;
+    /** Initialising the txtPassword.*/
     private static JPasswordField txtPassword;
+    /** Initialising the txtRPassword. */
     private static JPasswordField txtRPassword;
+    /** Initialising the client. */
     private static UserServiceImpl client;
+    /** Initialising the user. */
     private static User user;
 
     /**
-     * Launch the application.
+     * Initialising the Login.
+     * @param client2 the client
+     * @param user2 the user
+     * @param frame2 the frame
+     * @return login
      */
 
-    public static boolean Login_Add(UserServiceImpl client2, User user2, JFrame frame2) {
+    public static boolean Login_Add(final UserServiceImpl client2,
+                                    final User user2,
+                                    final JFrame frame2) {
         Login_A.client = client2;
         Login_A.user = user2;
         Login_A.frame = frame2;
@@ -54,8 +66,12 @@ public class Login_A {
 
     /**
      * Create the application.
+     * @param client the client
+     * @param user the user
+     * @param frame the frame
      */
-    public Login_A(UserServiceImpl client, User user, JFrame frame) {
+    public Login_A(final UserServiceImpl client,
+                   final User user, final JFrame frame) {
         Login_A.client = client;
         Login_A.user = user;
         Login_A.frame = frame;
@@ -67,8 +83,11 @@ public class Login_A {
      */
     private static void initialize() {
         // Create the frame
+        final int twozerozero = 200;
+        final int fivezerozero = 500;
+        final int threezerozero = 300;
         frame = new JFrame();
-        frame.setBounds(200, 200, 500, 300);
+        frame.setBounds(twozerozero, twozerozero, fivezerozero, threezerozero);
         frame.getContentPane().setLayout(null);
         frame.setFocusable(true);
 
@@ -87,18 +106,24 @@ public class Login_A {
 
                     // Check if password equals repeat password
                     if (password.equals(username)) {
-                        JOptionPane.showMessageDialog(null, "Passwords cannot be the same as username",
-                                "Create a account error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null,
+                                "Passwords cannot be the same as username",
+                                "Create a account error",
+                                JOptionPane.ERROR_MESSAGE);
                         txtPassword.setText(null);
                         txtRPassword.setText(null);
                     } else if (password.equals(rpassword)) {
                         try {
-                            Login_addAccount.addAccount(username, password, user, client, txtUsername, txtPassword, txtRPassword, frame);
+                            Login_addAccount.addAccount(username,
+                                    password, user, client, txtUsername,
+                                    txtPassword, txtRPassword, frame);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Passwords do not match", "Create a account error",
+                        JOptionPane.showMessageDialog(null,
+                                "Passwords do not match",
+                                "Create a account error",
                                 JOptionPane.ERROR_MESSAGE);
                         txtPassword.setText(null);
                         txtRPassword.setText(null);
@@ -107,46 +132,69 @@ public class Login_A {
             }
         };
         frame.addKeyListener(formSubmitKeyListener);
+        final int onezero = 10;
+        final int twoeight = 28;
+        final int foursixsix = 466;
+        final int threezero = 30;
+        final int threethree = 33;
+        final int sixeight = 68;
+        final int sixone = 61;
+        final int onezeroeight = 108;
+        final int sixthree = 63;
+        final int onefoursix = 146;
+        final int ninezero = 90;
+
 
         // Labels
         JLabel lblAccount = new JLabel("Add an Account");
         lblAccount.setHorizontalAlignment(SwingConstants.CENTER);
-        lblAccount.setBounds(10, 28, 466, 30);
+        lblAccount.setBounds(onezero,
+                twoeight, foursixsix, threezero);
         frame.getContentPane().add(lblAccount);
 
         JLabel lblUsername = new JLabel("Username");
-        lblUsername.setBounds(33, 68, 61, 30);
+        lblUsername.setBounds(threethree,
+                sixeight, sixone, threezero);
         frame.getContentPane().add(lblUsername);
 
         JLabel lblPassword = new JLabel("Password");
-        lblPassword.setBounds(33, 108, 63, 28);
+        lblPassword.setBounds(threethree,
+                onezeroeight, sixthree, twoeight);
         frame.getContentPane().add(lblPassword);
 
         JLabel lblRPassword = new JLabel("Repeat password");
-        lblRPassword.setBounds(33, 146, 90, 28);
+        lblRPassword.setBounds(threethree,
+                onefoursix, ninezero, twoeight);
         frame.getContentPane().add(lblRPassword);
+        final int oneeightseven = 187;
+        final int oneeightone = 181;
+        final int onezerosix = 106;
+        final int onefivezero = 150;
 
         // Text fields
         txtUsername = new JTextField();
-        txtUsername.setColumns(10);
-        txtUsername.setBounds(187, 68, 181, 28);
+        txtUsername.setColumns(onezero);
+        txtUsername.setBounds(oneeightseven,
+                sixeight, oneeightone, twoeight);
         frame.getContentPane().add(txtUsername);
         txtUsername.addKeyListener(formSubmitKeyListener);
 
         txtPassword = new JPasswordField();
-        txtPassword.setBounds(187, 106, 181, 28);
+        txtPassword.setBounds(oneeightseven,
+                onezerosix, oneeightone, twoeight);
         frame.getContentPane().add(txtPassword);
         txtPassword.addKeyListener(formSubmitKeyListener);
 
         txtRPassword = new JPasswordField();
-        txtRPassword.setBounds(187, 150, 181, 28);
+        txtRPassword.setBounds(oneeightseven,
+                onefivezero, oneeightone, twoeight);
         frame.getContentPane().add(txtRPassword);
         txtRPassword.addKeyListener(formSubmitKeyListener);
 
         // Buttons
         JButton btnReset = new JButton("Add Account");
         btnReset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
 
                 // Get the filled in username and password
                 @SuppressWarnings("deprecation")
@@ -157,18 +205,25 @@ public class Login_A {
 
                 // Check if password equals repeat password
                 if (password.equals(username)) {
-                    JOptionPane.showMessageDialog(null, "Passwords cannot be the same as username",
-                            "Create a account error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null,
+                            "Passwords cannot be the same as username",
+                            "Create a account error",
+                            JOptionPane.ERROR_MESSAGE);
                     txtPassword.setText(null);
                     txtRPassword.setText(null);
                 } else if (password.equals(rpassword)) {
                     try {
-                        Login_addAccount.addAccount(username, password, user, client, txtUsername, txtPassword, txtRPassword, frame);
+                        Login_addAccount.addAccount(username,
+                                password, user, client,
+                                txtUsername, txtPassword,
+                                txtRPassword, frame);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Passwords do not match", "Create a account error",
+                    JOptionPane.showMessageDialog(null,
+                            "Passwords do not match",
+                            "Create a account error",
                             JOptionPane.ERROR_MESSAGE);
                     txtPassword.setText(null);
                     txtRPassword.setText(null);
@@ -176,26 +231,35 @@ public class Login_A {
 
             }
         });
-        btnReset.setBounds(187, 210, 134, 21);
+        final int twoonezero = 210;
+        final int onethreefour = 134;
+        final int twoone = 21;
+        final int sevenfive = 75;
+        final int onezerozero = 100;
+        final int oneninesix = 196;
+        final int four = 4;
+        final int fouronesix = 416;
+        final int fivefour = 54;
+        btnReset.setBounds(oneeightseven, twoonezero, onethreefour, twoone);
         frame.getContentPane().add(btnReset);
         
         JButton btnBack = new JButton("Go Back");
         btnBack.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
             	frame.setVisible(false);
 				Login_S.main(null);
             }
         });
-        btnBack.setBounds(75, 210, 100, 21);
+        btnBack.setBounds(sevenfive, twoonezero, onezerozero, twoone);
         frame.getContentPane().add(btnBack);
 
         // Separators
         JSeparator separator = new JSeparator();
-        separator.setBounds(33, 196, 416, 4);
+        separator.setBounds(threethree, oneninesix, fouronesix, four);
         frame.getContentPane().add(separator);
 
         JSeparator separator_1 = new JSeparator();
-        separator_1.setBounds(33, 54, 416, 4);
+        separator_1.setBounds(threethree, fivefour, fouronesix, four);
         frame.getContentPane().add(separator_1);
 
     }
