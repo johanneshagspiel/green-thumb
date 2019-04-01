@@ -11,7 +11,21 @@ import java.util.List;
 @SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable {
-
+	/** Initialise a user.
+	 * @param id the user id
+	 * @param user_name the users name
+	 * @param password the users password
+	 * @param vegetarian the amount of vegetarian meals
+	 * @param produce the amount of produce
+	 * @param car the amount of the car
+	 * @param public_transportation the amount of the bus
+	 * @param bike the amount of the bike
+	 * @param temperature the degrees celsius
+	 * @param solar the amount of solar panels
+	 * @param total_saved the amount we saved
+	 * @param total_used the amount we used
+	 * @param total the entire total
+	 */
 	private int id;
 	private String user_name;
 	private String password;
@@ -110,7 +124,7 @@ public class User implements Serializable {
     /**
      * Gets produce.
      *
-     * @return the produce
+     * @return produce
      */
     public int getProduce() {
 		return produce;
