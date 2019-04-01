@@ -10,12 +10,15 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Friend implements Serializable {
-    /** New public class for Friend
+    /** New public class for Friend.
      */
 
         private int id;
+        /** initialises id .*/
         private String user_name_entry;
+        /** initialises the username. */
         private String friend_name;
+        /** initialises the friend name.*/
 
 
     /**
@@ -29,7 +32,7 @@ public class Friend implements Serializable {
      *
      * @return the id
      */
-    public int getId() {
+    public final int getId() {
         return id;
         }
 
@@ -37,7 +40,7 @@ public class Friend implements Serializable {
      * Sets id.
      * @param id the id
      */
-    public void setId(int id) {
+    public final void setId(final int id) {
             this.id = id;
         }
 
@@ -46,7 +49,7 @@ public class Friend implements Serializable {
      *
      * @return the user name entry
      */
-    public String getUser_name_entry() {
+    public final String getUser_name_entry() {
         return user_name_entry;
         }
 
@@ -55,7 +58,7 @@ public class Friend implements Serializable {
      *
      * @param user_name_entry the user name entry
      */
-    public void setUser_name_entry(String user_name_entry) {
+    public final void setUser_name_entry(final String user_name_entry) {
         this.user_name_entry = user_name_entry;
         }
 
@@ -63,7 +66,7 @@ public class Friend implements Serializable {
      * Gets friend name.
      * @return the friend name
      */
-    public String getFriend_name() {
+    public final String getFriend_name() {
         return friend_name;
         }
 
@@ -71,13 +74,14 @@ public class Friend implements Serializable {
      * Sets friend name.
      * @param friend_name the friend name
      */
-    public void setFriend_name(String friend_name) {
+    public final void setFriend_name(final String friend_name) {
         this.friend_name = friend_name;
         }
 
         @Override
-        public String toString() {
-            return "Friend [id=" + id + ", user_name_entry=" + user_name_entry + ", friend_name=" + friend_name + "]";
+        public final String toString() {
+            return "Friend [id=" + id + ", user_name_entry=" + user_name_entry
+                    + ", friend_name=" + friend_name + "]";
         }
 
     }
