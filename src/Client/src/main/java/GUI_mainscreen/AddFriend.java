@@ -102,31 +102,26 @@ public class AddFriend {
 					int count = 0;
 
 					List<Friend> friendList = userIn.getFriendlist();
-					Boolean included = false;
+					String noFriend = "";
 
 					//Look up the name among existing friends
 					for (int j = 0; j < userIn.getFriendlist().size(); j++)
-						if(true == lookup.equals(friendList.get(j).getFriend_name())) {
-							System.out.println(lookup.equals(friendList.get(j).getFriend_name()));
-							included = true;
+						if(lookup.equals(friendList.get(j).getFriend_name())) {
+							noFriend = friendList.get(j).getFriend_name();
+							System.out.println(noFriend);
 						}
 
 					// Look up the name
 					for (int i = 0; i < test.size(); i++) {
-							if (test.get(i).getUser_name().contains(lookup) & (false == test.get(i).getUser_name().equals(userIn.getUser_name()))) {
+							if (test.get(i).getUser_name().contains(lookup) & (!test.get(i).getUser_name().equals(userIn.getUser_name())) & !test.get(i).getUser_name().equals(noFriend)) {
 								result.add(test.get(i));
 								count++;
 								System.out.print(count);
 							}
 						}
 
-					if (included == true)
-					{
-						count = 0;
-					}
 
 					System.out.println(userIn.getUser_name());
-					System.out.println(included);
 
 						if (count >= 3) {
 							// Update the labels
