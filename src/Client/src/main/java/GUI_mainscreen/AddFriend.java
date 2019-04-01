@@ -89,9 +89,9 @@ public class AddFriend {
 				// Get the filled in username
 				String lookup = txtUsername.getText();
 
-				if (lookup.equals(userIn.getUser_name()))
-				{
-					JOptionPane.showMessageDialog(null, "You can not add yourself as a friend", "Adding Friend Error", JOptionPane.ERROR_MESSAGE);
+				if (lookup.equals(userIn.getUser_name())) {
+					JOptionPane.showMessageDialog(null, "You can not add yourself as a friend", "Adding Friend Error",
+							JOptionPane.ERROR_MESSAGE);
 					txtUsername.setText(null);
 				} else {
 
@@ -104,74 +104,84 @@ public class AddFriend {
 					List<Friend> friendList = userIn.getFriendlist();
 					String noFriend = "";
 
-					//Look up the name among existing friends
+					// Look up the name among existing friends
 					for (int j = 0; j < userIn.getFriendlist().size(); j++)
-						if(lookup.equals(friendList.get(j).getFriend_name())) {
+						if (lookup.equals(friendList.get(j).getFriend_name())) {
 							noFriend = friendList.get(j).getFriend_name();
 							System.out.println(noFriend);
 						}
 
 					// Look up the name
 					for (int i = 0; i < test.size(); i++) {
-							if (test.get(i).getUser_name().contains(lookup) & (!test.get(i).getUser_name().equals(userIn.getUser_name())) & !test.get(i).getUser_name().equals(noFriend)) {
-								result.add(test.get(i));
-								count++;
-								System.out.print(count);
-							}
+						if (test.get(i).getUser_name().contains(lookup)
+								& (!test.get(i).getUser_name().equals(userIn.getUser_name()))
+								& !test.get(i).getUser_name().equals(noFriend)) {
+							result.add(test.get(i));
+							count++;
+							System.out.print(count);
 						}
-
+					}
+					
+					// Sorting the results
+					for(int i = 0; i<result.size()-1; i++) {
+						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
+							String temp = result.get(i).getUser_name();
+							result.get(i).setUser_name(result.get(i+1).getUser_name());
+							result.get(i+1).setUser_name(temp);
+						}
+					}
 
 					System.out.println(userIn.getUser_name());
 
-						if (count >= 3) {
-							// Update the labels
-							labelAdd3.setText(result.get(2).getUser_name());
-							labelAdd2.setText(result.get(1).getUser_name());
-							labelAdd1.setText(result.get(0).getUser_name());
+					if (count >= 3) {
+						// Update the labels
+						labelAdd3.setText(result.get(2).getUser_name());
+						labelAdd2.setText(result.get(1).getUser_name());
+						labelAdd1.setText(result.get(0).getUser_name());
 
-							// Set the buttons visible
-							labelAdd3.setVisible(true);
-							btnAdd3.setVisible(true);
-							labelAdd2.setVisible(true);
-							btnAdd2.setVisible(true);
-							labelAdd1.setVisible(true);
-							btnAdd1.setVisible(true);
-						} else if (count == 2) {
-							// Update the labels
-							labelAdd2.setText(result.get(1).getUser_name());
-							labelAdd1.setText(result.get(0).getUser_name());
+						// Set the buttons visible
+						labelAdd3.setVisible(true);
+						btnAdd3.setVisible(true);
+						labelAdd2.setVisible(true);
+						btnAdd2.setVisible(true);
+						labelAdd1.setVisible(true);
+						btnAdd1.setVisible(true);
+					} else if (count == 2) {
+						// Update the labels
+						labelAdd2.setText(result.get(1).getUser_name());
+						labelAdd1.setText(result.get(0).getUser_name());
 
-							// Set the buttons visible
-							labelAdd2.setVisible(true);
-							btnAdd2.setVisible(true);
-							labelAdd1.setVisible(true);
-							btnAdd1.setVisible(true);
+						// Set the buttons visible
+						labelAdd2.setVisible(true);
+						btnAdd2.setVisible(true);
+						labelAdd1.setVisible(true);
+						btnAdd1.setVisible(true);
 
-							labelAdd3.setVisible(false);
-							btnAdd3.setVisible(false);
-						} else if (count == 1) {
-							// Update the labels
-							labelAdd1.setText(result.get(0).getUser_name());
+						labelAdd3.setVisible(false);
+						btnAdd3.setVisible(false);
+					} else if (count == 1) {
+						// Update the labels
+						labelAdd1.setText(result.get(0).getUser_name());
 
-							// Set the buttons visible
-							labelAdd1.setVisible(true);
-							btnAdd1.setVisible(true);
+						// Set the buttons visible
+						labelAdd1.setVisible(true);
+						btnAdd1.setVisible(true);
 
-							labelAdd2.setVisible(false);
-							labelAdd3.setVisible(false);
-							btnAdd2.setVisible(false);
-							btnAdd3.setVisible(false);
-						} else {
-							labelAdd1.setText("No users found");
-							labelAdd1.setVisible(true);
-							labelAdd2.setVisible(false);
-							labelAdd3.setVisible(false);
-							btnAdd1.setVisible(false);
-							btnAdd2.setVisible(false);
-							btnAdd3.setVisible(false);
+						labelAdd2.setVisible(false);
+						labelAdd3.setVisible(false);
+						btnAdd2.setVisible(false);
+						btnAdd3.setVisible(false);
+					} else {
+						labelAdd1.setText("No users found");
+						labelAdd1.setVisible(true);
+						labelAdd2.setVisible(false);
+						labelAdd3.setVisible(false);
+						btnAdd1.setVisible(false);
+						btnAdd2.setVisible(false);
+						btnAdd3.setVisible(false);
 
-						}
 					}
+				}
 
 			}
 		});
@@ -193,14 +203,14 @@ public class AddFriend {
 		btnAdd1.setVisible(false);
 		btnAdd1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Create a new friend
+				// Create a new friend
 				Friend temp = new Friend();
 				temp.setUser_name_entry(userIn.getUser_name());
 				temp.setFriend_name(labelAdd1.getText());
 				FriendServiceImpl client = new FriendServiceImpl();
 				client.createFriend(temp);
 
-				//Update the screen
+				// Update the screen
 				frameIn.setVisible(false);
 				GUI_App.application(userIn.getUser_name(), userIn, clientIn);
 				frame3.setVisible(false);
@@ -219,14 +229,14 @@ public class AddFriend {
 		btnAdd2.setVisible(false);
 		btnAdd2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Create a new friend
+				// Create a new friend
 				Friend temp = new Friend();
 				temp.setUser_name_entry(userIn.getUser_name());
 				temp.setFriend_name(labelAdd2.getText());
 				FriendServiceImpl client = new FriendServiceImpl();
 				client.createFriend(temp);
 
-				//Update the screen
+				// Update the screen
 				frameIn.setVisible(false);
 				GUI_App.application(userIn.getUser_name(), userIn, clientIn);
 				frame3.setVisible(false);
@@ -245,14 +255,14 @@ public class AddFriend {
 		btnAdd3.setVisible(false);
 		btnAdd3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Create a new friend
+				// Create a new friend
 				Friend temp = new Friend();
 				temp.setUser_name_entry(userIn.getUser_name());
 				temp.setFriend_name(labelAdd3.getText());
 				FriendServiceImpl client = new FriendServiceImpl();
 				client.createFriend(temp);
 
-				//Update the screen
+				// Update the screen
 				frameIn.setVisible(false);
 				GUI_App.application(userIn.getUser_name(), userIn, clientIn);
 				frame3.setVisible(false);
