@@ -12,9 +12,10 @@ import java.util.List;
  * The type Leader board entry.
  */
 public class LeaderBoardEntry {
-/** Initiating the string name and the score **/
-    private String name;
-    private int score;
+/** Initiating the string name. **/
+    private String names;
+    /** Initiating the score. */
+    private int scores;
 
     /**
      * Instantiates a new Leader board entry.
@@ -22,9 +23,9 @@ public class LeaderBoardEntry {
      * @param name  the name
      * @param score the score
      */
-    public LeaderBoardEntry(String name, int score) {
-        this.name = name;
-        this.score = score;
+    public LeaderBoardEntry(final String name, final int score) {
+        this.names = name;
+        this.scores = score;
     }
 
     /**
@@ -32,8 +33,8 @@ public class LeaderBoardEntry {
      *
      * @return the name
      */
-    public String getName() {
-        return name;
+    public final String getName() {
+        return names;
     }
 
     /**
@@ -41,8 +42,8 @@ public class LeaderBoardEntry {
      *
      * @param name the name
      */
-    public void setName(String name) {
-        this.name = name;
+    public final void setName(final String name) {
+        this.names = name;
     }
 
     /**
@@ -50,8 +51,8 @@ public class LeaderBoardEntry {
      *
      * @return the score
      */
-    public int getScore() {
-        return score;
+    public final int getScore() {
+        return scores;
     }
 
     /**
@@ -59,48 +60,64 @@ public class LeaderBoardEntry {
      *
      * @param score the score
      */
-    public void setScore(int score) {
-        this.score = score;
+    public final void setScore(final int score) {
+        this.scores = score;
     }
 
     @Override
-    public String toString() {
-        return name + ", " + score;
+    public final String toString() {
+        return names + ", " + scores;
     }
+    /** Returning the name.
+     * @param label the label
+     * @param userIn the user
+     * @return the leaderboard
+     */
 
-
-    public static String createLeaderboard(User userIn, String label) {
+    public static String createLeaderboard(final User userIn,
+                                           final String label) {
     /** Making a new leader board */
         List<LeaderBoardEntry> listEntries = new ArrayList<LeaderBoardEntry>();
+        final int a = 10;
 
 
 
         if (label.equals("Vegetarian Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getVegetarian());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getVegetarian());
             listEntries.add(user);
-        } else if (label.equals("Leaderboard Top 10 CO2 Used") || label.equals("Overall Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getTotal());
+        } else if (label.equals("Leaderboard Top 10 CO2 Used")
+                || label.equals("Overall Score")) {
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getTotal());
             listEntries.add(user);
         } else if (label.equals("Produce Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getProduce());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getProduce());
             listEntries.add(user);
         } else if (label.equals("Car Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getCar());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getCar());
             listEntries.add(user);
         } else if (label.equals("Public Transportation Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getPublic_transportation());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getPublic_transportation());
             listEntries.add(user);
         } else if (label.equals("Bike Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getBike());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getBike());
             listEntries.add(user);
         } else if (label.equals("Temperature Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getTemperature());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getTemperature());
             listEntries.add(user);
         } else if (label.equals("Solar Score")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getSolar());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getSolar());
             listEntries.add(user);
         } else if (label.equals("Overall CO2 Saved")) {
-            LeaderBoardEntry user = new LeaderBoardEntry("You", userIn.getTotal_saved());
+            LeaderBoardEntry user = new LeaderBoardEntry("You",
+                    userIn.getTotal_saved());
             listEntries.add(user);
         }
 
@@ -109,7 +126,8 @@ public class LeaderBoardEntry {
             // adding the friends
             FriendServiceImpl clientFriend = new FriendServiceImpl();
             UserServiceImpl clientUser = new UserServiceImpl();
-            List<Friend> friends = clientFriend.getFriends(userIn.getUser_name());
+            List<Friend> friends =
+                    clientFriend.getFriends(userIn.getUser_name());
 
             for (int i = 0; i < friends.size(); i++) {
                 Friend temp = friends.get(i);
@@ -120,7 +138,8 @@ public class LeaderBoardEntry {
 
                 if (label.equals("Vegetarian Score")) {
                     points = friend.getVegetarian();
-                } else if (label.equals("Leaderboard Top 10 CO2 Used") || label.equals("Overall Score")) {
+                } else if (label.equals("Leaderboard Top 10 CO2 Used")
+                        || label.equals("Overall Score")) {
                     points = friend.getTotal();
                 } else if (label.equals("Produce Score")) {
                     points = friend.getProduce();
@@ -152,9 +171,10 @@ public class LeaderBoardEntry {
             userIn.setFriendlist(friends);
 
             String content = new String();
-            for (int i = 0; i < listEntries.size() & i <= 10; i++) {
+            for (int i = 0; i < listEntries.size() & i <= a; i++) {
                 LeaderBoardEntry temp = listEntries.get(i);
-                content = content + "Rank " + (i + 1) + ": " + temp.toString() + "<br/>";
+                content = content + "Rank " + (i + 1) + ": "
+                       + temp.toString() + "<br/>";
             }
 
             String LeaderBoardContent = "<html>" + content + "</html>";
