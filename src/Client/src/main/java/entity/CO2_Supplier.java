@@ -1,16 +1,17 @@
 package entity;
 
 
-/** Gives the CO2 count to the GUI **/
+/** Gives the CO2 count to the GUI. **/
 public class CO2_Supplier {
     /**THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE FEATURES FOLDER
-        OR ../../../../../../doc/features(compared to the directory of this file**/
+     *   OR ../../../../../../doc/features
+     *(compared to the directory of this file**/
     /**
      *
      * @param km    The amount of kilometers traveled.
      * @return  the amount of co2 it cost to drive x kilometers by bike.
      */
-    public static double bike(int km) {
+    public static double bike(final int km) {
         final double a = 0.016;
         if (km < 0) {
             return 0;
@@ -23,7 +24,7 @@ public class CO2_Supplier {
      * @param km    The amount of kilometers traveled.
      * @return the amount of co2 to drive x kilometers in the average car.
      */
-    public static double car(int km) {
+    public static double car(final int km) {
         final double a = 0.271;
         if (km < 0) {
             return 0;
@@ -34,9 +35,10 @@ public class CO2_Supplier {
     /**
      *
      * @param km    The amount of kilometers traveled.
-     * @return  The amount of co2 to travel x kilometers with the public transport.
+     * @return  The amount of co2 to travel x kilometers with
+     * the public transport.
      */
-    public static double publicTransport(int km) {
+    public static double publicTransport(final int km) {
         final double a = 0.101;
         if (km < 0) {
             return 0;
@@ -49,7 +51,7 @@ public class CO2_Supplier {
      * @param km    The amount of kilometers traveled.
      * @return  The amount of co2 saved by cycling instead of riding your car.
      */
-    public static double bikeVsCar(int km) {
+    public static double bikeVsCar(final int km) {
         double difference = car(km) - bike(km);
         return difference;
     }
@@ -59,7 +61,7 @@ public class CO2_Supplier {
      * @param km    The amount of kilometers traveled.
      * @return  The amount of co2 saved by taking the public transport instead.
      */
-    public static double publicTransportVsCar(int km) {
+    public static double publicTransportVsCar(final int km) {
         double difference = car(km) - publicTransport(km);
         return difference;
     }
@@ -69,7 +71,7 @@ public class CO2_Supplier {
      * @param km    The amount of kilometers traveled.
      * @return  The amount of co2 saved by cycling a distance instead.
      */
-    public static double bikeVsPublicTransport(int km) {
+    public static double bikeVsPublicTransport(final int km) {
         double difference = publicTransport(km) - bike(km);
         return difference;
     }
@@ -80,7 +82,8 @@ public class CO2_Supplier {
      * @param localProduce  Wheter your meal was locally grown or produced.
      * @return  The amount of co2 it cost to produce your meal.
      */
-    public static double meal(boolean vegetarian, boolean localProduce) {
+    public static double meal(final boolean vegetarian,
+                              final boolean localProduce) {
         double co2 = 0;
         final double a = 1.2700;
         final double b = 1.8748;
@@ -102,7 +105,8 @@ public class CO2_Supplier {
      * @param localProduce  Wheter your meal was grown or produced locally.
      * @return  The amount of co2 saved by eating in this way.
      */
-    public static double mealDifference(final boolean vegetarian, final boolean localProduce) {
+    public static double mealDifference(final boolean vegetarian,
+                                        final boolean localProduce) {
         double difference;
         difference = meal(false, false) - meal(vegetarian, localProduce);
         return difference;
@@ -132,7 +136,8 @@ public class CO2_Supplier {
      * @return  The amount of CO2 you used, excluding what you saved
      * with your solar panels.
      */
-    public static double solarPanelUsed(final int amountOfSolarPanels, final int inhabitants) {
+    public static double solarPanelUsed(final int amountOfSolarPanels,
+                                        final int inhabitants) {
         final double a = 0.558;
         if (amountOfSolarPanels < 0) {
             return 0;
@@ -146,11 +151,13 @@ public class CO2_Supplier {
     /**
      *
      * @param inhabitants   the amount of people living in your household
-     * @param degreesLowered    the amount of degrees you have lowered your temperature.
+     * @param degreesLowered    the amount of degrees you have
+     *                          lowered your temperature.
      * @return  the amount of co2 you have saved.
      */
 
-    public static double temperature(final int inhabitants, final int degreesLowered) {
+    public static double temperature(final int inhabitants,
+                                     final int degreesLowered) {
         double kwh = getKWH(inhabitants, degreesLowered);
         double temp = kwh;
         final double a = 0.92;
@@ -166,14 +173,17 @@ public class CO2_Supplier {
     /**
      *
      * @param inhabitants   The amount of people living in your house.
-     * @param degreesLowered    The amount of degrees you lowered your temperature.
+     * @param degreesLowered    The amount of degrees you
+     *                          lowered your temperature.
      * @return  The amount of co2 it cost.
      */
 
-    public static double usedTemperature(final int inhabitants, final int degreesLowered) {
+    public static double usedTemperature(final int inhabitants,
+                                         final int degreesLowered) {
         double kwh = getKWH(inhabitants, degreesLowered);
         final double a = 0.92;
         final double b = 0.558;
+
         //multiplying co2 *.92 for every degree lowered
         for (int i = degreesLowered; i > 0; i--) {
             kwh *= a;
@@ -190,7 +200,8 @@ public class CO2_Supplier {
      * @param degreesLowered The amount of degrees you lowered your temperature
      * @return  The amount of KWH a average household uses.
      */
-    public static double getKWH(int inhabitants, int degreesLowered) {
+    public static double getKWH(final int inhabitants,
+                                final int degreesLowered) {
         final double a = 365.0;
         final double b = 1800.0;
         final double c = 2900.0;
