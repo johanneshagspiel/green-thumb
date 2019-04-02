@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -190,11 +191,9 @@ public class AddFriend {
 					
 					// Sorting the results
 //					for(int i = 0; i<result.size()-1; i++) {
-//						if(result.get(i).getUser_name().compareTo(result.
-//						get(i+1).getUser_name()) > 0) {
+//						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
 //							String temp = result.get(i).getUser_name();
-//							result.get(i).setUser_name(result.
-//							get(i+1).getUser_name());
+//							result.get(i).setUser_name(result.get(i+1).getUser_name());
 //							result.get(i+1).setUser_name(temp);
 //						}
 //					}
