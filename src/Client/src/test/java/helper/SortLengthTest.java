@@ -1,6 +1,3 @@
-/**
- * 
- */
 package helper;
 
 import static org.junit.Assert.*;
@@ -13,11 +10,7 @@ import org.junit.Test;
 
 import entity.User;
 
-/**
- * @author ardyz
- *
- */
-public class SortTest {
+public class SortLengthTest {
 
 	@Test
 	public void test() {
@@ -40,14 +33,15 @@ public class SortTest {
 		test.add(Giel);
 		test.add(Leon);
 		
-		Collections.sort(test, new Sort());
+		Collections.sort(test, new SortUsername());
+		Collections.sort(test, new SortLength());
 		System.out.println(test.toString());
 		
 		assertTrue(test.get(0).getUser_name().equals("Ardy"));
 		assertTrue(test.get(1).getUser_name().equals("Giel"));
 		assertTrue(test.get(2).getUser_name().equals("Leon"));
-		assertTrue(test.get(3).getUser_name().equals("Nathan"));
-		assertTrue(test.get(4).getUser_name().equals("Nick"));
+		assertTrue(test.get(3).getUser_name().equals("Nick"));
+		assertTrue(test.get(4).getUser_name().equals("Nathan"));
 	}
 
 }
