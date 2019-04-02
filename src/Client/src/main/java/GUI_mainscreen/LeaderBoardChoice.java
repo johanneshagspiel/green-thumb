@@ -77,23 +77,23 @@ public class LeaderBoardChoice {
         final int twofivezero = 250;
 
         frame2 = new JFrame();
-        frame2.setBounds(threezerozero, fivezerozero,
-                threezerozero, fivezerozero);
+        frame2.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
+        frame2.setBounds(300, 500, 307, 473);
         frame2.getContentPane().setLayout(null);
         frame2.setFocusable(true);
 
         JLabel lblWelcome
                 = new JLabel("What do you want to depict?");
         lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
-        lblWelcome.setBounds(onezero, onezero,
-                twosixsix, twozero);
+        lblWelcome.setBounds(10, 51, 266, 20);
         frame2.getContentPane().add(lblWelcome);
 
-        JButton lblVegetarian
-                = new JButton("Vegetarian Score");
+        JButton lblVegetarian = new JButton("Vegetarian Score");
+        lblVegetarian.setBackground(new Color(0, 255, 127));
+        lblVegetarian.setForeground(Color.WHITE);
+        lblVegetarian.setFont(new Font("Arial Black", Font.PLAIN, 13));
         lblVegetarian.setHorizontalAlignment(SwingConstants.CENTER);
-        lblVegetarian.setBounds(onezero,
-                fivezero, twosixsix, twozero);
+        lblVegetarian.setBounds(10, 84, 266, 25);
         lblVegetarian.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label
@@ -109,9 +109,11 @@ public class LeaderBoardChoice {
         frame2.getContentPane().add(lblVegetarian);
 
         JButton lblProduce = new JButton("Produce Score");
+        lblProduce.setForeground(Color.WHITE);
+        lblProduce.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblProduce.setBackground(new Color(0, 255, 127));
         lblProduce.setHorizontalAlignment(SwingConstants.CENTER);
-        lblProduce.setBounds(onezero, sevenfive,
-                twosixsix, twozero);
+        lblProduce.setBounds(10, 122, 266, 25);
         lblProduce.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblProduce.getText();
@@ -125,8 +127,11 @@ public class LeaderBoardChoice {
         frame2.getContentPane().add(lblProduce);
 
         JButton lblCar = new JButton("Car Score");
+        lblCar.setBackground(new Color(0, 255, 127));
+        lblCar.setForeground(Color.WHITE);
+        lblCar.setFont(new Font("Arial Black", Font.PLAIN, 13));
         lblCar.setHorizontalAlignment(SwingConstants.CENTER);
-        lblCar.setBounds(onezero, onezerozero, twosixsix, twozero);
+        lblCar.setBounds(10, 160, 266, 25);
         lblCar.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblCar.getText();
@@ -139,15 +144,14 @@ public class LeaderBoardChoice {
         });
         frame2.getContentPane().add(lblCar);
 
-        JButton lblPublic_transportation
-                = new JButton("Public Transportation Score");
-        lblPublic_transportation.
-                setHorizontalAlignment(SwingConstants.CENTER);
-        lblPublic_transportation.
-                setBounds(onezero, onetwofive, twosixsix, twozero);
-        lblPublic_transportation.
-                addActionListener(new ActionListener() {
-            public void actionPerformed(final ActionEvent arg0) {
+        JButton lblPublic_transportation = new JButton("Public Transportation Score");
+        lblPublic_transportation.setBackground(new Color(0, 255, 127));
+        lblPublic_transportation.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblPublic_transportation.setForeground(Color.WHITE);
+        lblPublic_transportation.setHorizontalAlignment(SwingConstants.CENTER);
+        lblPublic_transportation.setBounds(10, 198, 266, 25);
+        lblPublic_transportation.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
                 String label = lblPublic_transportation.getText();
                 setLabel(label);
                 lblLeaderboardContent.setText(LeaderBoardEntry.
@@ -159,8 +163,11 @@ public class LeaderBoardChoice {
         frame2.getContentPane().add(lblPublic_transportation);
 
         JButton lblBike = new JButton("Bike Score");
+        lblBike.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblBike.setForeground(Color.WHITE);
+        lblBike.setBackground(new Color(0, 255, 127));
         lblBike.setHorizontalAlignment(SwingConstants.CENTER);
-        lblBike.setBounds(onezero, onefivezero, twosixsix, twozero);
+        lblBike.setBounds(10, 236, 266, 25);
         lblBike.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblBike.getText();
@@ -174,9 +181,11 @@ public class LeaderBoardChoice {
         frame2.getContentPane().add(lblBike);
 
         JButton lblTemperature = new JButton("Temperature Score");
+        lblTemperature.setForeground(Color.WHITE);
+        lblTemperature.setBackground(new Color(0, 255, 127));
+        lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 13));
         lblTemperature.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTemperature.setBounds(onezero, onesevenfive,
-                twosixsix, twozero);
+        lblTemperature.setBounds(10, 274, 266, 25);
         lblTemperature.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblTemperature.getText();
@@ -189,10 +198,12 @@ public class LeaderBoardChoice {
         });
         frame2.getContentPane().add(lblTemperature);
 
-        JButton lblSolar = new JButton("Solar Score");
+        JButton lblSolar = new JButton("Solar Score" );
+        lblSolar.setBackground(new Color(0, 255, 127));
+        lblSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblSolar.setForeground(Color.WHITE);
         lblSolar.setHorizontalAlignment(SwingConstants.CENTER);
-        lblSolar.setBounds(onezero, twozerozero,
-                twosixsix, twozero);
+        lblSolar.setBounds(10, 312, 266, 25);
         lblSolar.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblSolar.getText();
@@ -206,9 +217,11 @@ public class LeaderBoardChoice {
         frame2.getContentPane().add(lblSolar);
 
         JButton lblSaved = new JButton("Overall CO2 Saved");
+        lblSaved.setForeground(Color.WHITE);
+        lblSaved.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblSaved.setBackground(new Color(0, 255, 127));
         lblSaved.setHorizontalAlignment(SwingConstants.CENTER);
-        lblSaved.setBounds(onezero, twotwofive,
-                twosixsix, twozero);
+        lblSaved.setBounds(10, 350, 266, 25);
         lblSaved.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblSaved.getText();
@@ -222,9 +235,11 @@ public class LeaderBoardChoice {
         frame2.getContentPane().add(lblSaved);
 
         JButton lblOverall = new JButton("Overall Score");
+        lblOverall.setForeground(Color.WHITE);
+        lblOverall.setBackground(new Color(0, 255, 127));
+        lblOverall.setFont(new Font("Arial Black", Font.PLAIN, 13));
         lblOverall.setHorizontalAlignment(SwingConstants.CENTER);
-        lblOverall.setBounds(onezero, twofivezero,
-                twosixsix, twozero);
+        lblOverall.setBounds(10, 388, 266, 25);
         lblOverall.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblOverall.getText();
@@ -236,5 +251,11 @@ public class LeaderBoardChoice {
             }
         });
         frame2.getContentPane().add(lblOverall);
+        
+        JLabel lblChangeLeaderboard = new JLabel("Change Leaderboard");
+        lblChangeLeaderboard.setFont(new Font("Arial Black", Font.PLAIN, 18));
+        lblChangeLeaderboard.setHorizontalAlignment(SwingConstants.CENTER);
+        lblChangeLeaderboard.setBounds(10, 13, 260, 36);
+        frame2.getContentPane().add(lblChangeLeaderboard);
     }
 }

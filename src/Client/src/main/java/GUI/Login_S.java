@@ -162,9 +162,8 @@ public class Login_S {
 		frame.getContentPane().add(lblLogin);
 
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setFont(new Font("Arial Black",
-				Font.PLAIN, onethree));
-		lblUsername.setBounds(eightnine, ninetwo, eightsix, threezero);
+		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		lblUsername.setBounds(87, 92, 86, 30);
 		frame.getContentPane().add(lblUsername);
 
 		JLabel lblPassword = new JLabel("Password");
@@ -190,12 +189,9 @@ public class Login_S {
 
 		//Buttons
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setForeground(new Color(twofourfive,
-				twofourfive, twofourfive));
-		btnLogin.setFont(new Font("Arial Black",
-				Font.PLAIN, onefive));
-		btnLogin.setBackground(new Color(fivezero,
-				twozerofive, fivezero));
+		btnLogin.setForeground(new Color(245, 245, 245));
+		btnLogin.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		btnLogin.setBackground(new Color(0, 255, 127));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				//Get the filled in username
@@ -217,18 +213,13 @@ public class Login_S {
 
 			}
 		});
-
-		btnLogin.setBounds(threezeroseven,
-				twozerotwo, onefourtwo, twoone);
+		btnLogin.setBounds(307, 202, 142, 30);
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnReset = new JButton("Add Account");
-		btnReset.setFont(new Font("Arial Black",
-				Font.PLAIN, onefive));
-		btnReset.setForeground(new Color(twofivefive,
-				twofivefive, twofivefive));
-		btnReset.setBackground(new Color(fivezero,
-				twozerofive, fivezero));
+		btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		btnReset.setForeground(new Color(255, 255, 255));
+		btnReset.setBackground(new Color(0, 255, 127));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				try {
@@ -239,16 +230,13 @@ public class Login_S {
 				}
 			}
 		});
-
-		btnReset.setBounds(onefourfive, twozerotwo,
-				onefivezero, twoone);
+		btnReset.setBounds(145, 202, 150, 30);
 		frame.getContentPane().add(btnReset);
 
 		JButton btnExit = new JButton("Exit");
-		btnExit.setForeground(new Color(twofourfive,
-				twofourfive, twofourfive));
-		btnExit.setFont(new Font("Arial Black", Font.PLAIN, onefive));
-		btnExit.setBackground(new Color(0, onezerotwo, 0));
+		btnExit.setForeground(new Color(245, 245, 245));
+		btnExit.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		btnExit.setBackground(new Color(102, 204, 153));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				frame = new JFrame("Exit");
@@ -261,9 +249,7 @@ public class Login_S {
 				}
 			}
 		});
-
-		btnExit.setBounds(threethree, twozerotwo,
-				sevenfive, twoone);
+		btnExit.setBounds(33, 202, 75, 30);
 		frame.getContentPane().add(btnExit);
 
 		// Separators
