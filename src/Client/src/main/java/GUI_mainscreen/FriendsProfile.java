@@ -47,12 +47,14 @@ public class FriendsProfile {
     public static void initialize(User userIn, UserServiceImpl clientIn) {
 
         frame2 = new JFrame();
+        frame2.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
         frame2.setBounds(300, 500, 300, 500);
         frame2.getContentPane().setLayout(null);
         frame2.setFocusable(true);
 
 		// Labels
-		JLabel lblWelcome = new JLabel("Profile of My Friends");
+		JLabel lblWelcome = new JLabel("Profiles of friends");
+		lblWelcome.setFont(new Font("Arial Black", Font.PLAIN, 18));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBounds(10, 10, 266, 20);
 		frame2.getContentPane().add(lblWelcome);

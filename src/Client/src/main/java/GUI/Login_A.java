@@ -19,6 +19,9 @@ import Login.Login_addAccount;
 import entity.User;
 import service.UserServiceImpl;
 import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.Color;
 
 public class Login_A {
 
@@ -68,6 +71,8 @@ public class Login_A {
     private static void initialize() {
         // Create the frame
         frame = new JFrame();
+        frame.setBackground(new Color(0, 255, 127));
+		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
         frame.setBounds(200, 200, 500, 300);
         frame.getContentPane().setLayout(null);
         frame.setFocusable(true);
@@ -110,41 +115,48 @@ public class Login_A {
 
         // Labels
         JLabel lblAccount = new JLabel("Add an Account");
+        lblAccount.setFont(new Font("Arial Black", Font.PLAIN, 18));
         lblAccount.setHorizontalAlignment(SwingConstants.CENTER);
-        lblAccount.setBounds(10, 28, 466, 30);
+        lblAccount.setBounds(12, 0, 466, 55);
         frame.getContentPane().add(lblAccount);
 
         JLabel lblUsername = new JLabel("Username");
-        lblUsername.setBounds(33, 68, 61, 30);
+        lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblUsername.setBounds(65, 68, 142, 30);
         frame.getContentPane().add(lblUsername);
 
         JLabel lblPassword = new JLabel("Password");
-        lblPassword.setBounds(33, 108, 63, 28);
+        lblPassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblPassword.setBounds(65, 107, 142, 28);
         frame.getContentPane().add(lblPassword);
 
         JLabel lblRPassword = new JLabel("Repeat password");
-        lblRPassword.setBounds(33, 146, 90, 28);
+        lblRPassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
+        lblRPassword.setBounds(65, 146, 142, 28);
         frame.getContentPane().add(lblRPassword);
 
         // Text fields
         txtUsername = new JTextField();
         txtUsername.setColumns(10);
-        txtUsername.setBounds(187, 68, 181, 28);
+        txtUsername.setBounds(219, 70, 181, 28);
         frame.getContentPane().add(txtUsername);
         txtUsername.addKeyListener(formSubmitKeyListener);
 
         txtPassword = new JPasswordField();
-        txtPassword.setBounds(187, 106, 181, 28);
+        txtPassword.setBounds(219, 108, 181, 28);
         frame.getContentPane().add(txtPassword);
         txtPassword.addKeyListener(formSubmitKeyListener);
 
         txtRPassword = new JPasswordField();
-        txtRPassword.setBounds(187, 150, 181, 28);
+        txtRPassword.setBounds(219, 147, 181, 28);
         frame.getContentPane().add(txtRPassword);
         txtRPassword.addKeyListener(formSubmitKeyListener);
 
         // Buttons
         JButton btnReset = new JButton("Add Account");
+        btnReset.setBackground(new Color(0, 255, 127));
+        btnReset.setForeground(Color.WHITE);
+        btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
         btnReset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 
@@ -176,17 +188,20 @@ public class Login_A {
 
             }
         });
-        btnReset.setBounds(187, 210, 134, 21);
+        btnReset.setBounds(219, 210, 181, 30);
         frame.getContentPane().add(btnReset);
         
         JButton btnBack = new JButton("Go Back");
+        btnBack.setBackground(new Color(102, 204, 153));
+        btnBack.setForeground(Color.WHITE);
+        btnBack.setFont(new Font("Arial Black", Font.PLAIN, 15));
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
             	frame.setVisible(false);
 				Login_S.main(null);
             }
         });
-        btnBack.setBounds(75, 210, 100, 21);
+        btnBack.setBounds(65, 210, 108, 30);
         frame.getContentPane().add(btnBack);
 
         // Separators
@@ -195,7 +210,7 @@ public class Login_A {
         frame.getContentPane().add(separator);
 
         JSeparator separator_1 = new JSeparator();
-        separator_1.setBounds(33, 54, 416, 4);
+        separator_1.setBounds(33, 51, 416, 4);
         frame.getContentPane().add(separator_1);
 
     }
