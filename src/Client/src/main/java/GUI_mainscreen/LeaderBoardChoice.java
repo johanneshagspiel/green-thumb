@@ -1,6 +1,6 @@
 package GUI_mainscreen;
 
-import GUI.GUI_App;
+
 import entity.LeaderBoardEntry;
 import entity.User;
 import service.UserServiceImpl;
@@ -9,26 +9,42 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static GUI.GUI_App.getUsername;
+
 import static GUI.GUI_App.setLabel;
 
 /**
  * The type My profile.
  */
 public class LeaderBoardChoice {
-
+/** Initialising the frame. */
     private static JFrame frame2;
 
-    private LeaderBoardChoice(JLabel lblLeaderboardContent, JLabel lblLeaderboard, User userIn) {
+    /**
+     * The Leaderboard.
+     * @param lblLeaderboardContent the content
+     * @param lblLeaderboard the leaderboard
+     * @param userIn the user
+     */
+    private LeaderBoardChoice(final JLabel lblLeaderboardContent,
+                              final JLabel lblLeaderboard, final User userIn) {
         initialize(lblLeaderboardContent, lblLeaderboard, userIn);
     }
 
-
-    public static void application(JLabel lblLeaderboardContent, JLabel lblLeaderboard, User userIn) {
+    /**
+     * The application.
+     * @param lblLeaderboardContent the content
+     * @param lblLeaderboard the leaderboard
+     * @param userIn the user
+     */
+    public static void application(final JLabel lblLeaderboardContent,
+                                   final JLabel lblLeaderboard,
+                                   final User userIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    LeaderBoardChoice window = new LeaderBoardChoice(lblLeaderboardContent, lblLeaderboard, userIn);
+                    LeaderBoardChoice window
+                            = new LeaderBoardChoice(lblLeaderboardContent,
+                            lblLeaderboard, userIn);
                     LeaderBoardChoice.frame2.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -37,7 +53,28 @@ public class LeaderBoardChoice {
         });
     }
 
-    public static void initialize(JLabel lblLeaderboardContent, JLabel lblLeaderboard, User userIn) {
+    /**
+     * Initialising.
+     * @param lblLeaderboardContent the content
+     * @param lblLeaderboard the leaderboard
+     * @param userIn the user
+     */
+    public static void initialize(final JLabel lblLeaderboardContent,
+                                  final JLabel lblLeaderboard, final User userIn) {
+        final int threezerozero = 300;
+        final int fivezerozero = 500;
+        final int onezero = 10;
+        final int twosixsix = 266;
+        final int twozero = 20;
+        final int fivezero = 50;
+        final int sevenfive = 75;
+        final int onezerozero = 100;
+        final int onetwofive = 125;
+        final int onefivezero = 150;
+        final int onesevenfive = 175;
+        final int twozerozero = 200;
+        final int twotwofive = 225;
+        final int twofivezero = 250;
 
         frame2 = new JFrame();
         frame2.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
@@ -45,7 +82,8 @@ public class LeaderBoardChoice {
         frame2.getContentPane().setLayout(null);
         frame2.setFocusable(true);
 
-        JLabel lblWelcome = new JLabel("What do you want to depict?");
+        JLabel lblWelcome
+                = new JLabel("What do you want to depict?");
         lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
         lblWelcome.setBounds(10, 51, 266, 20);
         frame2.getContentPane().add(lblWelcome);
@@ -57,10 +95,13 @@ public class LeaderBoardChoice {
         lblVegetarian.setHorizontalAlignment(SwingConstants.CENTER);
         lblVegetarian.setBounds(10, 84, 266, 25);
         lblVegetarian.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                String label = lblVegetarian.getText();
+            public void actionPerformed(final ActionEvent arg0) {
+                String label
+                        = lblVegetarian.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.
+                        setText(LeaderBoardEntry.
+                                createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Vegetarian Score");
                 frame2.setVisible(false);
             }
@@ -74,10 +115,11 @@ public class LeaderBoardChoice {
         lblProduce.setHorizontalAlignment(SwingConstants.CENTER);
         lblProduce.setBounds(10, 122, 266, 25);
         lblProduce.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblProduce.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Produce Score");
                 frame2.setVisible(false);
             }
@@ -91,10 +133,11 @@ public class LeaderBoardChoice {
         lblCar.setHorizontalAlignment(SwingConstants.CENTER);
         lblCar.setBounds(10, 160, 266, 25);
         lblCar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblCar.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Car Score");
                 frame2.setVisible(false);
             }
@@ -111,7 +154,8 @@ public class LeaderBoardChoice {
             public void actionPerformed(ActionEvent arg0) {
                 String label = lblPublic_transportation.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Top 10 Public Transportation Score");
                 frame2.setVisible(false);
             }
@@ -125,10 +169,11 @@ public class LeaderBoardChoice {
         lblBike.setHorizontalAlignment(SwingConstants.CENTER);
         lblBike.setBounds(10, 236, 266, 25);
         lblBike.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblBike.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Bike Score");
                 frame2.setVisible(false);
             }
@@ -142,10 +187,11 @@ public class LeaderBoardChoice {
         lblTemperature.setHorizontalAlignment(SwingConstants.CENTER);
         lblTemperature.setBounds(10, 274, 266, 25);
         lblTemperature.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblTemperature.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Temperature Score");
                 frame2.setVisible(false);
             }
@@ -159,10 +205,11 @@ public class LeaderBoardChoice {
         lblSolar.setHorizontalAlignment(SwingConstants.CENTER);
         lblSolar.setBounds(10, 312, 266, 25);
         lblSolar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblSolar.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Solar Score");
                 frame2.setVisible(false);
             }
@@ -176,10 +223,11 @@ public class LeaderBoardChoice {
         lblSaved.setHorizontalAlignment(SwingConstants.CENTER);
         lblSaved.setBounds(10, 350, 266, 25);
         lblSaved.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblSaved.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 CO2 Saved Score");
                 frame2.setVisible(false);
             }
@@ -193,10 +241,11 @@ public class LeaderBoardChoice {
         lblOverall.setHorizontalAlignment(SwingConstants.CENTER);
         lblOverall.setBounds(10, 388, 266, 25);
         lblOverall.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
+            public void actionPerformed(final ActionEvent arg0) {
                 String label = lblOverall.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, label));
+                lblLeaderboardContent.setText(LeaderBoardEntry.
+                        createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 CO2 Used");
                 frame2.setVisible(false);
             }
