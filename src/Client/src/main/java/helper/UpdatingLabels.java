@@ -10,10 +10,6 @@ import javax.swing.*;
 import static GUI.GUI_App.*;
 
 public class UpdatingLabels {
-	
-	private UpdatingLabels() {
-	    throw new IllegalStateException("UpdatingLabels class");
-	  }
 
     public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
@@ -46,7 +42,7 @@ public class UpdatingLabels {
             setLevel(pointsTemp / 1000);
 
             //updating the feature's total saved.
-            int temp = userIn.getVegetarian();
+            userIn.getVegetarian();
             userIn.setVegetarian(mealSaved);
             clientIn.updateUser(userIn);
 
@@ -182,7 +178,7 @@ public class UpdatingLabels {
             int temp = userIn.getSolar();
             userIn.setSolar(temp + savedCO2);
             clientIn.updateUser(userIn);
-        }
+        } 
 
         //Update Labels
         setPoints(userIn.getTotal());
