@@ -1,6 +1,5 @@
 package helper;
 
-import GUI.GUI_App;
 import entity.CO2_Supplier;
 import entity.LeaderBoardEntry;
 import entity.User;
@@ -11,11 +10,12 @@ import javax.swing.*;
 import static GUI.GUI_App.*;
 
 public class UpdatingLabels {
+	
+	private UpdatingLabels() {
+	    throw new IllegalStateException("UpdatingLabels class");
+	  }
 
     public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
-
-        int points = getPoints();
-        int pointsSaved = getPointsSaved();
 
         //Depending on what is used
         if (method.equals("Vegetarian")) {
@@ -99,11 +99,9 @@ public class UpdatingLabels {
 
     public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, double entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
-        int points = getPoints();
-        int pointsSaved = getPointsSaved();
-
         //Depending on what is used
         if (method.equals("Car")) {
+        	
             // Initializing the values we are going to use.
             int producedCO2 = ((int) CO2_Supplier.car((int) entry) * 100);
 
