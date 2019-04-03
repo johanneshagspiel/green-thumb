@@ -1,15 +1,14 @@
 package helper;
 
 public class PointsMissing {
+	
+	private PointsMissing() {
+	    throw new IllegalStateException("PointsMissing class");
+	  }
 
     public static int determiningPoints (int pointsIn) {
 
-        System.out.println(pointsIn);
+        return 1000 - (pointsIn % 1000);
 
-        int pointsOut = 1000 - (pointsIn % 1000);
-
-        System.out.println(pointsOut);
-
-        return pointsOut;
     }
 }
