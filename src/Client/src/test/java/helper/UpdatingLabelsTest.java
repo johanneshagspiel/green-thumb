@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 
 import org.junit.Test;
 
+import GUI.GUI_App;
 import Login.Login_r;
 import entity.User;
 import service.UserServiceImpl;
@@ -15,7 +16,7 @@ import service.UserServiceImpl;
 public class UpdatingLabelsTest {
 
 	@Test
-	public void test() {
+	public void testCar() {
 		
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
@@ -26,13 +27,14 @@ public class UpdatingLabelsTest {
 		
 		// Adding some user information
 		final double entry = 1000;
-		JLabel lblTotalCO2 = new JLabel("1243");
-		JLabel lblCO2Saved = new JLabel("100");
-		JLabel lblLeaderboardContent = new JLabel("1");
-		JLabel lblLevel = new JLabel("1");
-		JLabel lblMotivation = new JLabel("Hi");
-		final int resultTotal = 271;
+		JLabel lblTotalCO2 = new JLabel("");
+		JLabel lblCO2Saved = new JLabel("");
+		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblLevel = new JLabel("");
+		JLabel lblMotivation = new JLabel("");
+		final int resultTotal = 27100;
 		final int resultTotal_saved = 0;
+		GUI_App.setLabel("Car Score");
 		
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
