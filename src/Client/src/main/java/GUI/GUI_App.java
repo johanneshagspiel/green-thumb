@@ -22,15 +22,22 @@ import java.awt.event.ActionListener;
 /**
  * The type Gui app.
  */
-public class GUI_App extends Login_S {
-
+public class  GUI_App extends Login_S {
+	/** Initialises the app */
 	private static JFrame frame;
+	/** Initialises the frame. */
 	private static String username;
+	/** Initialises the username .*/
 	private static int points;
+	/** Initialises the points. */
 	private static int pointsSaved;
+	/** Initialises the pointsSaved. */
 	private static int level;
+	/** Initialises the level. */
 	private static int pointsmissing;
+	/** Initialises the pointsmissing. */
 	private static String label;
+	/** Initialises the label. */
 
 
 	/**
@@ -40,11 +47,16 @@ public class GUI_App extends Login_S {
      * @param userIn   the user in
      * @param clientIn the client in
      */
-    public static void application(String username, User userIn, UserServiceImpl clientIn) {
+    public static void application(
+    		final String username,
+			final User userIn,
+			final UserServiceImpl clientIn) {
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_App window = new GUI_App(username, userIn, clientIn);
+					GUI_App window = new GUI_App(username,
+							userIn, clientIn);
 					GUI_App.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,37 +67,125 @@ public class GUI_App extends Login_S {
 
 	/**
 	 * Create the application.
+	 * @param username the username
+	 * @param userIn   the user in
+	 * @param clientIn the client in
 	 */
-	private GUI_App(String username, User userIn, UserServiceImpl clientIn) {
+	private GUI_App(final String username,
+					final User userIn,
+					final UserServiceImpl clientIn) {
 		this.setUsername(username);
 		initialize(username, userIn, clientIn);
 	}
 
+	/**
+	 * Get PointsSaved.
+	 * @return pointsSaved
+	 */
 	public static int getPointsSaved() {
 		return pointsSaved;
 	}
 
-	public static void setPointsSaved(int pointsSaved) {
+	/**
+	 * Set PointsSaved.
+	 * @param pointsSaved the pointsSaved
+	 */
+	public static void setPointsSaved(final int pointsSaved) {
 		GUI_App.pointsSaved = pointsSaved;
 	}
 
+	/**
+	 * Get Label.
+	 * @return label
+	 */
 	public static String getLabel() {
 		return label;
 	}
 
-	public static void setLabel(String label) {
+	/**
+	 * Set Label.
+	 * @param label the label
+	 */
+	public static void setLabel(final String label) {
 		GUI_App.label = label;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 *@param username the username
+	 *@param userIn   the user in
+	 *@param clientIn the client in
 	 */
-	private static void initialize(String username, User userIn, UserServiceImpl clientIn) {
+	private static void initialize(
+			final String username,
+			final User userIn,
+			final UserServiceImpl clientIn) {
+		final int twofivefive = 255;
+		final int onetwoseven = 127;
+		final int twozerozero = 200;
+		final int oneninetwozero = 1920;
+		final int onezeroeightzero = 1080;
+		final int twonine = 29;
+		final int onezero = 10;
+		final int onefivetwozero = 1520;
+		final int fivenine = 59;
+		final int fourfourfive = 445;
+		final int onethreeseven = 137;
+		final int threesixnine = 369;
+		final int onezerozero = 100;
+		final int fiveeightzero = 580;
+		final int eightfourfive = 845;
+		final int fourtwozero = 420;
+		final int twoeightzero = 280;
+		final int onezerozerozerozero = 10000;
+		final int twozerofive = 205;
+		final int twofourzero = 240;
+		final int threefivezero = 350;
+		final int fivezerozero = 500;
+		final int nineeightzero = 980;
+		final int oneeightfive = 185;
+		final int twozero = 20;
+		final int onethreezero = 130;
+		final int fourtwo = 42;
+		final int fivezero = 50;
+		final int fourfivezero = 450;
+		final int onezerozerozero = 1000;
+		final int sevenfour = 74;
+		final int onethree = 13;
+		final int onetwotwozero = 1220;
+		final int onefourzero = 140;
+		final int threezerozero = 300;
+		final int threezero = 30;
+		final int onetwofivezero = 1250;
+		final int onesevenzero = 170;
+		final int twosixzero = 260;
+		final int two = 2;
+		final int threeeighteight = 388;
+		final int fourzero = 40;
+		final int onezerotwo = 102;
+		final int twozerofour = 204;
+		final int onefivethree = 153;
+		final int fourfourzero = 440;
+		final int oneninethree = 193;
+		final int fourseventwo = 472;
+		final int foursixtwo = 462;
+		final int onefour = 14;
+		final int fivetwo = 52;
+		final int threethreethree = 333;
+		final int twotwofive = 225;
+		final int twoninezero = 290;
+		final int threeonenine = 319;
+		final int threeseventwo = 372;
+
+
 		// Create the frame
 		frame = new JFrame();
-		frame.setBackground(new Color(0, 255, 127));
-		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
-		frame.setBounds(200, 200, 1920, 1080);
+		frame.setBackground(new Color(0, twofivefive, onetwoseven));
+		frame.getContentPane().
+				setBackground(SystemColor.
+						inactiveCaptionBorder);
+		frame.setBounds(twozerozero, twozerozero,
+				oneninetwozero, onezeroeightzero);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setFocusable(true);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -93,8 +193,8 @@ public class GUI_App extends Login_S {
 
 		// Labels
 		JLabel lblWelcome = new JLabel("Welcome " + username);
-		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 29));
-		lblWelcome.setBounds(10, 10, 1520, 59);
+		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, twonine));
+		lblWelcome.setBounds(onezero, onezero, onefivetwozero, fivenine);
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblWelcome);
 
@@ -104,115 +204,144 @@ public class GUI_App extends Login_S {
 
 		//To avoid null pointer exception
 		if (points > 0) {
-			pointsmissing = 1000 % points;
+			pointsmissing = PointsMissing.determiningPoints(points);
 		}
 
 
 		//Information about CO2 saved
-		JLabel lblCO2Saved = new JLabel("The amount of CO2 you have saved so far is " + pointsSaved);
-		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblCO2Saved.setBounds(130, 42, 1520, 50);
+		JLabel lblCO2Saved
+				= new JLabel("The amount of CO2 you have saved"
+				+ " so far is " + pointsSaved);
+		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, twozero));
+		lblCO2Saved.setBounds(onethreezero, fourtwo,
+				onefivetwozero, fivezero);
 		lblCO2Saved.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblCO2Saved);
 
 		//Information about CO2 saved
-		JLabel lblTotalCO2 = new JLabel("The total amount of CO2 you have used up so far is " + points);
-		lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTotalCO2.setBounds(450, 42, 1520, 50);
+		JLabel lblTotalCO2
+				= new JLabel("The total amount of CO2 you have used up"
+				+ " so far is " + points);
+		lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, twozero));
+		lblTotalCO2.setBounds(fourfivezero, fourtwo,
+				onefivetwozero, fivezero);
 		lblTotalCO2.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblTotalCO2);
 
 		// Information about level
-		level = points / 1000;
+		level = points / onezerozerozero;
 		JLabel lblLevel = new JLabel("Your Level is " + level);
-		lblLevel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblLevel.setBounds(10, 74, 1520, 50);
+		lblLevel.setFont(new Font("Tahoma", Font.PLAIN, twozero));
+		lblLevel.setBounds(onezero, sevenfour, onefivetwozero, fivezero);
 		lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblLevel);
 
 		// Leaderboard
 		label = "Leaderboard Top 10 CO2 Used";
 		JLabel lblLeaderboard = new JLabel(label);
-		lblLeaderboard.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblLeaderboard.setBounds(1220, 140, 300, 30);
+		lblLeaderboard.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		lblLeaderboard.setBounds(onetwotwozero,
+				onefourzero, threezerozero, threezero);
 		lblLeaderboard.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblLeaderboard);
 
 		// Create the content for the leaderboard
-		String LeaderBoardContent = LeaderBoardEntry.createLeaderboard(userIn, label);
+		String LeaderBoardContent
+				= LeaderBoardEntry.createLeaderboard(userIn, label);
+
 
 		JLabel lblLeaderboardContent = new JLabel(LeaderBoardContent);
 		lblLeaderboardContent.setBackground(Color.WHITE);
-		lblLeaderboardContent.setBounds(1250, 170, 260, 200);
-		lblLeaderboardContent.setHorizontalAlignment(SwingConstants.CENTER);
-		Border border = BorderFactory.createLineBorder(Color.GRAY, 2);
+		lblLeaderboardContent.setBounds(onetwofivezero, onesevenzero,
+				twosixzero, twozerozero);
+		lblLeaderboardContent.
+				setHorizontalAlignment(SwingConstants.CENTER);
+		Border border = BorderFactory.createLineBorder(Color.GRAY, two);
 		lblLeaderboardContent.setBorder(border);
 		frame.getContentPane().add(lblLeaderboardContent);
 
 		// Switch the leaderboard
 		JButton btnSwitchLeaderBoard = new JButton("Switch Leaderboard");
 		btnSwitchLeaderBoard.setForeground(Color.WHITE);
-		btnSwitchLeaderBoard.setBackground(new Color(0, 255, 127));
-		btnSwitchLeaderBoard.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnSwitchLeaderBoard.setBounds(1250, 388, 260, 40);
+		btnSwitchLeaderBoard.setBackground(new Color(0,
+				twofivefive, onetwoseven));
+		btnSwitchLeaderBoard.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		btnSwitchLeaderBoard.setBounds(onetwofivezero, threeeighteight,
+				twosixzero, fourzero);
 		btnSwitchLeaderBoard.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				LeaderBoardChoice.application(lblLeaderboardContent,lblLeaderboard, userIn);
+			public void actionPerformed(final ActionEvent arg0) {
+				LeaderBoardChoice.application(lblLeaderboardContent,
+						lblLeaderboard, userIn);
 			}
 		});
 		frame.getContentPane().add(btnSwitchLeaderBoard);
 
+
 		// Add friend button
 		JButton btnAddFriend = new JButton("Add a friend");
 		btnAddFriend.setForeground(Color.WHITE);
-		btnAddFriend.setBackground(new Color(102, 204, 153));
-		btnAddFriend.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnAddFriend.setBounds(1250, 440, 260, 40);
+		btnAddFriend.setBackground(new Color(onezerotwo,
+				twozerofour, onefivethree));
+		btnAddFriend.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnAddFriend.setBounds(onetwofivezero, fourfourzero,
+				twosixzero, fourzero);
 		btnAddFriend.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				AddFriend.application(userIn, clientIn, frame);
 			}
 		});
 		frame.getContentPane().add(btnAddFriend);
 
 		// Motivation
-		String motivation = "You only need " + pointsmissing + " points to the next level!";
+		String motivation = "You only need "
+				+ pointsmissing + " points to the next level!";
 		JLabel lblMotivation = new JLabel(motivation);
-		lblMotivation.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblMotivation.setBounds(193, 472, 462, 30);
+		lblMotivation.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblMotivation.setBounds(oneninethree, fourseventwo,
+				foursixtwo, threezero);
 		lblMotivation.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblMotivation);
 
 
+		// Labels
+
 		// Vegetarian
-		//Labels
-		JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
-		lblWhatKindOf.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		lblWhatKindOf.setBounds(52, 140, 333, 30);
+		JLabel lblWhatKindOf
+				= new JLabel("What kind of meal did you have today?");
+		lblWhatKindOf.setFont(new Font("Arial Black", Font.PLAIN, onefour));
+		lblWhatKindOf.setBounds(fivetwo, onefourzero,
+				threethreethree, threezero);
 		lblWhatKindOf.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblWhatKindOf);
 
 		// Vegetarian meal
 		JButton btnVeg = new JButton("Vegetarian meal");
 		btnVeg.setForeground(Color.WHITE);
-		btnVeg.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnVeg.setBackground(new Color(0, 255, 127));
-		btnVeg.setBounds(52, 170, 260, 40);
+		btnVeg.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnVeg.setBackground(new Color(0, twofivefive, onetwoseven));
+		btnVeg.setBounds(fivetwo, onesevenzero, twosixzero, fourzero);
 		btnVeg.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Vegetarian");
+			public void actionPerformed(final ActionEvent arg0) {
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn,
+						lblTotalCO2, lblCO2Saved, lblLeaderboardContent,
+						lblMotivation, lblLevel, "Vegetarian");
 			}
 		});
 		frame.getContentPane().add(btnVeg);
 
-		JButton btnNonVeg = new JButton("Carnivore meal");
-		btnNonVeg.setBackground(new Color(102, 204, 153));
+		JButton btnNonVeg = new JButton("Non-vegetarian meal");
+		btnNonVeg.setBackground(new Color(onezerotwo,
+				twozerofour, onefivethree));
 		btnNonVeg.setForeground(Color.WHITE);
-		btnNonVeg.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnNonVeg.setBounds(52, 225, 260, 40);
+		btnNonVeg.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnNonVeg.setBounds(fivetwo, twotwofive, twosixzero, fourzero);
 		btnNonVeg.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Carnivore");
+			public void actionPerformed(final ActionEvent arg0) {
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn,
+						lblTotalCO2, lblCO2Saved, lblLeaderboardContent,
+						lblMotivation, lblLevel, "Carnivore");
 			}
 		});
 		frame.getContentPane().add(btnNonVeg);
@@ -221,32 +350,40 @@ public class GUI_App extends Login_S {
 		// Produce
 
 		//Labels
-		JLabel lblProduce = new JLabel("What type of produce did you buy today?");
-		lblProduce.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblProduce.setBounds(52, 290, 333, 30);
+		JLabel lblProduce
+				= new JLabel("What type of produce did you buy today?");
+		lblProduce.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblProduce.setBounds(fivetwo, twoninezero, threethreethree, threezero);
 		lblProduce.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblProduce);
 
 		JButton btnLocalProduce = new JButton("Local Produce");
 		btnLocalProduce.setForeground(Color.WHITE);
-		btnLocalProduce.setBackground(new Color(0, 255, 127));
-		btnLocalProduce.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnLocalProduce.setBounds(52, 319, 260, 40);
+		btnLocalProduce.setBackground(new Color(0, twofivefive, onetwoseven));
+		btnLocalProduce.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnLocalProduce.setBounds(fivetwo, threeonenine, twosixzero, fourzero);
 		btnLocalProduce.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Local Produce");
+			public void actionPerformed(final ActionEvent arg0) {
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn,
+						lblTotalCO2, lblCO2Saved, lblLeaderboardContent,
+						lblMotivation, lblLevel, "Local Produce");
 			}
 		});
 		frame.getContentPane().add(btnLocalProduce);
 
 		JButton btnGlobalProduce = new JButton("Global Produce");
 		btnGlobalProduce.setForeground(Color.WHITE);
-		btnGlobalProduce.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnGlobalProduce.setBackground(new Color(102, 204, 153));
-		btnGlobalProduce.setBounds(52, 372, 260, 40);
+		btnGlobalProduce.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		btnGlobalProduce.setBackground(new Color(onezerotwo,
+				twozerofour, onefivethree));
+		btnGlobalProduce.setBounds(fivetwo, threeseventwo,
+				twosixzero, fourzero);
 		btnGlobalProduce.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Global Produce");
+			public void actionPerformed(final ActionEvent arg0) {
+				UpdatingLabels.updateEverythingDuo(userIn, clientIn,
+						lblTotalCO2, lblCO2Saved, lblLeaderboardContent,
+						lblMotivation, lblLevel, "Global Produce");
 			}
 		});
 		frame.getContentPane().add(btnGlobalProduce);
@@ -255,50 +392,63 @@ public class GUI_App extends Login_S {
 		// Transportation
 
 		//Labels
-		JLabel lblTransportation = new JLabel("How far did you travel today ?");
-		lblTransportation.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblTransportation.setBounds(445, 137, 369, 30);
+		JLabel lblTransportation
+				= new JLabel("How far did you travel today ?");
+		lblTransportation.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		lblTransportation.setBounds(fourfourfive, onethreeseven,
+				threesixnine, threezero);
 		lblTransportation.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTransportation);
 
 		JTextField distanceTravelled = new JTextField();
-		distanceTravelled.setBounds(445, 170, 130, 100);
+		distanceTravelled.setBounds(fourfourfive, onesevenzero,
+				onethreezero, onezerozero);
 		frame.getContentPane().add(distanceTravelled);
 
 		JLabel lblKM = new JLabel("km");
-		lblKM.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblKM.setBounds(580, 200, 260, 40);
+		lblKM.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblKM.setBounds(fiveeightzero, twozerozero, twosixzero, fourzero);
 		lblKM.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblKM);
 
 		// Method of transportation
-		JLabel lblDidYouUse = new JLabel("What was the method of transportation?");
+		JLabel lblDidYouUse
+				= new JLabel("What was the method of transportation?");
 		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
-		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblDidYouUse.setBounds(845, 140, 420, 30);
+		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblDidYouUse.setBounds(eightfourfive, onefourzero,
+				fourtwozero, threezero);
 		frame.getContentPane().add(lblDidYouUse);
 
 		JButton btnCar = new JButton("Car");
 		btnCar.setForeground(Color.WHITE);
-		btnCar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnCar.setBackground(new Color(0, 255, 127));
-		btnCar.setBounds(845, 170, 280, 30);
+		btnCar.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnCar.setBackground(new Color(0, twofivefive, onetwoseven));
+		btnCar.setBounds(eightfourfive, onesevenzero, twoeightzero, threezero);
 		btnCar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					double entry = Double.parseDouble(distanceTravelled.getText());
-					if(entry > 10000 || entry <=0 )
-					{
+					if (entry > onezerozerozerozero || entry <= 0) {
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Car");
+						UpdatingLabels.updateEverythingTextField(userIn,
+								clientIn, entry,
+								lblTotalCO2, lblCO2Saved,
+								lblLeaderboardContent,
+								lblMotivation, lblLevel, "Car");
 					}
 				} catch (java.lang.NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Please enter a valid number between 0 and 10,000",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					distanceTravelled.setText(null);
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					distanceTravelled.setText(null);
 				}
 			}
@@ -307,25 +457,44 @@ public class GUI_App extends Login_S {
 
 		JButton btnPublicTransport = new JButton("Public Transportation");
 		btnPublicTransport.setForeground(Color.WHITE);
-		btnPublicTransport.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnPublicTransport.setBackground(new Color(102, 204, 153));
-		btnPublicTransport.setBounds(845, 205, 280, 30);
+		btnPublicTransport.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		btnPublicTransport.setBackground(new Color(onezerotwo,
+				twozerofour, onefivethree));
+		btnPublicTransport.setBounds(eightfourfive, twozerofive,
+				twoeightzero, threezero);
 		btnPublicTransport.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				try {
-					double entry = Double.parseDouble(distanceTravelled.getText());
-					if(entry > 10000 || entry <=0 )
-					{
-						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry
+							= Double.parseDouble(distanceTravelled.getText());
+					if (entry > onezerozerozerozero || entry <= 0) {
+						JOptionPane.showMessageDialog(null,
+								"Please enter a valid number"
+										+ " between 0 and 10,000",
+								"User Entry Error",
+								JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Public Transportation");
+						UpdatingLabels.updateEverythingTextField(userIn,
+								clientIn, entry,
+								lblTotalCO2, lblCO2Saved,
+								lblLeaderboardContent,
+								lblMotivation, lblLevel,
+								"Public Transportation");
 					}
 				} catch (java.lang.NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Please enter a valid number "
+									+ "between 0 and 10,000",
+							"User Entry Error",
+							JOptionPane.ERROR_MESSAGE);
 					distanceTravelled.setText(null);
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error",
+							JOptionPane.ERROR_MESSAGE);
 					distanceTravelled.setText(null);
 				}
 			}
@@ -334,25 +503,37 @@ public class GUI_App extends Login_S {
 
 		JButton btnBike = new JButton("Bike");
 		btnBike.setForeground(Color.WHITE);
-		btnBike.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnBike.setBackground(new Color(0, 255, 204));
-		btnBike.setBounds(845, 240, 280, 30);
+		btnBike.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnBike.setBackground(new Color(0, twofivefive, twozerofour));
+		btnBike.setBounds(eightfourfive, twofourzero,
+				twoeightzero, threezero);
 		btnBike.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				try {
-					double entry = Double.parseDouble(distanceTravelled.getText());
-					if(entry > 10000 || entry <=0 )
-					{
-						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry =
+							Double.parseDouble(distanceTravelled.getText());
+					if (entry > onezerozerozerozero || entry <= 0) {
+						JOptionPane.showMessageDialog(null,
+								"Please enter a valid number"
+									+	" between 0 and 10,000",
+								"User Entry Error", JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Bike");
+						UpdatingLabels.updateEverythingTextField(userIn,
+								clientIn, entry, lblTotalCO2,
+								lblCO2Saved, lblLeaderboardContent,
+								lblMotivation, lblLevel, "Bike");
 					}
 				} catch (java.lang.NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Please enter a valid number"
+									+ " between 0 and 10,000",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					distanceTravelled.setText(null);
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					distanceTravelled.setText(null);
 				}
 			}
@@ -362,38 +543,55 @@ public class GUI_App extends Login_S {
 		// Temperature
 
 		//Labels
-		JLabel lblTemperature = new JLabel("What was the temperature in your room today?");
-		lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblTemperature.setBounds(445, 290, 388, 30);
+		JLabel lblTemperature
+				= new JLabel("By how much is your temperature lowered now?");
+		lblTemperature.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		lblTemperature.setBounds(fourfourfive, twoninezero,
+				threeeighteight, threezero);
 		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTemperature);
 
 		JTextField temperatureToday = new JTextField();
-		temperatureToday.setBounds(445, 319, 130, 100);
+		temperatureToday.setBounds(fourfourfive, threeonenine,
+				onethreezero, onezerozero);
 		frame.getContentPane().add(temperatureToday);
 
 		JButton btDegreeCelsius = new JButton("Degree Celsius");
 		btDegreeCelsius.setForeground(Color.WHITE);
-		btDegreeCelsius.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btDegreeCelsius.setBackground(new Color(102, 204, 153));
-		btDegreeCelsius.setBounds(580, 350, 200, 40);
+		btDegreeCelsius.setFont(new Font("Arial Black",
+				Font.PLAIN, onethree));
+		btDegreeCelsius.setBackground(new Color(onezerotwo,
+				twozerofour, onefivethree));
+		btDegreeCelsius.setBounds(fiveeightzero, threefivezero,
+				twozerozero, fourzero);
 		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
 		btDegreeCelsius.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				try {
-					double entry = Double.parseDouble(temperatureToday.getText());
-					if(entry > 10000 || entry <=0 )
-					{
-						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry
+							= Double.parseDouble(temperatureToday.getText());
+					if (entry > onezerozerozerozero || entry <= 0) {
+						JOptionPane.showMessageDialog(null,
+								"Please enter a valid number between 0 and 10,000",
+								"User Entry Error", JOptionPane.ERROR_MESSAGE);
 						temperatureToday.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Temperature");
+						UpdatingLabels.updateEverythingTextField(userIn,
+								clientIn, entry,
+								lblTotalCO2, lblCO2Saved,
+								lblLeaderboardContent,
+								lblMotivation, lblLevel, "Temperature");
 					}
 				} catch (java.lang.NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Please enter a valid number between 0 and 10,000",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					temperatureToday.setText(null);
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					temperatureToday.setText(null);
 				}
 			}
@@ -403,37 +601,55 @@ public class GUI_App extends Login_S {
 		// Solar
 
 		//Labels
-		JLabel lblSolar = new JLabel("How many installed solar panels do you own?");
-		lblSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblSolar.setBounds(845, 290, 500, 30);
+		JLabel lblSolar
+				= new JLabel("How many installed solar panels do you own?");
+		lblSolar.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblSolar.setBounds(eightfourfive, twoninezero,
+				fivezerozero, threezero);
 		lblSolar.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblSolar);
 
 		JTextField numberSolarPanels = new JTextField();
-		numberSolarPanels.setBounds(845, 319, 130, 100);
+		numberSolarPanels.setBounds(eightfourfive, threeonenine,
+				onethreezero, onezerozero);
 		frame.getContentPane().add(numberSolarPanels);
 
 		JButton btnNoSolar = new JButton("Solar Panels");
 		btnNoSolar.setForeground(Color.WHITE);
-		btnNoSolar.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnNoSolar.setBackground(new Color(102, 204, 153));
-		btnNoSolar.setBounds(980, 350, 185, 40);
+		btnNoSolar.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnNoSolar.setBackground(new Color(onezerotwo,
+				twozerofour, onefivethree));
+		btnNoSolar.setBounds(nineeightzero,
+				threefivezero, oneeightfive, fourzero);
 		btnNoSolar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				try {
-					double entry = Double.parseDouble(numberSolarPanels.getText());
-					if(entry > 10000 || entry <=0 )
+					double entry
+							= Double.parseDouble(numberSolarPanels.getText());
+					if (entry > onezerozerozerozero || entry <= 0)
 					{
-						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"Please enter a valid " 
+									+	"number between 0 and 10,000",
+								"User Entry Error", JOptionPane.ERROR_MESSAGE);
 						numberSolarPanels.setText(null);
 					} else {
-						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, "Solar");
+						UpdatingLabels.updateEverythingTextField(userIn,
+								clientIn, entry,
+								lblTotalCO2, lblCO2Saved,
+								lblLeaderboardContent,
+								lblMotivation, lblLevel, "Solar");
 					}
 				} catch (java.lang.NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 10,000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Please enter a valid number "
+									+ "between 0 and 10,000",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					numberSolarPanels.setText(null);
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "An unexpected error occured, we are sorry", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error", JOptionPane.ERROR_MESSAGE);
 					numberSolarPanels.setText(null);
 				}
 			}
@@ -449,12 +665,15 @@ public class GUI_App extends Login_S {
 		// Creates the "Log out" in menu-bar
 		JMenuItem mntmLogOut = new JMenuItem("Log out");
 		mntmLogOut.setForeground(Color.DARK_GRAY);
-		mntmLogOut.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		mntmLogOut.setBackground(new Color(204, 255, 255));
+		mntmLogOut.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		mntmLogOut.setBackground(new Color(twozerofour, twofivefive,
+				twofivefive));
 		mntmLogOut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "Log out",
-						JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+			public void actionPerformed(final ActionEvent arg0) {
+				if (JOptionPane.showConfirmDialog(frame,
+						"Confirm if you want to exit", "Log out",
+						JOptionPane.YES_NO_OPTION)
+						== JOptionPane.YES_NO_OPTION) {
 					Login_S.main(null);
 					frame.setVisible(false);
 				}
@@ -464,11 +683,12 @@ public class GUI_App extends Login_S {
 		// Creates the "My Profile" in menu-bar
 		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
 		mntmMyProfile.setForeground(Color.DARK_GRAY);
-		mntmMyProfile.setBackground(new Color(0, 204, 204));
-		mntmMyProfile.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		mntmMyProfile.setBackground(new Color(0, twozerofour, twozerofour));
+		mntmMyProfile.setFont(new Font("Arial Black", Font.PLAIN, onethree));
 		mntmMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MyProfile.application(userIn, clientIn, username, friendClient, frame);
+				MyProfile.application(userIn, clientIn, username,
+						friendClient, frame);
 				setUsername(userIn.getUser_name());
 				lblWelcome.setText("Welcome " + userIn.getUser_name());
 				System.out.println(userIn.getUser_name());
@@ -479,10 +699,10 @@ public class GUI_App extends Login_S {
 		// Creates the "My Friends" in menu-bar
 		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
 		mntmMyFriends.setForeground(Color.DARK_GRAY);
-		mntmMyFriends.setBackground(new Color(0, 255, 204));
-		mntmMyFriends.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		mntmMyFriends.setBackground(new Color(0, twofivefive, twozerofour));
+		mntmMyFriends.setFont(new Font("Arial Black", Font.PLAIN, onethree));
 		mntmMyFriends.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 				FriendsProfile.application(userIn, clientIn);
 			}
 		});
@@ -508,31 +728,55 @@ public class GUI_App extends Login_S {
 	 *
 	 * @param usernameIn the username
 	 */
-	public static void setUsername(String usernameIn) {
+	public static void setUsername(final String usernameIn) {
 		username = usernameIn;
 	}
 
+	/**
+	 * Get Points.
+	 * @return points
+	 */
 	public static int getPoints() {
 		return points;
 	}
 
-	public static void setPoints(int points) {
+	/**
+	 * Set Points.
+	 * @param points the points
+	 */
+	public static void setPoints(final int points) {
 		GUI_App.points = points;
 	}
 
+	/**
+	 * Get Level.
+	 * @return the level
+	 */
 	public static int getLevel() {
 		return level;
 	}
 
-	public static void setLevel(int level) {
+	/**
+	 * Set Level.
+	 * @param level the level
+	 */
+	public static void setLevel(final int level) {
 		GUI_App.level = level;
 	}
 
+	/**
+	 * Get Pointsmissing.
+	 * @return points
+	 */
 	public static int getPointsmissing() {
 		return pointsmissing;
 	}
 
-	public static void setPointsmissing(int pointsmissing) {
+	/**
+	 * Set Pointsmissing.
+	 * @param pointsmissing the pointsmissing
+	 */
+	public static void setPointsmissing(final int pointsmissing) {
 		GUI_App.pointsmissing = pointsmissing;
 	}
 }

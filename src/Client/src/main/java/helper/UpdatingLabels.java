@@ -1,6 +1,6 @@
 package helper;
 
-import GUI.GUI_App;
+import entity.CO2_Supplier;
 import entity.LeaderBoardEntry;
 import entity.User;
 import service.UserServiceImpl;
@@ -13,48 +13,69 @@ public class UpdatingLabels {
 
     public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
-        int points = getPoints();
-        int pointsSaved = getPointsSaved();
-
         //Depending on what is used
         if (method.equals("Vegetarian")) {
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + 100);
+            //Initializing the values we are going to use.
+            int mealSaved = (int) (CO2_Supplier.mealDifference(true, false) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(true, false) * 100);
+
+            //updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + mealSaved);
+            userIn.setTotal(getPoints() + mealCost);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //updating the feature's total saved.
             int temp = userIn.getVegetarian();
-            userIn.setVegetarian(temp + 100);
+            userIn.setVegetarian(temp + mealSaved);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Carnivore")) {
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points - 100);
+            //Initializing the values we are going to use.
+            int mealSaved = (int) (CO2_Supplier.mealDifference(false, false) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(false, false) * 100);
+
+            //updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + mealSaved);
+            userIn.setTotal(getPoints() + mealCost);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
-            int temp = userIn.getVegetarian();
-            userIn.setVegetarian(temp - 100);
+            //updating the feature's total saved.
+            userIn.getVegetarian();
+            userIn.setVegetarian(mealSaved);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Local Produce")) {
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + 100);
+            //Initializing the values we are going to use.
+            int mealSaved = (int) (CO2_Supplier.mealDifference(false, true) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(false, true) * 100);
+
+            //updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + mealSaved);
+            userIn.setTotal(getPoints() + mealCost);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //updating the feature's total saved.
             int temp = userIn.getProduce();
-            userIn.setProduce(temp + 100);
+            userIn.setProduce(temp + mealSaved);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Global Produce")) {
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points - 100);
+            //Initializing the values we are going to use.
+            int mealSaved = (int) (CO2_Supplier.mealDifference(false, false) * 100);
+            int mealCost = (int) (CO2_Supplier.meal(false, false) * 100);
+
+            //updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + mealSaved);
+            userIn.setTotal(getPoints() + mealCost);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //updating the feature's total saved.
             int temp = userIn.getProduce();
-            userIn.setProduce(temp - 100);
+            userIn.setProduce(temp + mealSaved);
             clientIn.updateUser(userIn);
         }
 
@@ -74,65 +95,90 @@ public class UpdatingLabels {
 
     public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, double entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, String method) {
 
-        int points = getPoints();
-        int pointsSaved = getPointsSaved();
-
         //Depending on what is used
         if (method.equals("Car")) {
-            double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + (int) additionalPoints);
+        	
+            // Initializing the values we are going to use.
+            int producedCO2 = ((int) CO2_Supplier.car((int) entry) * 100);
+
+            //Updating the totals.
+            userIn.setTotal_saved(getPointsSaved());
+            userIn.setTotal(getPoints() + producedCO2);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //Updating the feature's total saved.
             int temp = userIn.getCar();
-            userIn.setCar((int) additionalPoints);
+            
+            //All the other features store their SAVED co2 here, except for "car", which stores the total
+            //consumed co2.
+            userIn.setCar(temp + (int) CO2_Supplier.car((int) entry));
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Public Transportation")) {
-            double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + (int) additionalPoints);
+            // Initializing the values we are going to use.
+            int producedCO2 = ((int) CO2_Supplier.publicTransport((int) entry) * 100);
+            int savedCO2 = ((int) CO2_Supplier.publicTransportVsCar((int) entry) * 100);
+
+            //Updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + savedCO2);
+            userIn.setTotal(getPoints() + producedCO2);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //Updating the feature's total saved.
             int temp = userIn.getPublic_transportation();
-            userIn.setPublic_transportation((int) additionalPoints);
+            userIn.setPublic_transportation(temp + savedCO2);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Bike")) {
-            double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + (int) additionalPoints);
+            // Initializing the values we are going to use.
+            int producedCO2 = ((int) CO2_Supplier.bike((int) entry) * 100);
+            int savedCO2 = ((int) CO2_Supplier.bikeVsCar((int) entry) * 100);
+
+            //Updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + savedCO2);
+            userIn.setTotal(getPoints() + producedCO2);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //Updating the feature's total saved.
             int temp = userIn.getBike();
-            userIn.setBike((int) additionalPoints);
+            userIn.setBike(temp + savedCO2);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Temperature")) {
-            double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + (int) additionalPoints);
+            // Initializing the values we are going to use.
+            int producedCO2 = ((int) CO2_Supplier.usedTemperature(1, (int) entry) * 100);
+            int savedCO2 = ((int) CO2_Supplier.temperature(1, (int) entry) * 100);
+
+            //Updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + savedCO2);
+            userIn.setTotal(getPoints() + producedCO2);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //Updating the feature's total saved.
             int temp = userIn.getTemperature();
-            userIn.setTemperature((int) additionalPoints);
+            userIn.setTemperature(temp + savedCO2);
             clientIn.updateUser(userIn);
 
         } else if (method.equals("Solar")) {
-            double additionalPoints = entry * 10;
-            userIn.setTotal_saved(pointsSaved + 0);
-            userIn.setTotal(points + (int) additionalPoints);
+            // Initializing the values we are going to use. (assuming one person for simplicity)
+            int producedCO2 = ((int) CO2_Supplier.solarPanelUsed((int) entry, 1) * 100);
+            int savedCO2 = ((int) CO2_Supplier.solarPanel((int) entry) * 100);
+
+            //Updating the totals.
+            userIn.setTotal_saved(getPointsSaved() + savedCO2);
+            userIn.setTotal(getPoints() + producedCO2);
             int pointsTemp = getPoints();
             setLevel(pointsTemp / 1000);
 
+            //Updating the feature's total saved.
             int temp = userIn.getSolar();
-            userIn.setSolar((int) additionalPoints);
+            userIn.setSolar(temp + savedCO2);
             clientIn.updateUser(userIn);
-        }
+        } 
 
         //Update Labels
         setPoints(userIn.getTotal());
