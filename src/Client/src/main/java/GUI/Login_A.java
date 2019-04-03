@@ -85,10 +85,15 @@ public class Login_A {
      * Initialize the contents of the frame.
      */
     private static void initialize() {
-        // Create the frame
+        // Some used values
         final int twozerozero = 200;
         final int fivezerozero = 500;
         final int threezerozero = 300;
+        final int oneninesix = 196;
+        final int fouronesix = 416;
+        final int four = 4;
+        
+        // Create the frame
         frame = new JFrame();
         frame.setBackground(new Color(0, 255, 127));
 		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
@@ -254,7 +259,7 @@ public class Login_A {
 
         // Separators
         JSeparator separator = new JSeparator();
-        separator.setBounds(threethree, oneninesix, fouronesix, four);
+		separator.setBounds(threethree, oneninesix, fouronesix, four);
         frame.getContentPane().add(separator);
 
         JSeparator separator_1 = new JSeparator();

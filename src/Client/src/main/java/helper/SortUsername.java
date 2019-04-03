@@ -3,7 +3,7 @@ package helper;
 import java.util.Comparator;
 import entity.User;
 
-public class Sort implements Comparator<User> {
+public class SortUsername implements Comparator<User> {
 
 	@Override
     public int compare(User a, User b) {

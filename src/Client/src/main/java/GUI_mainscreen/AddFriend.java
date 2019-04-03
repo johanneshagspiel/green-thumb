@@ -2,7 +2,8 @@ package GUI_mainscreen;
 
 import GUI.GUI_App;
 import entity.User;
-import helper.Sort;
+import helper.SortLength;
+import helper.SortUsername;
 import entity.Friend;
 import service.FriendServiceImpl;
 import service.UserServiceImpl;
@@ -187,16 +188,8 @@ public class AddFriend {
 						}
 					}
 					
-					Collections.sort(result, new Sort());
-					
-					// Sorting the results
-//					for(int i = 0; i<result.size()-1; i++) {
-//						if(result.get(i).getUser_name().compareTo(result.get(i+1).getUser_name()) > 0) {
-//							String temp = result.get(i).getUser_name();
-//							result.get(i).setUser_name(result.get(i+1).getUser_name());
-//							result.get(i+1).setUser_name(temp);
-//						}
-//					}
+					Collections.sort(result, new SortUsername());
+					Collections.sort(result, new SortLength());
 
 					System.out.println(userIn.getUser_name());
 
