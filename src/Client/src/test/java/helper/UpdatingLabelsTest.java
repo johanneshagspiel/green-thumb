@@ -116,5 +116,73 @@ public class UpdatingLabelsTest {
 		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
 		
 	}
+	
+	@Test
+	public void testTemperature() {
+		
+		// Getting the user
+		UserServiceImpl clientIn = new UserServiceImpl();
+		User userIn = clientIn.getUser2("Test");
+		userIn.setTemperature(0);
+		userIn.setTotal(0);
+		userIn.setTotal_saved(0);
+		
+		// Adding some user information
+		final double entry = 1000;
+		JLabel lblTotalCO2 = new JLabel("");
+		JLabel lblCO2Saved = new JLabel("");
+		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblLevel = new JLabel("");
+		JLabel lblMotivation = new JLabel("");
+		final int resultTotal = 28700;
+		final int resultTotal_saved = 25500;
+		GUI_App.setLabel("Temperature Score");
+		
+		// Updating the label
+		UpdatingLabels.updateEverythingTextField(userIn,
+				clientIn, entry,
+				lblTotalCO2, lblCO2Saved,
+				lblLeaderboardContent,
+				lblMotivation, lblLevel, "Temperature");
+		
+		// Checking the method
+		assertEquals(userIn.getTotal(), resultTotal);
+		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		
+	}
+	
+	@Test
+	public void testSolar() {
+		
+		// Getting the user
+		UserServiceImpl clientIn = new UserServiceImpl();
+		User userIn = clientIn.getUser2("Test");
+		userIn.setSolar(0);
+		userIn.setTotal(0);
+		userIn.setTotal_saved(0);
+		
+		// Adding some user information
+		final double entry = 1000;
+		JLabel lblTotalCO2 = new JLabel("");
+		JLabel lblCO2Saved = new JLabel("");
+		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblLevel = new JLabel("");
+		JLabel lblMotivation = new JLabel("");
+		final int resultTotal = 28700;
+		final int resultTotal_saved = 25500;
+		GUI_App.setLabel("Solar Score");
+		
+		// Updating the label
+		UpdatingLabels.updateEverythingTextField(userIn,
+				clientIn, entry,
+				lblTotalCO2, lblCO2Saved,
+				lblLeaderboardContent,
+				lblMotivation, lblLevel, "Solar");
+		
+		// Checking the method
+		assertEquals(userIn.getTotal(), resultTotal);
+		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		
+	}
 
 }
