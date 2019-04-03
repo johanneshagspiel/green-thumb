@@ -60,8 +60,7 @@ public class Update {
     public static void initialize(User userIn, UserServiceImpl clientIn, String stringIn, FriendServiceImpl clientFriend, JFrame frameIn) {
 
         frame = new JFrame();
-        frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
-        frame.setBounds(300, 500, 306, 262);
+        frame.setBounds(300, 500, 300, 500);
         frame.getContentPane().setLayout(null);
         frame.setFocusable(true);
 
@@ -75,35 +74,31 @@ public class Update {
 
         // Labels
         JLabel lblWelcome = new JLabel("Change your " + label);
-        lblWelcome.setFont(new Font("Arial Black", Font.PLAIN, 15));
         lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
         lblWelcome.setBounds(10, 10, 266, 20);
         frame.getContentPane().add(lblWelcome);
 
         JLabel changeUserName = new JLabel("New " + label);
         changeUserName.setHorizontalAlignment(SwingConstants.CENTER);
-        changeUserName.setBounds(10, 42, 266, 20);
+        changeUserName.setBounds(10, 50, 266, 20);
         frame.getContentPane().add(changeUserName);
 
         JLabel changePassword = new JLabel("Please repeat your new " + label);
         changePassword.setHorizontalAlignment(SwingConstants.CENTER);
-        changePassword.setBounds(10, 110, 266, 20);
+        changePassword.setBounds(10, 100, 266, 20);
         frame.getContentPane().add(changePassword);
 
         txtentry1 = new JTextField();
-        txtentry1.setBounds(10, 67, 266, 30);
+        txtentry1.setBounds(10, 75, 266, 20);
         frame.getContentPane().add(txtentry1);
 
         txtentry2 = new JTextField();
-        txtentry2.setBounds(10, 132, 266, 30);
+        txtentry2.setBounds(10, 125, 266, 20);
         frame.getContentPane().add(txtentry2);
 
         JButton updateYourAccount = new JButton("Update your account");
-        updateYourAccount.setForeground(Color.WHITE);
-        updateYourAccount.setFont(new Font("Arial Black", Font.PLAIN, 13));
-        updateYourAccount.setBackground(new Color(0, 255, 127));
         updateYourAccount.setHorizontalAlignment(SwingConstants.CENTER);
-        updateYourAccount.setBounds(10, 175, 266, 30);
+        updateYourAccount.setBounds(10, 150, 266, 20);
         frame.getContentPane().add(updateYourAccount);
         updateYourAccount.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {

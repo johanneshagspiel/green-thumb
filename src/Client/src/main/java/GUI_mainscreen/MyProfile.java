@@ -50,25 +50,20 @@ public class MyProfile {
 	public static void initialize(User userIn, UserServiceImpl clientIn, FriendServiceImpl clientFriend, JFrame frameIn) {
 
 		frame2 = new JFrame();
-		frame2.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
-		frame2.setBounds(300, 500, 300, 337);
+		frame2.setBounds(300, 500, 300, 500);
 		frame2.getContentPane().setLayout(null);
 		frame2.setFocusable(true);
 
 
 		// Labels
 		JLabel lblWelcome = new JLabel("Welcome back " + userIn.getUser_name());
-		lblWelcome.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcome.setBounds(10, 10, 266, 27);
+		lblWelcome.setBounds(10, 10, 266, 20);
 		frame2.getContentPane().add(lblWelcome);
 
 		JButton changeUserName = new JButton("Change Username");
-		changeUserName.setBackground(new Color(0, 255, 127));
-		changeUserName.setForeground(Color.WHITE);
-		changeUserName.setFont(new Font("Arial Black", Font.PLAIN, 13));
 		changeUserName.setHorizontalAlignment(SwingConstants.CENTER);
-		changeUserName.setBounds(10, 43, 266, 27);
+		changeUserName.setBounds(10, 50, 266, 20);
 		frame2.getContentPane().add(changeUserName);
 		changeUserName.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -77,11 +72,8 @@ public class MyProfile {
 		});
 
 		JButton changePassword = new JButton("Change Password");
-		changePassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		changePassword.setForeground(Color.WHITE);
-		changePassword.setBackground(new Color(0, 255, 127));
 		changePassword.setHorizontalAlignment(SwingConstants.CENTER);
-		changePassword.setBounds(10, 75, 266, 27);
+		changePassword.setBounds(10, 75, 266, 20);
 		frame2.getContentPane().add(changePassword);
 		changePassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
