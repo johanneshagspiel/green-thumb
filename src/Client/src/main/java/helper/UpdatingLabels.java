@@ -113,6 +113,7 @@ public class UpdatingLabels {
 
             //Updating the feature's total saved.
             int temp = userIn.getCar();
+            
             //All the other features store their SAVED co2 here, except for "car", which stores the total
             //consumed co2.
             userIn.setCar(temp + (int) CO2_Supplier.car((int) entry));

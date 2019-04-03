@@ -18,27 +18,17 @@ public class UpdatingLabelsTest {
 	public void test() {
 		
 		// Getting the user
-		String username = "Test";
-		String password = "pwd";
-		User userIn = new User();
 		UserServiceImpl clientIn = new UserServiceImpl();
-		JTextField textField_1 = null;
-		JTextField txtPassword = null;
-		JFrame frame = null;
+		User userIn = clientIn.getUser2("Test");
 		userIn.setCar(0);
 		userIn.setTotal(0);
 		userIn.setTotal_saved(0);
-		
-		// Login in the user
-//		Login_r.Login_request(username, password,
-//				userIn, clientIn,
-//				textField_1, txtPassword, frame);
 		
 		// Adding some user information
 		final double entry = 1000;
 		JLabel lblTotalCO2 = new JLabel("1243");
 		JLabel lblCO2Saved = new JLabel("100");
-		JLabel lblLeaderboardContent = null;
+		JLabel lblLeaderboardContent = new JLabel("1");
 		JLabel lblLevel = new JLabel("1");
 		JLabel lblMotivation = new JLabel("Hi");
 		final int resultTotal = 271;
