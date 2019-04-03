@@ -48,5 +48,73 @@ public class UpdatingLabelsTest {
 		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
 		
 	}
+	
+	@Test
+	public void testPublicTransport() {
+		
+		// Getting the user
+		UserServiceImpl clientIn = new UserServiceImpl();
+		User userIn = clientIn.getUser2("Test");
+		userIn.setPublic_transportation(0);
+		userIn.setTotal(0);
+		userIn.setTotal_saved(0);
+		
+		// Adding some user information
+		final double entry = 1000;
+		JLabel lblTotalCO2 = new JLabel("");
+		JLabel lblCO2Saved = new JLabel("");
+		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblLevel = new JLabel("");
+		JLabel lblMotivation = new JLabel("");
+		final int resultTotal = 38800;
+		final int resultTotal_saved = 42500;
+		GUI_App.setLabel("Public Transportation Score");
+		
+		// Updating the label
+		UpdatingLabels.updateEverythingTextField(userIn,
+				clientIn, entry,
+				lblTotalCO2, lblCO2Saved,
+				lblLeaderboardContent,
+				lblMotivation, lblLevel, "Public Transportation");
+		
+		// Checking the method
+		assertEquals(userIn.getTotal(), resultTotal);
+		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		
+	}
+	
+	@Test
+	public void testBike() {
+		
+		// Getting the user
+		UserServiceImpl clientIn = new UserServiceImpl();
+		User userIn = clientIn.getUser2("Test");
+		userIn.setBike(0);
+		userIn.setTotal(0);
+		userIn.setTotal_saved(0);
+		
+		// Adding some user information
+		final double entry = 1000;
+		JLabel lblTotalCO2 = new JLabel("");
+		JLabel lblCO2Saved = new JLabel("");
+		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblLevel = new JLabel("");
+		JLabel lblMotivation = new JLabel("");
+		final int resultTotal = 28700;
+		final int resultTotal_saved = 25500;
+		GUI_App.setLabel("Bike Score");
+		
+		// Updating the label
+		UpdatingLabels.updateEverythingTextField(userIn,
+				clientIn, entry,
+				lblTotalCO2, lblCO2Saved,
+				lblLeaderboardContent,
+				lblMotivation, lblLevel, "Bike");
+		
+		// Checking the method
+		assertEquals(userIn.getTotal(), resultTotal);
+		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		
+	}
 
 }
