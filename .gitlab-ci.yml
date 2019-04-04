@@ -23,4 +23,4 @@ build:
 deploy:
   stage: deploy
   script: "git remote add heroku https://heroku:d5a1afd2-b712-4473-a074-a579726766a4@git.heroku.com/area22gogreen.git"
-  script: "git push -f heroku HEAD:refs/heads/master"
+  script: git push heroku master
