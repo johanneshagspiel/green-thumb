@@ -21,9 +21,9 @@ build:
   script: "mvn clean install -B"
   
 deploy:
-  stage: deploy
+  type: deploy
   script:
-    - "git remote add heroku https://heroku:d5a1afd2-b712-4473-a074-a579726766a4@git.heroku.com/area22gogreen.git"
-    - git commit -m "initial commit"
-    - "git push -f heroku master"
-
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - dpl --provider=heroku --app=area22gogreen --api-key=d5a1afd2-b712-4473-a074-a579726766a4
