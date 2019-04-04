@@ -1,8 +1,9 @@
 image: maven:3-jdk-8
 
 stages:
-  - build
+  - init
   - test
+  - build
   - deploy
 
 init:
@@ -22,7 +23,6 @@ build:
 deploy:
   stage: deploy
   script:
-    - git remote add heroku
-    https://heroku:d5a1afd2-b712-4473-a074-a579726766a4@git.heroku.com/area22gogreen.git
+    - git remote add heroku https://heroku:d5a1afd2-b712-4473-a074-a579726766a4@git.heroku.com/area22gogreen.git
     - git push heroku master
     - echo "deployed to Heroku server"
