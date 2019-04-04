@@ -23,6 +23,7 @@ build:
 deploy:
   type: deploy
   script:
+  - cd src/Server/TestServer
   - mvn package -DskipTests
   - apt-get update -qy
   - apt-get install -y ruby-dev
