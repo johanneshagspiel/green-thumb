@@ -16,19 +16,22 @@ import com.luv2code.springdemo.entity.User;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-	// need to inject the session factory
+	/** the autowired */
 	@Autowired
+	/** need to inject the session factory. */
 	private SessionFactory sessionFactory;
 			
 	@Override
 	public List<User> getUsers() {
 		
 		// get the current hibernate session
-		Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession
+				= sessionFactory.getCurrentSession();
 				
 		// create a query  ... sort by last name
 		Query<User> theQuery =
-				currentSession.createQuery("from User order by id",
+				currentSession.createQuery(
+						"from User order by id",
 						User.class);
 		
 		// execute query and get result list
@@ -39,10 +42,11 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void saveUser(User theUser) {
+	public void saveUser(final User theUser) {
 
 		// get current hibernate session
-		Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession
+				= sessionFactory.getCurrentSession();
 		
 		// save/upate the customer ... finally LOL
 		currentSession.saveOrUpdate(theUser);
@@ -50,7 +54,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUser(int theId) {
+	public User getUser(final int theId) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
@@ -62,14 +66,16 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void deleteUser(int theId) {
+	public void deleteUser(final int theId) {
 
 		// get the current hibernate session
-		Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession
+				= sessionFactory.getCurrentSession();
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from User where id=:userId");
+				currentSession.createQuery(
+						"delete from User where id=:userId");
 		theQuery.setParameter("userId", theId);
 		
 		theQuery.executeUpdate();		
@@ -81,7 +87,14 @@ public class UserDAOImpl implements UserDAO {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		Query query = currentSession.createSQLQuery("select * from user where user_name=:user_name and password=:password").addEntity(User.class).setParameter("user_name", user_name).setParameter("password", password);
+		Query query = currentSession.createSQLQuery(
+				"select * from user where"
+						+ " user_name=:user_name and password=:password")
+				.addEntity(User.class).
+						setParameter(
+						"user_name",
+						user_name).setParameter(
+								"password", password);
 
 		List<User> users = query.getResultList();
 
@@ -91,12 +104,16 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUser3(String user_name) {
+	public User getUser3(final String user_name) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		Query query = currentSession.createSQLQuery("select * from user where user_name=:user_name").addEntity(User.class).setParameter("user_name", user_name);
+		Query query = currentSession.createSQLQuery(
+				"select * from user where user_name=:user_name")
+				.addEntity(User.class).
+						setParameter(
+								"user_name", user_name);
 
 		List<User> users = query.getResultList();
 
@@ -106,14 +123,19 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUserSafe(User theUser) {
+	public User getUserSafe(final User theUser) {
 
 		String password = theUser.getPassword();
 		String user_name = theUser.getUser_name();
 
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		Query query = currentSession.createSQLQuery("select * from user where user_name=:user_name and password=:password").addEntity(User.class).setParameter("user_name", user_name).setParameter("password", password);
+		Query query = currentSession.createSQLQuery(
+				"select * from user where "
+						+ "user_name=:user_name and password=:password")
+				.addEntity(User.class).
+						setParameter("user_name", user_name)
+				.setParameter("password", password);
 
 		List<User> users = query.getResultList();
 
