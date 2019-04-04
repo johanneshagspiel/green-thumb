@@ -1,11 +1,28 @@
 image: maven:3-jdk-8
 
-build:
-  script: "mvn clean install -B"
+stages:
+  - build
+  - test
+  - deploy
+
+init:
+  stage: init
+  script: "mvn clean"
 test:
   stage: test
-  script: "mvn clean verify"
+  script: "mvn test"
   artifacts:
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml
+
+build:
+  script: "mvn clean install -B"
+  
+deploy:
+  stage: deploy
+  script:
+    - git remote add heroku
+    https://heroku:d5a1afd2-b712-4473-a074-a579726766a4@git.heroku.com/area22gogreen.git
+    - git push heroku master
+    - echo "deployed to Heroku server"
