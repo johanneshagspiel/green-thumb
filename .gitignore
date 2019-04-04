@@ -275,3 +275,5 @@ bin/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.
 .settings
 src/Client/.idea
 src/Server/.idea
+!/src/Server/TestServer/target/dependency
+!/src/Server/TestServer/target/spring-crm-rest.war
