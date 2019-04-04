@@ -23,6 +23,8 @@ build:
 deploy:
   type: deploy
   script:
+  - mvn package -DskipTests
+  - mvn war:exploded
   - apt-get update -qy
   - apt-get install -y ruby-dev
   - gem install dpl
