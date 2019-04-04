@@ -1,132 +1,147 @@
-package com.luv2code.springdemo.config;
+package com.luv2code.springdemo.test.rest;
 
-import java.beans.PropertyVetoException;
-import java.util.Properties;
-import java.util.logging.Logger;
+import com.luv2code.springdemo.entity.User;
+import com.luv2code.springdemo.rest.UserRestController;
+import com.luv2code.springdemo.service.UserService;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
-import javax.sql.DataSource;
+import java.util.Arrays;
+import java.util.List;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.MockitoAnnotations.initMocks;
 
 /**
- * The type Demo app config.
+ * The type User rest controller test.
  */
-@Configuration
-@EnableWebMvc
-@EnableTransactionManagement
-@ComponentScan("com.luv2code.springdemo")
-@PropertySource({ "classpath:persistence-mysql.properties" })
-public class DemoAppConfig implements WebMvcConfigurer {
-	/**
-	 * The environment variable.
-	 */
-	@Autowired
-	private Environment env;
-	/**
-	 * The logger variable.
-	 */
-	private Logger logger = Logger.getLogger(getClass().getName());
+public class UserRestControllerTest {
 
-	/**
-	 * My data source data source.
-	 *
-	 * @return the data source
-	 */
-	@Bean
-	public DataSource myDataSource() {
-		ComboPooledDataSource myDataSource =
-		new ComboPooledDataSource();
-		try {
-			myDataSource.setDriverClass(
-					"com.mysql.jdbc.Driver");
-			}
-		catch (PropertyVetoException exc) {
-			throw new RuntimeException(exc);
-											}
-		logger.info("jdbc.url=" + env.getProperty("jdbc.url"));
-		logger.info("jdbc.user=" + env.getProperty("jdbc.user"));
-		myDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-		myDataSource.setUser(env.getProperty("jdbc.user"));
-		myDataSource.setPassword(env.getProperty("jdbc.password"));
-		myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
-		myDataSource.setMinPoolSize(
-				getIntProperty("connection.pool.minPoolSize"));
-		myDataSource.setMaxPoolSize(
-				getIntProperty("connection.pool.maxPoolSize"));
-		myDataSource.setMaxIdleTime(
-				getIntProperty("connection.pool.maxIdleTime"));
-		return myDataSource;
-	}
-	/**
-	 * method to get the hibernate properties
-	 */
-	private Properties getHibernateProperties() {
-		Properties props = new Properties();
-		props.setProperty("hibernate.dialect",
-				env.getProperty("hibernate.dialect"));
-		props.setProperty("hibernate.show_sql",
-				env.getProperty("hibernate.show_sql"));
-		return props;
-	}
-	/**
-	 * method to get the int properties
-	 */
-	private int getIntProperty(String propName) {
-		String propVal = env.getProperty(propName);
-		int intPropVal = Integer.parseInt(propVal);
-		return intPropVal;
-	}
-	/**
-	 * Session factory local session factory bean.
-	 *
-	 * @return the local session factory bean
-	 */
-	@Bean
-	public LocalSessionFactoryBean sessionFactory(){
-		LocalSessionFactoryBean sessionFactory =
-				new LocalSessionFactoryBean();
-		sessionFactory.setDataSource(myDataSource());
-		sessionFactory.setPackagesToScan(
-				env.getProperty("hibernate.packagesToScan"));
-		sessionFactory.setHibernateProperties(
-				getHibernateProperties());
-		return sessionFactory;
-	}
-	/**
-	 * Transaction manager hibernate transaction manager.
-	 *
-	 * @param sessionFactory the session factory
-	 * @return the hibernate transaction manager
-	 */
-	@Bean
-	@Autowired
-	public HibernateTransactionManager transactionManager(
-			SessionFactory sessionFactory) {
-		HibernateTransactionManager txManager =
-				new HibernateTransactionManager();
-		txManager.setSessionFactory(sessionFactory);
-		return txManager;
-	}
+    @Mock
+    private UserService mockUserService;
+
+    @InjectMocks
+    private UserRestController userRestControllerUnderTest;
+
+    /**
+     * Sets up.
+     */
+    @Before
+    public void setUp() {
+        initMocks(this);
+    }
+
+    /**
+     * Test get users.
+     */
+    @Test
+    public void testGetUsers() {
+        // Setup
+        final List<User> expectedResult = Arrays.asList();
+
+        // Run the test
+        final List<User> result = userRestControllerUnderTest.getUsers();
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test get user.
+     */
+    @Test
+    public void testGetUser() {
+        // Setup
+        final int userId = 0;
+        final User expectedResult = null;
+
+        // Run the test
+        final User result = userRestControllerUnderTest.getUser(userId);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test get user 2.
+     */
+    @Test
+    public void testGetUser2() {
+        // Setup
+        final String user_name = "user_name";
+        final String password = "password";
+        final User expectedResult = null;
+
+        // Run the test
+        final User result = userRestControllerUnderTest.getUser2(user_name, password);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test get user 3.
+     */
+    @Test
+    public void testGetUser3() {
+        // Setup
+        final String user_name = "user_name";
+        final User expectedResult = null;
+
+        // Run the test
+        final User result = userRestControllerUnderTest.getUser3(user_name);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test add user.
+     */
+    @Test
+    public void testAddUser() {
+        // Setup
+        final User theUser = null;
+        final User expectedResult = null;
+
+        // Run the test
+        final User result = userRestControllerUnderTest.addUser(theUser);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test update user.
+     */
+    @Test
+    public void testUpdateUser() {
+        // Setup
+        final User theUser = null;
+        final User expectedResult = null;
+
+        // Run the test
+        final User result = userRestControllerUnderTest.updateUser(theUser);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test delete user.
+     */
+    @Test
+    public void testDeleteUser() {
+        // Setup
+        final int userId = 0;
+        final String expectedResult = "result";
+
+        // Run the test
+        final String result = userRestControllerUnderTest.deleteUser(userId);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
 }
-
-
-
-
-
-
-
-
-
