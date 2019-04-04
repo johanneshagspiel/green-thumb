@@ -1,4 +1,4 @@
-package test.entity;
+package entity;
 
 import entity.User;
 import org.junit.Test;
@@ -98,21 +98,6 @@ public class UserTest {
         assertEquals(test.getProduce(), 50);
     }
 
-    @Test
-    public void test_getTransportation() {
-        User test = new User();
-        test.setTransportation(100);
-        assertEquals(test.getTransportation(), 100);
-    }
-
-    @Test
-    public void test_setTransportation() {
-        User test = new User();
-        test.setTransportation(100);
-        assertEquals(test.getTransportation(), 100);
-        test.setTransportation(50);
-        assertEquals(test.getTransportation(), 50);
-    }
 
     @Test
     public void test_getTemperature() {
@@ -150,6 +135,6 @@ public class UserTest {
     public void test_toString() {
     	User test = new User();
     	System.out.println(test.toString());
-    	assertTrue(test.toString().equals("User [id=0, user_name=null, password=null, vegetarian=0, produce=0, transportation=0, temperature=0, solar=0]"));
+    	assertEquals(test.toString(), ("User [id=0, user_name=null, password=null, vegetarian=0, produce=0, car=0, public_transportation=0, bike=0, temperature=0, solar =0, total_saved=0, total_used=0, total=0]"));
     }
 }

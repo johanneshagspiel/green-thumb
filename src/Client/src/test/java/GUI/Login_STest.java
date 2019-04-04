@@ -1,4 +1,4 @@
-package test.GUI;
+package GUI;
 
 import GUI.Login_S;
 import org.junit.Before;
