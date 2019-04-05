@@ -52,7 +52,7 @@ public class Login_addAccount extends Login_S {
 		}
 
 		// Check if the username is available
-		if (clientIn.getUser2(username) != null || username.equals("Test2")) {
+		if (clientIn.getUser2(username) != null) {
 			JOptionPane.showMessageDialog(null,
 					"This username is not available",
 					"Create account",

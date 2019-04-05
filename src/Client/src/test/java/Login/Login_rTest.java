@@ -2,7 +2,11 @@ package Login;
 
 import Login.Login_r;
 import entity.User;
+
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import service.UserServiceImpl;
 
 import javax.swing.*;
@@ -14,7 +18,7 @@ import static org.junit.Assert.assertTrue;
  * The type Login r test.
  */
 public class Login_rTest {
-
+	
     /**
      * Test login request.
      */
@@ -88,6 +92,24 @@ public class Login_rTest {
 
         // Verify the results
         assertTrue(result);
+    }
+    
+    @Test
+    public void testNullPointer() {
+        // Setup
+        final String username = "Test";
+        final String password = "pwd";
+        final User userIn = null;
+        final UserServiceImpl clientIn = null;
+        final JTextField textField_1 = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JFrame frame = new JFrame();
+        
+        // Run the test
+        boolean result = Login_r.Login_request(username, password, userIn, clientIn, textField_1, txtPassword, frame);
+        
+     // Verify the results
+        assertFalse(result);
     }
     
 }
