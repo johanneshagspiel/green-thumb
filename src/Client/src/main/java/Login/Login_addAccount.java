@@ -61,21 +61,13 @@ public class Login_addAccount extends Login_S {
 			txtPassword.setText(null);
 			return false;
 		} else {
-			// If both textfields contain characters, execute the following
-			try {
 				userIn.setPassword(password);
 				userIn.setUser_name(username);
 				clientIn.createUser(userIn);
 				frame.setVisible(false);
 				Login_S.main(null);
 				return true;
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
 		}
-		return false;
 	}
 
 }
