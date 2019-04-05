@@ -59,7 +59,7 @@ public class Login_addAccountTest {
     @Test
     public void testAddAccountPasswordEmpty1() {
     	// Setup
-        final String username = "Koen";
+        final String username = "Test2";
         final String password = "";
         User userIn = new User();
         final UserServiceImpl clientIn = new UserServiceImpl();
@@ -116,7 +116,7 @@ public class Login_addAccountTest {
     @Test
     public void testAddAccountNewUser() {
     	// Setup
-        final String username = "Koen";
+        final String username = "Test2";
         final String password = "pwd";
         User userIn = new User();
         final UserServiceImpl clientIn = new UserServiceImpl();
@@ -129,7 +129,7 @@ public class Login_addAccountTest {
         final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
 
         //Reseting the added account
-        userIn = clientIn.getUser2("Koen");
+        userIn = clientIn.getUser2("Test2");
         clientIn.deleteUser(userIn.getId());
         
         // Verify the results
