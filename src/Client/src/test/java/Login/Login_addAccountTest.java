@@ -8,8 +8,7 @@ import service.UserServiceImpl;
 import javax.swing.*;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The type Login add account test.
@@ -20,16 +19,16 @@ public class Login_addAccountTest {
      * Test add account.
      */
     @Test
-    public void testAddAccountAllEmpty() {
+    public void testAddAccountWholeEmpty() {
         // Setup
         final String username = "";
         final String password = "";
-        final User userIn = null;
-        final UserServiceImpl clientIn = null;
-        final JTextField txtUsername = new JTextField ("");
-        final JTextField txtPassword = new JTextField ("");
-        final JTextField txtRPassword = new JTextField ("");
-        final JFrame hello = null;
+        final User userIn = new User();
+        final UserServiceImpl clientIn = new UserServiceImpl();
+        final JTextField txtUsername = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JTextField txtRPassword = new JTextField("");
+        final JFrame hello = new JFrame();
 
         // Run the test
         final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
@@ -39,25 +38,44 @@ public class Login_addAccountTest {
     }
     
     @Test
-    public void testAddAccountUsernameExsists() throws Exception {
-        // Setup
-        final String username = "Test";
+    public void testAddAccountUsernameEmpty() {
+    	// Setup
+        final String username = "";
         final String password = "pwd";
-        final User userIn = null;
-        final UserServiceImpl clientIn = null;
-        final JTextField txtUsername = new JTextField ("Test");
-        final JTextField txtPassword = new JTextField ("pwd");
-        final JTextField txtRPassword = new JTextField ("pwd");
-        final JFrame hello = null;
-        boolean result = true;
+        User userIn = new User();
+        final UserServiceImpl clientIn = new UserServiceImpl();
+        final JTextField txtUsername = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JTextField txtRPassword = new JTextField("");
+        final JFrame hello = new JFrame();
 
         // Run the test
-        try {
-        	 result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
-        } catch (Exception e) {
-        	result = false;
-        }
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
+        
         // Verify the results
         assertFalse(result);
+    }
+    
+    @Test
+    public void testAddAccountNewUser() {
+    	// Setup
+        final String username = "Koen";
+        final String password = "pwd";
+        User userIn = new User();
+        final UserServiceImpl clientIn = new UserServiceImpl();
+        final JTextField txtUsername = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JTextField txtRPassword = new JTextField("");
+        final JFrame hello = new JFrame();
+
+        // Run the test
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
+
+        //Reseting the added account
+        userIn = clientIn.getUser2("Koen");
+        clientIn.deleteUser(userIn.getId());
+        
+        // Verify the results
+        assertTrue(result);
     }
 }
