@@ -57,6 +57,63 @@ public class Login_addAccountTest {
     }
     
     @Test
+    public void testAddAccountPasswordEmpty1() {
+    	// Setup
+        final String username = "Koen";
+        final String password = "";
+        User userIn = new User();
+        final UserServiceImpl clientIn = new UserServiceImpl();
+        final JTextField txtUsername = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JTextField txtRPassword = new JTextField("");
+        final JFrame hello = new JFrame();
+
+        // Run the test
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
+        
+        // Verify the results
+        assertFalse(result);
+    }
+    
+    @Test
+    public void testAddAccountPasswordEmpty2() {
+    	// Setup
+        final String username = "Test";
+        final String password = "";
+        User userIn = new User();
+        final UserServiceImpl clientIn = new UserServiceImpl();
+        final JTextField txtUsername = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JTextField txtRPassword = new JTextField("");
+        final JFrame hello = new JFrame();
+
+        // Run the test
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
+        
+        // Verify the results
+        assertFalse(result);
+    }
+    
+    @Test
+    public void testAddAccountExsistingAcount() {
+    	// Setup
+        final String username = "Test";
+        final String password = "pwd";
+        User userIn = new User();
+        final UserServiceImpl clientIn = new UserServiceImpl();
+        final JTextField txtUsername = new JTextField("");
+        final JTextField txtPassword = new JTextField("");
+        final JTextField txtRPassword = new JTextField("");
+        final JFrame hello = new JFrame();
+
+        // Run the test
+        final boolean result = Login_addAccount.addAccount(username, password, userIn, clientIn, txtUsername, txtPassword, txtRPassword, hello);
+        
+        // Verify the results
+        assertFalse(result);
+    }
+    
+    @Test
     public void testAddAccountNewUser() {
     	// Setup
         final String username = "Koen";
