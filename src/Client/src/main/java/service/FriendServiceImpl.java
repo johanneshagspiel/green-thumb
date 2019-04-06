@@ -22,7 +22,7 @@ public class FriendServiceImpl  {
      *
      * @return the users
      */
-    public List<Friend> getUsers() {
+    public final List<Friend> getUsers() {
 
         return null;
     }
@@ -32,13 +32,16 @@ public class FriendServiceImpl  {
      *
      * @param theFriend the the friend
      */
-    public void createFriend(Friend theFriend) {
+    public final  void createFriend(final Friend theFriend) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            String postResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/friends/";
-            Friend friend = restTemplate.postForObject(postResourceUrl, theFriend, Friend.class);
-        } catch (Exception e)
-        {
+            String postResourceUrl =
+                    "http://localhost:8082/spring_crm"
+                            + "_rest_war_exploded/api/friends/";
+            Friend friend =
+                    restTemplate.postForObject(
+                            postResourceUrl, theFriend, Friend.class);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -49,23 +52,28 @@ public class FriendServiceImpl  {
      * @param user_name_entry the user name entry
      * @return the friends
      */
-    public List<Friend> getFriends(String user_name_entry) {
+    public final List<Friend> getFriends(final String user_name_entry) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            String getResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/friend/" + user_name_entry;
+            String getResourceUrl =
+                    "http://localhost:8082/spring_crm"
+                          +  "_rest_war_exploded/api/friend/"
+                            + user_name_entry;
 
-            ResponseEntity<List<Friend>> response = restTemplate.exchange(
+            ResponseEntity<List<Friend>> response
+                    = restTemplate.exchange(
                     getResourceUrl,
                     HttpMethod.GET,
                     null,
-                    new ParameterizedTypeReference<List<Friend>>(){});
+                    new ParameterizedTypeReference<List<Friend>>(){} );
             List<Friend> friends = response.getBody();
 
             return friends;
 
         } catch (Exception e) {
             e.printStackTrace();
-        } return null;
+        }
+        return null;
     }
 
     /**
@@ -73,9 +81,10 @@ public class FriendServiceImpl  {
      *
      * @param theId the the id
      */
-    public void deleteUser(int theId) {
+    public final void deleteUser(final int theId) {
         RestTemplate restTemplate = new RestTemplate();
-        String deleteResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/friends/" + theId;
+        String deleteResourceUrl = "http://localhost:8082/spring_crm"
+                + "_rest_war_exploded/api/friends/" + theId;
         restTemplate.delete(deleteResourceUrl);
     }
 
@@ -84,9 +93,10 @@ public class FriendServiceImpl  {
      *
      * @param theFriend the the friend
      */
-    public void updateUser(Friend theFriend) {
+    public final void updateUser(final Friend theFriend) {
         RestTemplate restTemplate = new RestTemplate();
-        String putResourceUrl = "http://localhost:8082/spring_crm_rest_war_exploded/api/friends/";
+        String putResourceUrl = "http://localhost:8082/spring_crm"
+                + "_rest_war_exploded/api/friends/";
         restTemplate.put(putResourceUrl, theFriend);
     }
 
