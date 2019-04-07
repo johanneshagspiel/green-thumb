@@ -194,8 +194,8 @@ public class  GUI_App extends Login_S {
 		// Labels
 		JLabel lblWelcome = new JLabel("Welcome " + username);
 		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, twonine));
-		lblWelcome.setBounds(onezero, onezero, onefivetwozero, fivenine);
-		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
+		lblWelcome.setBounds(52, 13, 462, 59);
+		lblWelcome.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblWelcome);
 
 		//Setting up points
@@ -213,27 +213,26 @@ public class  GUI_App extends Login_S {
 				= new JLabel("The amount of CO2 you have saved"
 				+ " so far is " + pointsSaved);
 		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, twozero));
-		lblCO2Saved.setBounds(onethreezero, fourtwo,
-				onefivetwozero, fivezero);
+		lblCO2Saved.setBounds(733, 19,
+				777, 50);
 		lblCO2Saved.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblCO2Saved);
 
 		//Information about CO2 saved
 		JLabel lblTotalCO2
-				= new JLabel("The total amount of CO2 you have used up"
-				+ " so far is " + points);
+				= new JLabel("Your total CO2 emission is now 0");
 		lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, twozero));
-		lblTotalCO2.setBounds(fourfivezero, fourtwo,
-				onefivetwozero, fivezero);
-		lblTotalCO2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTotalCO2.setBounds(765, 53,
+				652, 50);
+		lblTotalCO2.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTotalCO2);
 
 		// Information about level
 		level = points / onezerozerozero;
 		JLabel lblLevel = new JLabel("Your Level is " + level);
 		lblLevel.setFont(new Font("Tahoma", Font.PLAIN, twozero));
-		lblLevel.setBounds(onezero, sevenfour, onefivetwozero, fivezero);
-		lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLevel.setBounds(81, 53, 242, 50);
+		lblLevel.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblLevel);
 
 		// Leaderboard
@@ -396,19 +395,19 @@ public class  GUI_App extends Login_S {
 				= new JLabel("How far did you travel today ?");
 		lblTransportation.setFont(new Font("Arial Black",
 				Font.PLAIN, onethree));
-		lblTransportation.setBounds(fourfourfive, onethreeseven,
+		lblTransportation.setBounds(443, 137,
 				threesixnine, threezero);
 		lblTransportation.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTransportation);
 
 		JTextField distanceTravelled = new JTextField();
-		distanceTravelled.setBounds(fourfourfive, onesevenzero,
-				onethreezero, onezerozero);
+		distanceTravelled.setBounds(443, 200,
+				130, 40);
 		frame.getContentPane().add(distanceTravelled);
 
 		JLabel lblKM = new JLabel("km");
 		lblKM.setFont(new Font("Arial Black", Font.PLAIN, onethree));
-		lblKM.setBounds(fiveeightzero, twozerozero, twosixzero, fourzero);
+		lblKM.setBounds(585, 199, 59, 40);
 		lblKM.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblKM);
 
@@ -417,7 +416,7 @@ public class  GUI_App extends Login_S {
 				= new JLabel("What was the method of transportation?");
 		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, onethree));
-		lblDidYouUse.setBounds(eightfourfive, onefourzero,
+		lblDidYouUse.setBounds(667, 137,
 				fourtwozero, threezero);
 		frame.getContentPane().add(lblDidYouUse);
 
@@ -425,7 +424,7 @@ public class  GUI_App extends Login_S {
 		btnCar.setForeground(Color.WHITE);
 		btnCar.setFont(new Font("Arial Black", Font.PLAIN, onethree));
 		btnCar.setBackground(new Color(0, twofivefive, onetwoseven));
-		btnCar.setBounds(eightfourfive, onesevenzero, twoeightzero, threezero);
+		btnCar.setBounds(667, 175, twoeightzero, threezero);
 		btnCar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -461,8 +460,8 @@ public class  GUI_App extends Login_S {
 				Font.PLAIN, onethree));
 		btnPublicTransport.setBackground(new Color(onezerotwo,
 				twozerofour, onefivethree));
-		btnPublicTransport.setBounds(eightfourfive, twozerofive,
-				twoeightzero, threezero);
+		btnPublicTransport.setBounds(667, 210,
+				280, 30);
 		btnPublicTransport.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				try {
@@ -505,8 +504,8 @@ public class  GUI_App extends Login_S {
 		btnBike.setForeground(Color.WHITE);
 		btnBike.setFont(new Font("Arial Black", Font.PLAIN, onethree));
 		btnBike.setBackground(new Color(0, twofivefive, twozerofour));
-		btnBike.setBounds(eightfourfive, twofourzero,
-				twoeightzero, threezero);
+		btnBike.setBounds(667, 245,
+				280, 30);
 		btnBike.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				try {
@@ -553,8 +552,8 @@ public class  GUI_App extends Login_S {
 		frame.getContentPane().add(lblTemperature);
 
 		JTextField temperatureToday = new JTextField();
-		temperatureToday.setBounds(fourfourfive, threeonenine,
-				onethreezero, onezerozero);
+		temperatureToday.setBounds(445, 350,
+				130, 40);
 		frame.getContentPane().add(temperatureToday);
 
 		JButton btDegreeCelsius = new JButton("Degree Celsius");
@@ -610,8 +609,8 @@ public class  GUI_App extends Login_S {
 		frame.getContentPane().add(lblSolar);
 
 		JTextField numberSolarPanels = new JTextField();
-		numberSolarPanels.setBounds(eightfourfive, threeonenine,
-				onethreezero, onezerozero);
+		numberSolarPanels.setBounds(845, 350,
+				130, 40);
 		frame.getContentPane().add(numberSolarPanels);
 
 		JButton btnNoSolar = new JButton("Solar Panels");
