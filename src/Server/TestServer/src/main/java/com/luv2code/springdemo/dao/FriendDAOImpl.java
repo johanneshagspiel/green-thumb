@@ -16,19 +16,24 @@ import com.luv2code.springdemo.entity.Friend;
 @Repository
 public class FriendDAOImpl implements FriendDAO {
 
-    // need to inject the session factory
+
+    /** need to inject the session factory. */
     @Autowired
     private SessionFactory sessionFactory;
 
 
     @Override
-    public List<Friend> getFriends(String user_name_entry) {
+    public List<Friend> getFriends(final String user_name_entry) {
 
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
         // create a query  ... sort by last name
-        Query query = currentSession.createSQLQuery("select * from friend where user_name_entry=:user_name_entry").addEntity(Friend.class).setParameter("user_name_entry", user_name_entry);
+        Query query = currentSession.createSQLQuery(
+                "select * from friend "
+                       + "where user_name_entry=:user_name_entry")
+                .addEntity(Friend.class).setParameter(
+                        "user_name_entry", user_name_entry);
 
         List<Friend> friends = query.getResultList();
 
@@ -44,7 +49,8 @@ public class FriendDAOImpl implements FriendDAO {
         Session currentSession = sessionFactory.getCurrentSession();
 
         // create a query  ... sort by last name
-        Query query = currentSession.createSQLQuery("select * from friend").addEntity(Friend.class);
+        Query query = currentSession.createSQLQuery(
+                "select * from friend").addEntity(Friend.class);
 
         // execute query and get result list
         List<Friend> friends = query.getResultList();
@@ -54,7 +60,7 @@ public class FriendDAOImpl implements FriendDAO {
     }
 
     @Override
-    public void saveFriend(Friend theFriend) {
+    public void saveFriend(final Friend theFriend) {
 
         // get current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
@@ -65,13 +71,16 @@ public class FriendDAOImpl implements FriendDAO {
     }
 
     @Override
-    public void deleteFriend(int id) {
+    public void deleteFriend(final int id) {
 
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
         // delete object with primary key
-        Query query = currentSession.createSQLQuery("delete from friend where id=:id").addEntity(Friend.class).setParameter("id", id);
+        Query query = currentSession.createSQLQuery(
+                "delete from friend where id=:id").
+                addEntity(Friend.class).setParameter(
+                        "id", id);
 
         query.executeUpdate();
     }

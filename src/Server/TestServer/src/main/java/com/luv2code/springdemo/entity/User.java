@@ -12,54 +12,53 @@ import java.io.Serializable;
  * The type User.
  */
 @Entity
-@Table(name="user")
-public class User implements Serializable{
-
+@Table(name = "user")
+public class User implements Serializable {
+	/** the id. */
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
-	
-	@Column(name="user_name")
+	/** the user name. */
+	@Column(name = "user_name")
 	private String user_name;
-	
-	@Column(name="password")
+	/** the password. */
+	@Column(name = "password")
 	private String password;
-	
-	@Column(name="vegetarian")
+	/** the vegetarian. */
+	@Column(name = "vegetarian")
 	private int vegetarian;
-
-	@Column(name="produce")
+	/** the produce. */
+	@Column(name = "produce")
 	private int produce;
-
-	@Column(name="car")
+	/** the car. */
+	@Column(name = "car")
 	private int car;
-
-	@Column(name="public_transportation")
+	/** the public transport. */
+	@Column(name = "public_transportation")
 	private int public_transportation;
-
-	@Column(name="bike")
+	/** the bike. */
+	@Column(name = "bike")
 	private int bike;
-
-	@Column(name="temperature")
+	/** the temperature. */
+	@Column(name = "temperature")
 	private int temperature;
-
-	@Column(name="solar")
+	/** the solar. */
+	@Column(name = "solar")
 	private int solar;
-
-	@Column(name="total_saved")
+	/** the total saved. */
+	@Column(name = "total_saved")
 	private int total_saved;
-
-	@Column(name="total_used")
+	/** the total used. */
+	@Column(name = "total_used")
 	private int total_used;
-
-	@Column(name="total")
+	/** the total. */
+	@Column(name = "total")
 	private int total;
 	/**
 	 * Instantiates a new User.
 	 */
 	public User() {
-		
 	}
 
 	/**
@@ -76,7 +75,7 @@ public class User implements Serializable{
 	 *
 	 * @param id the id
 	 */
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
@@ -94,7 +93,7 @@ public class User implements Serializable{
 	 *
 	 * @param user_name the user name
 	 */
-	public void setUser_name(String user_name) {
+	public void setUser_name(final String user_name) {
 		this.user_name = user_name;
 	}
 
@@ -112,7 +111,7 @@ public class User implements Serializable{
 	 *
 	 * @param password the password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -130,7 +129,7 @@ public class User implements Serializable{
 	 *
 	 * @param vegetarian the vegetarian
 	 */
-	public void setVegetarian(int vegetarian) {
+	public void setVegetarian(final int vegetarian) {
 		this.vegetarian = vegetarian;
 	}
 
@@ -148,55 +147,103 @@ public class User implements Serializable{
 	 *
 	 * @param produce the produce
 	 */
-	public void setProduce(int produce) {
+	public void setProduce(final int produce) {
 		this.produce = produce;
 	}
 
+	/**
+	 * Get car.
+	 * @return car number
+	 */
 	public int getCar() {
 		return car;
 	}
 
-	public void setCar(int car) {
+	/**
+	 * set Car.
+	 * @param car the car
+	 */
+	public void setCar(final int car) {
 		this.car = car;
 	}
 
+	/**
+	 * Get Public transport.
+	 * @return the number
+	 */
 	public int getPublic_transportation() {
 		return public_transportation;
 	}
 
-	public void setPublic_transportation(int public_transportation) {
+	/** Set public transport.
+	 *
+	 * @param public_transportation the public transport
+	 */
+	public void setPublic_transportation(final int public_transportation) {
 		this.public_transportation = public_transportation;
 	}
 
+	/**
+	 * Get bike.
+	 * @return bike
+	 */
 	public int getBike() {
 		return bike;
 	}
 
-	public void setBike(int bike) {
+	/**
+	 * Set bike.
+	 * @param bike the bike
+	 */
+	public void setBike(final int bike) {
 		this.bike = bike;
 	}
 
+	/**
+	 * Get total saved.
+	 * @return the total saved
+	 */
 	public int getTotal_saved() {
 		return total_saved;
 	}
 
-	public void setTotal_saved(int total_saved) {
+	/** Set total saved.
+	 *
+	 * @param total_saved the total saved
+	 */
+	public void setTotal_saved(final int total_saved) {
 		this.total_saved = total_saved;
 	}
 
+	/**
+	 * Get the total used.
+	 * @return total used
+	 */
 	public int getTotal_used() {
 		return total_used;
 	}
 
-	public void setTotal_used(int total_used) {
+	/**
+	 * Set total used.
+	 * @param total_used the total used
+	 */
+	public void setTotal_used(final int total_used) {
 		this.total_used = total_used;
 	}
 
+	/**
+	 * Get total.
+	 * @return total
+	 */
 	public int getTotal() {
 		return total;
 	}
 
-	public void setTotal(int total) {
+	/** Set total.
+	 *
+	 * @param total the total
+	 */
+	public void setTotal(final int total) {
 		this.total = total;
 	}
 
@@ -214,7 +261,7 @@ public class User implements Serializable{
 	 *
 	 * @param temperature the temperature
 	 */
-	public void setTemperature(int temperature) {
+	public void setTemperature(final int temperature) {
 		this.temperature = temperature;
 	}
 
@@ -232,15 +279,28 @@ public class User implements Serializable{
 	 *
 	 * @param solar the solar
 	 */
-	public void setSolar(int solar) {
+	public void setSolar(final int solar) {
 		this.solar = solar;
 	}
 
+	/**
+	 * Make a string.
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", user_name=" + user_name + ", password=" + password + ", vegetarian=" + vegetarian + ", produce=" + produce + ", car=" + car + ", public_transportation=" + public_transportation + ", bike=" + bike + ", temperature=" + temperature + ", solar =" + solar + ", total_saved=" + total_saved + ", total_used=" + total_used  + ", total=" + total + "]";
+		return "User [id=" + id + ", user_name="
+				+ user_name + ", password="
+				+ password + ", vegetarian="
+				+ vegetarian + ", produce="
+				+ produce + ", car=" + car
+				+ ", public_transportation="
+				+ public_transportation + ", bike="
+				+ bike + ", temperature=" + temperature
+				+ ", solar =" + solar + ", total_saved="
+				+ total_saved + ", total_used="
+				+ total_used  + ", total=" + total + "]";
 	}
-		
 }
 
 

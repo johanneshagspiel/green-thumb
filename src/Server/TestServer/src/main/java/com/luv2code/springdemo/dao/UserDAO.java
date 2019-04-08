@@ -13,14 +13,14 @@ public interface UserDAO {
      *
      * @return the users
      */
-    public List<User> getUsers();
+     List<User> getUsers();
 
     /**
      * Save user.
      *
      * @param theUser the the user
      */
-    public void saveUser(User theUser);
+     void saveUser(User theUser);
 
     /**
      * Gets user.
@@ -28,14 +28,14 @@ public interface UserDAO {
      * @param theId the the id
      * @return the user
      */
-    public User getUser(int theId);
+     User getUser(int theId);
 
     /**
      * Delete user.
      *
      * @param theId the the id
      */
-    public void deleteUser(int theId);
+     void deleteUser(int theId);
 
     /**
      * Gets user 2.
@@ -44,7 +44,7 @@ public interface UserDAO {
      * @param password  the password
      * @return the user 2
      */
-    public User getUser2(String user_name, String password);
+     User getUser2(String user_name, String password);
 
     /**
      * Gets user 3.
@@ -52,13 +52,13 @@ public interface UserDAO {
      * @param user_name the user name
      * @return the user 3
      */
-    public User getUser3(String user_name);
+     User getUser3(String user_name);
 
     /**
      * Gets user 3.
      *
-     * @param returns the User with the right username + password combination
+     * @param theUser the User with the right username + password combination
      * @return the user 3
      */
-    public User getUserSafe(User theUser);
+     User getUserSafe(User theUser);
 }

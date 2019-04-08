@@ -15,27 +15,27 @@ public interface FriendDAO {
      * @param user_name_entry the user name entry
      * @return the friends
      */
-    public List<Friend> getFriends(String user_name_entry);
+     List<Friend> getFriends(String user_name_entry);
 
     /**
      * Gets friends.
      *
      * @return the friends
      */
-    public List<Friend> getFriends();
+     List<Friend> getFriends();
 
     /**
      * Save friend.
      *
      * @param theFriend the the friend
      */
-    public void saveFriend(Friend theFriend);
+     void saveFriend(Friend theFriend);
 
     /**
      * Delete friend.
      *
      * @param theId the the id
      */
-    public void deleteFriend(int theId);
+     void deleteFriend(int theId);
 
 }
