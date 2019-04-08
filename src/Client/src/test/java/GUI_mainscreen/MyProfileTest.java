@@ -45,7 +45,7 @@ public class MyProfileTest {
         final JFrame frame = null;
 
         // Run the test
-        MyProfile.initialize(userIn, clientIn, friendClientIn, frame);
+       // MyProfile.initialize(userIn, clientIn, friendClientIn, frame);
 
         // Verify the results
     }

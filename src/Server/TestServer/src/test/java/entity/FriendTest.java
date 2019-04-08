@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.entity;
+package entity;
 
 import com.luv2code.springdemo.entity.Friend;
 import org.junit.Test;
@@ -49,5 +49,13 @@ public class FriendTest {
         assertEquals(test.getFriend_name(),"test");
     }
 
+    @Test
+	public void testFriend_toString() {
+		Friend Test = new Friend();
+		Test.setId(12);
+		Test.setFriend_name("Ardy");
+		Test.setUser_name_entry("Nick");
+		assertEquals(Test.toString(), "Friend [id=12, user_name_entry=Nick, friend_name=Ardy]");
+	}
 
 }

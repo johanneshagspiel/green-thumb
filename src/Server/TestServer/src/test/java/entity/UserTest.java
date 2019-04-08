@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.entity;
+package entity;
 
 import com.luv2code.springdemo.entity.User;
 import org.junit.Before;
