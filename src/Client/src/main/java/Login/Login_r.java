@@ -55,6 +55,7 @@ public class Login_r extends Login_S {
 			JOptionPane.showMessageDialog(null, "There was an error when trying to read the logindetails database file", "Read file error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
+		
 		return false;
 	}
 }
