@@ -91,7 +91,7 @@ public class FriendServiceImplTest {
     @Test
     public void testUpdateUser() {
         // Setup
-        final Friend theFriend = null;
+        final Friend theFriend = new Friend();
 
         // Run the test
         friendServiceImplUnderTest.updateUser(theFriend);
