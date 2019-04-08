@@ -12,6 +12,14 @@ import service.UserServiceImpl;
 public class UpdatingLabelsTest {
 
 	@Test
+	public void testConstructor() {
+		
+		UpdatingLabels Ardy = new UpdatingLabels();
+		
+		assertNotNull(Ardy);
+	}
+	
+	@Test
 	public void testCar() {
 
 		// Getting the user

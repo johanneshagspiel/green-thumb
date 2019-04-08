@@ -11,4 +11,8 @@ public class PointsMissing {
         return 1000 - (pointsIn % 1000);
 
     }
+    
+    public PointsMissing() {
+    	
+    }
 }
