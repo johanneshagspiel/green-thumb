@@ -1,4 +1,5 @@
-package test.entity;
+package entity;
+
 import entity.CO2_Supplier;
 
 import org.junit.Test;
