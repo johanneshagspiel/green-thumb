@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.dao;
+package dao;
 
 import com.luv2code.springdemo.dao.UserDAOImpl;
 import com.luv2code.springdemo.entity.User;

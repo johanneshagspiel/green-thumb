@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.config;
+package config;
 
 import com.luv2code.springdemo.config.MySpringMvcDispatcherServletInitializer;
 import org.junit.Before;
