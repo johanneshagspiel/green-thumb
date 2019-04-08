@@ -23,9 +23,10 @@ public class AddFriendTest {
         final User userIn = null;
         final UserServiceImpl clientIn = null;
         final JFrame frameIn = null;
+        final JLabel imgAchievement = null;
 
         // Run the test
-        AddFriend.application(userIn, clientIn, frameIn);
+        AddFriend.application(userIn, clientIn, frameIn, imgAchievement);
 
         // Verify the results
     }
@@ -39,9 +40,10 @@ public class AddFriendTest {
         final User userIn = null;
         final UserServiceImpl clientIn = null;
         final JFrame frameIn = null;
+        final JLabel imgAchievement = null;
 
         // Run the test
-        AddFriend.initialize(userIn, clientIn, frameIn);
+        AddFriend.initialize(userIn, clientIn, frameIn, imgAchievement);
 
         // Verify the results
     }
