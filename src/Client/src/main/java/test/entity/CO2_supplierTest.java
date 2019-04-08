@@ -5,7 +5,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 /** the supplier test. */
 public class CO2_supplierTest {
-    /** test bike. */
+    
+	/** test constructor*/
+	@Test
+	public void testConstructor() {
+		
+		CO2_Supplier Ardy = new CO2_Supplier();
+		
+		assertNotNull(Ardy);
+	}
+	
+	/** test bike. */
     @Test
     public final void testBikeNegative() {
         int km = -10;
@@ -228,12 +238,31 @@ public class CO2_supplierTest {
                 CO2_Supplier.getKWH(7, 0),
                 result, 0);
     }
+    
+    /** test KWH. */
+    @Test
+    public final void testGetKWHFourInhabitants() {
+        double result = 4600.0 / 365.0;
+        assertEquals("should return result",
+                CO2_Supplier.getKWH(4, 0),
+                result, 0);
+    }
+    
     /** test solar panel. */
     @Test
     public final void testSolarPanelUsed() {
         double result = 2900.0 / 365.0 * .558 -  4.5 * 2 * 0.300 * 0.558;
         assertEquals("The solare panels should have saved result amount",
                 CO2_Supplier.solarPanelUsed(2, 2),
+                result, 0);
+    }
+    
+    /** test solar panel. */
+    @Test
+    public final void testSolarPanelUsedSmallZero() {
+        double result = 0.0;
+        assertEquals("The solare panels should have saved result amount",
+                CO2_Supplier.solarPanelUsed(-12, 2),
                 result, 0);
     }
 }

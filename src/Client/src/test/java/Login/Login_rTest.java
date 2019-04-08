@@ -12,6 +12,7 @@ import service.UserServiceImpl;
 import javax.swing.*;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -22,6 +23,14 @@ public class Login_rTest {
     /**
      * Test login request.
      */
+	@Test
+	public void testConstructor() {
+		
+		Login_r Ardy = new Login_r();
+		
+		assertNotNull(Ardy);
+	}
+	
     @Test
     public void testWrongNamePassword() {
         // Setup

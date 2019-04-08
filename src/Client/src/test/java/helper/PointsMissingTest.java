@@ -13,6 +13,14 @@ public class PointsMissingTest {
 	final int minusresult = 1456;
 
 	@Test
+	public void testConstructor() {
+		
+		PointsMissing Ardy = new PointsMissing();
+		
+		assertNotNull(Ardy);
+	}
+	
+	@Test
 	public void testUnderThousand() {
 		
 		int pointsIn = 456;

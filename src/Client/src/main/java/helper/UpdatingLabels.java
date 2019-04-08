@@ -10,7 +10,12 @@ import javax.swing.*;
 import static GUI.GUI_App.*;
 /** Update the label. */
 public class UpdatingLabels {
-    /**
+    
+	public UpdatingLabels() {
+		
+	}
+	
+	/**
      * Everything for leaderboard.
      * @param userIn the user in
      * @param clientIn the client in
