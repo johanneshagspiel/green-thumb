@@ -203,7 +203,13 @@ public class  GUI_App extends Login_S {
 		final int oneninezero = 190;
 		final int onefourfourzero = 1440;
 		final int sevenzero = 70;
-		
+		final int fourfourthree = 443;
+		final int fiveeightnine = 589;
+		final int fiveeightfive = 585;
+		final int onenineone = 191;
+		final int oneninenine = 199;
+		final int sixsixseven = 667;
+		final int onesevenfive = 175;
 		
 
 
@@ -587,425 +593,418 @@ public class  GUI_App extends Login_S {
 								twosixzero, fourzero);
 						btnGlobalProduce.addActionListener(new ActionListener() {
 
-															   public void actionPerformed(ActionEvent arg0) {
-																   UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, imgAchievementTwo, imgAchievementSeven, "Global Produce");
+							public void actionPerformed(ActionEvent arg0) {
+								UpdatingLabels.updateEverythingDuo(userIn, clientIn, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, imgAchievementTwo, imgAchievementSeven, "Global Produce");
 
-																   }
-															   });
+							}
+						});
 		frame.getContentPane().add(btnGlobalProduce);
 
 
-															   // Transportation
+		// Transportation
 
-															   //Labels
-															   JLabel lblTransportation
-																	   = new JLabel("How far did you travel today ?");
+		//Labels
+		JLabel lblTransportation
+		= new JLabel("How far did you travel today?");
 		lblTransportation.setFont(new Font(
 				"Arial Black",
 				Font.PLAIN, onethree));
-		lblTransportation.setBounds(
-															   fourfourfive, onethreeseven,
-															   threesixnine, threezero);
+		lblTransportation.setBounds(fourfourthree, onethreeseven,
+				threesixnine, threezero);
 		lblTransportation.setHorizontalAlignment(
-															   SwingConstants.LEFT);
+				SwingConstants.LEFT);
 		frame.getContentPane().add(lblTransportation);
 
-															   JTextField distanceTravelled = new JTextField();
-		distanceTravelled.setBounds(
-															   fourfourfive, onesevenzero,
-															   onethreezero, onezerozero);
+		JTextField distanceTravelled = new JTextField();
+		distanceTravelled.setBounds(fourfourthree, twozerozero,
+				onethreezero, fourzero);
 		frame.getContentPane().add(distanceTravelled);
 
-															   JLabel lblKM = new JLabel("km");
-		lblKM.setFont(new Font(
-				"Arial Black", Font.PLAIN, onethree));
-		lblKM.setBounds(
-															   fiveeightzero, twozerozero,
-															   twosixzero, fourzero);
+		JLabel lblKM = new JLabel("km");
+		lblKM.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblKM.setBounds(fiveeightfive, oneninenine,
+				fivenine, fourzero);
 		lblKM.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblKM);
 
-															   // Method of transportation
-															   JLabel lblDidYouUse
-																	   = new JLabel(
-																	   "What was the method of transportation?");
+		// Method of transportation
+		JLabel lblDidYouUse
+		= new JLabel(
+				"What was the method of transportation?");
 		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDidYouUse.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		lblDidYouUse.setBounds(
-															   eightfourfive, onefourzero,
-															   fourtwozero, threezero);
+				eightfourfive, onefourzero,
+				fourtwozero, threezero);
 		frame.getContentPane().add(lblDidYouUse);
 
-															   JButton btnCar = new JButton("Car");
+		JButton btnCar = new JButton("Car");
 		btnCar.setForeground(Color.WHITE);
-		btnCar.setFont(new Font(
-				"Arial Black", Font.PLAIN, onethree));
-		btnCar.setBackground(
-				new Color(0, twofivefive, onetwoseven));
-		btnCar.setBounds(
-															   eightfourfive, onesevenzero,
-															   twoeightzero, threezero);
+		btnCar.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnCar.setBackground(new Color(0, twofivefive, onetwoseven));
+		btnCar.setBounds(sixsixseven, onesevenfive,
+				twoeightzero, threezero);
 		btnCar.addActionListener(new ActionListener() {
-																   public void actionPerformed( final ActionEvent arg0) {
-																	   try {
+			public void actionPerformed( final ActionEvent arg0) {
+				try {
 
-																		   double entry = Double.parseDouble(distanceTravelled.getText());
-																		   if(entry > 1000 || entry <=0 )
-																		   {
-																			   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
-																			   distanceTravelled.setText(null);
-																		   } else {
-																			   UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,imgAchievementThree, imgAchievementSeven,"Car");
-																			   distanceTravelled.setText(null);
-																		   }
-																	   } catch (NumberFormatException e) {
-																		   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 1000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,imgAchievementThree, imgAchievementSeven,"Car");
+						distanceTravelled.setText(null);
+					}
+				} catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 
-																		   distanceTravelled.setText(null);
-																	   } catch (Exception e) {
-																		   JOptionPane.showMessageDialog(
-																				   null,
-																				   "An unexpected error occured, we are sorry",
-																				   "User Entry Error",
-																				   JOptionPane.ERROR_MESSAGE);
-																		   distanceTravelled.setText(null);
-																	   }
-																   }
-															   });
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(
+							null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error",
+							JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
+			}
+		});
 		frame.getContentPane().add(btnCar);
 
-															   JButton btnPublicTransport = new JButton(
-																	   "Public Transportation");
+		JButton btnPublicTransport = new JButton(
+				"Public Transportation");
 		btnPublicTransport.setForeground(Color.WHITE);
 		btnPublicTransport.setFont(new Font("Arial Black",
-											Font.PLAIN, onethree));
+				Font.PLAIN, onethree));
 		btnPublicTransport.setBackground(
 				new Color(onezerotwo,
-						  twozerofour, onefivethree));
+						twozerofour, onefivethree));
 		btnPublicTransport.setBounds(
-															   eightfourfive, twozerofive,
-															   twoeightzero, threezero);
+				eightfourfive, twozerofive,
+				twoeightzero, threezero);
 		btnPublicTransport.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
-																	   try {
+			public void actionPerformed(final ActionEvent arg0) {
+				try {
 
-																		   double entry = Double.parseDouble(distanceTravelled.getText());
-																		   if(entry > 1000 || entry <=0 )
-																		   {
-																			   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
-																			   distanceTravelled.setText(null);
-																		   } else {
-																			   UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation,imgAchievementFour, imgAchievementSeven,"Public Transportation");
-																			   distanceTravelled.setText(null);
-																		   }
-																	   } catch (NumberFormatException e) {
-																		   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 1000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation,imgAchievementFour, imgAchievementSeven,"Public Transportation");
+						distanceTravelled.setText(null);
+					}
+				} catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 
-																		   distanceTravelled.setText(null);
-																	   } catch (Exception e) {
-																		   JOptionPane.showMessageDialog(
-																				   null,
-																				   "An unexpected error occured,"
-																						   + " we are sorry",
-																				   "User Entry Error",
-																				   JOptionPane.ERROR_MESSAGE);
-																		   distanceTravelled.setText(null);
-																	   }
-																   }
-															   });
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(
+							null,
+							"An unexpected error occured,"
+									+ " we are sorry",
+									"User Entry Error",
+									JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
+			}
+		});
 		frame.getContentPane().add(btnPublicTransport);
 
-															   JButton btnBike = new JButton("Bike");
+		JButton btnBike = new JButton("Bike");
 		btnBike.setForeground(Color.WHITE);
 		btnBike.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		btnBike.setBackground(new Color(
 				0, twofivefive, twozerofour));
 		btnBike.setBounds(
-															   eightfourfive, twofourzero,
-															   twoeightzero, threezero);
+				eightfourfive, twofourzero,
+				twoeightzero, threezero);
 		btnBike.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
-																	   try {
+			public void actionPerformed(final ActionEvent arg0) {
+				try {
 
-																		   double entry = Double.parseDouble(distanceTravelled.getText());
-																		   if(entry > 1000 || entry <=0 )
-																		   {
-																			   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
-																			   distanceTravelled.setText(null);
-																		   } else {
-																			   UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,imgAchievementThree, imgAchievementSeven,"Bike");
-																			   distanceTravelled.setText(null);
-																		   }
-																	   } catch (NumberFormatException e) {
-																		   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry = Double.parseDouble(distanceTravelled.getText());
+					if(entry > 1000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						distanceTravelled.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation,imgAchievementThree, imgAchievementSeven,"Bike");
+						distanceTravelled.setText(null);
+					}
+				} catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 
-																		   distanceTravelled.setText(null);
-																	   } catch (Exception e) {
-																		   JOptionPane.showMessageDialog(
-																				   null,
-																				   "An unexpected error occured,"
-																						   + " we are sorry",
-																				   "User Entry Error",
-																				   JOptionPane.ERROR_MESSAGE);
-																		   distanceTravelled.setText(null);
-																	   }
-																   }
-															   });
+					distanceTravelled.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(
+							null,
+							"An unexpected error occured,"
+									+ " we are sorry",
+									"User Entry Error",
+									JOptionPane.ERROR_MESSAGE);
+					distanceTravelled.setText(null);
+				}
+			}
+		});
 		frame.getContentPane().add(btnBike);
 
-															   // Temperature
+		// Temperature
 
-															   //Labels
-															   JLabel lblTemperature
-																	   = new JLabel(
-																	   "By how much is your temperature lowered now?");
+		//Labels
+		JLabel lblTemperature
+		= new JLabel(
+				"By how much is your temperature lowered now?");
 		lblTemperature.setFont(new Font(
 				"Arial Black",
 				Font.PLAIN, onethree));
 		lblTemperature.setBounds(
-															   fourfourfive, twoninezero,
-															   threeeighteight, threezero);
+				fourfourfive, twoninezero,
+				threeeighteight, threezero);
 		lblTemperature.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTemperature);
 
-															   JTextField temperatureToday = new JTextField();
+		JTextField temperatureToday = new JTextField();
 		temperatureToday.setBounds(
-															   fourfourfive, threeonenine,
-															   onethreezero, onezerozero);
+				fourfourfive, threeonenine,
+				onethreezero, onezerozero);
 		frame.getContentPane().add(temperatureToday);
 
-															   JButton btDegreeCelsius = new JButton("Degree Celsius");
+		JButton btDegreeCelsius = new JButton("Degree Celsius");
 		btDegreeCelsius.setForeground(Color.WHITE);
 		btDegreeCelsius.setFont(new Font("Arial Black",
-										 Font.PLAIN, onethree));
+				Font.PLAIN, onethree));
 		btDegreeCelsius.setBackground(
 				new Color(onezerotwo,
-						  twozerofour, onefivethree));
+						twozerofour, onefivethree));
 		btDegreeCelsius.setBounds(
-															   fiveeightzero, threefivezero,
-															   twozerozero, fourzero);
+				fiveeightzero, threefivezero,
+				twozerozero, fourzero);
 		btDegreeCelsius.setHorizontalAlignment(SwingConstants.CENTER);
 		btDegreeCelsius.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
-																	   try {
+			public void actionPerformed(final ActionEvent arg0) {
+				try {
 
-																		   double entry = Double.parseDouble(temperatureToday.getText());
-																		   if(entry > 1000 || entry <=0 )
-																		   {
-																			   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
-																			   temperatureToday.setText(null);
-																		   } else {
-																			   UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation, imgAchievementFive, imgAchievementSeven,"Temperature");
-																			   temperatureToday.setText(null);
-																		   }
-																	   } catch (NumberFormatException e) {
-																		   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry = Double.parseDouble(temperatureToday.getText());
+					if(entry > 1000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						temperatureToday.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel, imgMotivation, imgAchievementFive, imgAchievementSeven,"Temperature");
+						temperatureToday.setText(null);
+					}
+				} catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 
-																		   temperatureToday.setText(null);
-																	   } catch (Exception e) {
-																		   JOptionPane.showMessageDialog(null,
-																				   "An unexpected error occured,"
-																						   + " we are sorry",
-																				   "User Entry Error",
-																				   JOptionPane.ERROR_MESSAGE);
-																		   temperatureToday.setText(null);
-																	   }
-																   }
-															   });
+					temperatureToday.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null,
+							"An unexpected error occured,"
+									+ " we are sorry",
+									"User Entry Error",
+									JOptionPane.ERROR_MESSAGE);
+					temperatureToday.setText(null);
+				}
+			}
+		});
 		frame.getContentPane().add(btDegreeCelsius);
 
-															   // Solar
+		// Solar
 
-															   //Labels
-															   JLabel lblSolar
-																	   = new JLabel("How many installed"
-																	   + " solar panels do you own?");
+		//Labels
+		JLabel lblSolar
+		= new JLabel("How many installed"
+				+ " solar panels do you own?");
 		lblSolar.setFont(new Font("Arial Black",
-								  Font.PLAIN, onethree));
+				Font.PLAIN, onethree));
 		lblSolar.setBounds(
-															   eightfourfive, twoninezero,
-															   fivezerozero, threezero);
+				eightfourfive, twoninezero,
+				fivezerozero, threezero);
 		lblSolar.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblSolar);
 
-															   JTextField numberSolarPanels = new JTextField();
+		JTextField numberSolarPanels = new JTextField();
 		numberSolarPanels.setBounds(
-															   eightfourfive, threeonenine,
-															   onethreezero, onezerozero);
+				eightfourfive, threeonenine,
+				onethreezero, onezerozero);
 		frame.getContentPane().add(numberSolarPanels);
 
-															   JButton btnNoSolar = new JButton("Solar Panels");
+		JButton btnNoSolar = new JButton("Solar Panels");
 		btnNoSolar.setForeground(Color.WHITE);
 		btnNoSolar.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		btnNoSolar.setBackground(new Color(onezerotwo,
-										   twozerofour, onefivethree));
+				twozerofour, onefivethree));
 		btnNoSolar.setBounds(
-															   nineeightzero,
-															   threefivezero, oneeightfive, fourzero);
+				nineeightzero,
+				threefivezero, oneeightfive, fourzero);
 		btnNoSolar.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
-																	   try {
+			public void actionPerformed(final ActionEvent arg0) {
+				try {
 
-																		   double entry = Double.parseDouble(numberSolarPanels.getText());
-																		   if(entry > 1000 || entry <=0 )
-																		   {
-																			   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
-																			   numberSolarPanels.setText(null);
-																		   } else {
-																			   UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, imgAchievementSix, imgAchievementSeven,"Solar");
-																			   numberSolarPanels.setText(null);
-																		   }
-																	   } catch (NumberFormatException e) {
-																		   JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+					double entry = Double.parseDouble(numberSolarPanels.getText());
+					if(entry > 1000 || entry <=0 )
+					{
+						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
+						numberSolarPanels.setText(null);
+					} else {
+						UpdatingLabels.updateEverythingTextField(userIn, clientIn, entry, lblTotalCO2, lblCO2Saved, lblLeaderboardContent, lblMotivation, lblLevel,imgMotivation, imgAchievementSix, imgAchievementSeven,"Solar");
+						numberSolarPanels.setText(null);
+					}
+				} catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 
-																		   numberSolarPanels.setText(null);
-																	   } catch (Exception e) {
-																		   JOptionPane.showMessageDialog(
-																				   null,
-																				   "An unexpected error occured, we are sorry",
-																				   "User Entry Error",
-																				   JOptionPane.ERROR_MESSAGE);
-																		   numberSolarPanels.setText(null);
-																	   }
-																   }
-															   });
+					numberSolarPanels.setText(null);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(
+							null,
+							"An unexpected error occured, we are sorry",
+							"User Entry Error",
+							JOptionPane.ERROR_MESSAGE);
+					numberSolarPanels.setText(null);
+				}
+			}
+		});
 		frame.getContentPane().add(btnNoSolar);
 
 
-															   // Creates the menu-bar
-															   JMenuBar menuBar = new JMenuBar();
+		// Creates the menu-bar
+		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
 
-															   // Creates the "Log out" in menu-bar
-															   JMenuItem mntmLogOut = new JMenuItem("Log out");
+		// Creates the "Log out" in menu-bar
+		JMenuItem mntmLogOut = new JMenuItem("Log out");
 		mntmLogOut.setForeground(Color.DARK_GRAY);
 		mntmLogOut.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		mntmLogOut.setBackground(
 				new Color(twozerofour, twofivefive,
-						  twofivefive));
+						twofivefive));
 		mntmLogOut.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
-																	   if (JOptionPane.showConfirmDialog(
-																			   frame,
-																			   "Confirm if you want to exit",
-																			   "Log out",
-																			   JOptionPane.YES_NO_OPTION)
-																			   == JOptionPane.YES_NO_OPTION) {
-																		   Login_S.main(null);
-																		   frame.setVisible(false);
-																	   }
-																   }
-															   });
+			public void actionPerformed(final ActionEvent arg0) {
+				if (JOptionPane.showConfirmDialog(
+						frame,
+						"Confirm if you want to exit",
+						"Log out",
+						JOptionPane.YES_NO_OPTION)
+						== JOptionPane.YES_NO_OPTION) {
+					Login_S.main(null);
+					frame.setVisible(false);
+				}
+			}
+		});
 
-															   // Creates the "My Profile" in menu-bar
-															   JMenuItem mntmMyProfile = new JMenuItem("My Profile");
+		// Creates the "My Profile" in menu-bar
+		JMenuItem mntmMyProfile = new JMenuItem("My Profile");
 		mntmMyProfile.setForeground(Color.DARK_GRAY);
 		mntmMyProfile.setBackground(
 				new Color(0, twozerofour, twozerofour));
 		mntmMyProfile.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		mntmMyProfile.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
-																	   MyProfile.application(
-																			   userIn, clientIn, username,
-																			   friendClient, frame);
-																	   setUsername(userIn.getUser_name());
-																	   lblWelcome.setText("Welcome "
-																			   + userIn.getUser_name());
-																	   System.out.println(userIn.getUser_name());
-																   }
-															   });
+			public void actionPerformed(final ActionEvent arg0) {
+				MyProfile.application(
+						userIn, clientIn, username,
+						friendClient, frame);
+				setUsername(userIn.getUser_name());
+				lblWelcome.setText("Welcome "
+						+ userIn.getUser_name());
+				System.out.println(userIn.getUser_name());
+			}
+		});
 		menuBar.add(mntmMyProfile);
 
-															   // Creates the "My Friends" in menu-bar
-															   JMenuItem mntmMyFriends = new JMenuItem("My Friends");
+		// Creates the "My Friends" in menu-bar
+		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
 		mntmMyFriends.setForeground(Color.DARK_GRAY);
 		mntmMyFriends.setBackground(new Color
-																	   (0, twofivefive, twozerofour));
+				(0, twofivefive, twozerofour));
 		mntmMyFriends.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		mntmMyFriends.addActionListener(new ActionListener() {
-																   public void actionPerformed(final ActionEvent arg0) {
+			public void actionPerformed(final ActionEvent arg0) {
 
-																	   FriendsProfile.application(userIn, clientIn);
-																   }
-															   });
+				FriendsProfile.application(userIn, clientIn);
+			}
+		});
 		menuBar.add(mntmMyFriends);
 		menuBar.add(mntmLogOut);
 
 
-														   }
+	}
 
 
-								/**
-								 * Gets username.
-								 *
-								 * @return the username
-								 */
-//Getters and Setters username
-						public static String getUsername() {
-							return username;
-						}
+	/**
+	 * Gets username.
+	 *
+	 * @return the username
+	 */
+	//Getters and Setters username
+	public static String getUsername() {
+		return username;
+	}
 
-						/**
-						 * Sets username.
-						 *
-						 * @param usernameIn the username
-						 */
-						public static void setUsername(final String usernameIn) {
-							username = usernameIn;
-						}
+	/**
+	 * Sets username.
+	 *
+	 * @param usernameIn the username
+	 */
+	public static void setUsername(final String usernameIn) {
+		username = usernameIn;
+	}
 
-						/**
-						 * Get Points.
-						 * @return points
-						 */
-						public static int getPoints() {
-							return points;
-						}
+	/**
+	 * Get Points.
+	 * @return points
+	 */
+	public static int getPoints() {
+		return points;
+	}
 
-						/**
-						 * Set Points.
-						 * @param points the points
-						 */
-						public static void setPoints(final int points) {
-							GUI_App.points = points;
-						}
+	/**
+	 * Set Points.
+	 * @param points the points
+	 */
+	public static void setPoints(final int points) {
+		GUI_App.points = points;
+	}
 
-						/**
-						 * Get Level.
-						 * @return the level
-						 */
-						public static int getLevel() {
-							return level;
-						}
+	/**
+	 * Get Level.
+	 * @return the level
+	 */
+	public static int getLevel() {
+		return level;
+	}
 
-						/**
-						 * Set Level.
-						 * @param level the level
-						 */
-						public static void setLevel(final int level) {
-							GUI_App.level = level;
-						}
+	/**
+	 * Set Level.
+	 * @param level the level
+	 */
+	public static void setLevel(final int level) {
+		GUI_App.level = level;
+	}
 
-						/**
-						 * Get Pointsmissing.
-						 * @return points
-						 */
-						public static int getPointsmissing() {
-							return pointsmissing;
-						}
+	/**
+	 * Get Pointsmissing.
+	 * @return points
+	 */
+	public static int getPointsmissing() {
+		return pointsmissing;
+	}
 
-						/**
-						 * Set Pointsmissing.
-						 * @param pointsmissing the pointsmissing
-						 */
-						public static void setPointsmissing(final int pointsmissing) {
-							GUI_App.pointsmissing = pointsmissing;
-						}
-					}
+	/**
+	 * Set Pointsmissing.
+	 * @param pointsmissing the pointsmissing
+	 */
+	public static void setPointsmissing(final int pointsmissing) {
+		GUI_App.pointsmissing = pointsmissing;
+	}
+}
