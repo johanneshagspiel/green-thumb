@@ -212,7 +212,10 @@ public class  GUI_App extends Login_S {
 		final int onesevenfive = 175;
 		final int twofourfive = 245;
 		final int twoonezero = 210;
-		
+		final int fivefivezero = 550;
+		final int fivetwofive = 525;
+		final int fivefourzero = 540;
+		final int fivethreefive = 535;		
 
 
 		// Create the frame
@@ -256,7 +259,7 @@ public class  GUI_App extends Login_S {
 				"The amount of CO2 you have saved"
 				+ " so far is " + pointsSaved);
 		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, twozero));
-		lblCO2Saved.setBounds(seventhreethree, onenine,
+		lblCO2Saved.setBounds(fivezerozero, onenine,
 				sevensevenseven, fivezero);
 
 		lblCO2Saved.setHorizontalAlignment(SwingConstants.LEFT);
@@ -267,7 +270,7 @@ public class  GUI_App extends Login_S {
 		= new JLabel("Your total CO2 emission is now "
 				+ points);
 			lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, twozero));
-			lblTotalCO2.setBounds(sevensixfive, fivethree,
+			lblTotalCO2.setBounds(fivefourzero, fivethree,
 		sixfivetwo, fivezero);
 			lblTotalCO2.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTotalCO2);
