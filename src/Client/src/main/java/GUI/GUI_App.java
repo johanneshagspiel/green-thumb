@@ -197,6 +197,14 @@ public class  GUI_App extends Login_S {
 		final int sevenzerozero = 700;
 		final int eightzerozero = 800;
 		final int ninezerozero = 900;
+		final int fivethreezero = 530;
+		final int onetwofiveone = 1251;
+		final int sixninezero = 690;
+		final int oneninezero = 190;
+		final int onefourfourzero = 1440;
+		final int sevenzero = 70;
+		
+		
 
 
 		// Create the frame
@@ -424,8 +432,8 @@ public class  GUI_App extends Login_S {
 			// Chat
 			label = "Global Chat";
 			JLabel lblChat = new JLabel(label);
-		lblChat.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblChat.setBounds(1220, 500, 300, 30);
+		lblChat.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblChat.setBounds(onetwotwozero, fivezerozero, threezerozero, threezero);
 		lblChat.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblChat);
 
@@ -436,10 +444,10 @@ public class  GUI_App extends Login_S {
 
 					JLabel lblChatContent = new JLabel(chatContent);
 		lblChatContent.setBackground(Color.WHITE);
-		lblChatContent.setBounds(1250, 530, 260, 200);
+		lblChatContent.setBounds(onetwofivezero, fivethreezero, twosixzero, twozerozero);
 		lblChatContent.setHorizontalAlignment(SwingConstants.LEFT);
 		lblChatContent.setVerticalAlignment(SwingConstants.TOP);
-			Border borderChat = BorderFactory.createLineBorder(Color.GRAY, 2);
+			Border borderChat = BorderFactory.createLineBorder(Color.GRAY, two);
 		lblChatContent.setBorder(borderChat);
 		frame.getContentPane().add(lblChatContent);
 
@@ -453,23 +461,23 @@ public class  GUI_App extends Login_S {
 			};
 
 			Timer timer = new Timer();
-		timer.scheduleAtFixedRate(task, 100, 1000);
+		timer.scheduleAtFixedRate(task, onezerozero, onezerozerozero);
 
 			// Comment Textfield
 			JTextField chatText = new JTextField();
-		chatText.setBounds(1251, 690, 190, 40);
+		chatText.setBounds(onetwofiveone, sixninezero, oneninezero, fourzero);
 		frame.getContentPane().add(chatText);
 
 			// Post comment
 			JButton btnPostChat = new JButton("Post");
 		btnPostChat.setForeground(Color.WHITE);
-		btnPostChat.setBackground(new Color(0, 255, 127));
-		btnPostChat.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		btnPostChat.setBounds(1440, 690, 70, 40);
+		btnPostChat.setBackground(new Color(0, twofivefive, onetwoseven));
+		btnPostChat.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnPostChat.setBounds(onefourfourzero, sixninezero, sevenzero, fourzero);
 		btnPostChat.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					String lengthUserInput = userIn.getUser_name() + ": " + chatText.getText();
-					if (lengthUserInput.length() >= 40)
+					if (lengthUserInput.length() >= fourzero)
 					{
 						JOptionPane.showMessageDialog(null,"Your chat message is too long, we are sorry!", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						chatText.setText(null);
@@ -482,13 +490,12 @@ public class  GUI_App extends Login_S {
 		frame.getContentPane().add(btnPostChat);
 
 
-			//Labels
-			JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
-		lblWhatKindOf.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		lblWhatKindOf.setBounds(52, 140, 333, 30);
 			// Labels
-
-
+		
+			// Vegetarian
+			JLabel lblWhatKindOf = new JLabel("What kind of meal did you have today?");
+		lblWhatKindOf.setFont(new Font("Arial Black", Font.PLAIN, onefour));
+		lblWhatKindOf.setBounds(fivetwo, onefourzero, threethreethree, threezero);
 		lblWhatKindOf.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblWhatKindOf);
 
