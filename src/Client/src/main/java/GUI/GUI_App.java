@@ -47,14 +47,14 @@ public class  GUI_App extends Login_S {
 
 
 	/**
-	 * Launch the application.
-	 *
-	 * @param username the username
-	 * @param userIn   the user in
-	 * @param clientIn the client in
-	 */
-	public static void application(
-			final String username,
+     * Launch the application.
+     *
+     * @param username the username
+     * @param userIn   the user in
+     * @param clientIn the client in
+     */
+    public static void application(
+    		final String username,
 			final User userIn,
 			final UserServiceImpl clientIn) {
 
@@ -182,6 +182,14 @@ public class  GUI_App extends Login_S {
 		final int twoninezero = 290;
 		final int threeonenine = 319;
 		final int threeseventwo = 372;
+		final int seventhreethree = 733;
+		final int onenine = 19;
+		final int sevensevenseven = 777;
+		final int sevensixfive = 765;
+		final int fivethree = 53;
+		final int sixfivetwo = 652;
+		final int eightone = 81;
+		final int twofourtwo = 242;
 
 
 		// Create the frame
@@ -203,14 +211,10 @@ public class  GUI_App extends Login_S {
 		frame.getContentPane().setLayout(null);
 
 		// Labels
-		JLabel lblWelcome =
-				new JLabel("Welcome " + username);
-		lblWelcome.setFont(new Font(
-				"Times New Roman", Font.PLAIN, twonine));
-		lblWelcome.setBounds(
-				onezero, onezero, onefivetwozero, fivenine);
-		lblWelcome.setHorizontalAlignment(
-				SwingConstants.CENTER);
+		JLabel lblWelcome = new JLabel("Welcome " + username);
+		lblWelcome.setFont(new Font("Times New Roman", Font.PLAIN, twonine));
+		lblWelcome.setBounds(fivetwo, onethree, foursixtwo, fivenine);
+		lblWelcome.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblWelcome);
 
 		//Setting up points
@@ -227,38 +231,31 @@ public class  GUI_App extends Login_S {
 		JLabel lblCO2Saved
 				= new JLabel(
 				"The amount of CO2 you have saved"
-						+ " so far is " + pointsSaved);
-		lblCO2Saved.setFont(new Font(
-				"Tahoma", Font.PLAIN, twozero));
-		lblCO2Saved.setBounds(onethreezero, fourtwo,
-				onefivetwozero, fivezero);
+				+ " so far is " + pointsSaved);
+		lblCO2Saved.setFont(new Font("Tahoma", Font.PLAIN, twozero));
+		lblCO2Saved.setBounds(seventhreethree, onenine,
+				sevensevenseven, fivezero);
+
 		lblCO2Saved.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblCO2Saved);
 
 		//Information about CO2 saved
 		JLabel lblTotalCO2
-				= new JLabel(
-				"The total amount of CO2 you have used up"
-						+ " so far is " + points);
-		lblTotalCO2.setFont(new Font(
-				"Tahoma", Font.PLAIN, twozero));
-		lblTotalCO2.setBounds(
-				fourfivezero, fourtwo,
-				onefivetwozero, fivezero);
-		lblTotalCO2.setHorizontalAlignment(SwingConstants.CENTER);
+		= new JLabel("Your total CO2 emission is now "
+				+ points);
+			lblTotalCO2.setFont(new Font("Tahoma", Font.PLAIN, twozero));
+			lblTotalCO2.setBounds(sevensixfive, fivethree,
+		sixfivetwo, fivezero);
+			lblTotalCO2.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblTotalCO2);
 
 		// Information about level
 		level = points / onezerozerozero;
-		JLabel lblLevel =
-				new JLabel(
-						"Your Level is " + level);
-		lblLevel.setFont(new Font(
-				"Tahoma", Font.PLAIN, twozero));
-		lblLevel.setBounds(
-				onezero, sevenfour,
-				onefivetwozero, fivezero);
-		lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
+		JLabel lblLevel = new JLabel("Your Level is " + level);
+		lblLevel.setFont(new Font("Tahoma", Font.PLAIN, twozero));
+		lblLevel.setBounds(eightone, fivethree, twofourtwo, fivezero);
+		lblLevel.setHorizontalAlignment(SwingConstants.LEFT);
+
 		frame.getContentPane().add(lblLevel);
 
 		// Leaderboard
