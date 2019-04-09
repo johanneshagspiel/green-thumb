@@ -16,6 +16,7 @@ import static org.junit.Assert.assertEquals;
 public class UserServiceImplTest {
 
     private UserServiceImpl userServiceImplUnderTest;
+    private User createDelete;
 
     /**
      * Sets up.
@@ -46,12 +47,16 @@ public class UserServiceImplTest {
     @Test
     public void testCreateUser() {
         // Setup
-        final User theUser = null;
+    	createDelete = new User();
+    	createDelete.setUser_name("Testing");
+    	createDelete.setPassword("pwd");
+    	createDelete.setId(0);
 
         // Run the test
-        userServiceImplUnderTest.createUser(theUser);
+        userServiceImplUnderTest.createUser(createDelete);
 
         // Verify the results
+        assertEquals(createDelete, userServiceImplUnderTest.getUser2("Testing"));
     }
 
     /**
@@ -60,14 +65,13 @@ public class UserServiceImplTest {
     @Test
     public void testGetUser() {
         // Setup
-        final int theId = 0;
-        final User expectedResult = null;
+        final int theId = createDelete.getId();
 
         // Run the test
         final User result = userServiceImplUnderTest.getUser(theId);
 
         // Verify the results
-        assertEquals(expectedResult, result);
+        assertEquals(createDelete, result);
     }
 
     /**
@@ -76,14 +80,13 @@ public class UserServiceImplTest {
     @Test
     public void testGetUser2() {
         // Setup
-        final String user_name = "user_name";
-        final User expectedResult = null;
+        final String user_name = "Testing";
 
         // Run the test
         final User result = userServiceImplUnderTest.getUser2(user_name);
 
         // Verify the results
-        assertEquals(expectedResult, result);
+        assertEquals(createDelete, result);
     }
 
     /**
@@ -92,29 +95,30 @@ public class UserServiceImplTest {
     @Test
     public void testLogin() {
         // Setup
-        final String user_name = "user_name";
-        final String password = "password";
-        final User expectedResult = null;
+        final String user_name = "Testing";
+        final String password = "pwd";
 
         // Run the test
         final User result = userServiceImplUnderTest.login(user_name, password);
 
         // Verify the results
-        assertEquals(expectedResult, result);
+        assertEquals(createDelete, result);
     }
 
     /**
      * Test delete user.
      */
     @Test
-    public void testDeleteUser() {
+    public void testZDeleteUser() {
         // Setup
-        final int theId = 0;
+        final int theId = createDelete.getId();
+        final User user = null;
 
         // Run the test
         userServiceImplUnderTest.deleteUser(theId);
 
         // Verify the results
+        assertEquals(userServiceImplUnderTest.getUser2("Testing"), user);
     }
 
     /**
