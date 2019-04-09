@@ -210,6 +210,8 @@ public class  GUI_App extends Login_S {
 		final int oneninenine = 199;
 		final int sixsixseven = 667;
 		final int onesevenfive = 175;
+		final int twofourfive = 245;
+		final int twoonezero = 210;
 		
 
 
@@ -632,10 +634,8 @@ public class  GUI_App extends Login_S {
 		= new JLabel(
 				"What was the method of transportation?");
 		lblDidYouUse.setHorizontalAlignment(SwingConstants.LEFT);
-		lblDidYouUse.setFont(new Font(
-				"Arial Black", Font.PLAIN, onethree));
-		lblDidYouUse.setBounds(
-				eightfourfive, onefourzero,
+		lblDidYouUse.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblDidYouUse.setBounds(sixsixseven, onethreeseven,
 				fourtwozero, threezero);
 		frame.getContentPane().add(lblDidYouUse);
 
@@ -650,7 +650,7 @@ public class  GUI_App extends Login_S {
 				try {
 
 					double entry = Double.parseDouble(distanceTravelled.getText());
-					if(entry > 1000 || entry <=0 )
+					if(entry > onezerozerozero || entry <=0 )
 					{
 						JOptionPane.showMessageDialog(null, "Please enter a valid number between 0 and 1000", "User Entry Error", JOptionPane.ERROR_MESSAGE);
 						distanceTravelled.setText(null);
@@ -682,9 +682,9 @@ public class  GUI_App extends Login_S {
 		btnPublicTransport.setBackground(
 				new Color(onezerotwo,
 						twozerofour, onefivethree));
-		btnPublicTransport.setBounds(
-				eightfourfive, twozerofive,
+		btnPublicTransport.setBounds(sixsixseven, twoonezero,
 				twoeightzero, threezero);
+
 		btnPublicTransport.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				try {
@@ -717,12 +717,9 @@ public class  GUI_App extends Login_S {
 
 		JButton btnBike = new JButton("Bike");
 		btnBike.setForeground(Color.WHITE);
-		btnBike.setFont(new Font(
-				"Arial Black", Font.PLAIN, onethree));
-		btnBike.setBackground(new Color(
-				0, twofivefive, twozerofour));
-		btnBike.setBounds(
-				eightfourfive, twofourzero,
+		btnBike.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		btnBike.setBackground(new Color(0, twofivefive, twozerofour));
+		btnBike.setBounds(sixsixseven, twofourfive,
 				twoeightzero, threezero);
 		btnBike.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
@@ -770,9 +767,8 @@ public class  GUI_App extends Login_S {
 		frame.getContentPane().add(lblTemperature);
 
 		JTextField temperatureToday = new JTextField();
-		temperatureToday.setBounds(
-				fourfourfive, threeonenine,
-				onethreezero, onezerozero);
+		temperatureToday.setBounds(fourfourfive, threefivezero,
+				onethreezero, fourzero);
 		frame.getContentPane().add(temperatureToday);
 
 		JButton btDegreeCelsius = new JButton("Degree Celsius");
@@ -830,9 +826,8 @@ public class  GUI_App extends Login_S {
 		frame.getContentPane().add(lblSolar);
 
 		JTextField numberSolarPanels = new JTextField();
-		numberSolarPanels.setBounds(
-				eightfourfive, threeonenine,
-				onethreezero, onezerozero);
+		numberSolarPanels.setBounds(eightfourfive, threefivezero,
+				onethreezero, fourzero);
 		frame.getContentPane().add(numberSolarPanels);
 
 		JButton btnNoSolar = new JButton("Solar Panels");
