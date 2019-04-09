@@ -15,7 +15,8 @@ public class UpdateAchievements {
         if (label.equals("imgAchievementOne") || label.equals("Vegetarian") || label.equals("Carnivore"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_vegetarian.jpg"));
 
                 if (userIn.getVegetarian() < 500) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -31,7 +32,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementTwo") || label.equals("Local Produce") ||  label.equals("Global Produce"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_localproduce.jpg"));
 
                 if (userIn.getProduce() < 500) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -47,7 +49,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementThree") ||  label.equals("Bike") || label.equals("Car"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_bike.jpg"));
 
                 if (userIn.getBike() < 500) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -63,7 +66,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementFour") ||  label.equals("Public Transportation"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_publictransport.jpg"));
 
                 if (userIn.getPublic_transportation() < 500) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -79,7 +83,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementFive") ||  label.equals("Temperature"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_temperature.jpg"));
 
                 if (userIn.getTemperature() < 500) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -95,7 +100,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementSix") ||  label.equals("Solar"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_solarpanels.jpg"));
 
                 if (userIn.getSolar() < 500) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -111,7 +117,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementSeven"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_co2.jpg"));
 
                 if (userIn.getTotal_saved() < 1000) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
@@ -127,7 +134,8 @@ public class UpdateAchievements {
         } else if (label.equals("imgAchievementEight"))
         {
             try {
-                BufferedImage myPicture = ImageIO.read(new File("src/main/java/resources/level0.JPG"));
+                BufferedImage myPicture = ImageIO.read(new File(
+                        "src/main/java/resources/achievement_friends.jpg"));
 
                 if (userIn.getFriendlist().size() < 5) {
                     Image gray = GrayFilter.createDisabledImage(myPicture);
