@@ -190,6 +190,13 @@ public class  GUI_App extends Login_S {
 		final int sixfivetwo = 652;
 		final int eightone = 81;
 		final int twofourtwo = 242;
+		final int sixzerozero = 600;
+		final int sevenfive = 75;
+		final int twofivezero = 250;
+		final int sixsixzero = 660;
+		final int sevenzerozero = 700;
+		final int eightzerozero = 800;
+		final int ninezerozero = 900;
 
 
 		// Create the frame
@@ -316,77 +323,77 @@ public class  GUI_App extends Login_S {
 		// Motivation
 		String motivation = "You only need " + pointsmissing + " points to the next level!";
 		JLabel lblMotivation = new JLabel(motivation);
-		lblMotivation.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblMotivation.setBounds(193, 472, 462, 30);
+		lblMotivation.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblMotivation.setBounds(oneninethree, fourseventwo, foursixtwo, threezero);
 		lblMotivation.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblMotivation);
 
 
 		// Motivation image
 		JLabel imgMotivation = new JLabel(new ImageIcon(CreateMotivationImage.createIcon()));
-		imgMotivation.setBounds(300, 500, 250, 300);
+		imgMotivation.setBounds(threezerozero, fivezerozero, twofivezero, threezerozero);
 		imgMotivation.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(imgMotivation);
 
-		// Achievemnt label
+		// Achievement label
 		JLabel achievmentLabel = new JLabel("Achievement Bar");
-		achievmentLabel.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		achievmentLabel.setBounds(660, 472, 462, 30);
+		achievmentLabel.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		achievmentLabel.setBounds(sixsixzero, fourseventwo, foursixtwo, threezero);
 		achievmentLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(achievmentLabel);
 
 		// Achievement one
 		JLabel imgAchievementOne = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementOne", userIn)));
-		imgAchievementOne.setBounds(700, 500, 75, 75);
+		imgAchievementOne.setBounds(sevenzerozero, fivezerozero, sevenfive, sevenfive);
 		imgAchievementOne.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementOne.setToolTipText(UpdateAchievements.createText("imgAchievementOne", userIn));
 		frame.getContentPane().add(imgAchievementOne);
 
 		// Achievement two
 		JLabel imgAchievementTwo = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementTwo", userIn)));
-		imgAchievementTwo.setBounds(700, 600, 75, 75);
+		imgAchievementTwo.setBounds(sevenzerozero, sixzerozero, sevenfive, sevenfive);
 		imgAchievementTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementTwo.setToolTipText(UpdateAchievements.createText("imgAchievementTwo", userIn));
 		frame.getContentPane().add(imgAchievementTwo);
 
 		// Achievement three
 		JLabel imgAchievementThree = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementThree", userIn)));
-		imgAchievementThree.setBounds(800, 500, 75, 75);
+		imgAchievementThree.setBounds(eightzerozero, fivezerozero, sevenfive, sevenfive);
 		imgAchievementThree.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementThree.setToolTipText(UpdateAchievements.createText("imgAchievementThree", userIn));
 		frame.getContentPane().add(imgAchievementThree);
 
 		// Achievement four
 		JLabel imgAchievementFour = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementFour", userIn)));
-		imgAchievementFour.setBounds(800, 600, 75, 75);
+		imgAchievementFour.setBounds(eightzerozero, sixzerozero, sevenfive, sevenfive);
 		imgAchievementFour.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementFour.setToolTipText(UpdateAchievements.createText("imgAchievementFour", userIn));
 		frame.getContentPane().add(imgAchievementFour);
 
 		// Achievement five
 		JLabel imgAchievementFive = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementFive", userIn)));
-		imgAchievementFive.setBounds(900, 500, 75, 75);
+		imgAchievementFive.setBounds(ninezerozero, fivezerozero, sevenfive, sevenfive);
 		imgAchievementFive.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementFive.setToolTipText(UpdateAchievements.createText("imgAchievementFive", userIn));
 		frame.getContentPane().add(imgAchievementFive);
 
 		// Achievement six
 		JLabel imgAchievementSix = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementSix", userIn)));
-		imgAchievementSix.setBounds(900, 600, 75, 75);
+		imgAchievementSix.setBounds(ninezerozero, sixzerozero, sevenfive, sevenfive);
 		imgAchievementSix.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementSix.setToolTipText(UpdateAchievements.createText("imgAchievementSix", userIn));
 		frame.getContentPane().add(imgAchievementSix);
 
 		// Achievement seven
 		JLabel imgAchievementSeven = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementSeven", userIn)));
-		imgAchievementSeven.setBounds(1000, 500, 75, 75);
+		imgAchievementSeven.setBounds(onezerozerozero, fivezerozero, sevenfive, sevenfive);
 		imgAchievementSeven.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementSeven.setToolTipText(UpdateAchievements.createText("imgAchievementSeven", userIn));
 		frame.getContentPane().add(imgAchievementSeven);
 
 		// Achievement eight
 		JLabel imgAchievementEight = new JLabel(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementOne", userIn)));
-		imgAchievementEight.setBounds(1000, 600, 75, 75);
+		imgAchievementEight.setBounds(onezerozerozero, sixzerozero, sevenfive, sevenfive);
 		imgAchievementEight.setHorizontalAlignment(SwingConstants.CENTER);
 		imgAchievementEight.setToolTipText(UpdateAchievements.createText("imgAchievementEight", userIn));
 		frame.getContentPane().add(imgAchievementEight);
