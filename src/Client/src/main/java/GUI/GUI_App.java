@@ -124,7 +124,7 @@ public final class GUI_App extends Login_S {
 			final String username,
 			final User userIn,
 			final UserServiceImpl clientIn) {
-		final int VALUETWOFIVEFIVE_INTEGER = 255;
+		final int twofivefive = 255;
 		final int onetwoseven = 127;
 		final int twozerozero = 200;
 		final int oneninetwozero = 1920;
@@ -199,14 +199,14 @@ public final class GUI_App extends Login_S {
 		final int twofourfive = 245;
 		final int twoonezero = 210;
 		final int fivefourzero = 540;
-		final int ENTRY_INTEGER = 1000;
+		final int entry_integer = 1000;
 
 
 		// Create the frame
 		frame = new JFrame();
 		frame.setBackground(
 				new Color(
-						0, VALUETWOFIVEFIVE_INTEGER, onetwoseven));
+						0, twofivefive, onetwoseven));
 		frame.getContentPane().
 				setBackground(SystemColor.
 						inactiveCaptionBorder);
@@ -321,7 +321,7 @@ public final class GUI_App extends Login_S {
 				new JButton("Switch Leaderboard");
 		btnSwitchLeaderBoard.setForeground(Color.WHITE);
 		btnSwitchLeaderBoard.setBackground(new Color(0,
-				VALUETWOFIVEFIVE_INTEGER, onetwoseven));
+				twofivefive, onetwoseven));
 		btnSwitchLeaderBoard.setFont(new Font(
 				"Arial Black",
 				Font.PLAIN, onethree));
@@ -555,7 +555,7 @@ public final class GUI_App extends Login_S {
 			JButton btnPostChat = new JButton("Post");
 		btnPostChat.setForeground(Color.WHITE);
 		btnPostChat.setBackground(new Color(0,
-				VALUETWOFIVEFIVE_INTEGER, onetwoseven));
+				twofivefive, onetwoseven));
 		btnPostChat.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		btnPostChat.setBounds(onefourfourzero, sixninezero,
@@ -600,7 +600,7 @@ public final class GUI_App extends Login_S {
 		btnVeg.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		btnVeg.setBackground(
-				new Color(0, VALUETWOFIVEFIVE_INTEGER, onetwoseven));
+				new Color(0, twofivefive, onetwoseven));
 		btnVeg.setBounds(
 			fivetwo, onesevenzero,
 			twosixzero, fourzero);
@@ -667,7 +667,7 @@ public final class GUI_App extends Login_S {
 							"Local Produce");
 		btnLocalProduce.setForeground(Color.WHITE);
 		btnLocalProduce.setBackground(
-				new Color(0, VALUETWOFIVEFIVE_INTEGER, onetwoseven));
+				new Color(0, twofivefive, onetwoseven));
 		btnLocalProduce.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		btnLocalProduce.setBounds(
@@ -765,7 +765,7 @@ public final class GUI_App extends Login_S {
 		JButton btnCar = new JButton("Car");
 		btnCar.setForeground(Color.WHITE);
 		btnCar.setFont(new Font("Arial Black", Font.PLAIN, onethree));
-		btnCar.setBackground(new Color(0, VALUETWOFIVEFIVE_INTEGER, onetwoseven));
+		btnCar.setBackground(new Color(0, twofivefive, onetwoseven));
 		btnCar.setBounds(sixsixseven, onesevenfive,
 				twoeightzero, threezero);
 		btnCar.addActionListener(new ActionListener() {
@@ -836,7 +836,7 @@ public final class GUI_App extends Login_S {
 					double entry
 							= Double.parseDouble(
 									distanceTravelled.getText());
-					if (entry > ENTRY_INTEGER || entry <= 0) {
+					if (entry > entry_integer || entry <= 0) {
 						JOptionPane.showMessageDialog(
 								null,
 								"Please enter a valid"
@@ -884,7 +884,7 @@ public final class GUI_App extends Login_S {
 		btnBike.setForeground(Color.WHITE);
 		btnBike.setFont(new Font("Arial Black",
 				Font.PLAIN, onethree));
-		btnBike.setBackground(new Color(0, VALUETWOFIVEFIVE_INTEGER, twozerofour));
+		btnBike.setBackground(new Color(0, twofivefive, twozerofour));
 		btnBike.setBounds(sixsixseven, twofourfive,
 				twoeightzero, threezero);
 		btnBike.addActionListener(new ActionListener() {
@@ -893,7 +893,7 @@ public final class GUI_App extends Login_S {
 
 					double entry = Double.parseDouble(
 							distanceTravelled.getText());
-					if (entry > ENTRY_INTEGER || entry <= 0) {
+					if (entry > entry_integer || entry <= 0) {
 						JOptionPane.showMessageDialog(
 								null,
 								"Please enter a valid"
@@ -974,7 +974,7 @@ public final class GUI_App extends Login_S {
 
 					double entry = Double.parseDouble(
 							temperatureToday.getText());
-					if (entry > ENTRY_INTEGER || entry <= 0) {
+					if (entry > entry_integer || entry <= 0) {
 						JOptionPane.showMessageDialog(
 								null,
 								"Please enter a valid"
@@ -1051,7 +1051,7 @@ public final class GUI_App extends Login_S {
 					double entry =
 							Double.parseDouble(
 									numberSolarPanels.getText());
-					if (entry > ENTRY_INTEGER || entry <= 0) {
+					if (entry > entry_integer || entry <= 0) {
 						JOptionPane.showMessageDialog(
 								null,
 								"Please enter a valid "
@@ -1106,8 +1106,8 @@ public final class GUI_App extends Login_S {
 		mntmLogOut.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		mntmLogOut.setBackground(
-				new Color(twozerofour, VALUETWOFIVEFIVE_INTEGER,
-						VALUETWOFIVEFIVE_INTEGER));
+				new Color(twozerofour, twofivefive,
+						twofivefive));
 		mntmLogOut.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				if (JOptionPane.showConfirmDialog(
@@ -1146,7 +1146,7 @@ public final class GUI_App extends Login_S {
 		JMenuItem mntmMyFriends = new JMenuItem("My Friends");
 		mntmMyFriends.setForeground(Color.DARK_GRAY);
 		mntmMyFriends.setBackground(new Color(
-				0, VALUETWOFIVEFIVE_INTEGER, twozerofour));
+				0, twofivefive, twozerofour));
 		mntmMyFriends.setFont(new Font(
 				"Arial Black", Font.PLAIN, onethree));
 		mntmMyFriends.addActionListener(new ActionListener() {
