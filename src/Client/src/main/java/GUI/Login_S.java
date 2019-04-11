@@ -68,43 +68,41 @@ public class Login_S {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		final int twofivefive = 255;
-		final int onetwoseven = 127;
-		final int twozerozero = 200;
-		final int fivezerozero = 500;
-		final int threezerozero = 300;
-		final int threezeroseven = 307;
 		final int twozerotwo = 202;
-		final int twoone = 21;
-		final int onezerotwo = 102;
 		final int onetwoeight = 128;
 		final int fourzero = 40;
-		final int threethree = 33;
-		final int onethree = 13;
-		final int fouronesix = 416;
 		final int fivezero = 50;
-		final int eightnine = 89;
 		final int ninetwo = 92;
 		final int eightsix = 86;
-		final int threezero = 30;
 		final int eightseven = 87;
 		final int onefourone = 141;
 		final int eighteight = 88;
-		final int twoeight = 28;
-		final int onezero = 10;
-		final int oneeightseven = 187;
-		final int ninefour = 94;
-		final int oneeightone = 181;
-		final int onefourtwo = 142;
 		final int twofourfive = 245;
-		final int twozerofive = 205;
-		final int onefive = 15;
 		final int onefourfive = 145;
-		final int onefivezero = 150;
-		final int four = 4;
 		final int sevenfive = 75;
 		final int oneeighteight = 188;
+		final int fivezerozero = 500;
+		final int fouronesix = 416;
+		final int four = 4;
+		final int twofivefive = 255;
+		final int onetwoseven = 127;
+		final int twoeight = 28;
+		final int threethree = 33;
 		final int sixeight = 68;
+		final int threezerozero = 300;
+		final int onezero = 10;
+		final int threezero = 30;
+		final int onethree = 13;
+		final int twozerozero = 200;
+		final int onezerotwo = 102;
+		final int twozerofour = 204;
+		final int onefivethree = 153;
+		final int oneeightseven = 187;
+		final int oneeightone = 181;
+		final int onefivezero = 150;
+		final int onefourtwo = 142;
+		final int onefive = 15;
+		final int ninefour = 94;
 		// Create the frame
 		frame = new JFrame();
 		//frame.setIconImage(Toolkit.getDefaultToolkit().
@@ -112,7 +110,8 @@ public class Login_S {
 		// getResource("/GUI/Images/
 		// Go Green Logo 50x50.jpg")));
 		frame.setResizable(false);
-		frame.setBackground(new Color(0, twofivefive,
+		frame.setBackground(new Color(0,
+				twofivefive,
 				onetwoseven));
 		frame.getContentPane().
 				setBackground(SystemColor.inactiveCaptionBorder);
@@ -129,7 +128,7 @@ public class Login_S {
 		// Add a key listener to the Enter
 		KeyListener formSubmitKeyListener = new KeyAdapter() {
 			@Override
-			public void keyPressed(KeyEvent event) {
+			public void keyPressed(final KeyEvent event) {
 				if (event.getKeyCode()
 						== KeyEvent.VK_ENTER) {
 
@@ -162,8 +161,8 @@ public class Login_S {
 		frame.getContentPane().add(lblLogin);
 
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
-		lblUsername.setBounds(87, 92, 86, 30);
+		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+		lblUsername.setBounds(eightseven, ninetwo, eightsix, threezero);
 		frame.getContentPane().add(lblUsername);
 
 		JLabel lblPassword = new JLabel("Password");
@@ -189,9 +188,9 @@ public class Login_S {
 
 		//Buttons
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setForeground(new Color(245, 245, 245));
-		btnLogin.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnLogin.setBackground(new Color(0, 255, 127));
+		btnLogin.setForeground(new Color(twofourfive, twofourfive, twofourfive));
+		btnLogin.setFont(new Font("Arial Black", Font.PLAIN, onefive));
+		btnLogin.setBackground(new Color(0, twofivefive, onetwoseven));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				//Get the filled in username
@@ -217,9 +216,9 @@ public class Login_S {
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnReset = new JButton("Add Account");
-		btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnReset.setForeground(new Color(255, 255, 255));
-		btnReset.setBackground(new Color(0, 255, 127));
+		btnReset.setFont(new Font("Arial Black", Font.PLAIN, onefive));
+		btnReset.setForeground(new Color(twofivefive, twofivefive, twofivefive));
+		btnReset.setBackground(new Color(0, twofivefive, onetwoseven));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				try {
@@ -230,13 +229,13 @@ public class Login_S {
 				}
 			}
 		});
-		btnReset.setBounds(145, 202, 150, 30);
+		btnReset.setBounds(onefourfive, twozerotwo, onefivezero, threezero);
 		frame.getContentPane().add(btnReset);
 
 		JButton btnExit = new JButton("Exit");
-		btnExit.setForeground(new Color(245, 245, 245));
-		btnExit.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		btnExit.setBackground(new Color(102, 204, 153));
+		btnExit.setForeground(new Color(twofourfive, twofourfive, twofourfive));
+		btnExit.setFont(new Font("Arial Black", Font.PLAIN, onefive));
+		btnExit.setBackground(new Color(onezerotwo, twozerofour, onefivethree));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				frame = new JFrame("Exit");
@@ -249,7 +248,7 @@ public class Login_S {
 				}
 			}
 		});
-		btnExit.setBounds(33, 202, 75, 30);
+		btnExit.setBounds(threethree, twozerotwo, sevenfive, threezero);
 		frame.getContentPane().add(btnExit);
 
 		// Separators
