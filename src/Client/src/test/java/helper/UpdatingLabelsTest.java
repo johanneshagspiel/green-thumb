@@ -24,7 +24,7 @@ public class UpdatingLabelsTest {
 
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
-		User userIn = clientIn.getUser2("Test");
+		User userIn = new User();
 		userIn.setBike(0);
 		userIn.setCar(0);
 		userIn.setProduce(0);
@@ -43,12 +43,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 200;
-		final int resultTotal_saved = 0;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Car Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
@@ -58,8 +57,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel, imgMotivation,imgAchievementSaved,imgAchievement, "Car");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getCar(), resultTotal);
 
 	}
 
@@ -79,9 +77,9 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Adding some user information
 		final double entry = 10;
@@ -90,8 +88,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 552;
-		final int resultTotal_saved = 1109;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Public Transportation Score");
 
 		// Updating the label
@@ -102,8 +99,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Public Transportation");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getPublic_transportation(), resultTotal);
 
 	}
 
@@ -123,9 +119,9 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Adding some user information
 		final double entry = 10;
@@ -134,8 +130,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = -200;
-		final int resultTotal_saved = 900;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Bike Score");
 
 		// Updating the label
@@ -146,8 +141,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Bike");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getBike(), resultTotal);
 
 	}
 
@@ -175,12 +169,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 78;
-		final int resultTotal_saved = 1009;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Temperature Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
@@ -190,8 +183,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Temperature");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getTemperature(), resultTotal);
 
 	}
 
@@ -219,12 +211,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = -200;
-		final int resultTotal_saved = 700;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Solar Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
@@ -234,8 +225,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Solar");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getSolar(), resultTotal);
 
 	}
 
@@ -262,12 +252,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 679;
-		final int resultTotal_saved = 1169;
+		final int resultTotal = 60;
 		GUI_App.setLabel("Vegetarian Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
@@ -277,8 +266,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Vegetarian");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getVegetarian(), resultTotal);
 
 	}
 
@@ -305,12 +293,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 452;
-		final int resultTotal_saved = 1009;
+		final int resultTotal = 0;
 		GUI_App.setLabel("Vegetarian Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
@@ -320,8 +307,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Carnivore");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getVegetarian(), resultTotal);
 
 	}
 
@@ -348,12 +334,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = -22;
-		final int resultTotal_saved = 909;
+		final int resultTotal = 9;
 		GUI_App.setLabel("Produce Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
@@ -363,8 +348,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Local Produce");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getProduce(), resultTotal);
 
 	}
 
@@ -391,12 +375,11 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 265;
-		final int resultTotal_saved = 1009;
+		final int resultTotal = 0;
 		GUI_App.setLabel("Produce Score");
-		JLabel imgMotivation = null;
-		JLabel imgAchievementSaved = null;
-		JLabel imgAchievement = null;
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
 
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
@@ -406,8 +389,7 @@ public class UpdatingLabelsTest {
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Global Produce");
 
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
+		assertEquals(userIn.getProduce(), resultTotal);
 
 	}
 
