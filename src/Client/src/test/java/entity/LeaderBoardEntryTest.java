@@ -12,6 +12,23 @@ import static entity.LeaderBoardEntry.*;
 import static org.junit.Assert.*;
 
 public class LeaderBoardEntryTest {
+    /*
+            if you want to pass the tests you need these two Users:
+            //this id doesn't matter
+            INSERT INTO testdatabase.user
+            VALUES(1029, "Test5", "pwd", 1, 2, 3, 4, 5, 6, 7, 8, 9,10)
+
+            and
+            //this id doesn't matter either
+            INSERT INTO testdatabase.user
+            VALUES(998, "Test", "pwd", 0, 0, 0, 0, 0, 0, 0, 69, 0, 1179)
+
+            and add them to the friends table
+            like this:
+            //this id doesn't matter either
+            INSERT INTO testdatabase.friend
+            VALUES(17, "Test", "Test5")
+     */
     User karel = new User();
     Friend karelFriend = new Friend();
     User lukas = new User();
