@@ -15,7 +15,6 @@ public class SortUsername implements Comparator<User> {
      */
     @Override
     public final int compare(final User a, final User b) {
-	    return a.getUser_name().compareToIgnoreCase(b.getUser_name());
+        return a.getUser_name().compareToIgnoreCase(b.getUser_name());
     }
-
 }
