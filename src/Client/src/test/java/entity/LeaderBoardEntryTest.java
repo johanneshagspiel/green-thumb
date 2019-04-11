@@ -8,8 +8,7 @@ import service.UserServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-import static entity.LeaderBoardEntry.createLeaderboard;
-import static entity.LeaderBoardEntry.userSupplyEntry;
+import static entity.LeaderBoardEntry.*;
 import static org.junit.Assert.*;
 
 public class LeaderBoardEntryTest {
@@ -380,4 +379,183 @@ public class LeaderBoardEntryTest {
         assertEquals(expected, output);
     }
 
+    @Test
+    public void testPointSupplierVegetarian(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Vegetarian Score");
+        int expected = 60;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierTopTen(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Leaderboard Top 10 CO2 Used");
+        int expected = 1179;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierOverall(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Overall Score");
+        int expected = 1179;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierProduce(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Produce Score");
+        int expected = 0;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierCar(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Car Score");
+        int expected = 0;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierPublicTransport(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Public Transportation Score");
+        int expected = 0;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierBike(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Bike Score");
+        int expected = 0;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierTemperature(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Temperature Score");
+        int expected = 0;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierSolar(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Solar Score");
+        int expected = 0;
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testPointSupplierOverallSaved(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        int output = pointSupplier(userIn, "Overall CO2 Saved");
+        int expected = 69;
+        assertEquals(expected, output);
+    }
 }
