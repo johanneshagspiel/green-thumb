@@ -3,10 +3,12 @@ package entity;
 
 import org.junit.Before;
 import org.junit.Test;
+import service.UserServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static entity.LeaderBoardEntry.createLeaderboard;
 import static entity.LeaderBoardEntry.userSupplyEntry;
 import static org.junit.Assert.*;
 
@@ -180,4 +182,202 @@ public class LeaderBoardEntryTest {
         LeaderBoardEntry supplied = userSupplyEntry(lukas, "asdfsadfsadffadf");
         assertEquals(entry, supplied);
     }
+
+    @Test
+    public void testCreateLeaderboardVegetarian(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Vegetarian Score");
+        String expected = "<html>Rank 1: You, 60<br/>Rank 2: Test5, 1<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardTopTenUsed(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Leaderboard Top 10 CO2 Used");
+        String expected = "<html>Rank 1: You, 1179<br/>Rank 2: Test5, 10<br/></html>";
+        assertEquals(expected, output);
+    }
+    @Test
+    public void testCreateLeaderboardOverallScore(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Overall Score");
+        String expected = "<html>Rank 1: You, 1179<br/>Rank 2: Test5, 10<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardProduce(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Produce Score");
+        String expected = "<html>Rank 1: Test5, 2<br/>Rank 2: You, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardCarScore(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Car Score");
+        String expected = "<html>Rank 1: Test5, 3<br/>Rank 2: You, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardPublicTransportScore(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Public Transportation Score");
+        String expected = "<html>Rank 1: Test5, 4<br/>Rank 2: You, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardBikeScore(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Bike Score");
+        String expected = "<html>Rank 1: Test5, 5<br/>Rank 2: You, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardTemperature(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Temperature Score");
+        String expected = "<html>Rank 1: Test5, 6<br/>Rank 2: You, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardSolarScore(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Solar Score");
+        String expected = "<html>Rank 1: Test5, 7<br/>Rank 2: You, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testCreateLeaderboardOverallCO2Saved(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "Overall CO2 Saved");
+        String expected = "<html>Rank 1: You, 69<br/>Rank 2: Test5, 8<br/></html>";
+        assertEquals(expected, output);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testCreateLeaderboardRandomString(){
+        /*
+            This only works if you have a user Test with values
+            Test, pwd, 60, 0, 0, 0, 0, 0, 0, 69, 0, 1179
+
+            and a user Test5 with values
+            Test5, pwd, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+            And the only friend Test has is Test5
+         */
+        UserServiceImpl uservice = new UserServiceImpl();
+        User userIn = uservice.getUser2("Test");
+        String output = createLeaderboard(userIn, "asdf");
+        String expected = "<html>Rank 1: You, 0<br/>Rank 2: Test5, 0<br/></html>";
+        assertEquals(expected, output);
+    }
+
 }

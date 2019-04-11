@@ -94,33 +94,7 @@ public class LeaderBoardEntry {
             String nameFriend = temp.getFriend_name();
             User friend = clientUser.getUser2(nameFriend);
 
-            int points = 0;
-
-            if (label.equals("Vegetarian Score")) {
-                points = friend.getVegetarian();
-            } else if (label.equals("Leaderboard Top 10 CO2 Used")
-                    || label.equals("Overall Score")) {
-                points = friend.getTotal();
-            } else if (label.equals("Produce Score")) {
-                points = friend.getProduce();
-            } else if (label.equals("Car Score")) {
-                points = friend.getCar();
-            } else if (label.equals("Public Transportation Score")) {
-                points = friend.getPublic_transportation();
-            } else if (label.equals("Bike Score")) {
-                points = friend.getBike();
-            } else if (label.equals("Temperature Score")) {
-                points = friend.getTemperature();
-            } else if (label.equals("Solar Score")) {
-                points = friend.getSolar();
-            } else if (label.equals("Overall CO2 Saved")) {
-                points = friend.getTotal_saved();
-
-            }
-
-
-
-
+            int points = pointSupplier(friend, label);
             listEntries.add(new LeaderBoardEntry(nameFriend, points));
         }
 
@@ -183,5 +157,34 @@ public class LeaderBoardEntry {
         } else{
             return null;
         }
+    }
+
+    public static int pointSupplier(User friend, String label){
+        int points = 0;
+
+        if (label.equals("Vegetarian Score")) {
+            points = friend.getVegetarian();
+        } else if (label.equals("Leaderboard Top 10 CO2 Used")
+                || label.equals("Overall Score")) {
+            points = friend.getTotal();
+        } else if (label.equals("Produce Score")) {
+            points = friend.getProduce();
+        } else if (label.equals("Car Score")) {
+            points = friend.getCar();
+        } else if (label.equals("Public Transportation Score")) {
+            points = friend.getPublic_transportation();
+        } else if (label.equals("Bike Score")) {
+            points = friend.getBike();
+        } else if (label.equals("Temperature Score")) {
+            points = friend.getTemperature();
+        } else if (label.equals("Solar Score")) {
+            points = friend.getSolar();
+        } else if (label.equals("Overall CO2 Saved")) {
+            points = friend.getTotal_saved();
+
+        } else{
+            points = 0;
+        }
+        return points;
     }
 }
