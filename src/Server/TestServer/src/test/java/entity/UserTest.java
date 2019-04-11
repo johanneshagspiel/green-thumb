@@ -1,36 +1,31 @@
 package entity;
 
 import com.luv2code.springdemo.entity.User;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 /**
  * The type User test.
  */
 public class UserTest {
 
-    private User userUnderTest;
-
-    /**
-     * Sets up.
-     */
-    @Before
-    public void setUp() {
-        userUnderTest = new User();
-    }
-
-    /**
-     * Test to string.
-     */
+	@Test
+	public void testConstructor() {
+		User test = new User();
+		assertNotNull(test);
+	}
+	
     @Test
     public void testToString() {
         // Setup
-        final String expectedResult = "result";
-
+        final String expectedResult = "User [id=0, user_name=null, password=null, vegetarian=0, produce=0, car=0, public_transportation=0, bike=0, temperature=0, solar =0, total_saved=0, total_used=0, total=0]";
+        User test = new User();
+        
         // Run the test
-        final String result = userUnderTest.toString();
+        final String result = test.toString();
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -40,8 +35,7 @@ public class UserTest {
     @Test
     public void getId() {
         User test = new User();
-        test.setId(1);
-        assertEquals(test.getId(), 1);
+        assertEquals(test.getId(), 0);
     }
 
     @Test
@@ -54,8 +48,7 @@ public class UserTest {
     @Test
     public void getUser_name() {
         User test = new User();
-        test.setUser_name("Test");
-        assertEquals(test.getUser_name(), "Test");
+        assertNull(test.getUser_name());
     }
 
     @Test
@@ -68,8 +61,7 @@ public class UserTest {
     @Test
     public void getPassword() {
         User test = new User();
-        test.setPassword("Test");
-        assertEquals(test.getPassword(), "Test");
+        assertNull(test.getPassword());
     }
 
     @Test
@@ -82,8 +74,7 @@ public class UserTest {
     @Test
     public void getVegetarian() {
         User test = new User();
-        test.setVegetarian(100);
-        assertEquals(test.getVegetarian(), 100);
+        assertEquals(test.getVegetarian(), 0);
     }
 
     @Test
@@ -96,8 +87,7 @@ public class UserTest {
     @Test
     public void getProduce() {
         User test = new User();
-        test.setProduce(100);
-        assertEquals(test.getProduce(), 100);
+        assertEquals(test.getProduce(), 0);
     }
 
     @Test
@@ -110,8 +100,7 @@ public class UserTest {
     @Test
     public void getPublic_transportation() {
         User test = new User();
-        test.setPublic_transportation(100);
-        assertEquals(test.getPublic_transportation(), 100);
+        assertEquals(test.getPublic_transportation(), 0);
     }
 
     @Test
@@ -124,8 +113,7 @@ public class UserTest {
     @Test
     public void getTemperature() {
         User test = new User();
-        test.setTemperature(100);
-        assertEquals(test.getTemperature(), 100);
+        assertEquals(test.getTemperature(), 0);
     }
 
     @Test
@@ -138,8 +126,7 @@ public class UserTest {
     @Test
     public void getSolar() {
         User test = new User();
-        test.setSolar(100);
-        assertEquals(test.getSolar(), 100);
+        assertEquals(test.getSolar(), 0);
     }
 
     @Test
@@ -147,5 +134,70 @@ public class UserTest {
         User test = new User();
         test.setSolar(100);
         assertEquals(test.getSolar(), 100);
+    }
+    
+    @Test
+    public void getCar() {
+        User test = new User();
+        assertEquals(test.getCar(), 0);
+    }
+
+    @Test
+    public void setCar() {
+        User test = new User();
+        test.setCar(100);
+        assertEquals(test.getCar(), 100);
+    }
+    
+    @Test
+    public void getBike() {
+        User test = new User();
+        assertEquals(test.getBike(), 0);
+    }
+    
+    @Test
+    public void setBike() {
+        User test = new User();
+        test.setBike(100);
+        assertEquals(test.getBike(), 100);
+    }
+
+    @Test
+    public void getTotal_saved() {
+        User test = new User();
+        assertEquals(test.getTotal_saved(), 0);
+    }
+    
+    @Test
+    public void setTotal_saved() {
+        User test = new User();
+        test.setTotal_saved(100);
+        assertEquals(test.getTotal_saved(), 100);
+    }
+    
+    @Test
+    public void getTotal_used() {
+        User test = new User();
+        assertEquals(test.getTotal_used(), 0);
+    }
+    
+    @Test
+    public void setTotal_used() {
+        User test = new User();
+        test.setTotal_used(100);
+        assertEquals(test.getTotal_used(), 100);
+    }
+    
+    @Test
+    public void getTotal() {
+        User test = new User();
+        assertEquals(test.getTotal(), 0);
+    }
+    
+    @Test
+    public void setTotal() {
+        User test = new User();
+        test.setTotal(100);
+        assertEquals(test.getTotal(), 100);
     }
 }
