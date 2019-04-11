@@ -116,7 +116,14 @@ public class LeaderBoardEntry {
         return LeaderBoardContent;
     }
 
-    public static LeaderBoardEntry userSupplyEntry(User userIn, String label){
+    /**
+     * The leaderboard entry.
+     * @param userIn the user in
+     * @param label the label
+     * @return leaderboard
+     */
+    public static LeaderBoardEntry userSupplyEntry(final User userIn,
+                                                   final String label) {
         if (label.equals("Vegetarian Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getVegetarian());
@@ -154,12 +161,19 @@ public class LeaderBoardEntry {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getTotal_saved());
             return user;
-        } else{
+        } else {
             return null;
         }
     }
 
-    public static int pointSupplier(User friend, String label){
+    /**
+     * The point supplier.
+     * @param friend the friend
+     * @param label the label
+     * @return the points
+     */
+    public static int pointSupplier(final User friend,
+                                    final String label) {
         int points = 0;
 
         if (label.equals("Vegetarian Score")) {
@@ -182,7 +196,7 @@ public class LeaderBoardEntry {
         } else if (label.equals("Overall CO2 Saved")) {
             points = friend.getTotal_saved();
 
-        } else{
+        } else {
             points = 0;
         }
         return points;
