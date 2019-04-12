@@ -103,12 +103,15 @@ public class LeaderBoardEntry {
         Collections.sort(listEntries, new ComparatorLeaderBoard());
 
         userIn.setFriendlist(friends);
-
         String content = new String();
-        for (int i = 0; i < listEntries.size() & i <= a; i++) {
-            LeaderBoardEntry temp = listEntries.get(i);
-            content = content + "Rank " + (i + 1) + ": "
-                    + temp.toString() + "<br/>";
+        if (listEntries.size() > 0) {
+            for (int i = 0; i < listEntries.size() & i <= a; i++) {
+                LeaderBoardEntry temp = listEntries.get(i);
+                if (temp != null) {
+                    content = content + "Rank " + (i + 1) + ": "
+                            + temp.toString() + "<br/>";
+                }
+            }
         }
 
         String LeaderBoardContent = "<html>" + content + "</html>";
