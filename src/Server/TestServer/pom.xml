@@ -130,6 +130,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> make_heroku_work_for_client
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
@@ -147,12 +150,15 @@
 						</configuration>
 					</execution>
 				</executions>
+<<<<<<< HEAD
 =======
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 >>>>>>> 59d377551542250f427f3ae6b0bf213bae175774
+=======
+>>>>>>> make_heroku_work_for_client
 			</plugin>
 
 			<plugin>

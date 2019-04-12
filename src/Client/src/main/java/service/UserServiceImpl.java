@@ -3,6 +3,8 @@ package service;
 
 import entity.User;
 
+import helper.ServerConfig;
+import org.apache.maven.settings.Server;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -33,8 +35,7 @@ public class UserServiceImpl  {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			String postResourceUrl =
-					"http://localhost:8082/spring_crm"
-							+ "_rest_war_exploded/api/users/";
+                    ServerConfig.getUserpageURL();
 			User user = restTemplate.postForObject(
 					postResourceUrl, theUser, User.class);
 		} catch (Exception e) {
@@ -52,8 +53,7 @@ public class UserServiceImpl  {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			String getResourceUrl =
-					"http://localhost:8082/spring_crm"
-							+ "_rest_war_exploded/api/users/";
+					ServerConfig.getUserpageURL();
 			ResponseEntity<String> response =
 					restTemplate.getForEntity(
 							getResourceUrl,
@@ -80,8 +80,8 @@ public class UserServiceImpl  {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			String getResourceUrl =
-					"http://localhost:8082/spring_crm"
-							+ "_rest_war_exploded/api/user2/"
+                    ServerConfig.getAPIURL()
+                            + "user2/"
 							+ user_name;
 			ResponseEntity<String> response =
 					restTemplate.getForEntity(
@@ -108,9 +108,8 @@ public class UserServiceImpl  {
 	public final List<User> getAllUsers() {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
-			String getResourceUrl
-					= "http://localhost:8082/spring_crm"
-					+ "_rest_war_exploded/api/users/";
+			String getResourceUrl =
+                    ServerConfig.getUserpageURL();
 
 			ResponseEntity<List<User>> response =
 					restTemplate.exchange(
@@ -141,8 +140,7 @@ public class UserServiceImpl  {
 			RestTemplate restTemplate =
 					new RestTemplate();
 			String getResourceUrl =
-					"http://localhost:8082/spring_crm"
-							+ "_rest_war_exploded/api/user/"
+					ServerConfig.getUserpageURL()
 							+ user_name + "/" + password;
 			ResponseEntity<String> response =
 					restTemplate.getForEntity(
@@ -174,8 +172,7 @@ public class UserServiceImpl  {
 			userToSend.setPassword(password);
 			userToSend.setUser_name(user_name);
 			String putResourceUrl =
-					"http://localhost:8082/spring_crm"
-							+ "_rest_war_exploded/api/users3";
+					ServerConfig.getAPIURL() + "users3";
 
 
 			HttpHeaders headers = new HttpHeaders();
@@ -217,8 +214,7 @@ public class UserServiceImpl  {
     public final void deleteUser(final int theId) {
 		RestTemplate restTemplate = new RestTemplate();
 		String deleteResourceUrl
-				= "http://localhost:8082/spring_crm"
-				+ "_rest_war_exploded/api/users/" + theId;
+				= ServerConfig.getUserpageURL() + theId;
 		restTemplate.delete(deleteResourceUrl);
 	}
 
@@ -229,8 +225,8 @@ public class UserServiceImpl  {
      */
     public final void updateUser(final User theUser) {
 		RestTemplate restTemplate = new RestTemplate();
-		String putResourceUrl = "http://localhost:8082/spring_crm"
-				+ "_rest_war_exploded/api/users/";
+		String putResourceUrl =
+                ServerConfig.getUserpageURL();
 		restTemplate.put(putResourceUrl, theUser);
 	}
 
