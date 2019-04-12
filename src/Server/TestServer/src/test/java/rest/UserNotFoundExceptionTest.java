@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.rest;
+package rest;
 
 import com.luv2code.springdemo.rest.UserNotFoundException;
 import org.jboss.logging.Message;

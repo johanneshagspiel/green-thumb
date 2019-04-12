@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * The type Friend service impl test.
@@ -37,7 +38,7 @@ public class FriendServiceImplTest {
         final List<Friend> result = friendServiceImplUnderTest.getUsers();
 
         // Verify the results
-        assertEquals(expectedResult, result);
+        assertNull(result);
     }
 
     /**
@@ -90,7 +91,7 @@ public class FriendServiceImplTest {
     @Test
     public void testUpdateUser() {
         // Setup
-        final Friend theFriend = null;
+        final Friend theFriend = new Friend();
 
         // Run the test
         friendServiceImplUnderTest.updateUser(theFriend);

@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.dao;
+package dao;
 
 import com.luv2code.springdemo.dao.FriendDAOImpl;
 import com.luv2code.springdemo.entity.Friend;

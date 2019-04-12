@@ -8,6 +8,7 @@ import service.UserServiceImpl;
 import javax.swing.*;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -18,6 +19,14 @@ public class Login_addAccountTest {
     /**
      * Test add account.
      */
+	@Test
+	public void testConstructor() {
+		
+		Login_addAccount Ardy = new Login_addAccount();
+		
+		assertNotNull(Ardy);
+	}
+	
     @Test
     public void testAddAccountWholeEmpty() {
         // Setup

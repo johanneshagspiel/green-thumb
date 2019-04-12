@@ -12,11 +12,19 @@ import service.UserServiceImpl;
 public class UpdatingLabelsTest {
 
 	@Test
-	public void testCar() {
+	public void testConstructor() {
 		
+		UpdatingLabels Ardy = new UpdatingLabels();
+		
+		assertNotNull(Ardy);
+	}
+	
+	@Test
+	public void testCar() {
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
-		User userIn = clientIn.getUser2("Test");
+		User userIn = new User();
 		userIn.setBike(0);
 		userIn.setCar(0);
 		userIn.setProduce(0);
@@ -27,7 +35,7 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
@@ -35,26 +43,27 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 200;
-		final int resultTotal_saved = 0;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Car Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Car");
-		
+				lblMotivation, lblLevel, imgMotivation,imgAchievementSaved,imgAchievement, "Car");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getCar(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testPublicTransport() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -68,7 +77,10 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Adding some user information
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
@@ -76,26 +88,24 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 552;
-		final int resultTotal_saved = 1109;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Public Transportation Score");
-		
+
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Public Transportation");
-		
+				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Public Transportation");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getPublic_transportation(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testBike() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -109,7 +119,10 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Adding some user information
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
@@ -117,26 +130,24 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = -200;
-		final int resultTotal_saved = 900;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Bike Score");
-		
+
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Bike");
-		
+				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Bike");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getBike(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testTemperature() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -150,7 +161,7 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
@@ -158,26 +169,27 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 78;
-		final int resultTotal_saved = 1009;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Temperature Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Temperature");
-		
+				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Temperature");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getTemperature(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testSolar() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -191,7 +203,7 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
@@ -199,26 +211,27 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = -200;
-		final int resultTotal_saved = 700;
+		final int resultTotal = 100;
 		GUI_App.setLabel("Solar Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Solar");
-		
+				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Solar");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getSolar(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testVegetarian() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -232,33 +245,34 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 679;
-		final int resultTotal_saved = 1169;
+		final int resultTotal = 60;
 		GUI_App.setLabel("Vegetarian Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Vegetarian");
-		
+				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Vegetarian");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getVegetarian(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testCarnivore() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -272,33 +286,34 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 452;
-		final int resultTotal_saved = 1009;
+		final int resultTotal = 0;
 		GUI_App.setLabel("Vegetarian Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Carnivore");
-		
+				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Carnivore");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getVegetarian(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testLocalProduce() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -312,33 +327,34 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = -22;
-		final int resultTotal_saved = 909;
+		final int resultTotal = 9;
 		GUI_App.setLabel("Produce Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Local Produce");
-		
+				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Local Produce");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getProduce(), resultTotal);
+
 	}
-	
+
 	@Test
 	public void testGlobalProduce() {
-		
+
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
 		User userIn = clientIn.getUser2("Test");
@@ -352,28 +368,29 @@ public class UpdatingLabelsTest {
 		userIn.setTotal_saved(0);
 		userIn.setTotal_used(0);
 		userIn.setVegetarian(0);
-		
+
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 265;
-		final int resultTotal_saved = 1009;
+		final int resultTotal = 0;
 		GUI_App.setLabel("Produce Score");
-		
+		JLabel imgMotivation = new JLabel("");
+		JLabel imgAchievementSaved = new JLabel("");
+		JLabel imgAchievement = new JLabel("");
+
 		// Updating the label
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
 				lblLeaderboardContent,
-				lblMotivation, lblLevel, "Global Produce");
-		
+				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Global Produce");
+
 		// Checking the method
-		assertEquals(userIn.getTotal(), resultTotal);
-		assertEquals(userIn.getTotal_saved(), resultTotal_saved);
-		
+		assertEquals(userIn.getProduce(), resultTotal);
+
 	}
 
 }

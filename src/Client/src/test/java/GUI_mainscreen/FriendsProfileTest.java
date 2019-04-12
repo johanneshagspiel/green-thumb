@@ -33,11 +33,12 @@ public class FriendsProfileTest {
     @Test
     public void testInitialize() {
         // Setup
-        final User userIn = null;
-        final UserServiceImpl clientIn = null;
+    	final UserServiceImpl clientIn = new UserServiceImpl();
+        final User userIn = clientIn.getUser2("Test");
+        
 
         // Run the test
-        FriendsProfile.initialize(userIn, clientIn);
+        FriendsProfile.application(userIn, clientIn);
 
         // Verify the results
     }

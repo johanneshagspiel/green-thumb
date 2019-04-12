@@ -3,6 +3,11 @@ package entity;
 
 /** Gives the CO2 count to the GUI. **/
 public class CO2_Supplier {
+	
+	public CO2_Supplier() {
+		
+	}
+	
     /**THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE FEATURES FOLDER
      *   OR ../../../../../../doc/features
      *(compared to the directory of this file**/

@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.test.rest;
+package rest;
 
 import com.luv2code.springdemo.entity.Friend;
 import com.luv2code.springdemo.rest.FriendRestController;

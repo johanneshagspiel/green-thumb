@@ -12,7 +12,7 @@ import java.util.List;
  * The type Leader board entry.
  */
 public class LeaderBoardEntry {
-/** Initiating the string name. **/
+    /** Initiating the string name. **/
     private String names;
     /** Initiating the score. */
     private int scores;
@@ -76,111 +76,115 @@ public class LeaderBoardEntry {
 
     public static String createLeaderboard(final User userIn,
                                            final String label) {
-    /** Making a new leader board */
+        /** Making a new leader board */
         List<LeaderBoardEntry> listEntries = new ArrayList<LeaderBoardEntry>();
         final int a = 10;
 
+        LeaderBoardEntry user = userSupplyEntry(userIn, label);
+        listEntries.add(user);
+
+        // adding the friends
+        FriendServiceImpl clientFriend = new FriendServiceImpl();
+        UserServiceImpl clientUser = new UserServiceImpl();
+        List<Friend> friends =
+                clientFriend.getFriends(userIn.getUser_name());
+
+        for (int i = 0; i < friends.size(); i++) {
+            Friend temp = friends.get(i);
+            String nameFriend = temp.getFriend_name();
+            User friend = clientUser.getUser2(nameFriend);
+
+            int points = pointSupplier(friend, label);
+            listEntries.add(new LeaderBoardEntry(nameFriend, points));
+        }
 
 
+        // sort the list
+        Collections.sort(listEntries, new ComparatorLeaderBoard());
+
+        userIn.setFriendlist(friends);
+
+        String content = new String();
+        for (int i = 0; i < listEntries.size() & i <= a; i++) {
+            LeaderBoardEntry temp = listEntries.get(i);
+            content = content + "Rank " + (i + 1) + ": "
+                    + temp.toString() + "<br/>";
+        }
+
+        String LeaderBoardContent = "<html>" + content + "</html>";
+
+        return LeaderBoardContent;
+    }
+
+    public static LeaderBoardEntry userSupplyEntry(User userIn, String label){
         if (label.equals("Vegetarian Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getVegetarian());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Leaderboard Top 10 CO2 Used")
                 || label.equals("Overall Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getTotal());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Produce Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getProduce());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Car Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getCar());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Public Transportation Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getPublic_transportation());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Bike Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getBike());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Temperature Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getTemperature());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Solar Score")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getSolar());
-            listEntries.add(user);
+            return user;
         } else if (label.equals("Overall CO2 Saved")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getTotal_saved());
-            listEntries.add(user);
+            return user;
+        } else{
+            return null;
         }
+    }
 
+    public static int pointSupplier(User friend, String label){
+        int points = 0;
 
+        if (label.equals("Vegetarian Score")) {
+            points = friend.getVegetarian();
+        } else if (label.equals("Leaderboard Top 10 CO2 Used")
+                || label.equals("Overall Score")) {
+            points = friend.getTotal();
+        } else if (label.equals("Produce Score")) {
+            points = friend.getProduce();
+        } else if (label.equals("Car Score")) {
+            points = friend.getCar();
+        } else if (label.equals("Public Transportation Score")) {
+            points = friend.getPublic_transportation();
+        } else if (label.equals("Bike Score")) {
+            points = friend.getBike();
+        } else if (label.equals("Temperature Score")) {
+            points = friend.getTemperature();
+        } else if (label.equals("Solar Score")) {
+            points = friend.getSolar();
+        } else if (label.equals("Overall CO2 Saved")) {
+            points = friend.getTotal_saved();
 
-            // adding the friends
-            FriendServiceImpl clientFriend = new FriendServiceImpl();
-            UserServiceImpl clientUser = new UserServiceImpl();
-            List<Friend> friends =
-                    clientFriend.getFriends(userIn.getUser_name());
-
-            for (int i = 0; i < friends.size(); i++) {
-                Friend temp = friends.get(i);
-                String nameFriend = temp.getFriend_name();
-                User friend = clientUser.getUser2(nameFriend);
-
-                int points = 0;
-
-                if (label.equals("Vegetarian Score")) {
-                    points = friend.getVegetarian();
-                } else if (label.equals("Leaderboard Top 10 CO2 Used")
-                        || label.equals("Overall Score")) {
-                    points = friend.getTotal();
-                } else if (label.equals("Produce Score")) {
-                    points = friend.getProduce();
-                } else if (label.equals("Car Score")) {
-                    points = friend.getCar();
-                } else if (label.equals("Public Transportation Score")) {
-                    points = friend.getPublic_transportation();
-                } else if (label.equals("Bike Score")) {
-                    points = friend.getBike();
-                } else if (label.equals("Temperature Score")) {
-                    points = friend.getTemperature();
-                } else if (label.equals("Solar Score")) {
-                    points = friend.getSolar();
-                } else if (label.equals("Overall CO2 Saved")) {
-                    points = friend.getTotal_saved();
-
-                }
-
-
-
-
-                listEntries.add(new LeaderBoardEntry(nameFriend, points));
-            }
-
-
-            // sort the list
-            Collections.sort(listEntries, new ComparatorLeaderBoard());
-
-            userIn.setFriendlist(friends);
-
-            String content = new String();
-            for (int i = 0; i < listEntries.size() & i <= a; i++) {
-                LeaderBoardEntry temp = listEntries.get(i);
-                content = content + "Rank " + (i + 1) + ": "
-                       + temp.toString() + "<br/>";
-            }
-
-            String LeaderBoardContent = "<html>" + content + "</html>";
-
-
-            return LeaderBoardContent;
-
+        } else{
+            points = 0;
         }
+        return points;
+    }
 }
