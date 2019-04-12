@@ -25,6 +25,19 @@ If you want to run the app from a JAR file, after importing the ```src/Client/po
 ```mvn package```
 Then, you will find the JAR file in the ```target``` folder.
 
+## Running the whole project on your computer
+
+You will need to replace the code in:
+```src/Server/TestServer/src/main/resources/persistence-mysql.properties```
+```src/Client/src/main/java/helper/ServerConfig.java```
+With the commented-out replacement code.
+
+Then, you will need a running Tomcat instance and a running MySQL instance.
+
+Finally, you will need to create a database called ```testdatabase``` and run the commands specified in the ```src/Server/TestServer/src/main/resources/SQLconfig.txt``` file. 
+
+After that, you can run ```mvn package -DskipTests``` on both projects, which will give you a WAR file you can load in Tomcat (server project), and a JAR file for the client.
+
 ## Names and student numbers
 
 ### Ardy Zwanenburg
