@@ -18,8 +18,14 @@ public class ComparatorLeaderBoard implements Comparator<LeaderBoardEntry> {
      * @param arg1 argument 1
      * @return the score
      */
-    public final int compare(final LeaderBoardEntry arg0,
-                             final LeaderBoardEntry arg1) {
-        return arg1.getScore() - arg0.getScore();
+    public int compare(LeaderBoardEntry arg0,
+                             LeaderBoardEntry arg1) {
+
+        if (arg0 != null && arg1 != null) {
+            int finalScore = arg1.getScore() - arg0.getScore();
+            return finalScore;
+        } else {
+            return -1;
+        }
     }
 }
