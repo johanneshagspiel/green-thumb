@@ -14,13 +14,16 @@ Eclipse:
 Intellij:  
 [https://www.jetbrains.com/help/idea/2016.2/importing-project-from-maven-model.html](https://www.jetbrains.com/help/idea/2016.2/importing-project-from-maven-model.html)
 
-## Getting your weekly reports
+## How to run on your machine
 
-**Jacoco**:  
-Run `maven install` ([Intellij](https://www.jetbrains.com/help/idea/2016.3/getting-started-with-maven.html#execute_maven_goal)/[Eclipse](http://imgur.com/a/6q7pV))
+### IDE
+If you want to run the client from your IDE, you will need to import the Maven project from the ```src/Client/pom.xml``` file.
+Then, you only need to run the GUI_App.java class, which you will find in the client's ```src/main/java/GUI``` folder.
 
-**Checkstyle**:  
-Run `maven site`
+### JAR
+If you want to run the app from a JAR file, after importing the ```src/Client/pom.xml``` project you will need to run this command:
+```mvn package```
+Then, you will find the JAR file in the ```target``` folder.
 
 ## Names and student numbers
 
