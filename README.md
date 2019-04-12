@@ -1,10 +1,5 @@
-# CSE1105 Template Repository
-
-This a template repository to help you get started on making the best project possible!
-
-You can download the latest version [here](https://github.com/SERG-Delft/TI1216/releases)
-
-http://stackoverflow.com/a/6466993
+# \#GoGreen
+### A project made by Area22
 
 ## How to import into your IDE
 
