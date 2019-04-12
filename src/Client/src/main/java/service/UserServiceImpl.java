@@ -23,7 +23,8 @@ public class UserServiceImpl  {
      *
      * @return the users
      */
-    public final List<User> getUsers() { return null;
+    public final List<User> getUsers() {
+        return null;
     }
 
     /**
@@ -98,8 +99,6 @@ public class UserServiceImpl  {
 		}
 		return null;
     }
-    
-    
     /**
 	 * Gets friends.
 	 *

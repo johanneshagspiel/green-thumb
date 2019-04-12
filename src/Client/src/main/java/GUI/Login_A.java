@@ -22,7 +22,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.Color;
-
+/** The Login. */
 public class Login_A {
 /** Initialising Login Screen. */
     // Fields
@@ -86,25 +86,52 @@ public class Login_A {
      */
     private static void initialize() {
         // Some used values
-        final int twozerozero = 200;
         final int fivezerozero = 500;
-        final int threezerozero = 300;
         final int oneninesix = 196;
         final int fouronesix = 416;
         final int four = 4;
-        
-        // Create the frame
+        final int twofivefive = 255;
+        final int onetwoseven = 127;
+        final int twoeight = 28;
+        final int foursixsix = 466;
+        final int threethree = 33;
+        final int sixeight = 68;
+        final int onezeroeight = 108;
+        final int onefoursix = 146;
+        final int threezerozero = 300;
+        final int onezero = 10;
+        final int onetwo = 12;
+        final int threezero = 30;
+        final int onethree = 13;
+        final int twozerozero = 200;
+        final int onezerotwo = 102;
+        final int twozerofour = 204;
+        final int onefivethree = 153;
+        final int fivefive = 55;
+        final int oneeightone = 181;
+        final int sixfive = 65;
+        final int onefourtwo = 142;
+        final int onezeroseven = 107;
+        final int twoonenine = 219;
+        final int sevenzero = 70;
+        final int onefourseven = 147;
+        final int onefive = 15;
+        final int twoonezero = 210;
+        final int fiveone = 51;
+        final int oneeight = 18;
+
         frame = new JFrame();
-        frame.setBackground(new Color(0, 255, 127));
-		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
-        frame.setBounds(200, 200, 500, 300);
+        frame.setBackground(new Color(0, twofivefive, onetwoseven));
+		frame.getContentPane().setBackground(
+		        SystemColor.inactiveCaptionBorder);
+        frame.setBounds(twozerozero, twozerozero, fivezerozero, threezerozero);
         frame.getContentPane().setLayout(null);
         frame.setFocusable(true);
 
         // Add a key listener to the Enter
         KeyListener formSubmitKeyListener = new KeyAdapter() {
             @Override
-            public void keyPressed(KeyEvent event) {
+            public void keyPressed(final KeyEvent event) {
                 if (event.getKeyCode() == KeyEvent.VK_ENTER) {
 
                     // Get the filled in username and password
@@ -142,67 +169,57 @@ public class Login_A {
             }
         };
         frame.addKeyListener(formSubmitKeyListener);
-        final int onezero = 10;
-        final int twoeight = 28;
-        final int foursixsix = 466;
-        final int threezero = 30;
-        final int threethree = 33;
-        final int sixeight = 68;
-        final int sixone = 61;
-        final int onezeroeight = 108;
-        final int sixthree = 63;
-        final int onefoursix = 146;
-        final int ninezero = 90;
+
+
 
 
         // Labels
         JLabel lblAccount = new JLabel("Add an Account");
-        lblAccount.setFont(new Font("Arial Black", Font.PLAIN, 18));
+        lblAccount.setFont(new Font("Arial Black", Font.PLAIN, oneeight));
         lblAccount.setHorizontalAlignment(SwingConstants.CENTER);
-        lblAccount.setBounds(12, 0, 466, 55);
+        lblAccount.setBounds(onetwo, 0, foursixsix, fivefive);
         frame.getContentPane().add(lblAccount);
 
         JLabel lblUsername = new JLabel("Username");
-        lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 13));
-        lblUsername.setBounds(65, 68, 142, 30);
+        lblUsername.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+        lblUsername.setBounds(sixfive, sixeight, onefourtwo, threezero);
         frame.getContentPane().add(lblUsername);
 
         JLabel lblPassword = new JLabel("Password");
-        lblPassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
-        lblPassword.setBounds(65, 107, 142, 28);
+        lblPassword.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+        lblPassword.setBounds(sixfive, onezeroseven, onefourtwo, twoeight);
         frame.getContentPane().add(lblPassword);
 
         JLabel lblRPassword = new JLabel("Repeat password");
-        lblRPassword.setFont(new Font("Arial Black", Font.PLAIN, 13));
-        lblRPassword.setBounds(65, 146, 142, 28);
+        lblRPassword.setFont(new Font("Arial Black", Font.PLAIN, onethree));
+        lblRPassword.setBounds(sixfive, onefoursix, onefourtwo, twoeight);
         frame.getContentPane().add(lblRPassword);
-        final int oneeightseven = 187;
-        final int oneeightone = 181;
-        final int onezerosix = 106;
-        final int onefivezero = 150;
 
         // Text fields
         txtUsername = new JTextField();
-        txtUsername.setColumns(10);
-        txtUsername.setBounds(219, 70, 181, 28);
+        txtUsername.setColumns(onezero);
+        txtUsername.setBounds(twoonenine, sevenzero,
+                oneeightone, twoeight);
         frame.getContentPane().add(txtUsername);
         txtUsername.addKeyListener(formSubmitKeyListener);
 
         txtPassword = new JPasswordField();
-        txtPassword.setBounds(219, 108, 181, 28);
+        txtPassword.setBounds(twoonenine, onezeroeight,
+                oneeightone, twoeight);
         frame.getContentPane().add(txtPassword);
         txtPassword.addKeyListener(formSubmitKeyListener);
 
         txtRPassword = new JPasswordField();
-        txtRPassword.setBounds(219, 147, 181, 28);
+        txtRPassword.setBounds(twoonenine, onefourseven,
+                oneeightone, twoeight);
         frame.getContentPane().add(txtRPassword);
         txtRPassword.addKeyListener(formSubmitKeyListener);
 
         // Buttons
         JButton btnReset = new JButton("Add Account");
-        btnReset.setBackground(new Color(0, 255, 127));
+        btnReset.setBackground(new Color(0, twofivefive, onetwoseven));
         btnReset.setForeground(Color.WHITE);
-        btnReset.setFont(new Font("Arial Black", Font.PLAIN, 15));
+        btnReset.setFont(new Font("Arial Black", Font.PLAIN, onefive));
         btnReset.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
 
@@ -241,20 +258,21 @@ public class Login_A {
 
             }
         });
-        btnReset.setBounds(219, 210, 181, 30);
+        btnReset.setBounds(twoonenine, twoonezero,
+                oneeightone, threezero);
         frame.getContentPane().add(btnReset);
-        
         JButton btnBack = new JButton("Go Back");
-        btnBack.setBackground(new Color(102, 204, 153));
+        btnBack.setBackground(new Color(onezerotwo,
+                twozerofour, onefivethree));
         btnBack.setForeground(Color.WHITE);
-        btnBack.setFont(new Font("Arial Black", Font.PLAIN, 15));
+        btnBack.setFont(new Font("Arial Black", Font.PLAIN, onefive));
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
             	frame.setVisible(false);
 				Login_S.main(null);
             }
         });
-        btnBack.setBounds(65, 210, 108, 30);
+        btnBack.setBounds(sixfive, twoonezero, onezeroeight, threezero);
         frame.getContentPane().add(btnBack);
 
         // Separators
@@ -263,7 +281,7 @@ public class Login_A {
         frame.getContentPane().add(separator);
 
         JSeparator separator_1 = new JSeparator();
-        separator_1.setBounds(33, 51, 416, 4);
+        separator_1.setBounds(threethree, fiveone, fouronesix, four);
         frame.getContentPane().add(separator_1);
 
     }

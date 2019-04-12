@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -64,7 +63,7 @@ public class FriendServiceImpl  {
                     getResourceUrl,
                     HttpMethod.GET,
                     null,
-                    new ParameterizedTypeReference<List<Friend>>(){} );
+                    new ParameterizedTypeReference<List<Friend>>(){});
             List<Friend> friends = response.getBody();
 
             return friends;

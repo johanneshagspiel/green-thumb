@@ -54,41 +54,46 @@ public class FriendsProfile {
      */
     public static void initialize(final User userIn,
                                   final UserServiceImpl clientIn) {
-        final int threezerozero = 300;
-        final int fivezerozero = 500;
-        final int onezero = 10;
         final int twosixsix = 266;
-        final int twozero = 20;
-        final int onefourtwo = 142;
         final int fivenine = 59;
         final int threeseven = 37;
+        final int fivezerozero = 500;
+        final int twoeight = 28;
+        final int threezerozero = 300;
+        final int onezero = 10;
+        final int twozero = 20;
+        final int two = 2;
+        final int onefourtwo = 142;
+        final int oneeight = 18;
+        final int onetwofour = 124;
+        final int onesix = 16;
 
         frame2 = new JFrame();
-        frame2.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
-        frame2.setBounds(300, 500, 300, 500);
+        frame2.getContentPane().setBackground(
+                SystemColor.inactiveCaptionBorder);
+        frame2.setBounds(threezerozero, fivezerozero,
+                threezerozero, fivezerozero);
         frame2.getContentPane().setLayout(null);
         frame2.setFocusable(true);
-
 		// Labels
 		JLabel lblWelcome = new JLabel("Profiles of friends");
-		lblWelcome.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		lblWelcome.setFont(new Font("Arial Black",
+                Font.PLAIN, oneeight));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBounds(onezero,
                 onezero, twosixsix, twozero);
 		frame2.getContentPane().add(lblWelcome);
-		
 		// Creating a friend list
-		final int length = 124;
-		final int with = 28;
-		final int friends_x = 16;
-		final int friends_y = 2;
+		final int length = onetwofour;
+		final int with = twoeight;
+		final int friends_x = onesix;
+		final int friends_y = two;
 		int count = 0;
 
 		for (int j = 0; j < friends_x && count
                 < userIn.getFriendlist().size(); j++) {
 			for (int i = 0; i < friends_y && count
                     < userIn.getFriendlist().size(); i++) {
-				
 				//JOHANNES put here something that retrieves
                 // the information and than moves on to the next one
 				//TODO
