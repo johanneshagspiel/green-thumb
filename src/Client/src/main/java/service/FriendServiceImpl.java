@@ -37,7 +37,7 @@ public class FriendServiceImpl  {
         try {
             RestTemplate restTemplate = new RestTemplate();
             String postResourceUrl =
-                    ServerConfig.getFriendpageURL();
+                    ServerConfig.getFriendspageURL();
             Friend friend =
                     restTemplate.postForObject(
                             postResourceUrl, theFriend, Friend.class);
@@ -83,7 +83,7 @@ public class FriendServiceImpl  {
     public final void deleteUser(final int theId) {
         RestTemplate restTemplate = new RestTemplate();
         String deleteResourceUrl =
-                ServerConfig.getFriendpageURL()
+                ServerConfig.getFriendspageURL()
                         + theId;
         restTemplate.delete(deleteResourceUrl);
     }
@@ -96,7 +96,7 @@ public class FriendServiceImpl  {
     public final void updateUser(final Friend theFriend) {
         RestTemplate restTemplate = new RestTemplate();
         String putResourceUrl =
-                ServerConfig.getFriendpageURL();
+                ServerConfig.getFriendspageURL();
         restTemplate.put(putResourceUrl, theFriend);
     }
 

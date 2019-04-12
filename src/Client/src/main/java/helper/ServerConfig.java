@@ -34,10 +34,19 @@ public class ServerConfig {
     }
 
     /**
+     * Returning the correct friendspage URL for the TomCat instance the app should connect to.
+     * @return The URL of the friendspage.
+     */
+    public static String getFriendspageURL() {
+        return friendspage;
+    }
+
+    /**
      * Returning the correct friendpage URL for the TomCat instance the app should connect to.
      * @return The URL of the friendpage.
      */
     public static String getFriendpageURL() {
-        return friendspage;
+        return friendpage;
     }
+
 }
