@@ -21,11 +21,14 @@ build:
   script: "mvn clean install -B"
   
 deploy:
+  only:
+    - master
   type: deploy
   script:
-  - cd src/Server/TestServer
-  - mvn package -DskipTests
-  - apt-get update -qy
-  - apt-get install -y ruby-dev
-  - gem install dpl
-  - dpl --provider=heroku --app=area22gogreen --api-key=$HEROKU_API_KEY
+    - cd src/Server/TestServer
+    - mvn package -DskipTests
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=area22gogreen --api-key=$HEROKU_API_KEY
+  
