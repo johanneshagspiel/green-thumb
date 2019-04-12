@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class FriendServiceImpl implements FriendService {
 
-    // need to inject customer dao
     @Autowired
     private FriendDAO friendDAO;
 
@@ -33,18 +32,14 @@ public class FriendServiceImpl implements FriendService {
     @Override
     @Transactional
     public Friend saveFriend(Friend theFriend) {
-
         friendDAO.saveFriend(theFriend);
-
         return theFriend;
     }
 
     @Override
     @Transactional
     public int deleteFriend(int theId) {
-
         friendDAO.deleteFriend(theId);
-
         return theId;
     }
 }

@@ -1,23 +1,29 @@
-package Server.test.java.config;
+package config;
 
 import Server.config.DemoAppConfig;
 import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import javax.sql.DataSource;
 
+import java.util.logging.Logger;
+
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 /**
  * The type Demo app config test.
  */
+@RunWith(MockitoJUnitRunner.class)
 public class DemoAppConfigTest {
 
     @Mock
@@ -25,6 +31,7 @@ public class DemoAppConfigTest {
 
     @InjectMocks
     private DemoAppConfig demoAppConfigUnderTest;
+    private Logger loggerTest;
 
     /**
      * Sets up.
@@ -47,6 +54,9 @@ public class DemoAppConfigTest {
 
         // Verify the results
         assertEquals(expectedResult, result);
+
+//        when(demoAppConfigUnderTest.myDataSource().se).thenReturn(expectedResult);
+//        assertEquals(expectedResult, friendDAOImplUnderTest.getFriends());
     }
 
     /**

@@ -17,11 +17,12 @@ public interface UserService {
     public List<User> getUsers();
 
     /**
-     * Save user.
+     * Save user user.
      *
      * @param theUser the the user
+     * @return the user
      */
-    public void saveUser(User theUser);
+    public User saveUser(User theUser);
 
     /**
      * Gets user.
@@ -32,11 +33,12 @@ public interface UserService {
     public User getUser(int theId);
 
     /**
-     * Delete user.
+     * Delete user int.
      *
      * @param theId the the id
+     * @return the int
      */
-    public void deleteUser(int theId);
+    public int deleteUser(int theId);
 
     /**
      * Gets user 2.
@@ -56,9 +58,10 @@ public interface UserService {
     public User getUser3(String user_name);
 
     /**
-     * Get a user based on a password + username combination
+     * Gets user safe.
      *
      * @param theUser the the user
+     * @return the user safe
      */
     public User getUserSafe(User theUser);
 }

@@ -30,14 +30,10 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @ComponentScan("Server")
 @PropertySource ({ "classpath:persistence-mysql.properties" })
 public class DemoAppConfig implements WebMvcConfigurer {
-	/**
-	 * The environment variable.
-	 */
+
 	@Autowired
 	private Environment env;
-	/**
-	 * The logger variable.
-	 */
+
 	private Logger logger = Logger.getLogger(getClass().getName());
 
 	/**
@@ -79,10 +75,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 						"connection.pool.maxIdleTime"));
 		return myDataSource;
 	}
-	/**
-	 * method to get the hibernate properties.
-	 * @return the properties
-	 */
+
 	private Properties getHibernateProperties() {
 		Properties props = new Properties();
 		props.setProperty("hibernate.dialect",
@@ -91,16 +84,13 @@ public class DemoAppConfig implements WebMvcConfigurer {
 				env.getProperty("hibernate.show_sql"));
 		return props;
 	}
-	/**
-	 * method to get the int properties.
-	 * @param propName the property name
-	 * @return the value of the property
-	 */
+
 	private int getIntProperty(final String propName) {
 		String propVal = env.getProperty(propName);
 		int intPropVal = Integer.parseInt(propVal);
 		return intPropVal;
 	}
+
 	/**
 	 * Session factory local session factory bean.
 	 *
@@ -117,6 +107,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 				getHibernateProperties());
 		return sessionFactory;
 	}
+
 	/**
 	 * Transaction manager hibernate transaction manager.
 	 *

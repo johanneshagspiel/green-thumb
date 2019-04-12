@@ -20,7 +20,7 @@ public interface UserDAO {
      *
      * @param theUser the the user
      */
-     void saveUser(User theUser);
+     User saveUser(User theUser);
 
     /**
      * Gets user.
@@ -35,7 +35,7 @@ public interface UserDAO {
      *
      * @param theId the the id
      */
-     void deleteUser(int theId);
+     int deleteUser(int theId);
 
     /**
      * Gets user 2.

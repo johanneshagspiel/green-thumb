@@ -1,14 +1,14 @@
-package service;
+package dao;
 
-import entity.Friend;
-import entity.User;
+import Server.dao.UserDAOImpl;
+import Server.entity.User;
+import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import service.UserServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,13 +19,13 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 /**
- * The type User service impl test.
+ * The type User dao impl test.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class UserServiceImplTest {
+public class UserDAOImplTest {
 
     @Mock
-    private UserServiceImpl mockUserServiceImpl;
+    private UserDAOImpl userDAOImplUnderTest;
 
     @InjectMocks
     public User test1;
@@ -80,20 +80,19 @@ public class UserServiceImplTest {
         expectedResult.add(0, test1);
         expectedResult.add(1, test2);
 
-        when(mockUserServiceImpl.getUsers()).thenReturn(expectedResult);
-        assertEquals(expectedResult, mockUserServiceImpl.getUsers());
-        
+        when(userDAOImplUnderTest.getUsers()).thenReturn(expectedResult);
+        assertEquals(expectedResult, userDAOImplUnderTest.getUsers());
+
     }
 
     /**
-     * Test create user.
+     * Test save user.
      */
     @Test
-    public void testCreateUser() {
+    public void testSaveUser() {
 
-        when(mockUserServiceImpl.createUser(test1)).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.createUser(test1));
-        
+        when(userDAOImplUnderTest.saveUser(test1)).thenReturn(test1);
+        assertEquals(test1, userDAOImplUnderTest.saveUser(test1));
     }
 
     /**
@@ -102,9 +101,18 @@ public class UserServiceImplTest {
     @Test
     public void testGetUser() {
 
-        when(mockUserServiceImpl.getUser(1)).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.getUser(1));
-        
+        when(userDAOImplUnderTest.getUser(1)).thenReturn(test1);
+        assertEquals(test1, userDAOImplUnderTest.getUser(1));
+    }
+
+    /**
+     * Test delete user.
+     */
+    @Test
+    public void testDeleteUser() {
+
+        when(userDAOImplUnderTest.deleteUser(1)).thenReturn(1);
+        assertEquals(1, userDAOImplUnderTest.deleteUser(1));
     }
 
     /**
@@ -113,41 +121,27 @@ public class UserServiceImplTest {
     @Test
     public void testGetUser2() {
 
-        when(mockUserServiceImpl.getUser2("test1")).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.getUser2("test1"));
-
+        when(userDAOImplUnderTest.getUser2("test1", "test1")).thenReturn(test1);
+        assertEquals(test1, userDAOImplUnderTest.getUser2("test1", "test1"));
     }
 
     /**
-     * Test login.
+     * Test get user 3.
      */
     @Test
-    public void testLogin() {
+    public void testGetUser3() {
 
-        when(mockUserServiceImpl.login("test1", "test1")).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.login("test1", "test1"));
-        
+        when(userDAOImplUnderTest.getUser3("test1")).thenReturn(test1);
+        assertEquals(test1, userDAOImplUnderTest.getUser3("test1"));
     }
 
     /**
-     * Test delete user.
+     * Test get user safe.
      */
     @Test
-    public void testZDeleteUser() {
+    public void testGetUserSafe() {
 
-        when(mockUserServiceImpl.deleteUser(1)).thenReturn(1);
-        assertEquals(1, mockUserServiceImpl.deleteUser(1));
-        
-    }
-
-    /**
-     * Test update user.
-     */
-    @Test
-    public void testUpdateUser() {
-
-        when(mockUserServiceImpl.updateUser(test1)).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.updateUser(test1));
-
+        when(userDAOImplUnderTest.getUserSafe(test1)).thenReturn(test1);
+        assertEquals(test1, userDAOImplUnderTest.getUserSafe(test1));
     }
 }

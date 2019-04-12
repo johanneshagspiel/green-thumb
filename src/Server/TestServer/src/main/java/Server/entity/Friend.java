@@ -14,15 +14,12 @@ import java.io.Serializable;
 @Entity
 @Table(name="friend")
 public class Friend implements Serializable {
-    /** initiating the id. */
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    /** initialising the user name. */
     @Column(name = "user_name_entry")
     private String user_name_entry;
-    /** initialising the friend name. */
     @Column(name = "friend_name")
     private String friend_name;
 

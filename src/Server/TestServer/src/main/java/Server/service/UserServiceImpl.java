@@ -14,7 +14,6 @@ import Server.entity.User;
 @Service
 public class UserServiceImpl implements UserService {
 
-	// need to inject customer dao
 	@Autowired
 	private UserDAO userDAO;
 	
@@ -26,43 +25,39 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional
-	public void saveUser(User theUser) {
-
+	public User saveUser(User theUser) {
 		userDAO.saveUser(theUser);
+		return theUser;
 	}
 
 	@Override
 	@Transactional
 	public User getUser(int theId) {
-		
 		return userDAO.getUser(theId);
 	}
 
 	@Override
 	@Transactional
-	public void deleteUser(int theId) {
-
+	public int deleteUser(int theId) {
 		userDAO.deleteUser(theId);
+		return theId;
 	}
 
 	@Override
 	@Transactional
 	public User getUser2(String user_name, String password) {
-
 		return userDAO.getUser2(user_name, password);
 	}
 
 	@Override
 	@Transactional
 	public User getUser3(String user_name) {
-
 		return userDAO.getUser3(user_name);
 	}
 
 	@Override
 	@Transactional
 	public User getUserSafe(User theUser) {
-
 		return userDAO.getUserSafe(theUser);
 	}
 }

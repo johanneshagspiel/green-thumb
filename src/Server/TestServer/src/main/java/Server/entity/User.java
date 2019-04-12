@@ -14,47 +14,35 @@ import java.io.Serializable;
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
-	/** the id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	/** the user name. */
 	@Column(name = "user_name")
 	private String user_name;
-	/** the password. */
 	@Column(name = "password")
 	private String password;
-	/** the vegetarian. */
 	@Column(name = "vegetarian")
 	private int vegetarian;
-	/** the produce. */
 	@Column(name = "produce")
 	private int produce;
-	/** the car. */
 	@Column(name = "car")
 	private int car;
-	/** the public transport. */
 	@Column(name = "public_transportation")
 	private int public_transportation;
-	/** the bike. */
 	@Column(name = "bike")
 	private int bike;
-	/** the temperature. */
 	@Column(name = "temperature")
 	private int temperature;
-	/** the solar. */
 	@Column(name = "solar")
 	private int solar;
-	/** the total saved. */
 	@Column(name = "total_saved")
 	private int total_saved;
-	/** the total used. */
 	@Column(name = "total_used")
 	private int total_used;
-	/** the total. */
 	@Column(name = "total")
 	private int total;
+
 	/**
 	 * Instantiates a new User.
 	 */
@@ -152,15 +140,17 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * Get car.
-	 * @return car number
+	 * Gets car.
+	 *
+	 * @return the car
 	 */
 	public int getCar() {
 		return car;
 	}
 
 	/**
-	 * set Car.
+	 * Sets car.
+	 *
 	 * @param car the car
 	 */
 	public void setCar(final int car) {
@@ -168,31 +158,35 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * Get Public transport.
-	 * @return the number
+	 * Gets public transportation.
+	 *
+	 * @return the public transportation
 	 */
 	public int getPublic_transportation() {
 		return public_transportation;
 	}
 
-	/** Set public transport.
+	/**
+	 * Sets public transportation.
 	 *
-	 * @param public_transportation the public transport
+	 * @param public_transportation the public transportation
 	 */
 	public void setPublic_transportation(final int public_transportation) {
 		this.public_transportation = public_transportation;
 	}
 
 	/**
-	 * Get bike.
-	 * @return bike
+	 * Gets bike.
+	 *
+	 * @return the bike
 	 */
 	public int getBike() {
 		return bike;
 	}
 
 	/**
-	 * Set bike.
+	 * Sets bike.
+	 *
 	 * @param bike the bike
 	 */
 	public void setBike(final int bike) {
@@ -200,14 +194,16 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * Get total saved.
+	 * Gets total saved.
+	 *
 	 * @return the total saved
 	 */
 	public int getTotal_saved() {
 		return total_saved;
 	}
 
-	/** Set total saved.
+	/**
+	 * Sets total saved.
 	 *
 	 * @param total_saved the total saved
 	 */
@@ -216,15 +212,17 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * Get the total used.
-	 * @return total used
+	 * Gets total used.
+	 *
+	 * @return the total used
 	 */
 	public int getTotal_used() {
 		return total_used;
 	}
 
 	/**
-	 * Set total used.
+	 * Sets total used.
+	 *
 	 * @param total_used the total used
 	 */
 	public void setTotal_used(final int total_used) {
@@ -232,14 +230,16 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * Get total.
-	 * @return total
+	 * Gets total.
+	 *
+	 * @return the total
 	 */
 	public int getTotal() {
 		return total;
 	}
 
-	/** Set total.
+	/**
+	 * Sets total.
 	 *
 	 * @param total the total
 	 */
@@ -283,10 +283,6 @@ public class User implements Serializable {
 		this.solar = solar;
 	}
 
-	/**
-	 * Make a string.
-	 * @return the string
-	 */
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", user_name="

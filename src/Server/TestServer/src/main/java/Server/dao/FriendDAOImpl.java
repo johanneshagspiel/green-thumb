@@ -15,6 +15,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FriendDAOImpl implements FriendDAO {
 
+    /**
+     * The Session factory.
+     */
     @Autowired
     public SessionFactory sessionFactory;
 
@@ -22,10 +25,8 @@ public class FriendDAOImpl implements FriendDAO {
     @Override
     public List<Friend> getFriends(final String user_name_entry) {
 
-        // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
-        // create a query  ... sort by last name
         Query query = currentSession.createSQLQuery(
                 "select * from friend "
                        + "where user_name_entry=:user_name_entry")
@@ -34,58 +35,36 @@ public class FriendDAOImpl implements FriendDAO {
 
         List<Friend> friends = query.getResultList();
 
-        // return the results
         return friends;
     }
-
 
     @Override
     public List<Friend> getFriends() {
 
-        // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
-
-        // create a query  ... sort by last name
         Query query = currentSession.createSQLQuery(
                 "select * from friend").addEntity(Friend.class);
-
-        // execute query and get result list
         List<Friend> friends = query.getResultList();
-
-        // return the results
         return friends;
     }
 
     @Override
     public Friend saveFriend(final Friend theFriend) {
-
-        // get current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
-
-        // save/upate the customer ... finally LOL
         currentSession.saveOrUpdate(theFriend);
-
         return theFriend;
     }
 
     @Override
     public int deleteFriend(final int id) {
-
-        // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
-
-        // delete object with primary key
         Query query = currentSession.createSQLQuery(
                 "delete from friend where id=:id").
                 addEntity(Friend.class).setParameter(
                         "id", id);
-
         query.executeUpdate();
-
         return id;
     }
-
-
 }
 
 

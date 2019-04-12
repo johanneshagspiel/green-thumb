@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class FriendRestController {
 
-    // autowire the CustomerService
     @Autowired
     private FriendService friendService;
 
@@ -31,12 +30,9 @@ public class FriendRestController {
      * @param user_name_entry the user name entry
      * @return the friends
      */
-// add mapping for GET /customers
     @GetMapping("/friend/{user_name_entry}")
     public List<Friend> getFriends(@PathVariable String user_name_entry) {
-
         return friendService.getFriends(user_name_entry);
-
     }
 
     /**
@@ -44,15 +40,10 @@ public class FriendRestController {
      *
      * @return the friends
      */
-// add mapping for GET /customers
     @GetMapping("/friends")
     public List<Friend> getFriends() {
-
         return friendService.getFriends();
-
     }
-
-    // add mapping for POST /customers  - add new customer
 
     /**
      * Add friend friend.
@@ -62,18 +53,10 @@ public class FriendRestController {
      */
     @PostMapping("/friends")
     public Friend addFriend(@RequestBody Friend theFriend) {
-
-        // also just in case the pass an id in JSON ... set id to 0
-        // this is force a save of new item ... instead of update
-
         theFriend.setId(0);
-
         friendService.saveFriend(theFriend);
-
         return theFriend;
     }
-
-    // add mapping for PUT /customers - update existing customer
 
     /**
      * Update friend friend.
@@ -83,14 +66,9 @@ public class FriendRestController {
      */
     @PutMapping("/friends")
     public Friend updateFriend(@RequestBody Friend theFriend) {
-
         friendService.saveFriend(theFriend);
-
         return theFriend;
-
     }
-
-    // add mapping for DELETE /customers/{customerId} - delete customer
 
     /**
      * Delete friend string.
@@ -100,12 +78,9 @@ public class FriendRestController {
      */
     @DeleteMapping("/friends/{userId}")
     public String deleteFriend(@PathVariable int userId) {
-
         friendService.deleteFriend(userId);
-
         return "Deleted user id - " + userId;
     }
-
 }
 
 

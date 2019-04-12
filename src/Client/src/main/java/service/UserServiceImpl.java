@@ -23,7 +23,7 @@ public class UserServiceImpl  {
      *
      * @return the users
      */
-    public final List<User> getUsers() {
+    public List<User> getUsers() {
         return null;
     }
 
@@ -32,7 +32,7 @@ public class UserServiceImpl  {
      *
      * @param theUser the the user
      */
-    public final void createUser(final User theUser) {
+    public User createUser(final User theUser) {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			String postResourceUrl =
@@ -42,6 +42,7 @@ public class UserServiceImpl  {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return theUser;
 	}
 
     /**
@@ -59,12 +60,12 @@ public class UserServiceImpl  {
 					restTemplate.getForEntity(
 							getResourceUrl,
 							String.class);
-			User user =
+			User theUser =
 					restTemplate.getForObject(
 					getResourceUrl + theId,
 					User.class);
-			System.out.println(user.toString());
-			return user;
+			System.out.println(theUser.toString());
+			return theUser;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -104,7 +105,7 @@ public class UserServiceImpl  {
 	 *
 	 * @return all the users
 	 */
-	public final List<User> getAllUsers() {
+	public List<User> getAllUsers() {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			String getResourceUrl =
@@ -133,7 +134,7 @@ public class UserServiceImpl  {
      * @param password  the password
      * @return the user
      */
-    public final User loginOld(final String user_name,
+    public User loginOld(final String user_name,
 							   final String password) {
 		try {
 			RestTemplate restTemplate =
@@ -162,7 +163,7 @@ public class UserServiceImpl  {
 	 * @param password the password
 	 * @return the user
 	 */
-	public final User login(final String user_name, final String password) {
+	public User login(final String user_name, final String password) {
 		try {
 
 			RestTemplate restTemplate =
@@ -210,11 +211,12 @@ public class UserServiceImpl  {
      *
      * @param theId the the id
      */
-    public final void deleteUser(final int theId) {
+    public int deleteUser(final int theId) {
 		RestTemplate restTemplate = new RestTemplate();
 		String deleteResourceUrl
 				= ServerConfig.getUserpageURL() + theId;
 		restTemplate.delete(deleteResourceUrl);
+		return theId;
 	}
 
     /**
@@ -222,11 +224,12 @@ public class UserServiceImpl  {
      *
      * @param theUser the the user
      */
-    public final void updateUser(final User theUser) {
+    public User updateUser(final User theUser) {
 		RestTemplate restTemplate = new RestTemplate();
 		String putResourceUrl =
                 ServerConfig.getUserpageURL();
 		restTemplate.put(putResourceUrl, theUser);
+		return theUser;
 	}
 
 

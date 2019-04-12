@@ -1,4 +1,4 @@
-package Server.test.java.entity;
+package entity;
 
 import Server.entity.User;
 import org.junit.Test;
@@ -54,8 +54,8 @@ public class UserTest {
     @Test
     public void setUser_name() {
         User test = new User();
-        test.setUser_name("Test");
-        assertEquals(test.getUser_name(), "Test");
+        test.setUser_name("src/main/Test");
+        assertEquals(test.getUser_name(), "src/main/Test");
     }
 
     @Test
@@ -67,8 +67,8 @@ public class UserTest {
     @Test
     public void setPassword() {
         User test = new User();
-        test.setPassword("Test");
-        assertEquals(test.getPassword(), "Test");
+        test.setPassword("src/main/Test");
+        assertEquals(test.getPassword(), "src/main/Test");
     }
 
     @Test

@@ -25,16 +25,18 @@ public interface FriendService {
     public List<Friend> getFriends();
 
     /**
-     * Save friend.
+     * Save friend friend.
      *
      * @param theFriend the the friend
+     * @return the friend
      */
     public Friend saveFriend(Friend theFriend);
 
     /**
-     * Delete friend.
+     * Delete friend int.
      *
      * @param theId the the id
+     * @return the int
      */
     public int deleteFriend(int theId);
 

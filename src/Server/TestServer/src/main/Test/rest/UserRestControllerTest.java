@@ -1,33 +1,30 @@
-package service;
-
-import entity.Friend;
-import entity.User;
+package rest;
+import Server.entity.User;
+import Server.rest.UserRestController;
+import Server.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import service.UserServiceImpl;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 /**
- * The type User service impl test.
+ * The type User rest controller test.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class UserServiceImplTest {
+public class UserRestControllerTest {
 
     @Mock
-    private UserServiceImpl mockUserServiceImpl;
+    private UserService mockUserService;
 
     @InjectMocks
+    private UserRestController userRestControllerUnderTest;
     public User test1;
     public User test2;
 
@@ -36,6 +33,7 @@ public class UserServiceImplTest {
      */
     @Before
     public void setUp() {
+
         test1 = new User();
         test2 = new User();
 
@@ -70,6 +68,8 @@ public class UserServiceImplTest {
         initMocks(this);
     }
 
+
+
     /**
      * Test get users.
      */
@@ -80,20 +80,8 @@ public class UserServiceImplTest {
         expectedResult.add(0, test1);
         expectedResult.add(1, test2);
 
-        when(mockUserServiceImpl.getUsers()).thenReturn(expectedResult);
-        assertEquals(expectedResult, mockUserServiceImpl.getUsers());
-        
-    }
-
-    /**
-     * Test create user.
-     */
-    @Test
-    public void testCreateUser() {
-
-        when(mockUserServiceImpl.createUser(test1)).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.createUser(test1));
-        
+        when(mockUserService.getUsers()).thenReturn(expectedResult);
+        assertEquals(expectedResult, userRestControllerUnderTest.getUsers());
     }
 
     /**
@@ -102,9 +90,18 @@ public class UserServiceImplTest {
     @Test
     public void testGetUser() {
 
-        when(mockUserServiceImpl.getUser(1)).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.getUser(1));
-        
+        when(mockUserService.getUser(1)).thenReturn(test1);
+        assertEquals(test1, userRestControllerUnderTest.getUser(1));
+    }
+
+    /**
+     * Test get user safe.
+     */
+    @Test
+    public void testGetUserSafe() {
+
+        when(mockUserService.getUserSafe(test1)).thenReturn(test1);
+        assertEquals(test1, userRestControllerUnderTest.getUserSafe(test1));
     }
 
     /**
@@ -113,31 +110,29 @@ public class UserServiceImplTest {
     @Test
     public void testGetUser2() {
 
-        when(mockUserServiceImpl.getUser2("test1")).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.getUser2("test1"));
-
+        when(mockUserService.getUser2("test1", "test1")).thenReturn(test1);
+        assertEquals(test1, userRestControllerUnderTest.getUser2("test1", "test1"));
     }
 
     /**
-     * Test login.
+     * Test get user 3.
      */
     @Test
-    public void testLogin() {
+    public void testGetUser3() {
 
-        when(mockUserServiceImpl.login("test1", "test1")).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.login("test1", "test1"));
-        
+        when(mockUserService.getUser3("test1")).thenReturn(test1);
+        assertEquals(test1, userRestControllerUnderTest.getUser3("test1"));
     }
 
     /**
-     * Test delete user.
+     * Test add user.
      */
     @Test
-    public void testZDeleteUser() {
+    public void testAddUser() {
 
-        when(mockUserServiceImpl.deleteUser(1)).thenReturn(1);
-        assertEquals(1, mockUserServiceImpl.deleteUser(1));
-        
+        when(mockUserService.saveUser(test1)).thenReturn(test1);
+        assertEquals(test1, userRestControllerUnderTest.addUser(test1));
+
     }
 
     /**
@@ -146,8 +141,18 @@ public class UserServiceImplTest {
     @Test
     public void testUpdateUser() {
 
-        when(mockUserServiceImpl.updateUser(test1)).thenReturn(test1);
-        assertEquals(test1, mockUserServiceImpl.updateUser(test1));
+        when(mockUserService.saveUser(test1)).thenReturn(test1);
+        assertEquals(test1, userRestControllerUnderTest.updateUser(test1));
 
+    }
+
+    /**
+     * Test delete user.
+     */
+    @Test
+    public void testDeleteUser() {
+
+        when(mockUserService.deleteUser(1)).thenReturn(1);
+        assertEquals("Deleted user id - " +1, userRestControllerUnderTest.deleteUser(1));
     }
 }
