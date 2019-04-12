@@ -9,6 +9,11 @@ import javax.swing.*;
  * The type Login add account.
  */
 public class Login_addAccount extends Login_S {
+	
+	public Login_addAccount() {
+		
+	}
+	
 	/**
 	 * Creates a new account Pre.
 	 *  - Username is not used yet - Username and Password

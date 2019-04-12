@@ -14,16 +14,16 @@ import java.io.Serializable;
 @Entity
 @Table(name="friend")
 public class Friend implements Serializable {
-
+    /** initiating the id. */
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-
-    @Column(name="user_name_entry")
+    /** initialising the user name. */
+    @Column(name = "user_name_entry")
     private String user_name_entry;
-
-    @Column(name="friend_name")
+    /** initialising the friend name. */
+    @Column(name = "friend_name")
     private String friend_name;
 
 
@@ -48,7 +48,7 @@ public class Friend implements Serializable {
      *
      * @param id the id
      */
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -66,7 +66,7 @@ public class Friend implements Serializable {
      *
      * @param user_name_entry the user name entry
      */
-    public void setUser_name_entry(String user_name_entry) {
+    public void setUser_name_entry(final String user_name_entry) {
         this.user_name_entry = user_name_entry;
     }
 
@@ -84,13 +84,15 @@ public class Friend implements Serializable {
      *
      * @param friend_name the friend name
      */
-    public void setFriend_name(String friend_name) {
+    public void setFriend_name(final String friend_name) {
         this.friend_name = friend_name;
     }
 
     @Override
     public String toString() {
-        return "Friend [id=" + id + ", user_name_entry=" + user_name_entry + ", friend_name=" + friend_name + "]";
+        return "Friend [id=" + id + ", user_name_entry="
+                + user_name_entry + ", friend_name="
+                + friend_name + "]";
     }
 
 }

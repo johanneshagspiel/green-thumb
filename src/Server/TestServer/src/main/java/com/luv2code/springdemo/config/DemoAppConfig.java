@@ -28,7 +28,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan("com.luv2code.springdemo")
-@PropertySource({ "classpath:persistence-mysql.properties" })
+@PropertySource ({ "classpath:persistence-mysql.properties" })
 public class DemoAppConfig implements WebMvcConfigurer {
 	/**
 	 * The environment variable.
@@ -52,26 +52,36 @@ public class DemoAppConfig implements WebMvcConfigurer {
 		try {
 			myDataSource.setDriverClass(
 					"com.mysql.jdbc.Driver");
-			}
-		catch (PropertyVetoException exc) {
+			} catch (PropertyVetoException exc) {
 			throw new RuntimeException(exc);
 											}
-		logger.info("jdbc.url=" + env.getProperty("jdbc.url"));
-		logger.info("jdbc.user=" + env.getProperty("jdbc.user"));
-		myDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-		myDataSource.setUser(env.getProperty("jdbc.user"));
-		myDataSource.setPassword(env.getProperty("jdbc.password"));
-		myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
+		logger.info("jdbc.url="
+				+ env.getProperty("jdbc.url"));
+		logger.info("jdbc.user="
+				+ env.getProperty("jdbc.user"));
+		myDataSource.setJdbcUrl(
+				env.getProperty("jdbc.url"));
+		myDataSource.setUser(
+				env.getProperty("jdbc.user"));
+		myDataSource.setPassword(
+				env.getProperty("jdbc.password"));
+		myDataSource.setInitialPoolSize(
+				getIntProperty(
+				"connection.pool.initialPoolSize"));
 		myDataSource.setMinPoolSize(
-				getIntProperty("connection.pool.minPoolSize"));
+				getIntProperty(
+						"connection.pool.minPoolSize"));
 		myDataSource.setMaxPoolSize(
-				getIntProperty("connection.pool.maxPoolSize"));
+				getIntProperty(
+						"connection.pool.maxPoolSize"));
 		myDataSource.setMaxIdleTime(
-				getIntProperty("connection.pool.maxIdleTime"));
+				getIntProperty(
+						"connection.pool.maxIdleTime"));
 		return myDataSource;
 	}
 	/**
-	 * method to get the hibernate properties
+	 * method to get the hibernate properties.
+	 * @return the properties
 	 */
 	private Properties getHibernateProperties() {
 		Properties props = new Properties();
@@ -82,9 +92,11 @@ public class DemoAppConfig implements WebMvcConfigurer {
 		return props;
 	}
 	/**
-	 * method to get the int properties
+	 * method to get the int properties.
+	 * @param propName the property name
+	 * @return the value of the property
 	 */
-	private int getIntProperty(String propName) {
+	private int getIntProperty(final String propName) {
 		String propVal = env.getProperty(propName);
 		int intPropVal = Integer.parseInt(propVal);
 		return intPropVal;
@@ -95,7 +107,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 	 * @return the local session factory bean
 	 */
 	@Bean
-	public LocalSessionFactoryBean sessionFactory(){
+	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory =
 				new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(myDataSource());
@@ -114,19 +126,10 @@ public class DemoAppConfig implements WebMvcConfigurer {
 	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(
-			SessionFactory sessionFactory) {
+			final SessionFactory sessionFactory) {
 		HibernateTransactionManager txManager =
 				new HibernateTransactionManager();
 		txManager.setSessionFactory(sessionFactory);
 		return txManager;
 	}
 }
-
-
-
-
-
-
-
-
-

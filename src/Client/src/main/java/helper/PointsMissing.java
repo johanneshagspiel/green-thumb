@@ -7,8 +7,12 @@ public class PointsMissing {
      * @return the points out
      */
     public static int determiningPoints(final int pointsIn) {
-
+    	
         return 1000 - (pointsIn % 1000);
 
+    }
+    
+    public PointsMissing() {
+    	
     }
 }

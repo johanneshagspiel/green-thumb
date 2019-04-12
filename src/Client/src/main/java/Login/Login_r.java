@@ -12,6 +12,10 @@ import javax.swing.*;
  */
 public class Login_r extends Login_S {
 
+	public Login_r() {
+		
+	}
+	
     /**
      * Handles the login request.
      * Pre    - Username is not empty and in database
