@@ -129,7 +129,6 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-<<<<<<< HEAD
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
@@ -147,12 +146,6 @@
 						</configuration>
 					</execution>
 				</executions>
-=======
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-				</configuration>
->>>>>>> 59d377551542250f427f3ae6b0bf213bae175774
 			</plugin>
 
 			<plugin>
