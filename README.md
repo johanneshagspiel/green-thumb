@@ -13,7 +13,7 @@ Intellij:
 
 ### IDE
 If you want to run the client from your IDE, you will need to import the Maven project from the ```src/Client/pom.xml``` file.
-Then, you only need to run the GUI_App.java class, which you will find in the client's ```src/main/java/GUI``` folder.
+Then, you only need to run the Login_S.java class, which you will find in the client's ```src/main/java/GUI``` folder.
 
 ### JAR
 If you want to run the app from a JAR file, after importing the ```src/Client/pom.xml``` project you will need to run this command:
@@ -31,7 +31,10 @@ Then, you will need a running Tomcat instance and a running MySQL instance.
 
 Finally, you will need to create a database called ```testdatabase``` and run the commands specified in the ```src/Server/TestServer/src/main/resources/SQLconfig.txt``` file. 
 
-After that, you can run ```mvn package -DskipTests``` on both projects, which will give you a WAR file you can load in Tomcat (server project), and a JAR file for the client.
+After that, you can run ```mvn package -DskipTests``` on both projects, which will give you:
+
+A WAR file you can load in Tomcat (just copy it into the ```webapps``` folder of Tomcat's directory and restart it).
+A JAR file for the client, which you can simply run with your Java JRE.
 
 ## Names and student numbers
 
