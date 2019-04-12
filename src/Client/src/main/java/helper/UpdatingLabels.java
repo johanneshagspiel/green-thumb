@@ -10,8 +10,40 @@ import javax.swing.*;
 import static GUI.GUI_App.*;
 /** Update the label. */
 public class UpdatingLabels {
-
-    public static void updateEverythingDuo(User userIn, UserServiceImpl clientIn, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel, JLabel imgMotivation, JLabel imgAchievement, JLabel imgAchievementSaved, String method) {
+    /** the level value. */
+    public static final int LEVELVALUE = 1000;
+    /** the cost value. */
+    public static final int COSTVALUE = 100;
+    /** the maximum level. */
+    public static final int LEVELMAX = 4;
+    /** The additional multiplier.*/
+    public static final int ADDITIONALVALUE = 10;
+    /**
+     * Update everything.
+     * @param userIn the user in
+     * @param clientIn the client in
+     * @param lblTotalCO2 the total co2
+     * @param lblCO2Saved the total co2 saved
+     * @param lblLeaderboardContent the leaderboard
+     * @param lblMotivation the motivation
+     * @param lblLevel the level
+     * @param imgMotivation the img
+     * @param imgAchievement the img
+     * @param imgAchievementSaved the img
+     * @param method the method
+     */
+    public static void updateEverythingDuo(
+            final User userIn,
+            final UserServiceImpl clientIn,
+            final JLabel lblTotalCO2,
+            final JLabel lblCO2Saved,
+            final JLabel lblLeaderboardContent,
+            final JLabel lblMotivation,
+            final JLabel lblLevel,
+            final JLabel imgMotivation,
+            final JLabel imgAchievement,
+            final JLabel imgAchievementSaved,
+            final String method) {
 
         int points = getPoints();
         int pointsSaved = getPointsSaved();
@@ -20,18 +52,17 @@ public class UpdatingLabels {
             if (method.equals("Vegetarian")) {
                 //Initializing the values we are going to use.
                 int mealSaved = (int) (CO2_Supplier.mealDifference(
-                        true, false) * 100);
+                        true, false) * COSTVALUE);
                 int mealCost = (int) (CO2_Supplier.meal(
-                        true, false) * 100);
+                        true, false) * COSTVALUE);
 
                 //updating the totals.
                 userIn.setTotal_saved(getPointsSaved() + mealSaved);
                 userIn.setTotal(getPoints() + mealCost);
                 int pointsTemp = getPoints();
-                setLevel(pointsTemp / 1000);
-                if(getLevel() > 4)
-                {
-                    setLevel(4);
+                setLevel(pointsTemp / LEVELVALUE);
+                if (getLevel() > LEVELMAX) {
+                    setLevel(LEVELMAX);
                 }
 
                 //updating the feature's total saved.
@@ -42,18 +73,17 @@ public class UpdatingLabels {
             } else if (method.equals("Carnivore")) {
                 //Initializing the values we are going to use.
                 int mealSaved = (int) (CO2_Supplier.mealDifference(
-                        false, false) * 100);
+                        false, false) * COSTVALUE);
                 int mealCost = (int) (CO2_Supplier.meal(
-                        false, false) * 100);
+                        false, false) * COSTVALUE);
 
                 //updating the totals.
                 userIn.setTotal_saved(getPointsSaved() + mealSaved);
                 userIn.setTotal(getPoints() + mealCost);
                 int pointsTemp = getPoints();
-                setLevel(pointsTemp / 1000);
-                if(getLevel() > 4)
-                {
-                    setLevel(4);
+                setLevel(pointsTemp / LEVELVALUE);
+                if (getLevel() > LEVELMAX) {
+                    setLevel(LEVELMAX);
                 }
 
                 //updating the feature's total saved.
@@ -64,18 +94,17 @@ public class UpdatingLabels {
             } else if (method.equals("Local Produce")) {
                 //Initializing the values we are going to use.
                 int mealSaved = (int) (CO2_Supplier.mealDifference(
-                        false, true) * 100);
+                        false, true) * COSTVALUE);
                 int mealCost = (int) (CO2_Supplier.meal(
-                        false, true) * 100);
+                        false, true) * COSTVALUE);
 
                 //updating the totals.
                 userIn.setTotal_saved(getPointsSaved() + mealSaved);
                 userIn.setTotal(getPoints() + mealCost);
                 int pointsTemp = getPoints();
-                setLevel(pointsTemp / 1000);
-                if(getLevel() > 4)
-                {
-                    setLevel(4);
+                setLevel(pointsTemp / LEVELVALUE);
+                if (getLevel() > LEVELMAX) {
+                    setLevel(LEVELMAX);
                 }
 
                 //updating the feature's total saved.
@@ -86,18 +115,17 @@ public class UpdatingLabels {
             } else if (method.equals("Global Produce")) {
                 //Initializing the values we are going to use.
                 int mealSaved = (int) (CO2_Supplier.mealDifference(
-                        false, false) * 100);
+                        false, false) * COSTVALUE);
                 int mealCost = (int) (CO2_Supplier.meal(
-                        false, false) * 100);
+                        false, false) * COSTVALUE);
 
                 //updating the totals.
                 userIn.setTotal_saved(getPointsSaved() + mealSaved);
                 userIn.setTotal(getPoints() + mealCost);
                 int pointsTemp = getPoints();
-                setLevel(pointsTemp / 1000);
-                if(getLevel() > 4)
-                {
-                    setLevel(4);
+                setLevel(pointsTemp / LEVELVALUE);
+                if (getLevel() > LEVELMAX) {
+                    setLevel(LEVELMAX);
                 }
 
                 //updating the feature's total saved.
@@ -119,21 +147,59 @@ public class UpdatingLabels {
             setPointsmissing(PointsMissing.determiningPoints(getPoints()));
 
             String motivation = "";
-            if (getLevel() < 4) {
-                motivation = "You only need " + getPointsmissing() + " points to the next level!";
+            if (getLevel() < LEVELMAX) {
+                motivation = "You only need "
+                        + getPointsmissing() + " points to the next level!";
             } else {
-                motivation = "Congratulation! You have reached the highest level!";
+                motivation =
+                        "Congratulation! You have reached the highest level!";
             }
             lblMotivation.setText(motivation);
             lblLevel.setText("Your Level is " + getLevel());
-            imgMotivation.setIcon(new ImageIcon(CreateMotivationImage.createIcon()));
-            imgAchievement.setIcon(new ImageIcon(UpdateAchievements.updateAchievements(method, userIn)));
-            imgAchievement.setToolTipText(UpdateAchievements.createText(method, userIn));
-            imgAchievementSaved.setIcon(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementSeven", userIn)));
-            imgAchievementSaved.setToolTipText(UpdateAchievements.createText("imgAchievementSeven", userIn));
+            imgMotivation.setIcon(
+                    new ImageIcon(CreateMotivationImage.createIcon()));
+            imgAchievement.setIcon(
+                    new ImageIcon(UpdateAchievements.
+                            updateAchievements(method, userIn)));
+            imgAchievement.setToolTipText(
+                    UpdateAchievements.createText(method, userIn));
+            imgAchievementSaved.setIcon(
+                    new ImageIcon(UpdateAchievements.
+                            updateAchievements(
+                                    "imgAchievementSeven", userIn)));
+            imgAchievementSaved.setToolTipText(
+                    UpdateAchievements.createText(
+                            "imgAchievementSeven", userIn));
         }
 
-        public static void updateEverythingTextField(User userIn, UserServiceImpl clientIn, double entry, JLabel lblTotalCO2, JLabel lblCO2Saved, JLabel lblLeaderboardContent, JLabel lblMotivation, JLabel lblLevel,JLabel imgMotivation,JLabel imgAchievement, JLabel imgAchievementSaved, String method) {
+    /**
+     * Update all textfield.
+     * @param userIn the user in
+     * @param clientIn the client in
+     * @param entry the entry
+     * @param lblTotalCO2 the total co2
+     * @param lblCO2Saved the total co2 saved
+     * @param lblLeaderboardContent the leaderboard
+     * @param lblMotivation the motivation
+     * @param lblLevel the level
+     * @param imgMotivation the img
+     * @param imgAchievement the img
+     * @param imgAchievementSaved the img
+     * @param method the method
+     */
+        public static void updateEverythingTextField(
+                final User userIn,
+                final UserServiceImpl clientIn,
+                final double entry,
+                final JLabel lblTotalCO2,
+                final JLabel lblCO2Saved,
+                final JLabel lblLeaderboardContent,
+                final JLabel lblMotivation,
+                final JLabel lblLevel,
+                final JLabel imgMotivation,
+                final JLabel imgAchievement,
+                final JLabel imgAchievementSaved,
+                final String method) {
 
             int points = getPoints();
             int pointsSaved = getPointsSaved();
@@ -141,16 +207,15 @@ public class UpdatingLabels {
             //Depending on what is used
             if (method.equals("Car")) {
 
-                double additionalPointsDouble = entry * 10;
-                int additionalPoints = (int)additionalPointsDouble;
+                double additionalPointsDouble = entry * ADDITIONALVALUE;
+                int additionalPoints = (int) additionalPointsDouble;
                 userIn.setTotal_saved(pointsSaved + 0);
                 userIn.setTotal(points + additionalPoints);
                 int pointsTemp = userIn.getTotal();
 
-                    setLevel(pointsTemp / 1000);
-                    if(getLevel() > 4)
-                    {
-                        setLevel(4);
+                    setLevel(pointsTemp / LEVELVALUE);
+                    if (getLevel() > LEVELMAX) {
+                        setLevel(LEVELMAX);
                     }
 
                     //Updating the feature's total saved.
@@ -160,35 +225,33 @@ public class UpdatingLabels {
                     clientIn.updateUser(userIn);
 
                 } else if (method.equals("Public Transportation")) {
-                    double additionalPoints = entry * 10;
+                    double additionalPoints = entry * ADDITIONALVALUE;
                     userIn.setTotal_saved(pointsSaved + 0);
                     userIn.setTotal(points + (int) additionalPoints);
                     int pointsTemp = userIn.getTotal();
 
-                    setLevel(pointsTemp / 1000);
-                    if(getLevel() > 4)
-                    {
-                        setLevel(4);
+                    setLevel(pointsTemp / LEVELVALUE);
+                    if (getLevel() > LEVELMAX) {
+                        setLevel(LEVELMAX);
                     }
 
                     //Updating the feature's total saved.
                     int temp = userIn.getPublic_transportation();
 
-                    userIn.setPublic_transportation(temp + (int) additionalPoints);
+                    userIn.setPublic_transportation(temp
+                            + (int) additionalPoints);
                     clientIn.updateUser(userIn);
 
                 } else if (method.equals("Bike")) {
-                    double additionalPoints = entry * 10;
+                    double additionalPoints = entry * ADDITIONALVALUE;
                     userIn.setTotal_saved(pointsSaved + 0);
                     userIn.setTotal(points + (int) additionalPoints);
                     int pointsTemp = userIn.getTotal();
 
-                    setLevel(pointsTemp / 1000);
-                    if(getLevel() > 4)
-                    {
-                        setLevel(4);
+                    setLevel(pointsTemp / LEVELVALUE);
+                    if (getLevel() > LEVELMAX) {
+                        setLevel(LEVELMAX);
                     }
-
                     //Updating the feature's total saved.
                     int temp = userIn.getBike();
 
@@ -196,15 +259,14 @@ public class UpdatingLabels {
                     clientIn.updateUser(userIn);
 
                 } else if (method.equals("Temperature")) {
-                    double additionalPoints = entry * 10;
+                    double additionalPoints = entry * ADDITIONALVALUE;
                     userIn.setTotal_saved(pointsSaved + 0);
                     userIn.setTotal(points + (int) additionalPoints);
                     int pointsTemp = userIn.getTotal();
 
-                    setLevel(pointsTemp / 1000);
-                    if(getLevel() > 4)
-                    {
-                        setLevel(4);
+                    setLevel(pointsTemp / LEVELVALUE);
+                    if (getLevel() > LEVELMAX) {
+                        setLevel(LEVELMAX);
                     }
 
                     //Updating the feature's total saved.
@@ -214,15 +276,14 @@ public class UpdatingLabels {
                     clientIn.updateUser(userIn);
 
                 } else if (method.equals("Solar")) {
-                    double additionalPoints = entry * 10;
+                    double additionalPoints = entry * ADDITIONALVALUE;
                     userIn.setTotal_saved(pointsSaved + 0);
                     userIn.setTotal(points + (int) additionalPoints);
                     int pointsTemp = userIn.getTotal();
 
-                    setLevel(pointsTemp / 1000);
-                    if(getLevel() > 4)
-                    {
-                        setLevel(4);
+                    setLevel(pointsTemp / LEVELVALUE);
+                    if (getLevel() > LEVELMAX) {
+                        setLevel(LEVELMAX);
                     }
 
                     //Updating the feature's total saved.
@@ -242,24 +303,41 @@ public class UpdatingLabels {
                 int level = getLevel();
 
 
-                lblTotalCO2.setText("The total amount of CO2 you have used up so far is " + pointsFinal);
-                lblCO2Saved.setText("The amount of CO2 you have saved so far is " + pointsSavedFinal);
-                lblLeaderboardContent.setText(LeaderBoardEntry.createLeaderboard(userIn, getLabel()));
-                setPointsmissing(PointsMissing.determiningPoints(pointsFinal));
+                lblTotalCO2.setText(
+                        "The total amount of CO2 you have used up so far is "
+                                + pointsFinal);
+                lblCO2Saved.setText(
+                        "The amount of CO2 you have saved so far is "
+                                + pointsSavedFinal);
+                lblLeaderboardContent.setText(
+                        LeaderBoardEntry.createLeaderboard(userIn,
+                                getLabel()));
+                setPointsmissing(
+                        PointsMissing.determiningPoints(pointsFinal));
                 String motivation = "";
-                if (level < 4) {
-                    motivation = "You only need " + getPointsmissing() + " points to the next level!";
+                if (level < LEVELMAX) {
+                    motivation = "You only need "
+                            + getPointsmissing()
+                            + " points to the next level!";
                 } else {
-                    motivation = "Congratulation! You have reached the highest level!";
+                    motivation = "Congratulation!"
+                            + " You have reached the highest level!";
                 }
                 lblMotivation.setText(motivation);
                 lblLevel.setText("Your Level is " + level);
-                imgMotivation.setIcon(new ImageIcon(CreateMotivationImage.createIcon()));
-                imgAchievement.setIcon(new ImageIcon(UpdateAchievements.updateAchievements(method, userIn)));
-                imgAchievement.setToolTipText(UpdateAchievements.createText(method, userIn));
-                imgAchievementSaved.setIcon(new ImageIcon(UpdateAchievements.updateAchievements("imgAchievementSeven", userIn)));
-                imgAchievementSaved.setToolTipText(UpdateAchievements.createText("imgAchievementSeven", userIn));
-
-
+                imgMotivation.setIcon(
+                        new ImageIcon(CreateMotivationImage.createIcon()));
+                imgAchievement.setIcon(
+                        new ImageIcon(UpdateAchievements.
+                                updateAchievements(method, userIn)));
+                imgAchievement.setToolTipText(
+                        UpdateAchievements.createText(method, userIn));
+                imgAchievementSaved.setIcon(
+                        new ImageIcon(UpdateAchievements.
+                                updateAchievements("imgAchievementSeven",
+                                        userIn)));
+                imgAchievementSaved.setToolTipText(
+                        UpdateAchievements.createText(
+                                "imgAchievementSeven", userIn));
             }
         }

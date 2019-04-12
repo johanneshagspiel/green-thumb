@@ -88,55 +88,74 @@ public class Update {
             final String stringIn,
             final FriendServiceImpl clientFriend,
             final JFrame frameIn) {
+        final int twosixsix = 266;
+        final int fivezerozero = 500;
+        final int twofivefive = 255;
+        final int onetwoseven = 127;
+        final int threezerozero = 300;
+        final int onezero = 10;
+        final int twozero = 20;
+        final int threezero = 30;
+        final int onesevenfive = 175;
+        final int onefive = 15;
+        final int oneonezero = 110;
+        final int threezerosix = 306;
+        final int twosixtwo = 262;
+        final int fourtwo = 42;
+        final int sixseven = 67;
+        final int onethreetwo = 132;
+        final int onethree = 13;
+
+
 
         frame = new JFrame();
         frame.getContentPane().setBackground(SystemColor.
                 inactiveCaptionBorder);
-        frame.setBounds(300, 500, 306, 262);
+        frame.setBounds(threezerozero, fivezerozero, threezerosix, twosixtwo);
         frame.getContentPane().setLayout(null);
         frame.setFocusable(true);
 
-        if (stringIn == userIn.getUser_name())
-        {
+        if (stringIn == userIn.getUser_name()) {
             label = "user name";
-        } else if (stringIn == userIn.getPassword())
-        {
+        } else if (stringIn == userIn.getPassword()) {
             label = "password";
         }
 
         // Labels
         JLabel lblWelcome = new JLabel("Change your " + label);
-        lblWelcome.setFont(new Font("Arial Black", Font.PLAIN, 15));
+        lblWelcome.setFont(new Font("Arial Black", Font.PLAIN, onefive));
         lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
-        lblWelcome.setBounds(10, 10, 266, 20);
+        lblWelcome.setBounds(onezero, onezero, twosixsix, twozero);
         frame.getContentPane().add(lblWelcome);
 
         JLabel changeUserName = new JLabel("New " + label);
         changeUserName.setHorizontalAlignment(SwingConstants.CENTER);
-        changeUserName.setBounds(10, 42, 266, 20);
+        changeUserName.setBounds(onezero, fourtwo, twosixsix, twozero);
         frame.getContentPane().add(changeUserName);
 
         JLabel changePassword
                 = new JLabel("Please repeat your new " + label);
         changePassword.setHorizontalAlignment(SwingConstants.CENTER);
-        changePassword.setBounds(10, 110, 266, 20);
+        changePassword.setBounds(onezero, oneonezero, twosixsix, twozero);
         frame.getContentPane().add(changePassword);
 
         txtentry1 = new JTextField();
-        txtentry1.setBounds(10, 67, 266, 30);
+        txtentry1.setBounds(onezero, sixseven, twosixsix, threezero);
         frame.getContentPane().add(txtentry1);
 
         txtentry2 = new JTextField();
-        txtentry2.setBounds(10, 132, 266, 30);
+        txtentry2.setBounds(onezero, onethreetwo, twosixsix, threezero);
         frame.getContentPane().add(txtentry2);
 
         JButton updateYourAccount = new JButton("Update your account");
         updateYourAccount.setForeground(Color.WHITE);
         updateYourAccount.setFont(new Font("Arial Black",
-                Font.PLAIN, 13));
-        updateYourAccount.setBackground(new Color(0, 255, 127));
+                Font.PLAIN, onethree));
+        updateYourAccount.setBackground(new Color(0, twofivefive,
+                onetwoseven));
         updateYourAccount.setHorizontalAlignment(SwingConstants.CENTER);
-        updateYourAccount.setBounds(10, 175, 266, 30);
+        updateYourAccount.setBounds(onezero, onesevenfive,
+                twosixsix, threezero);
         frame.getContentPane().add(updateYourAccount);
         updateYourAccount.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
@@ -180,8 +199,7 @@ public class Update {
                                     List<Friend> friends
                                             = test.getFriends(oldUserName);
 
-                                    for(int i =0; i < friends.size(); i++)
-                                    {
+                                    for (int i = 0; i < friends.size(); i++) {
                                         Friend temp = friends.get(i);
                                         test.deleteUser(temp.getId());
                                         temp.setUser_name_entry(entry1);
@@ -216,7 +234,8 @@ public class Update {
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null,
                                 "There was an error when trying"
-                                       +" to read the logindetails database file",
+                                       + " to read the logindetails "
+                                        + "database file",
                                 "Read file error",
                                 JOptionPane.ERROR_MESSAGE);
                         e.printStackTrace();
@@ -262,9 +281,7 @@ public class Update {
                                 JOptionPane.ERROR_MESSAGE);
                         e.printStackTrace();
                     }
-                }
-                else
-                {
+                } else {
                     System.out.println(label);
                 }
             }

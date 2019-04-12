@@ -292,13 +292,21 @@ public class User implements Serializable {
 	@Override
 	public final String toString() {
 		return "User [id=" + id + ", user_name="
-				+ user_name + ", password=" + password + ", vegetarian="
-				+ vegetarian + ", produce=" + produce + ", car="
+				+ user_name + ", password="
+				+ password + ", vegetarian="
+				+ vegetarian
+				+ ", produce="
+				+ produce + ", car="
 				+ car + ", public_transportation="
-				+ public_transportation + ", bike=" + bike + ", temperature="
+				+ public_transportation
+				+ ", bike=" + bike
+				+ ", temperature="
 				+ temperature + ", solar ="
-				+ solar + ", total_saved=" + total_saved
-				+ ", total_used=" + total_used  + ", total=" + total + "]";
+				+ solar + ", total_saved="
+				+ total_saved
+				+ ", total_used="
+				+ total_used
+				+ ", total=" + total + "]";
 	}
 
 }
