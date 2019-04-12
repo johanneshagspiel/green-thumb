@@ -2,6 +2,7 @@ package service;
 
 
 import entity.Friend;
+import helper.ServerConfig;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -35,8 +36,7 @@ public class FriendServiceImpl  {
         try {
             RestTemplate restTemplate = new RestTemplate();
             String postResourceUrl =
-                    "http://localhost:8082/spring_crm"
-                            + "_rest_war_exploded/api/friends/";
+                    ServerConfig.getFriendspageURL();
             Friend friend =
                     restTemplate.postForObject(
                             postResourceUrl, theFriend, Friend.class);
@@ -55,8 +55,7 @@ public class FriendServiceImpl  {
         try {
             RestTemplate restTemplate = new RestTemplate();
             String getResourceUrl =
-                    "http://localhost:8082/spring_crm"
-                          +  "_rest_war_exploded/api/friend/"
+                    ServerConfig.getFriendpageURL()
                             + user_name_entry;
 
             ResponseEntity<List<Friend>> response
@@ -82,8 +81,9 @@ public class FriendServiceImpl  {
      */
     public final void deleteUser(final int theId) {
         RestTemplate restTemplate = new RestTemplate();
-        String deleteResourceUrl = "http://localhost:8082/spring_crm"
-                + "_rest_war_exploded/api/friends/" + theId;
+        String deleteResourceUrl =
+                ServerConfig.getFriendspageURL()
+                        + theId;
         restTemplate.delete(deleteResourceUrl);
     }
 
@@ -94,8 +94,8 @@ public class FriendServiceImpl  {
      */
     public final void updateUser(final Friend theFriend) {
         RestTemplate restTemplate = new RestTemplate();
-        String putResourceUrl = "http://localhost:8082/spring_crm"
-                + "_rest_war_exploded/api/friends/";
+        String putResourceUrl =
+                ServerConfig.getFriendspageURL();
         restTemplate.put(putResourceUrl, theFriend);
     }
 
