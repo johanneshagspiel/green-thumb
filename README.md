@@ -1,10 +1,5 @@
-# CSE1105 Template Repository
-
-This a template repository to help you get started on making the best project possible!
-
-You can download the latest version [here](https://github.com/SERG-Delft/TI1216/releases)
-
-http://stackoverflow.com/a/6466993
+# \#GoGreen
+### A project made by Area22
 
 ## How to import into your IDE
 
@@ -14,13 +9,32 @@ Eclipse:
 Intellij:  
 [https://www.jetbrains.com/help/idea/2016.2/importing-project-from-maven-model.html](https://www.jetbrains.com/help/idea/2016.2/importing-project-from-maven-model.html)
 
-## Getting your weekly reports
+## How to run on your machine
 
-**Jacoco**:  
-Run `maven install` ([Intellij](https://www.jetbrains.com/help/idea/2016.3/getting-started-with-maven.html#execute_maven_goal)/[Eclipse](http://imgur.com/a/6q7pV))
+### IDE
+If you want to run the client from your IDE, you will need to import the Maven project from the ```src/Client/pom.xml``` file.
+Then, you only need to run the Login_S.java class, which you will find in the client's ```src/main/java/GUI``` folder.
 
-**Checkstyle**:  
-Run `maven site`
+### JAR
+If you want to run the app from a JAR file, after importing the ```src/Client/pom.xml``` project you will need to run this command:
+```mvn package```
+Then, you will find the JAR file in the ```target``` folder.
+
+## Running the whole project on your computer
+
+You will need to replace the code in:
+```src/Server/TestServer/src/main/resources/persistence-mysql.properties```
+```src/Client/src/main/java/helper/ServerConfig.java```
+With the commented-out replacement code.
+
+Then, you will need a running Tomcat instance and a running MySQL instance.
+
+Finally, you will need to create a database called ```testdatabase``` and run the commands specified in the ```src/Server/TestServer/src/main/resources/SQLconfig.txt``` file. 
+
+After that, you can run ```mvn package -DskipTests``` on both projects, which will give you:
+
+A WAR file you can load in Tomcat (just copy it into the ```webapps``` folder of Tomcat's directory and restart it).
+A JAR file for the client, which you can simply run with your Java JRE.
 
 ## Names and student numbers
 
