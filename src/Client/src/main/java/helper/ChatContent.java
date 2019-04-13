@@ -7,6 +7,16 @@ import service.UserServiceImpl;
 import javax.swing.*;
 /** The chatcontent. */
 public class ChatContent {
+
+
+    /**
+     * The Constructor.
+     * Only for testing
+     */
+    public ChatContent() {
+
+    }
+
     /**
      * The Chat.
      * @param clientIn the client in
