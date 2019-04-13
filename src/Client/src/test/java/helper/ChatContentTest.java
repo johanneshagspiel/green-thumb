@@ -52,4 +52,40 @@ public class ChatContentTest {
         String actual = createChat(userService);
         assertEquals(expected, actual);
     }
+
+    @Test(expected = NullPointerException.class)
+    public void testCreateChatNull(){
+        String actual = createChat(null);
+    }
+
+    @Test
+    public void testCreateChatLongConversation(){
+        User testUser = new User();
+        testUser.setId(999);
+        testUser.setUser_name("Global Chat");
+        String chat = "Global Chat: Be the first to post in the chat!" +
+                "SplitHereer" +
+                "Lukas: HelloSplitHereer" +
+                "Karel: Hi, how much CO2 did you save?SplitHereer" +
+                "Lukas: 69kilo's!SplitHereer" +
+                "Karel: Ha, noob, I saved 420 kilo'sSplitHereer" +
+                "Lukas: dayumnSplitHereer" +
+                "Lukas: But I spent lessSplitHereer" +
+                "Karel: That doesn't matterSplitHereer" +
+                "Lukas: You only care about points huh?SplitHereer" +
+                "Karel: ofcourse, you don't?SplitHereer" +
+                "Lukas: I try to save the worldSplitHereer" +
+                "Karel: Keep dreaming scrubSplitHereer";
+        testUser.setPassword(chat);
+        userService.updateUser(testUser);
+        String actual = createChat(userService);
+        String expected = "<html>Karel: Hi, how much CO2 did you save?" +
+                "<br/>Lukas: 69kilo's!<br/>Karel: Ha, noob, I saved" +
+                " 420 kilo's<br/>Lukas: dayumn<br/>Lukas: But I spent" +
+                " less<br/>Karel: That doesn't matter<br/>Lukas: You " +
+                "only care about points huh?<br/>Karel: ofcourse, you " +
+                "don't?<br/>Lukas: I try to save the world<br/>Karel:" +
+                " Keep dreaming scrub<br/></html>";
+        assertEquals(expected, actual);
+    }
 }
