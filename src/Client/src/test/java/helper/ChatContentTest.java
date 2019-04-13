@@ -36,4 +36,20 @@ public class ChatContentTest {
         testUser.setPassword(chat);
         userService.updateUser(testUser);
     }
+
+    @After
+    public void restoreChatContent(){
+        userService.updateUser(chatcontent);
+        chatcontent = null;
+    }
+
+    @Test
+    public void testCreateChat(){
+        String expected = "<html>Global Chat: Be the first to post in" +
+                " the chat!<br/>Lukas: Hello<br/>Karel: Hi, how much" +
+                " CO2 did you save?<br/>Lukas: 69kilo's!<br/>Karel: " +
+                "Ha, noob, I saved 420 kilo's<br/>Lukas: dayumn<br/></html>";
+        String actual = createChat(userService);
+        assertEquals(expected, actual);
+    }
 }
