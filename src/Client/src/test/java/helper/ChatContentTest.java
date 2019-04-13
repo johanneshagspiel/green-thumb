@@ -88,7 +88,7 @@ public class ChatContentTest {
                 " Keep dreaming scrub<br/></html>";
         assertEquals(expected, actual);
     }
-    
+
     @Test
     public void testPostComment(){
         final JTextField textfield = new JTextField();
