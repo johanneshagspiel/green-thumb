@@ -4,7 +4,7 @@ public class ServerConfig {
 
     //declaring the variables
     // IF YOU ARE RUNNING THE SERVER ON YOUR MACHINE REPLACE WITH THIS
-    // private static String homepage = "http://localhost:8082/spring_crm_rest_war_exploded";
+//     private static String homepage = "http://localhost:8082/spring_crm_rest_war_exploded";
     private static String homepage = "https://area22gogreen.herokuapp.com";
     private static String apipage = homepage + "/api/";
     private static String userpage = apipage + "users/";

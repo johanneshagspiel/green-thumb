@@ -1,21 +1,21 @@
 package service;
 
-import entity.Friend;
-
+import Server.dao.FriendDAO;
+import Server.entity.Friend;
+import Server.service.FriendServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
-
-import service.FriendServiceImpl;
-
 
 /**
  * The type Friend service impl test.
@@ -24,9 +24,10 @@ import service.FriendServiceImpl;
 public class FriendServiceImplTest {
 
     @Mock
-    private FriendServiceImpl mockFriendServiceImpl;
+    private FriendDAO mockFriendDAO;
 
     @InjectMocks
+    private FriendServiceImpl friendServiceImplUnderTest;
     public Friend test1;
     public Friend test2;
 
@@ -35,6 +36,7 @@ public class FriendServiceImplTest {
      */
     @Before
     public void setUp() {
+
         test1 = new Friend();
         test2 = new Friend();
 
@@ -49,17 +51,6 @@ public class FriendServiceImplTest {
         initMocks(this);
     }
 
-
-    /**
-     * Test create friend.
-     */
-    @Test
-    public void testCreateFriend() {
-
-        when(mockFriendServiceImpl.createFriend(test1)).thenReturn(test1);
-        assertEquals(test1, mockFriendServiceImpl.createFriend(test1));
-    }
-
     /**
      * Test get friends.
      */
@@ -70,28 +61,42 @@ public class FriendServiceImplTest {
         expectedResult.add(0, test1);
         expectedResult.add(1, test2);
 
-        when(mockFriendServiceImpl.getFriends("Test2222")).thenReturn(expectedResult);
-        assertEquals(expectedResult, mockFriendServiceImpl.getFriends("Test2222"));
+        when(mockFriendDAO.getFriends()).thenReturn(expectedResult);
+        assertEquals(expectedResult, friendServiceImplUnderTest.getFriends());
     }
 
     /**
-     * Test delete user.
+     * Test get friends 1.
      */
     @Test
-    public void testDeleteUser() {
+    public void testGetFriends1() {
 
-        when(mockFriendServiceImpl.deleteUser(111)).thenReturn(111);
-        assertEquals(111, mockFriendServiceImpl.deleteUser(111));
+        final List<Friend> expectedResult = new ArrayList<>();
+        expectedResult.add(0, test1);
+        expectedResult.add(1, test2);
+
+        when(mockFriendDAO.getFriends("Test2222")).thenReturn(expectedResult);
+        assertEquals(expectedResult, friendServiceImplUnderTest.getFriends("Test2222"));
     }
 
     /**
-     * Test update user.
+     * Test save friend.
      */
     @Test
-    public void testUpdateUser() {
+    public void testSaveFriend() {
 
-        when(mockFriendServiceImpl.updateUser(test1)).thenReturn(test1);
-        assertEquals(test1, mockFriendServiceImpl.updateUser(test1));
+        when(mockFriendDAO.saveFriend(test1)).thenReturn(test1);
+        assertEquals(test1, friendServiceImplUnderTest.saveFriend(test1));
 
+    }
+
+    /**
+     * Test delete friend.
+     */
+    @Test
+    public void testDeleteFriend() {
+
+        when(mockFriendDAO.deleteFriend(111)).thenReturn(111);
+        assertEquals(111, friendServiceImplUnderTest.deleteFriend(111));
     }
 }

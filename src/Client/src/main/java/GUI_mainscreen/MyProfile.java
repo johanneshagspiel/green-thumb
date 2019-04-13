@@ -120,6 +120,7 @@ public class MyProfile {
         frame2.getContentPane().add(changeUserName);
         changeUserName.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
+                frame2.setVisible(false);
                 Update.application(userIn,
                         clientIn,
                         userIn.getUser_name(),
@@ -138,6 +139,7 @@ public class MyProfile {
         frame2.getContentPane().add(changePassword);
         changePassword.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent arg0) {
+                frame2.setVisible(false);
                 Update.application(userIn, clientIn,
                         userIn.getPassword(),
                         clientFriend, frameIn);
