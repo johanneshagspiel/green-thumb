@@ -150,4 +150,53 @@ public class UserServiceImplTest {
         assertEquals(test1, mockUserServiceImpl.updateUser(test1));
 
     }
+
+    /**
+     * Test Login Old.
+     */
+    @Test
+    public void testLoginOld() {
+
+        when(mockUserServiceImpl.loginOld("test1", "test1")).thenReturn(test1);
+        assertEquals(test1, mockUserServiceImpl.loginOld("test1","test1"));
+
+    }
+
+    /**
+     * Test Login Old.
+     */
+    @Test
+    public void testGetUser3() {
+
+        when(mockUserServiceImpl.getUser(1)).thenReturn(test1);
+        assertEquals(test1, mockUserServiceImpl.getUser(1));
+    }
+
+    /**
+     * Test Login Old.
+     */
+    @Test
+    public void testGetAllUsers() {
+
+        final List<User> expectedResult = new ArrayList<>();
+        expectedResult.add(0, test1);
+        expectedResult.add(1, test2);
+
+        when(mockUserServiceImpl.getAllUsers()).thenReturn(expectedResult);
+        assertEquals(expectedResult, mockUserServiceImpl.getAllUsers());
+    }
+
+    /**
+     * Test getUsers.
+     */
+    @Test
+    public void testGetUsers2() {
+
+        final List<User> expectedResult = new ArrayList<>();
+        expectedResult.add(0, test1);
+        expectedResult.add(1, test2);
+
+        when(mockUserServiceImpl.getUsers()).thenReturn(expectedResult);
+        assertEquals(expectedResult, mockUserServiceImpl.getUsers());
+    }
 }
