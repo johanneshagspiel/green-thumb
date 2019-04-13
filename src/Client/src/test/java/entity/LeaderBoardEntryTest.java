@@ -230,6 +230,7 @@ public class LeaderBoardEntryTest {
          */
         UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
+        userIn.setTotal(1179);
         String output = createLeaderboard(userIn, "Leaderboard Top 10 CO2 Used");
         String expected = "<html>Rank 1: You, 1179<br/>Rank 2: Test5, 10<br/></html>";
         assertEquals(expected, output);
@@ -247,6 +248,7 @@ public class LeaderBoardEntryTest {
          */
         UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
+        userIn.setTotal(1179);
         String output = createLeaderboard(userIn, "Overall Score");
         String expected = "<html>Rank 1: You, 1179<br/>Rank 2: Test5, 10<br/></html>";
         assertEquals(expected, output);
@@ -373,12 +375,13 @@ public class LeaderBoardEntryTest {
          */
         UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
+        userIn.setTotal_saved(69);
         String output = createLeaderboard(userIn, "Overall CO2 Saved");
         String expected = "<html>Rank 1: You, 69<br/>Rank 2: Test5, 8<br/></html>";
         assertEquals(expected, output);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void testCreateLeaderboardRandomString(){
         /*
             This only works if you have a user Test with values
@@ -389,10 +392,10 @@ public class LeaderBoardEntryTest {
 
             And the only friend Test has is Test5
          */
-        UserServiceImpl uservice = new UserServiceImpl();
+    	UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
-        String output = createLeaderboard(userIn, "asdf");
-        String expected = "<html>Rank 1: You, 0<br/>Rank 2: Test5, 0<br/></html>";
+        String output = createLeaderboard(userIn, "Car Score");
+        String expected = "<html>Rank 1: Test5, 3<br/>Rank 2: You, 0<br/></html>";
         assertEquals(expected, output);
     }
 
@@ -427,6 +430,7 @@ public class LeaderBoardEntryTest {
          */
         UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
+        userIn.setTotal(1179);
         int output = pointSupplier(userIn, "Leaderboard Top 10 CO2 Used");
         int expected = 1179;
         assertEquals(expected, output);
@@ -445,6 +449,7 @@ public class LeaderBoardEntryTest {
          */
         UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
+        userIn.setTotal(1179);
         int output = pointSupplier(userIn, "Overall Score");
         int expected = 1179;
         assertEquals(expected, output);
@@ -571,6 +576,7 @@ public class LeaderBoardEntryTest {
          */
         UserServiceImpl uservice = new UserServiceImpl();
         User userIn = uservice.getUser2("Test");
+        userIn.setTotal_saved(69);
         int output = pointSupplier(userIn, "Overall CO2 Saved");
         int expected = 69;
         assertEquals(expected, output);
