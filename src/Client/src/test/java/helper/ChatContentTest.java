@@ -88,4 +88,24 @@ public class ChatContentTest {
                 " Keep dreaming scrub<br/></html>";
         assertEquals(expected, actual);
     }
+    
+    @Test
+    public void testPostComment(){
+        final JTextField textfield = new JTextField();
+        User userIn = userService.getUser2("Test");
+        final JLabel lblChatContent = new JLabel();
+        textfield.setText("Oy mate");
+        postComment(textfield, userService, userIn, lblChatContent);
+        String expected = "<html>Global Chat: Be the first to post" +
+                " in the chat!<br/>Lukas: Hello<br/>Karel: Hi, how" +
+                " much CO2 did you save?<br/>Lukas: 69kilo's!<br/>Karel:" +
+                " Ha, noob, I saved 420 kilo's<br/>Lukas: dayumn<br/>" +
+                "Test: Oy mate<br/></html>";
+        assertEquals(expected, lblChatContent.getText());
+    }
+
+    @Test
+    public void testConstructor() {
+        assertNotNull(new ChatContent());
+    }
 }
