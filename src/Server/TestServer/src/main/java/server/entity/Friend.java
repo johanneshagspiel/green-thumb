@@ -12,16 +12,20 @@ import java.io.Serializable;
  * The type Friend.
  */
 @Entity
-@Table(name="friend")
-public class Friend implements Serializable {
+@Table(name = "friend")
+
+public final class Friend implements Serializable {
+    /** Javadoc comment.*/
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+    /** Javadoc comment. */
     @Column(name = "userNameEntry")
     private String userNameEntry;
-    @Column(name = "friend_name")
-    private String friend_name;
+    /** Javadoc comment.*/
+    @Column(name = "friendName")
+    private String friendName;
 
 
     /**
@@ -54,7 +58,7 @@ public class Friend implements Serializable {
      *
      * @return the user name entry
      */
-    public String getUser_name_entry() {
+    public String getUserNameEntry() {
         return userNameEntry;
     }
 
@@ -63,7 +67,7 @@ public class Friend implements Serializable {
      *
      * @param userNameEntry the user name entry
      */
-    public void setUser_name_entry(final String userNameEntry) {
+    public void setUserNameEntry(final String userNameEntry) {
         this.userNameEntry = userNameEntry;
     }
 
@@ -72,24 +76,24 @@ public class Friend implements Serializable {
      *
      * @return the friend name
      */
-    public String getFriend_name() {
-        return friend_name;
+    public String getFriendName() {
+        return friendName;
     }
 
     /**
      * Sets friend name.
      *
-     * @param friend_name the friend name
+     * @param friendName the friend name
      */
-    public void setFriend_name(final String friend_name) {
-        this.friend_name = friend_name;
+    public void setFriendName(final String friendName) {
+        this.friendName = friendName;
     }
 
     @Override
     public String toString() {
         return "Friend [id=" + id + ", userNameEntry="
-                + userNameEntry + ", friend_name="
-                + friend_name + "]";
+                + userNameEntry + ", friendName="
+                + friendName + "]";
     }
 
 }
