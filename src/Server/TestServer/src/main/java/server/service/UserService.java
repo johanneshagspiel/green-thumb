@@ -14,7 +14,7 @@ public interface UserService {
      *
      * @return the users
      */
-    public List<User> getUsers();
+    List<User> getUsers();
 
     /**
      * Save user user.
@@ -22,7 +22,7 @@ public interface UserService {
      * @param theUser the the user
      * @return the user
      */
-    public User saveUser(User theUser);
+    User saveUser(User theUser);
 
     /**
      * Gets user.
@@ -30,7 +30,7 @@ public interface UserService {
      * @param theId the the id
      * @return the user
      */
-    public User getUser(int theId);
+    User getUser(int theId);
 
     /**
      * Delete user int.
@@ -38,7 +38,7 @@ public interface UserService {
      * @param theId the the id
      * @return the int
      */
-    public int deleteUser(int theId);
+    int deleteUser(int theId);
 
     /**
      * Gets user 2.
@@ -47,7 +47,7 @@ public interface UserService {
      * @param password  the password
      * @return the user 2
      */
-    public User getUser2(String userName, String password);
+    User getUser2(String userName, String password);
 
     /**
      * Gets user 3.
@@ -55,7 +55,7 @@ public interface UserService {
      * @param userName the user name
      * @return the user 3
      */
-    public User getUser3(String userName);
+    User getUser3(String userName);
 
     /**
      * Gets user safe.
@@ -63,5 +63,5 @@ public interface UserService {
      * @param theUser the the user
      * @return the user safe
      */
-    public User getUserSafe(User theUser);
+    User getUserSafe(User theUser);
 }
