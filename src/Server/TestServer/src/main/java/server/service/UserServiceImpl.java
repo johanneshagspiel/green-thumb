@@ -14,52 +14,60 @@ import server.entity.User;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Autowired
-	private UserDAO userDAO;
-	
-	@Override
-	@Transactional
-	public List<User> getUsers() {
-		return userDAO.getUsers();
-	}
+    /**Javadoc comment.*/
+    @Autowired
+    private UserDAO userDAO;
 
-	@Override
-	@Transactional
-	public User saveUser(User theUser) {
-		userDAO.saveUser(theUser);
-		return theUser;
-	}
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public List<User> getUsers() {
+        return userDAO.getUsers();
+    }
 
-	@Override
-	@Transactional
-	public User getUser(int theId) {
-		return userDAO.getUser(theId);
-	}
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public User saveUser(final User theUser) {
+        userDAO.saveUser(theUser);
+        return theUser;
+    }
 
-	@Override
-	@Transactional
-	public int deleteUser(int theId) {
-		userDAO.deleteUser(theId);
-		return theId;
-	}
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public User getUser(final int theId) {
+        return userDAO.getUser(theId);
+    }
 
-	@Override
-	@Transactional
-	public User getUser2(String userName, String password) {
-		return userDAO.getUser2(userName, password);
-	}
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public int deleteUser(final int theId) {
+        userDAO.deleteUser(theId);
+        return theId;
+    }
 
-	@Override
-	@Transactional
-	public User getUser3(String userName) {
-		return userDAO.getUser3(userName);
-	}
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public User getUser2(final String userName, final String password) {
+        return userDAO.getUser2(userName, password);
+    }
 
-	@Override
-	@Transactional
-	public User getUserSafe(User theUser) {
-		return userDAO.getUserSafe(theUser);
-	}
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public User getUser3(final String userName) {
+        return userDAO.getUser3(userName);
+    }
+
+    /**Javadoc comment.*/
+    @Override
+    @Transactional
+    public User getUserSafe(final User theUser) {
+        return userDAO.getUserSafe(theUser);
+    }
 }
 
 
