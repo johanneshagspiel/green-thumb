@@ -2,7 +2,7 @@ package entity;
 
 
 /** Gives the CO2 count to the GUI. **/
-public class CO2_Supplier { CO2_Supplier() { }
+public class co2Supplier { co2Supplier() { }
 
    // /**THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE FEATURES FOLDER
    //  *   OR ../../../../../../doc/features
@@ -192,7 +192,6 @@ public class CO2_Supplier { CO2_Supplier() { }
             kwh *= a;
         }
         double co2 = kwh * b;
-        ;
         return co2;
     }
 

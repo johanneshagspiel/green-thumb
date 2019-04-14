@@ -1,6 +1,6 @@
 package helper;
 
-import entity.CO2_Supplier;
+import entity.co2Supplier;
 import entity.LeaderBoardEntry;
 import entity.User;
 import service.UserServiceImpl;
@@ -51,9 +51,9 @@ public class UpdatingLabels {
             //Depending on what is used
             if (method.equals("Vegetarian")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (co2Supplier.mealDifference(
                         true, false) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (co2Supplier.meal(
                         true, false) * COSTVALUE);
 
                 //updating the totals.
@@ -72,9 +72,9 @@ public class UpdatingLabels {
 
             } else if (method.equals("Carnivore")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (co2Supplier.mealDifference(
                         false, false) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (co2Supplier.meal(
                         false, false) * COSTVALUE);
 
                 //updating the totals.
@@ -93,9 +93,9 @@ public class UpdatingLabels {
 
             } else if (method.equals("Local Produce")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (co2Supplier.mealDifference(
                         false, true) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (co2Supplier.meal(
                         false, true) * COSTVALUE);
 
                 //updating the totals.
@@ -114,9 +114,9 @@ public class UpdatingLabels {
 
             } else if (method.equals("Global Produce")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (co2Supplier.mealDifference(
                         false, false) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (co2Supplier.meal(
                         false, false) * COSTVALUE);
 
                 //updating the totals.
