@@ -11,7 +11,7 @@ import static GUI.GUI_App.*;
 /** Update the label. */
 public class UpdatingLabels {
     /** the level value. */
-    public static final int LEVELVALUE = 1000;
+    public static final int LEVELVALUE = 2500;
     /** the cost value. */
     public static final int COSTVALUE = 100;
     /** the maximum level. */
@@ -201,97 +201,114 @@ public class UpdatingLabels {
                 final JLabel imgAchievementSaved,
                 final String method) {
 
-            int points = getPoints();
-            int pointsSaved = getPointsSaved();
-
             //Depending on what is used
             if (method.equals("Car")) {
 
-                double additionalPointsDouble = entry * ADDITIONALVALUE;
-                int additionalPoints = (int) additionalPointsDouble;
-                userIn.setTotal_saved(pointsSaved + 0);
-                userIn.setTotal(points + additionalPoints);
-                int pointsTemp = userIn.getTotal();
+                // Initializing the values we are going to use.
+                int producedCO2 = ((int) (CO2_Supplier.car((int) entry) * COSTVALUE));
 
-                    setLevel(pointsTemp / LEVELVALUE);
-                    if (getLevel() > LEVELMAX) {
-                        setLevel(LEVELMAX);
-                    }
+                // Updating the totals.
+                userIn.setTotal_saved(getPointsSaved());
+                userIn.setTotal(getPoints() + producedCO2);
+                int pointsTemp = getPoints();
 
-                    //Updating the feature's total saved.
-                    int temp = userIn.getCar();
+                //Updating the feature's total saved.
+                int temp = userIn.getCar();
 
-                    userIn.setCar(temp + additionalPoints);
-                    clientIn.updateUser(userIn);
+                //All the other features store their SAVED co2 here, except for "car", which stores the total
+                //consumed co2.
+                userIn.setCar(temp + (int) CO2_Supplier.car((int) entry));
+                clientIn.updateUser(userIn);
+                setLevel(pointsTemp / LEVELVALUE);
 
-                } else if (method.equals("Public Transportation")) {
-                    double additionalPoints = entry * ADDITIONALVALUE;
-                    userIn.setTotal_saved(pointsSaved + 0);
-                    userIn.setTotal(points + (int) additionalPoints);
-                    int pointsTemp = userIn.getTotal();
+                //level set at the end
+                if (getLevel() > LEVELMAX) {
+                    setLevel(LEVELMAX);
+                }
 
-                    setLevel(pointsTemp / LEVELVALUE);
-                    if (getLevel() > LEVELMAX) {
-                        setLevel(LEVELMAX);
-                    }
 
-                    //Updating the feature's total saved.
-                    int temp = userIn.getPublic_transportation();
+            } else if (method.equals("Public Transportation")) {
+                // Initializing the values we are going to use.
+                int producedCO2 = ((int) (CO2_Supplier.publicTransport((int) entry) * COSTVALUE));
+                int savedCO2 = ((int) (CO2_Supplier.publicTransportVsCar((int) entry) * COSTVALUE));
 
-                    userIn.setPublic_transportation(temp
-                            + (int) additionalPoints);
-                    clientIn.updateUser(userIn);
+                //Updating the totals.
+                userIn.setTotal_saved(getPointsSaved() + savedCO2);
+                userIn.setTotal(getPoints() + producedCO2);
+                int pointsTemp = getPoints();
 
+                //Updating the feature's total saved.
+                int temp = userIn.getPublic_transportation();
+                userIn.setPublic_transportation(temp + savedCO2);
+                clientIn.updateUser(userIn);
+
+                //level set at the end
+                setLevel(pointsTemp / LEVELVALUE);
+                if (getLevel() > LEVELMAX) {
+                    setLevel(LEVELMAX);
+                }
                 } else if (method.equals("Bike")) {
-                    double additionalPoints = entry * ADDITIONALVALUE;
-                    userIn.setTotal_saved(pointsSaved + 0);
-                    userIn.setTotal(points + (int) additionalPoints);
-                    int pointsTemp = userIn.getTotal();
+                    // Initializing the values we are going to use.
+                    int producedCO2 = ((int) (CO2_Supplier.bike((int) entry) * COSTVALUE));
+                    int savedCO2 = ((int) (CO2_Supplier.bikeVsCar((int) entry) * COSTVALUE));
 
+                    // Updating the totals.
+                    userIn.setTotal_saved(getPointsSaved() + savedCO2);
+                    userIn.setTotal(getPoints() + producedCO2);
+                    int pointsTemp = getPoints();
+
+                    // Updating the feature's total saved.
+                    int temp = userIn.getBike();
+                    userIn.setBike(temp + savedCO2);
+                    clientIn.updateUser(userIn);
+
+                    //level set at the end
                     setLevel(pointsTemp / LEVELVALUE);
                     if (getLevel() > LEVELMAX) {
                         setLevel(LEVELMAX);
                     }
-                    //Updating the feature's total saved.
-                    int temp = userIn.getBike();
-
-                    userIn.setBike(temp + (int) additionalPoints);
-                    clientIn.updateUser(userIn);
 
                 } else if (method.equals("Temperature")) {
-                    double additionalPoints = entry * ADDITIONALVALUE;
-                    userIn.setTotal_saved(pointsSaved + 0);
-                    userIn.setTotal(points + (int) additionalPoints);
-                    int pointsTemp = userIn.getTotal();
+                    // Initializing the values we are going to use.
+                    int producedCO2 = ((int) (CO2_Supplier.usedTemperature(1, (int) entry) * COSTVALUE));
+                    int savedCO2 = ((int) (CO2_Supplier.temperature(1, (int) entry) * COSTVALUE));
 
+                    // Updating the totals.
+                    userIn.setTotal_saved(getPointsSaved() + savedCO2);
+                    userIn.setTotal(getPoints() + producedCO2);
+                    int pointsTemp = getPoints();
+
+                    // Updating the feature's total saved.
+                    int temp = userIn.getTemperature();
+                    userIn.setTemperature(temp + savedCO2);
+                    clientIn.updateUser(userIn);
+
+                    // Level set at the end.
                     setLevel(pointsTemp / LEVELVALUE);
                     if (getLevel() > LEVELMAX) {
                         setLevel(LEVELMAX);
                     }
-
-                    //Updating the feature's total saved.
-                    int temp = userIn.getTemperature();
-
-                    userIn.setTemperature(temp + (int) additionalPoints);
-                    clientIn.updateUser(userIn);
 
                 } else if (method.equals("Solar")) {
-                    double additionalPoints = entry * ADDITIONALVALUE;
-                    userIn.setTotal_saved(pointsSaved + 0);
-                    userIn.setTotal(points + (int) additionalPoints);
-                    int pointsTemp = userIn.getTotal();
+                    //Initializing the values we are going to use.
+                    //(assuming one person for simplicity)
+                    int producedCO2 = ((int) (CO2_Supplier.solarPanelUsed((int) entry, 1) * COSTVALUE));
+                    int savedCO2 = ((int) (CO2_Supplier.solarPanel((int) entry) * COSTVALUE));
+
+                    //Updating the totals.
+                    userIn.setTotal_saved(getPointsSaved() + savedCO2);
+                    userIn.setTotal(getPoints() + producedCO2);
+                    int pointsTemp = getPoints();
+
+                    // Updating the feature's total saved.
+                    int temp = userIn.getSolar();
+                    userIn.setSolar(temp + savedCO2);
+                    clientIn.updateUser(userIn);
 
                     setLevel(pointsTemp / LEVELVALUE);
                     if (getLevel() > LEVELMAX) {
                         setLevel(LEVELMAX);
                     }
-
-                    //Updating the feature's total saved.
-                    int temp = userIn.getSolar();
-
-                    userIn.setSolar(temp + (int) additionalPoints);
-
-                    clientIn.updateUser(userIn);
                 }
 
                 //Update Labels
