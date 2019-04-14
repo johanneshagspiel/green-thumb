@@ -29,7 +29,7 @@ With the commented-out replacement code.
 
 Then, you will need a running Tomcat instance and a running MySQL instance.
 
-Finally, you will need to create a database called ```testdatabase``` and run the commands specified in the ```src/Server/TestServer/src/main/resources/SQLconfig.txt``` file. 
+Finally, you will need to create a database called ```testdatabase``` and run the commands specified in the ```src/Server/TestServer/sql-scripts/00-create-database(01 and 02 combined).sql``` file. 
 
 After that, you can run ```mvn package -DskipTests``` on both projects, which will give you:
 
