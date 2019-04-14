@@ -6,7 +6,7 @@ public class PointsMissing {
      * @param pointsIn the points in
      * @return the points out
      */
-    public static final int MODULO = 1000;
+    public static final int MODULO = 2500;
 
     /**
      * Determine the points.
