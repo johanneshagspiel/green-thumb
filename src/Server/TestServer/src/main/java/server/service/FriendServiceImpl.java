@@ -12,14 +12,15 @@ import org.springframework.transaction.annotation.Transactional;
  * The type Friend service.
  */
 @Service
-public class FriendServiceImpl implements FriendService {
+public final class FriendServiceImpl implements FriendService {
 
+    /**Javadoc comment.*/
     @Autowired
     private FriendDAO friendDAO;
 
     @Override
     @Transactional
-    public List<Friend> getFriends(String userNameEntry) {
+    public List<Friend> getFriends(final String userNameEntry) {
         return friendDAO.getFriends(userNameEntry);
     }
 
@@ -31,14 +32,14 @@ public class FriendServiceImpl implements FriendService {
 
     @Override
     @Transactional
-    public Friend saveFriend(Friend theFriend) {
+    public Friend saveFriend(final Friend theFriend) {
         friendDAO.saveFriend(theFriend);
         return theFriend;
     }
 
     @Override
     @Transactional
-    public int deleteFriend(int theId) {
+    public int deleteFriend(final int theId) {
         friendDAO.deleteFriend(theId);
         return theId;
     }

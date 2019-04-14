@@ -15,14 +15,14 @@ public interface FriendService {
      * @param userNameEntry the user name entry
      * @return the friends
      */
-    public List<Friend> getFriends(String userNameEntry);
+    List<Friend> getFriends(String userNameEntry);
 
     /**
      * Gets friends.
      *
      * @return the friends
      */
-    public List<Friend> getFriends();
+    List<Friend> getFriends();
 
     /**
      * Save friend friend.
@@ -30,7 +30,7 @@ public interface FriendService {
      * @param theFriend the the friend
      * @return the friend
      */
-    public Friend saveFriend(Friend theFriend);
+    Friend saveFriend(Friend theFriend);
 
     /**
      * Delete friend int.
@@ -38,6 +38,6 @@ public interface FriendService {
      * @param theId the the id
      * @return the int
      */
-    public int deleteFriend(int theId);
+    int deleteFriend(int theId);
 
 }
