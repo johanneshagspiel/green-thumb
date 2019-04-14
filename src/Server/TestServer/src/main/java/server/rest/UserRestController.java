@@ -20,68 +20,95 @@ import server.entity.User;
  */
 @RestController
 @RequestMapping("/api")
-public class UserRestController {
+public final class UserRestController {
 
-	@Autowired
-	private UserService userService;
+    /**Javadoc comment.*/
+    @Autowired
+    private UserService userService;
 
-	/**
-	 * Gets users.
-	 *
-	 * @return the users
-	 */
-	@GetMapping("/users")
-	public List<User> getUsers() {
-		return userService.getUsers();
-	}
+    /**
+     * Gets users.
+     *
+     * @return the users
+     */
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userService.getUsers();
+    }
 
+    /**Javadoc comment.
+     * @return theUser
+     * @param userId is used here*/
     @GetMapping("/users/{userId}")
-	public User getUser(@PathVariable int userId) {
-		User theUser = userService.getUser(userId);
-		return theUser;
-	}
+    public User getUser(@PathVariable final int userId) {
+        User theUser = userService.getUser(userId);
+        return theUser;
+    }
 
+    /**Javadoc comment.
+     * @return theUser
+     * @param userName is used here*
+     * @param password is used here*/
     @GetMapping("/user/{userName}/{password}")
-	public User getUser2(@PathVariable String userName,@PathVariable String password) {
-		User theUser = userService.getUser2(userName, password);
-		return theUser;
-	}
+    public User getUser2(@PathVariable final String userName,
+                         @PathVariable final String password) {
+        User theUser = userService.getUser2(userName, password);
+        return theUser;
+    }
 
-	@GetMapping("/users3")
-	public User getUserSafeNW(@RequestBody User theUser) {
-		User theUserReturn = userService.getUserSafe(theUser);
-		return theUserReturn;
-	}
+    /**Javadoc comment.
+     * @return theUserReturn
+     * @param theUser is used here*/
+    @GetMapping("/users3")
+    public User getUserSafeNW(@RequestBody final User theUser) {
+        User theUserReturn = userService.getUserSafe(theUser);
+        return theUserReturn;
+    }
 
-	@PutMapping("/users3")
-	public User getUserSafe(@RequestBody User theUser) {
-		User theUserReturn = userService.getUserSafe(theUser);
-		return theUserReturn;
-	}
+    /** Javadoc comment.
+     * @return theUserReturn
+     * @param theUser is used here*/
+    @PutMapping("/users3")
+    public User getUserSafe(@RequestBody final User theUser) {
+        User theUserReturn = userService.getUserSafe(theUser);
+        return theUserReturn;
+    }
 
+    /**Javadoc comment.
+     * @return theUser
+     * @param userName is used here*/
     @GetMapping("/user2/{userName}")
-	public User getUser3(@PathVariable String userName) {
-		User theUser = userService.getUser3(userName);
-		return theUser;
-	}
+    public User getUser3(@PathVariable final String userName) {
+        User theUser = userService.getUser3(userName);
+        return theUser;
+    }
 
+    /**Javadoc comment.
+     * @return theUser
+     * @param theUser is used here*/
     @PostMapping("/users")
-	public User addUser(@RequestBody User theUser) {
-		theUser.setId(0);
-		userService.saveUser(theUser);
-		return theUser;
-	}
+    public User addUser(@RequestBody final User theUser) {
+        theUser.setId(0);
+        userService.saveUser(theUser);
+        return theUser;
+    }
 
+    /**Javadoc comment.
+     * @return theUser
+     * @param theUser is used here*/
     @PutMapping("/users")
-	public User updateUser(@RequestBody User theUser) {
-		userService.saveUser(theUser);
-		return theUser;
-	}
+    public User updateUser(@RequestBody final User theUser) {
+        userService.saveUser(theUser);
+        return theUser;
+    }
 
+    /**Javadoc comment.
+     * @return Text + userID
+     * @param userId is used here*/
     @DeleteMapping("/users/{userId}")
-	public String deleteUser(@PathVariable int userId) {
-		User tempCustomer = userService.getUser(userId);
-		userService.deleteUser(userId);
-		return "Deleted user id - " + userId;
-	}
+    public String deleteUser(@PathVariable final int userId) {
+        User tempCustomer = userService.getUser(userId);
+        userService.deleteUser(userId);
+        return "Deleted user id - " + userId;
+    }
 }
