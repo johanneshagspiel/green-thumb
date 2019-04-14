@@ -29,11 +29,14 @@ With the commented-out replacement code.
 
 Then, you will need a running Tomcat instance and a running MySQL instance.
 
-Finally, you will need to create a database called ```testdatabase``` and run the commands specified in the ```src/Server/TestServer/sql-scripts/00-create-database(01 and 02 combined).sql``` file. 
+Finally, you will need to create a database called ```testdatabase``` and run the sql script found here: ```src/Server/TestServer/sql-scripts/00-create-database(01 and 02 combined).sql``` file. 
+
 
 After that, you can run ```mvn package -DskipTests``` on both projects, which will give you:
 
+
 A WAR file you can load in Tomcat (just copy it into the ```webapps``` folder of Tomcat's directory and restart it).
+
 A JAR file for the client, which you can simply run with your Java JRE.
 
 ## Names and student numbers
