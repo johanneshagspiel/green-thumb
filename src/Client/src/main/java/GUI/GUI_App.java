@@ -248,7 +248,8 @@ public final class GUI_App extends Login_S {
         JLabel lblCO2Saved
                 = new JLabel(
                 "The amount of CO2 you have saved"
-                        + " so far is " + pointsSaved);
+                        + " so far is " + pointsSaved
+                        + " decagrams");
         lblCO2Saved.setFont(new Font(
                 "Tahoma", Font.PLAIN, twozero));
         lblCO2Saved.setBounds(fivezerozero, onenine,
@@ -261,7 +262,7 @@ public final class GUI_App extends Login_S {
         //Information about CO2 saved
         JLabel lblTotalCO2
                 = new JLabel("Your total CO2 emission is now "
-                + points);
+                                    + points + " decagrams");
         lblTotalCO2.setFont(new Font(
                 "Tahoma", Font.PLAIN, twozero));
         lblTotalCO2.setBounds(fivefourzero, fivethree,
