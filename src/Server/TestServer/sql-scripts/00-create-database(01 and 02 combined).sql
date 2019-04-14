@@ -26,3 +26,17 @@ VALUES(998, "Test", "pwd", 1, 2, 3, 4, 5, 6, 7, 8, 9,10);
 
 INSERT INTO testdatabase.user 
 VALUES (999, "Global Chat", "Global Chat: Be the first to post in the chat!SplitHereer", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+
+USE `testdatabase`;
+
+CREATE TABLE `friend` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name_entry` varchar(45) DEFAULT NULL,
+  `friend_name` varchar(45) DEFAULT NULL,
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+INSERT INTO testdatabase.friend 
+VALUES(1, "Test", "Test5");
