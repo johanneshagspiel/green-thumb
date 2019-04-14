@@ -3,7 +3,7 @@ USE `testdatabase`;
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(45) DEFAULT NULL,
+  `userName` varchar(45) DEFAULT NULL,
   `password` varchar(5000) DEFAULT NULL,
   `vegetarian` int(11) DEFAULT NULL,
   `produce` int(11) DEFAULT NULL,

@@ -41,9 +41,9 @@ public class UserRestController {
 		return theUser;
 	}
 
-    @GetMapping("/user/{user_name}/{password}")
-	public User getUser2(@PathVariable String user_name,@PathVariable String password) {
-		User theUser = userService.getUser2(user_name, password);
+    @GetMapping("/user/{userName}/{password}")
+	public User getUser2(@PathVariable String userName,@PathVariable String password) {
+		User theUser = userService.getUser2(userName, password);
 		return theUser;
 	}
 
@@ -59,9 +59,9 @@ public class UserRestController {
 		return theUserReturn;
 	}
 
-    @GetMapping("/user2/{user_name}")
-	public User getUser3(@PathVariable String user_name) {
-		User theUser = userService.getUser3(user_name);
+    @GetMapping("/user2/{userName}")
+	public User getUser3(@PathVariable String userName) {
+		User theUser = userService.getUser3(userName);
 		return theUser;
 	}
 

@@ -18,8 +18,8 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	@Column(name = "user_name")
-	private String user_name;
+	@Column(name = "userName")
+	private String userName;
 	@Column(name = "password")
 	private String password;
 	@Column(name = "vegetarian")
@@ -73,16 +73,16 @@ public class User implements Serializable {
 	 * @return the user name
 	 */
 	public String getUser_name() {
-		return user_name;
+		return userName;
 	}
 
 	/**
 	 * Sets user name.
 	 *
-	 * @param user_name the user name
+	 * @param userName the user name
 	 */
-	public void setUser_name(final String user_name) {
-		this.user_name = user_name;
+	public void setUser_name(final String userName) {
+		this.userName = userName;
 	}
 
 	/**
@@ -285,8 +285,8 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", user_name="
-				+ user_name + ", password="
+		return "User [id=" + id + ", userName="
+				+ userName + ", password="
 				+ password + ", vegetarian="
 				+ vegetarian + ", produce="
 				+ produce + ", car=" + car

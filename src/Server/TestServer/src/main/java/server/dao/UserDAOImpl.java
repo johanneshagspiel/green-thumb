@@ -61,15 +61,15 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUser2(String user_name, String password) {
+	public User getUser2(String userName, String password) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query query = currentSession.createSQLQuery(
 				"select * from user where"
-						+ " user_name=:user_name and password=:password")
+						+ " userName=:userName and password=:password")
 				.addEntity(User.class).
 						setParameter(
-						"user_name",
-						user_name).setParameter(
+						"userName",
+						userName).setParameter(
 								"password", password);
 		List<User> users = query.getResultList();
 		User theUser = users.get(0);
@@ -77,13 +77,13 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUser3(final String user_name) {
+	public User getUser3(final String userName) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query query = currentSession.createSQLQuery(
-				"select * from user where user_name=:user_name")
+				"select * from user where userName=:userName")
 				.addEntity(User.class).
 						setParameter(
-								"user_name", user_name);
+								"userName", userName);
 		List<User> users = query.getResultList();
 		User theUser = users.get(0);
 		return theUser;
@@ -92,13 +92,13 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User getUserSafe(final User theUser) {
 		String password = theUser.getPassword();
-		String user_name = theUser.getUser_name();
+		String userName = theUser.getUser_name();
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query query = currentSession.createSQLQuery(
 				"select * from user where "
-						+ "user_name=:user_name and password=:password")
+						+ "userName=:userName and password=:password")
 				.addEntity(User.class).
-						setParameter("user_name", user_name)
+						setParameter("userName", userName)
 				.setParameter("password", password);
 		List<User> users = query.getResultList();
 		User theUserReturn = users.get(0);

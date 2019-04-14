@@ -21,7 +21,7 @@ public class UserTest {
     @Test
     public void testToString() {
         // Setup
-        final String expectedResult = "User [id=0, user_name=null, password=null, vegetarian=0, produce=0, car=0, public_transportation=0, bike=0, temperature=0, solar =0, total_saved=0, total_used=0, total=0]";
+        final String expectedResult = "User [id=0, userName=null, password=null, vegetarian=0, produce=0, car=0, public_transportation=0, bike=0, temperature=0, solar =0, total_saved=0, total_used=0, total=0]";
         User test = new User();
         
         // Run the test

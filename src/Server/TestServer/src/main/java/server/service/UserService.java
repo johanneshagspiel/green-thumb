@@ -43,19 +43,19 @@ public interface UserService {
     /**
      * Gets user 2.
      *
-     * @param user_name the user name
+     * @param userName the user name
      * @param password  the password
      * @return the user 2
      */
-    public User getUser2(String user_name, String password);
+    public User getUser2(String userName, String password);
 
     /**
      * Gets user 3.
      *
-     * @param user_name the user name
+     * @param userName the user name
      * @return the user 3
      */
-    public User getUser3(String user_name);
+    public User getUser3(String userName);
 
     /**
      * Gets user safe.
