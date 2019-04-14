@@ -44,7 +44,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
     /**
      * My data source data source.
      *
-     * @return the data sourceØ
+     * @return the data source
      */
     @Bean
     public DataSource myDataSource() {
