@@ -114,15 +114,16 @@ public class LeaderBoardEntry {
             }
         }
 
-        String LeaderBoardContent = "<html>" + content + "</html>";
+        String leaderBoardContent = "<html>" + content + "</html>";
 
-        return LeaderBoardContent;
+        return leaderBoardContent;
     }
 
     /**
      * The leaderboard entry.
      * @param userIn the user in
      * @param label the label
+     *              
      * @return leaderboard
      */
     public static LeaderBoardEntry userSupplyEntry(final User userIn,

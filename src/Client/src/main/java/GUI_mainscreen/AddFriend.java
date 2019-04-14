@@ -6,7 +6,6 @@ import helper.SortLength;
 import helper.SortUsername;
 import entity.Friend;
 
-import entity.LeaderBoardEntry;
 import helper.UpdateAchievements;
 
 import service.FriendServiceImpl;
