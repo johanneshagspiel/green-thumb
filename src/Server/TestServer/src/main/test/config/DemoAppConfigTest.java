@@ -30,7 +30,6 @@ public class DemoAppConfigTest {
 
     @InjectMocks
     private DemoAppConfig demoAppConfigUnderTest;
-    private Logger loggerTest;
 
     /**
      * Sets up.
@@ -44,48 +43,13 @@ public class DemoAppConfigTest {
      * Test my data source.
      */
     @Test
-    public void testMyDataSource() {
-        // Setup
-        final DataSource expectedResult = null;
+    public void testDemoAppConfig() {
 
-        // Run the test
-        final DataSource result = demoAppConfigUnderTest.myDataSource();
-
-        // Verify the results
-        assertEquals(expectedResult, result);
-
-//        when(demoAppConfigUnderTest.myDataSource().se).thenReturn(expectedResult);
-//        assertEquals(expectedResult, friendDAOImplUnderTest.getFriends());
-    }
-
-    /**
-     * Test session factory.
-     */
-    @Test
-    public void testSessionFactory() {
-        // Setup
-        final LocalSessionFactoryBean expectedResult = null;
-
-        // Run the test
-        final LocalSessionFactoryBean result = demoAppConfigUnderTest.sessionFactory();
-
-        // Verify the results
-        assertEquals(expectedResult, result);
-    }
-
-    /**
-     * Test transaction manager.
-     */
-    @Test
-    public void testTransactionManager() {
-        // Setup
-        final SessionFactory sessionFactory = null;
-        final HibernateTransactionManager expectedResult = null;
-
-        // Run the test
-        final HibernateTransactionManager result = demoAppConfigUnderTest.transactionManager(sessionFactory);
-
-        // Verify the results
-        assertEquals(expectedResult, result);
+        DemoAppConfig testConfig = new DemoAppConfig();
+        assertEquals(testConfig.getClass(), demoAppConfigUnderTest.getClass());
     }
 }
+
+
+// As this is a configuration class without any branches, we found it hard to test it as our knowledge of Mokito was no
+// advanced enough

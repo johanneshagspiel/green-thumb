@@ -4,32 +4,31 @@ import server.config.MySpringMvcDispatcherServletInitializer;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * The type My spring mvc dispatcher servlet initializer test.
  */
 public class MySpringMvcDispatcherServletInitializerTest {
 
-    private MySpringMvcDispatcherServletInitializer mySpringMvcDispatcherServletInitializerUnderTest;
+    public MySpringMvcDispatcherServletInitializer mySpringMvcDispatcherServletInitializerUnderTest;
 
     /**
      * Sets up.
      */
     @Before
     public void setUp() {
-        mySpringMvcDispatcherServletInitializerUnderTest = new MySpringMvcDispatcherServletInitializer();
-    }
+       mySpringMvcDispatcherServletInitializerUnderTest = new MySpringMvcDispatcherServletInitializer();
+            }
 
     @Test
     public void testGetRootConfigClasses() {
 
+        MySpringMvcDispatcherServletInitializer mySpringMvcDispatcherServletInitializerUnderTest2 = new MySpringMvcDispatcherServletInitializer();
+        assertEquals(mySpringMvcDispatcherServletInitializerUnderTest2.getClass(), mySpringMvcDispatcherServletInitializerUnderTest.getClass());
     }
 
-    @Test
-    public void testGetServletConfigClasses() {
+// As this is a configuration class without any branches, we found it hard to test it as our knowledge of Mokito was no
+// advanced enough
 
-    }
-
-    @Test
-    public void testGetServletMappings() {
-       }
 }
