@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * The type Friend dao.
  */
 @Repository
-public class FriendDAOImpl implements FriendDAO {
+public final class FriendDAOImpl implements FriendDAO {
 
     /**
      * The Session factory.
