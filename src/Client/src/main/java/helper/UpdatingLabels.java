@@ -139,9 +139,9 @@ public class UpdatingLabels {
             setPointsSaved(userIn.getTotal_saved());
 
             lblTotalCO2.setText("The total amount of CO2 "
-                    + "you have used up so far is " + getPoints());
+                    + "you have used up so far is " + getPoints() + " decagrams");
             lblCO2Saved.setText("The amount of CO2 you have saved so far is "
-                    + getPointsSaved());
+                    + getPointsSaved() + " decagrams");
             lblLeaderboardContent.setText(
                     LeaderBoardEntry.createLeaderboard(userIn, getLabel()));
             setPointsmissing(PointsMissing.determiningPoints(getPoints()));
@@ -219,13 +219,8 @@ public class UpdatingLabels {
                 //All the other features store their SAVED co2 here, except for "car", which stores the total
                 //consumed co2.
                 userIn.setCar(temp + (int) CO2_Supplier.car((int) entry));
-                clientIn.updateUser(userIn);
                 setLevel(pointsTemp / LEVELVALUE);
-
-                //level set at the end
-                if (getLevel() > LEVELMAX) {
-                    setLevel(LEVELMAX);
-                }
+                clientIn.updateUser(userIn);
 
 
             } else if (method.equals("Public Transportation")) {
@@ -243,13 +238,10 @@ public class UpdatingLabels {
                 //Updating the feature's total saved.
                 int temp = userIn.getPublic_transportation();
                 userIn.setPublic_transportation(temp + savedCO2);
+                setLevel(pointsTemp / LEVELVALUE);
                 clientIn.updateUser(userIn);
 
-                //level set at the end
-                setLevel(pointsTemp / LEVELVALUE);
-                if (getLevel() > LEVELMAX) {
-                    setLevel(LEVELMAX);
-                }
+
                 } else if (method.equals("Bike")) {
                     // Initializing the values we are going to use.
                     int producedCO2 = ((int) (CO2_Supplier.
@@ -265,13 +257,8 @@ public class UpdatingLabels {
                     // Updating the feature's total saved.
                     int temp = userIn.getBike();
                     userIn.setBike(temp + savedCO2);
-                    clientIn.updateUser(userIn);
-
-                    //level set at the end
                     setLevel(pointsTemp / LEVELVALUE);
-                    if (getLevel() > LEVELMAX) {
-                        setLevel(LEVELMAX);
-                    }
+                    clientIn.updateUser(userIn);
 
                 } else if (method.equals("Temperature")) {
                     // Initializing the values we are going to use.
@@ -288,13 +275,8 @@ public class UpdatingLabels {
                     // Updating the feature's total saved.
                     int temp = userIn.getTemperature();
                     userIn.setTemperature(temp + savedCO2);
-                    clientIn.updateUser(userIn);
-
-                    // Level set at the end.
                     setLevel(pointsTemp / LEVELVALUE);
-                    if (getLevel() > LEVELMAX) {
-                        setLevel(LEVELMAX);
-                    }
+                    clientIn.updateUser(userIn);
 
                 } else if (method.equals("Solar")) {
                     //Initializing the values we are going to use.
@@ -312,12 +294,8 @@ public class UpdatingLabels {
                     // Updating the feature's total saved.
                     int temp = userIn.getSolar();
                     userIn.setSolar(temp + savedCO2);
-                    clientIn.updateUser(userIn);
-
                     setLevel(pointsTemp / LEVELVALUE);
-                    if (getLevel() > LEVELMAX) {
-                        setLevel(LEVELMAX);
-                    }
+                    clientIn.updateUser(userIn);
                 }
 
                 //Update Labels
@@ -331,10 +309,10 @@ public class UpdatingLabels {
 
                 lblTotalCO2.setText(
                         "The total amount of CO2 you have used up so far is "
-                                + pointsFinal);
+                                + pointsFinal + " decagrams");
                 lblCO2Saved.setText(
                         "The amount of CO2 you have saved so far is "
-                                + pointsSavedFinal);
+                                + pointsSavedFinal + " decagrams");
                 lblLeaderboardContent.setText(
                         LeaderBoardEntry.createLeaderboard(userIn,
                                 getLabel()));
