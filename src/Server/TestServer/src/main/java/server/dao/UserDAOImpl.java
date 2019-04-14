@@ -67,7 +67,7 @@ public final class UserDAOImpl implements UserDAO {
         Session currentSession = sessionFactory.getCurrentSession();
         Query query = currentSession.createSQLQuery(
                 "select * from user where"
-                        + " userName=:userName and password=:password")
+                        + " user_name=:userName and password=:password")
                 .addEntity(User.class).
                         setParameter(
                                 "userName",
@@ -82,7 +82,7 @@ public final class UserDAOImpl implements UserDAO {
     public User getUser3(final String userName) {
         Session currentSession = sessionFactory.getCurrentSession();
         Query query = currentSession.createSQLQuery(
-                "select * from user where userName=:userName")
+                "select * from user where user_name=:userName")
                 .addEntity(User.class).
                         setParameter(
                                 "userName", userName);
@@ -98,7 +98,7 @@ public final class UserDAOImpl implements UserDAO {
         Session currentSession = sessionFactory.getCurrentSession();
         Query query = currentSession.createSQLQuery(
                 "select * from user where "
-                        + "userName=:userName and password=:password")
+                        + "user_name=:userName and password=:password")
                 .addEntity(User.class).
                         setParameter("userName", userName)
                 .setParameter("password", password);

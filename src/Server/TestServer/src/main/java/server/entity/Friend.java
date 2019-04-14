@@ -21,10 +21,10 @@ public final class Friend implements Serializable {
     @Column(name = "id")
     private int id;
     /** Javadoc comment. */
-    @Column(name = "userNameEntry")
+    @Column(name = "user_name_entry")
     private String userNameEntry;
     /** Javadoc comment.*/
-    @Column(name = "friendName")
+    @Column(name = "friend_name")
     private String friendName;
 
 
@@ -91,8 +91,8 @@ public final class Friend implements Serializable {
 
     @Override
     public String toString() {
-        return "Friend [id=" + id + ", userNameEntry="
-                + userNameEntry + ", friendName="
+        return "Friend [id=" + id + ", user_name_entry="
+                + userNameEntry + ", friend_name="
                 + friendName + "]";
     }
 

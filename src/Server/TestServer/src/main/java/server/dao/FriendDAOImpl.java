@@ -29,7 +29,7 @@ public final class FriendDAOImpl implements FriendDAO {
 
         Query query = currentSession.createSQLQuery(
                 "select * from friend "
-                       + "where userNameEntry=:userNameEntry")
+                       + "where user_name_entry=:userNameEntry")
                 .addEntity(Friend.class).setParameter(
                         "userNameEntry", userNameEntry);
 
