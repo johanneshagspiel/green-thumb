@@ -1,7 +1,7 @@
 package rest;
-import Server.entity.User;
-import Server.rest.UserRestController;
-import Server.service.UserService;
+import server.entity.User;
+import server.rest.UserRestController;
+import server.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

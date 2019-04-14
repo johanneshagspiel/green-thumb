@@ -1,8 +1,7 @@
 package dao;
 
-import Server.dao.UserDAOImpl;
-import Server.entity.User;
-import org.hibernate.SessionFactory;
+import server.dao.UserDAOImpl;
+import server.entity.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;

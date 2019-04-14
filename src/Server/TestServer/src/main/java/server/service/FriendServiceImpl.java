@@ -1,9 +1,9 @@
-package Server.service;
+package server.service;
 
 import java.util.List;
 
-import Server.dao.FriendDAO;
-import Server.entity.Friend;
+import server.dao.FriendDAO;
+import server.entity.Friend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,9 +1,9 @@
-package Server.rest;
+package server.rest;
 
 import java.util.List;
 
-import Server.entity.Friend;
-import Server.service.FriendService;
+import server.entity.Friend;
+import server.service.FriendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

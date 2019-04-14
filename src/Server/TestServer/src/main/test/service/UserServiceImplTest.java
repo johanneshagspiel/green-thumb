@@ -1,8 +1,8 @@
 package service;
 
-import Server.dao.UserDAO;
-import Server.entity.User;
-import Server.service.UserServiceImpl;
+import server.dao.UserDAO;
+import server.entity.User;
+import server.service.UserServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;

@@ -1,7 +1,7 @@
-package Server.dao;
+package server.dao;
 
 import java.util.List;
-import Server.entity.User;
+import server.entity.User;
 
 /**
  * The interface User dao.

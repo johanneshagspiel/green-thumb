@@ -1,8 +1,8 @@
 package service;
 
-import Server.dao.FriendDAO;
-import Server.entity.Friend;
-import Server.service.FriendServiceImpl;
+import server.dao.FriendDAO;
+import server.entity.Friend;
+import server.service.FriendServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

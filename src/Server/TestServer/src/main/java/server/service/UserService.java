@@ -1,8 +1,8 @@
-package Server.service;
+package server.service;
 
 import java.util.List;
 
-import Server.entity.User;
+import server.entity.User;
 
 /**
  * The interface User service.

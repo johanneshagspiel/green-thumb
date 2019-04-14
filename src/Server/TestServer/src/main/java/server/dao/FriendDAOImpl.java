@@ -1,8 +1,8 @@
-package Server.dao;
+package server.dao;
 
 import java.util.List;
 
-import Server.entity.Friend;
+import server.entity.Friend;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

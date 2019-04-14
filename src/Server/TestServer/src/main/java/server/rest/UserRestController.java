@@ -1,8 +1,8 @@
-package Server.rest;
+package server.rest;
 
 import java.util.List;
 
-import Server.service.UserService;
+import server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Server.entity.User;
+import server.entity.User;
 
 /**
  * The type User rest controller.

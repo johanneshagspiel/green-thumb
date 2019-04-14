@@ -1,6 +1,6 @@
 package entity;
 
-import Server.entity.Friend;
+import server.entity.Friend;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,6 +1,6 @@
 package entity;
 
-import Server.entity.User;
+import server.entity.User;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

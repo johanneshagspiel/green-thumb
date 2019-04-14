@@ -1,7 +1,7 @@
 package rest;
-import Server.entity.Friend;
-import Server.rest.FriendRestController;
-import Server.service.FriendService;
+import server.entity.Friend;
+import server.rest.FriendRestController;
+import server.service.FriendService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
