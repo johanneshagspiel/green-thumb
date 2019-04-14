@@ -15,9 +15,9 @@ public class Friend implements Serializable {
 
         private int id;
         /** initialises id .*/
-        private String userNameEntry;
+        private String user_name_entry;
         /** initialises the username. */
-        private String friendName;
+        private String friend_name;
         /** initialises the friend name.*/
 
 
@@ -49,39 +49,39 @@ public class Friend implements Serializable {
      *
      * @return the user name entry
      */
-    public final String getuserNameEntry() {
-        return userNameEntry;
+    public final String getUser_name_entry() {
+        return user_name_entry;
         }
 
     /**
      * Sets user name entry.
      *
-     * @param userNameEntry the user name entry
+     * @param user_name_entry the user name entry
      */
-    public final void setuserNameEntry(final String userNameEntry) {
-        this.userNameEntry = userNameEntry;
+    public final void setUser_name_entry(final String user_name_entry) {
+        this.user_name_entry = user_name_entry;
         }
 
     /**
      * Gets friend name.
      * @return the friend name
      */
-    public final String getfriendName() {
-        return friendName;
+    public final String getFriend_name() {
+        return friend_name;
         }
 
     /**
      * Sets friend name.
-     * @param friendName the friend name
+     * @param friend_name the friend name
      */
-    public final void setfriendName(final String friendName) {
-        this.friendName = friendName;
+    public final void setFriend_name(final String friend_name) {
+        this.friend_name = friend_name;
         }
 
         @Override
         public final String toString() {
-            return "Friend [id=" + id + ", userNameEntry=" + userNameEntry
-                    + ", friendName=" + friendName + "]";
+            return "Friend [id=" + id + ", user_name_entry=" + user_name_entry
+                    + ", friend_name=" + friend_name + "]";
         }
 
     }

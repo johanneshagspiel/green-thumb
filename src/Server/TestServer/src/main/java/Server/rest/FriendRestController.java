@@ -1,9 +1,9 @@
-package server.rest;
+package Server.rest;
 
 import java.util.List;
 
-import server.entity.Friend;
-import server.service.FriendService;
+import Server.entity.Friend;
+import Server.service.FriendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,19 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class FriendRestController {
 
-    /** Javadoc comment. */
     @Autowired
     private FriendService friendService;
 
     /**
      * Gets friends.
      *
-     * @param userNameEntry the user name entry
+     * @param user_name_entry the user name entry
      * @return the friends
      */
-    @GetMapping("/friend/{userNameEntry}")
-    public List<Friend> getFriends(@PathVariable final String userNameEntry) {
-        return friendService.getFriends(userNameEntry);
+    @GetMapping("/friend/{user_name_entry}")
+    public List<Friend> getFriends(@PathVariable String user_name_entry) {
+        return friendService.getFriends(user_name_entry);
     }
 
     /**
@@ -53,7 +52,7 @@ public class FriendRestController {
      * @return the friend
      */
     @PostMapping("/friends")
-    public Friend addFriend(@RequestBody final Friend theFriend) {
+    public Friend addFriend(@RequestBody Friend theFriend) {
         theFriend.setId(0);
         friendService.saveFriend(theFriend);
         return theFriend;
@@ -66,7 +65,7 @@ public class FriendRestController {
      * @return the friend
      */
     @PutMapping("/friends")
-    public Friend updateFriend(@RequestBody final Friend theFriend) {
+    public Friend updateFriend(@RequestBody Friend theFriend) {
         friendService.saveFriend(theFriend);
         return theFriend;
     }
@@ -78,7 +77,7 @@ public class FriendRestController {
      * @return the string
      */
     @DeleteMapping("/friends/{userId}")
-    public String deleteFriend(@PathVariable final int userId) {
+    public String deleteFriend(@PathVariable int userId) {
         friendService.deleteFriend(userId);
         return "Deleted user id - " + userId;
     }

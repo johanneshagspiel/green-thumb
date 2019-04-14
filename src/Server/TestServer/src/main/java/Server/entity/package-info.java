@@ -1,3 +1,3 @@
 /** This package contains the actual entities.
  * /objects upon which this project is based on */
-package server.entity;
+package Server.entity;

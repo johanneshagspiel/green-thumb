@@ -1,4 +1,4 @@
-package server.entity;
+package Server.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,20 +12,16 @@ import java.io.Serializable;
  * The type Friend.
  */
 @Entity
-@Table(name = "friend")
-
-public final class Friend implements Serializable {
-    /** Javadoc comment.*/
+@Table(name="friend")
+public class Friend implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    /** Javadoc comment. */
-    @Column(name = "userNameEntry")
-    private String userNameEntry;
-    /** Javadoc comment.*/
-    @Column(name = "friendName")
-    private String friendName;
+    @Column(name = "user_name_entry")
+    private String user_name_entry;
+    @Column(name = "friend_name")
+    private String friend_name;
 
 
     /**
@@ -58,17 +54,17 @@ public final class Friend implements Serializable {
      *
      * @return the user name entry
      */
-    public String getUserNameEntry() {
-        return userNameEntry;
+    public String getUser_name_entry() {
+        return user_name_entry;
     }
 
     /**
      * Sets user name entry.
      *
-     * @param userNameEntry the user name entry
+     * @param user_name_entry the user name entry
      */
-    public void setUserNameEntry(final String userNameEntry) {
-        this.userNameEntry = userNameEntry;
+    public void setUser_name_entry(final String user_name_entry) {
+        this.user_name_entry = user_name_entry;
     }
 
     /**
@@ -76,24 +72,24 @@ public final class Friend implements Serializable {
      *
      * @return the friend name
      */
-    public String getFriendName() {
-        return friendName;
+    public String getFriend_name() {
+        return friend_name;
     }
 
     /**
      * Sets friend name.
      *
-     * @param friendName the friend name
+     * @param friend_name the friend name
      */
-    public void setFriendName(final String friendName) {
-        this.friendName = friendName;
+    public void setFriend_name(final String friend_name) {
+        this.friend_name = friend_name;
     }
 
     @Override
     public String toString() {
-        return "Friend [id=" + id + ", userNameEntry="
-                + userNameEntry + ", friendName="
-                + friendName + "]";
+        return "Friend [id=" + id + ", user_name_entry="
+                + user_name_entry + ", friend_name="
+                + friend_name + "]";
     }
 
 }

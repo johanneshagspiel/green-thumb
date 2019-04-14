@@ -1,6 +1,7 @@
 package helper;
 
 import entity.LeaderBoardEntry;
+import helper.ComparatorLeaderBoard;
 import org.junit.Before;
 import org.junit.Test;
 

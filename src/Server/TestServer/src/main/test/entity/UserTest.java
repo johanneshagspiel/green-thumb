@@ -1,6 +1,6 @@
 package entity;
 
-import server.entity.User;
+import Server.entity.User;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -21,7 +21,7 @@ public class UserTest {
     @Test
     public void testToString() {
         // Setup
-        final String expectedResult = "User [id=0, userName=null, password=null, vegetarian=0, produce=0, car=0, publicTransportation=0, bike=0, temperature=0, solar =0, totalSaved=0, toalUsed=0, total=0]";
+        final String expectedResult = "User [id=0, user_name=null, password=null, vegetarian=0, produce=0, car=0, public_transportation=0, bike=0, temperature=0, solar =0, total_saved=0, total_used=0, total=0]";
         User test = new User();
         
         // Run the test
@@ -46,16 +46,16 @@ public class UserTest {
     }
 
     @Test
-    public void getUserName() {
+    public void getUser_name() {
         User test = new User();
-        assertNull(test.getUserName());
+        assertNull(test.getUser_name());
     }
 
     @Test
-    public void setUserName() {
+    public void setUser_name() {
         User test = new User();
-        test.setUserName("src/main/Test");
-        assertEquals(test.getUserName(), "src/main/Test");
+        test.setUser_name("src/main/Test");
+        assertEquals(test.getUser_name(), "src/main/Test");
     }
 
     @Test
@@ -98,16 +98,16 @@ public class UserTest {
     }
 
     @Test
-    public void getPublicTransportation() {
+    public void getPublic_transportation() {
         User test = new User();
-        assertEquals(test.getPublicTransportation(), 0);
+        assertEquals(test.getPublic_transportation(), 0);
     }
 
     @Test
-    public void setPublicTransportation() {
+    public void setPublic_transportation() {
         User test = new User();
-        test.setPublicTransportation(100);
-        assertEquals(test.getPublicTransportation(), 100);
+        test.setPublic_transportation(100);
+        assertEquals(test.getPublic_transportation(), 100);
     }
 
     @Test
@@ -163,29 +163,29 @@ public class UserTest {
     }
 
     @Test
-    public void getTotalSaved() {
+    public void getTotal_saved() {
         User test = new User();
-        assertEquals(test.getTotalSaved(), 0);
+        assertEquals(test.getTotal_saved(), 0);
     }
     
     @Test
-    public void setTotalSaved() {
+    public void setTotal_saved() {
         User test = new User();
-        test.setTotalSaved(100);
-        assertEquals(test.getTotalSaved(), 100);
+        test.setTotal_saved(100);
+        assertEquals(test.getTotal_saved(), 100);
     }
     
     @Test
-    public void getTotalUsed() {
+    public void getTotal_used() {
         User test = new User();
-        assertEquals(test.getTotalUsed(), 0);
+        assertEquals(test.getTotal_used(), 0);
     }
     
     @Test
-    public void setTotalUsed() {
+    public void setTotal_used() {
         User test = new User();
-        test.setTotalUsed(100);
-        assertEquals(test.getTotalUsed(), 100);
+        test.setTotal_used(100);
+        assertEquals(test.getTotal_used(), 100);
     }
     
     @Test

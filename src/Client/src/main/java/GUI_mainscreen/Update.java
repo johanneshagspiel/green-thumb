@@ -1,7 +1,9 @@
 package GUI_mainscreen;
 
 import GUI.GUI_App;
+import Login.Login_r;
 import entity.Friend;
+import entity.LeaderBoardEntry;
 import entity.User;
 import service.FriendServiceImpl;
 import service.UserServiceImpl;
@@ -9,6 +11,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
+
+import static GUI.GUI_App.getUsername;
+import static GUI.GUI_App.setUsername;
+import static GUI.Login_S.friendClient;
+import static GUI.Login_S.user;
 
 /**
  * The type My profile.
@@ -195,7 +202,7 @@ public class Update {
                                     for (int i = 0; i < friends.size(); i++) {
                                         Friend temp = friends.get(i);
                                         test.deleteUser(temp.getId());
-                                        temp.setuserNameEntry(entry1);
+                                        temp.setUser_name_entry(entry1);
                                         test.createFriend(temp);
                                     }
 

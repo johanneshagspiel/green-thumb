@@ -1,5 +1,5 @@
 /** This package contains the classes to connect this program to hibernate. */
-package server.config;
+package Server.config;
 
 
 

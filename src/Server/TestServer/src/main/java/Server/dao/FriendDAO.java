@@ -1,21 +1,22 @@
-package server.service;
+package Server.dao;
 
 import java.util.List;
 
-import server.entity.Friend;
+import Server.entity.Friend;
 
 /**
- * The interface Friend service.
+ * The interface Friend dao.
  */
-public interface FriendService {
+public interface FriendDAO {
+
 
     /**
      * Gets friends.
      *
-     * @param userNameEntry the user name entry
+     * @param user_name_entry the user name entry
      * @return the friends
      */
-    List<Friend> getFriends(String userNameEntry);
+    List<Friend> getFriends(String user_name_entry);
 
     /**
      * Gets friends.
