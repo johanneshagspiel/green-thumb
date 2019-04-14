@@ -1,6 +1,6 @@
 package config;
 
-import Server.config.DemoAppConfig;
+import server.config.DemoAppConfig;
 import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +17,6 @@ import javax.sql.DataSource;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 /**

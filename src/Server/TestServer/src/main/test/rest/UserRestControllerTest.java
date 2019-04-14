@@ -1,7 +1,7 @@
 package rest;
-import Server.entity.User;
-import Server.rest.UserRestController;
-import Server.service.UserService;
+import server.entity.User;
+import server.rest.UserRestController;
+import server.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,13 +42,13 @@ public class UserRestControllerTest {
         test1.setBike(11);
         test1.setCar(11);
         test1.setProduce(11);
-        test1.setPublic_transportation(11);
+        test1.setPublicTransportation(11);
         test1.setSolar(11);
         test1.setTemperature(11);
         test1.setTotal(11);
-        test1.setTotal_saved(11);
-        test1.setTotal_used(11);
-        test1.setUser_name("test1");
+        test1.setTotalSaved(11);
+        test1.setTotalUsed(11);
+        test1.setUserName("test1");
         test1.setVegetarian(11);
 
         test2.setId(11);
@@ -56,13 +56,13 @@ public class UserRestControllerTest {
         test2.setBike(11);
         test2.setCar(11);
         test2.setProduce(11);
-        test2.setPublic_transportation(11);
+        test2.setPublicTransportation(11);
         test2.setSolar(11);
         test2.setTemperature(11);
         test2.setTotal(11);
-        test2.setTotal_saved(11);
-        test2.setTotal_used(11);
-        test2.setUser_name("test2");
+        test2.setTotalSaved(11);
+        test2.setTotalUsed(11);
+        test2.setUserName("test2");
         test2.setVegetarian(11);
 
         initMocks(this);

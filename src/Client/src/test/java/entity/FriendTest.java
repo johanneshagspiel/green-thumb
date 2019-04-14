@@ -44,54 +44,54 @@ public class FriendTest {
 	@Test
 	public void testUsername_Get() {
 		Friend Test = new Friend();
-		assertEquals(Test.getUser_name_entry(), null);
+		assertEquals(Test.getuserNameEntry(), null);
 	}
 	
 	@Test
 	public void testUsername_SetGet() {
 		Friend Test = new Friend();
-		Test.setUser_name_entry(Ardy);
-		assertEquals(Test.getUser_name_entry(), Ardy);
+		Test.setuserNameEntry(Ardy);
+		assertEquals(Test.getuserNameEntry(), Ardy);
 	}
 	
 	@Test
 	public void testUsername_SetGetSetGet() {
 		Friend Test = new Friend();
-		Test.setUser_name_entry(Ardy);
-		assertEquals(Test.getUser_name_entry(), Ardy);
-		Test.setUser_name_entry(Nick);
-		assertEquals(Test.getUser_name_entry(), Nick);
+		Test.setuserNameEntry(Ardy);
+		assertEquals(Test.getuserNameEntry(), Ardy);
+		Test.setuserNameEntry(Nick);
+		assertEquals(Test.getuserNameEntry(), Nick);
 	}
 	
 	@Test
 	public void testFriendname_Get() {
 		Friend Test = new Friend();
-		assertEquals(Test.getFriend_name(), null);
+		assertEquals(Test.getfriendName(), null);
 	}
 	
 	@Test
 	public void testFriendname_SetGet() {
 		Friend Test = new Friend();
-		Test.setFriend_name(Ardy);
-		assertEquals(Test.getFriend_name(), Ardy);
+		Test.setfriendName(Ardy);
+		assertEquals(Test.getfriendName(), Ardy);
 	}
 	
 	@Test
 	public void testFriendname_SetGetSetGet() {
 		Friend Test = new Friend();
-		Test.setFriend_name(Ardy);
-		assertEquals(Test.getFriend_name(), Ardy);
-		Test.setFriend_name(Nick);
-		assertEquals(Test.getFriend_name(), Nick);
+		Test.setfriendName(Ardy);
+		assertEquals(Test.getfriendName(), Ardy);
+		Test.setfriendName(Nick);
+		assertEquals(Test.getfriendName(), Nick);
 	}
 	
 	@Test
 	public void testFriend_toString() {
 		Friend Test = new Friend();
 		Test.setId(twelf);
-		Test.setFriend_name(Ardy);
-		Test.setUser_name_entry(Nick);
-		assertEquals(Test.toString(), "Friend [id=12, user_name_entry=Nick, friend_name=Ardy]");
+		Test.setfriendName(Ardy);
+		Test.setuserNameEntry(Nick);
+		assertEquals(Test.toString(), "Friend [id=12, userNameEntry=Nick, friendName=Ardy]");
 	}
 	
 	

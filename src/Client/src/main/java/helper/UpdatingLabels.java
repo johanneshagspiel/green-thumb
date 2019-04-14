@@ -1,6 +1,6 @@
 package helper;
 
-import entity.CO2_Supplier;
+import entity.Co2Supplier;
 import entity.LeaderBoardEntry;
 import entity.User;
 import service.UserServiceImpl;
@@ -24,7 +24,7 @@ public class UpdatingLabels {
      * @param clientIn the client in
      * @param lblTotalCO2 the total co2
      * @param lblCO2Saved the total co2 saved
-     * @param lblLeaderboardContent the leaderboard
+     * @param lblleaderBoardContent the leaderboard
      * @param lblMotivation the motivation
      * @param lblLevel the level
      * @param imgMotivation the img
@@ -37,7 +37,7 @@ public class UpdatingLabels {
             final UserServiceImpl clientIn,
             final JLabel lblTotalCO2,
             final JLabel lblCO2Saved,
-            final JLabel lblLeaderboardContent,
+            final JLabel lblleaderBoardContent,
             final JLabel lblMotivation,
             final JLabel lblLevel,
             final JLabel imgMotivation,
@@ -51,9 +51,9 @@ public class UpdatingLabels {
             //Depending on what is used
             if (method.equals("Vegetarian")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (Co2Supplier.mealDifference(
                         true, false) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (Co2Supplier.meal(
                         true, false) * COSTVALUE);
 
                 //updating the totals.
@@ -72,9 +72,9 @@ public class UpdatingLabels {
 
             } else if (method.equals("Carnivore")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (Co2Supplier.mealDifference(
                         false, false) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (Co2Supplier.meal(
                         false, false) * COSTVALUE);
 
                 //updating the totals.
@@ -93,9 +93,9 @@ public class UpdatingLabels {
 
             } else if (method.equals("Local Produce")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (Co2Supplier.mealDifference(
                         false, true) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (Co2Supplier.meal(
                         false, true) * COSTVALUE);
 
                 //updating the totals.
@@ -114,9 +114,9 @@ public class UpdatingLabels {
 
             } else if (method.equals("Global Produce")) {
                 //Initializing the values we are going to use.
-                int mealSaved = (int) (CO2_Supplier.mealDifference(
+                int mealSaved = (int) (Co2Supplier.mealDifference(
                         false, false) * COSTVALUE);
-                int mealCost = (int) (CO2_Supplier.meal(
+                int mealCost = (int) (Co2Supplier.meal(
                         false, false) * COSTVALUE);
 
                 //updating the totals.
@@ -142,7 +142,7 @@ public class UpdatingLabels {
                     + "you have used up so far is " + getPoints());
             lblCO2Saved.setText("The amount of CO2 you have saved so far is "
                     + getPointsSaved());
-            lblLeaderboardContent.setText(
+            lblleaderBoardContent.setText(
                     LeaderBoardEntry.createLeaderboard(userIn, getLabel()));
             setPointsmissing(PointsMissing.determiningPoints(getPoints()));
 
@@ -179,7 +179,7 @@ public class UpdatingLabels {
      * @param entry the entry
      * @param lblTotalCO2 the total co2
      * @param lblCO2Saved the total co2 saved
-     * @param lblLeaderboardContent the leaderboard
+     * @param lblleaderBoardContent the leaderboard
      * @param lblMotivation the motivation
      * @param lblLevel the level
      * @param imgMotivation the img
@@ -193,7 +193,7 @@ public class UpdatingLabels {
                 final double entry,
                 final JLabel lblTotalCO2,
                 final JLabel lblCO2Saved,
-                final JLabel lblLeaderboardContent,
+                final JLabel lblleaderBoardContent,
                 final JLabel lblMotivation,
                 final JLabel lblLevel,
                 final JLabel imgMotivation,
@@ -309,7 +309,7 @@ public class UpdatingLabels {
                 lblCO2Saved.setText(
                         "The amount of CO2 you have saved so far is "
                                 + pointsSavedFinal);
-                lblLeaderboardContent.setText(
+                lblleaderBoardContent.setText(
                         LeaderBoardEntry.createLeaderboard(userIn,
                                 getLabel()));
                 setPointsmissing(

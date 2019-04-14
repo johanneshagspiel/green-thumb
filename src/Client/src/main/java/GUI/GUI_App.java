@@ -4,7 +4,6 @@ import GUI_mainscreen.LeaderBoardChoice;
 
 import entity.LeaderBoardEntry;
 import entity.User;
-import Login.Login_addAccount;
 
 import helper.*;
 import service.UserServiceImpl;
@@ -25,24 +24,24 @@ import java.util.Timer;
 
 
 /**
- * The type Gui app.
+ * The type GUI app.
  */
 public final class GUI_App extends Login_S {
-    /** Initialises the app. */
+    /** Initializes the app. */
     private static JFrame frame;
-    /** Initialises the frame. */
+    /** Initializes the frame. */
     private static String username;
-    /** Initialises the username .*/
+    /** Initializes the username.*/
     private static int points;
-    /** Initialises the points. */
+    /** Initializes the points. */
     private static int pointsSaved;
-    /** Initialises the pointsSaved. */
+    /** Initializes the pointsSaved. */
     private static int level;
-    /** Initialises the level. */
+    /** Initializes the level. */
     private static int pointsmissing;
-    /** Initialises the pointsmissing. */
+    /** Initializes the pointsmissing. */
     private static String label;
-    /** Initialises the label. */
+    /** Initializes the label. */
 
     /**
      * Launch the application.
@@ -298,25 +297,25 @@ public final class GUI_App extends Login_S {
         frame.getContentPane().add(lblLeaderboard);
 
         // Create the content for the leaderboard
-        String LeaderBoardContent
+        String leaderBoardContent
                 = LeaderBoardEntry.
                 createLeaderboard(userIn, label);
 
 
-        JLabel lblLeaderboardContent =
-                new JLabel(LeaderBoardContent);
-        lblLeaderboardContent.setBackground(Color.WHITE);
-        lblLeaderboardContent.setBounds(
+        JLabel lblleaderBoardContent =
+                new JLabel(leaderBoardContent);
+        lblleaderBoardContent.setBackground(Color.WHITE);
+        lblleaderBoardContent.setBounds(
                 onetwofivezero, onesevenzero,
                 twosixzero, twozerozero);
-        lblLeaderboardContent.
+        lblleaderBoardContent.
                 setHorizontalAlignment(
                         SwingConstants.CENTER);
         Border border =
                 BorderFactory.createLineBorder(
                         Color.GRAY, two);
-        lblLeaderboardContent.setBorder(border);
-        frame.getContentPane().add(lblLeaderboardContent);
+        lblleaderBoardContent.setBorder(border);
+        frame.getContentPane().add(lblleaderBoardContent);
 
         // Switch the leaderboard
         JButton btnSwitchLeaderBoard =
@@ -335,7 +334,7 @@ public final class GUI_App extends Login_S {
                     public void actionPerformed(
                             final ActionEvent arg0) {
                         LeaderBoardChoice.application(
-                                lblLeaderboardContent,
+                                lblleaderBoardContent,
                                 lblLeaderboard, userIn);
                     }
                 });
@@ -611,7 +610,7 @@ public final class GUI_App extends Login_S {
             public void actionPerformed(final ActionEvent arg0) {
                 UpdatingLabels.updateEverythingDuo(
                         userIn, clientIn, lblTotalCO2,
-                        lblCO2Saved, lblLeaderboardContent,
+                        lblCO2Saved, lblleaderBoardContent,
                         lblMotivation, lblLevel,
                         imgMotivation, imgAchievementOne,
                         imgAchievementSeven,
@@ -639,7 +638,7 @@ public final class GUI_App extends Login_S {
                         updateEverythingDuo(
                                 userIn, clientIn,
                                 lblTotalCO2, lblCO2Saved,
-                                lblLeaderboardContent,
+                                lblleaderBoardContent,
                                 lblMotivation,
                                 lblLevel, imgMotivation,
                                 imgAchievementOne,
@@ -683,7 +682,7 @@ public final class GUI_App extends Login_S {
                                 userIn, clientIn,
                                 lblTotalCO2,
                                 lblCO2Saved,
-                                lblLeaderboardContent,
+                                lblleaderBoardContent,
                                 lblMotivation,
                                 lblLevel,
                                 imgMotivation,
@@ -715,7 +714,7 @@ public final class GUI_App extends Login_S {
                                 userIn, clientIn,
                                 lblTotalCO2,
                                 lblCO2Saved,
-                                lblLeaderboardContent,
+                                lblleaderBoardContent,
                                 lblMotivation,
                                 lblLevel,
                                 imgMotivation,
@@ -789,7 +788,7 @@ public final class GUI_App extends Login_S {
                                 updateEverythingTextField(userIn,
                                         clientIn, entry, lblTotalCO2,
                                         lblCO2Saved,
-                                        lblLeaderboardContent,
+                                        lblleaderBoardContent,
                                         lblMotivation,
                                         lblLevel,
                                         imgMotivation,
@@ -851,7 +850,7 @@ public final class GUI_App extends Login_S {
                                 updateEverythingTextField(userIn,
                                         clientIn, entry, lblTotalCO2,
                                         lblCO2Saved,
-                                        lblLeaderboardContent,
+                                        lblleaderBoardContent,
                                         lblMotivation,
                                         lblLevel,
                                         imgMotivation,
@@ -909,7 +908,7 @@ public final class GUI_App extends Login_S {
                                         userIn, clientIn, entry,
                                         lblTotalCO2,
                                         lblCO2Saved,
-                                        lblLeaderboardContent,
+                                        lblleaderBoardContent,
                                         lblMotivation, lblLevel,
                                         imgMotivation,
                                         imgAchievementThree,
@@ -989,7 +988,7 @@ public final class GUI_App extends Login_S {
                                 updateEverythingTextField(
                                         userIn, clientIn, entry,
                                         lblTotalCO2, lblCO2Saved,
-                                        lblLeaderboardContent,
+                                        lblleaderBoardContent,
                                         lblMotivation, lblLevel,
                                         imgMotivation,
                                         imgAchievementFive,
@@ -1066,7 +1065,7 @@ public final class GUI_App extends Login_S {
                                 updateEverythingTextField(userIn,
                                         clientIn, entry, lblTotalCO2,
                                         lblCO2Saved,
-                                        lblLeaderboardContent,
+                                        lblleaderBoardContent,
                                         lblMotivation,
                                         lblLevel, imgMotivation,
                                         imgAchievementSix,

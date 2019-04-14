@@ -1,6 +1,6 @@
 package entity;
 
-import Server.entity.Friend;
+import server.entity.Friend;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -22,40 +22,40 @@ public class FriendTest {
     }
 
     @Test
-    public void getUser_name_entry() {
+    public void getUserNameEntry() {
         Friend test = new Friend();
-        test.setUser_name_entry("test");
-        assertEquals(test.getUser_name_entry(),"test");
+        test.setUserNameEntry("test");
+        assertEquals(test.getUserNameEntry(),"test");
     }
 
     @Test
-    public void setUser_name_entry() {
+    public void setUserNameEntry() {
         Friend test = new Friend();
-        test.setUser_name_entry("test");
-        assertEquals(test.getUser_name_entry(),"test");
+        test.setUserNameEntry("test");
+        assertEquals(test.getUserNameEntry(),"test");
     }
 
     @Test
-    public void getFriend_name() {
+    public void getFriendName() {
         Friend test = new Friend();
-        test.setFriend_name("test");
-        assertEquals(test.getFriend_name(),"test");
+        test.setFriendName("test");
+        assertEquals(test.getFriendName(),"test");
     }
 
     @Test
-    public void setFriend_name() {
+    public void setFriendName() {
         Friend test = new Friend();
-        test.setFriend_name("test");
-        assertEquals(test.getFriend_name(),"test");
+        test.setFriendName("test");
+        assertEquals(test.getFriendName(),"test");
     }
 
     @Test
 	public void testFriend_toString() {
 		Friend Test = new Friend();
 		Test.setId(12);
-		Test.setFriend_name("Ardy");
-		Test.setUser_name_entry("Nick");
-		assertEquals(Test.toString(), "Friend [id=12, user_name_entry=Nick, friend_name=Ardy]");
+		Test.setFriendName("Ardy");
+		Test.setUserNameEntry("Nick");
+		assertEquals(Test.toString(), "Friend [id=12, userNameEntry=Nick, friendName=Ardy]");
 	}
 
 }

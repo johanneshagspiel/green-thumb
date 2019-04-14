@@ -1,28 +1,29 @@
-package Server.service;
+package server.dao;
 
 import java.util.List;
 
-import Server.entity.Friend;
+import server.entity.Friend;
 
 /**
- * The interface Friend service.
+ * The interface Friend dao.
  */
-public interface FriendService {
+public interface FriendDAO {
+
 
     /**
      * Gets friends.
      *
-     * @param user_name_entry the user name entry
+     * @param userNameEntry the user name entry
      * @return the friends
      */
-    public List<Friend> getFriends(String user_name_entry);
+    List<Friend> getFriends(String userNameEntry);
 
     /**
      * Gets friends.
      *
      * @return the friends
      */
-    public List<Friend> getFriends();
+    List<Friend> getFriends();
 
     /**
      * Save friend friend.
@@ -30,7 +31,7 @@ public interface FriendService {
      * @param theFriend the the friend
      * @return the friend
      */
-    public Friend saveFriend(Friend theFriend);
+    Friend saveFriend(Friend theFriend);
 
     /**
      * Delete friend int.
@@ -38,6 +39,6 @@ public interface FriendService {
      * @param theId the the id
      * @return the int
      */
-    public int deleteFriend(int theId);
+    int deleteFriend(int theId);
 
 }

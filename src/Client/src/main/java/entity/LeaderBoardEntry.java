@@ -91,7 +91,7 @@ public class LeaderBoardEntry {
 
         for (int i = 0; i < friends.size(); i++) {
             Friend temp = friends.get(i);
-            String nameFriend = temp.getFriend_name();
+            String nameFriend = temp.getfriendName();
             User friend = clientUser.getUser2(nameFriend);
 
             int points = pointSupplier(friend, label);
@@ -114,15 +114,16 @@ public class LeaderBoardEntry {
             }
         }
 
-        String LeaderBoardContent = "<html>" + content + "</html>";
+        String leaderBoardContent = "<html>" + content + "</html>";
 
-        return LeaderBoardContent;
+        return leaderBoardContent;
     }
 
     /**
      * The leaderboard entry.
      * @param userIn the user in
      * @param label the label
+     *
      * @return leaderboard
      */
     public static LeaderBoardEntry userSupplyEntry(final User userIn,

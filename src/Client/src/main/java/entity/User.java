@@ -9,34 +9,34 @@ import java.util.List;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable {
-	/** Initialises a user. */
-	private int id;
-	/** Initialise the id. */
-	private String user_name;
-	/** Initialise the username. */
-	private String password;
-	/** Initialise the password. */
-	private int vegetarian;
-	/** Initialise the vegetarian counter. */
-	private int produce;
-	/** Initialise the produce counter. */
-	private int car;
-	/** Initialise the car counter. */
-	private int public_transportation;
-	/** Initialise the public counter. */
-	private int bike;
-	/** Initialise the bike counter. */
-	private int temperature;
-	/** Initialise the temperature counter. */
-	private int solar;
-	/** Initialise the solar counter. */
-	private int total_saved;
-	/** Initialise the total saved counter. */
-	private int total_used;
-	/** Initialise the total used counter. */
-	private int total;
-	/** Initialise the total counter. */
-	private List<Friend> friendlist;
+/** Initialises a user. */
+private int id;
+/** Initialise the id. */
+private String user_name;
+/** Initialise the username. */
+private String password;
+/** Initialise the password. */
+private int vegetarian;
+/** Initialise the vegetarian counter. */
+private int produce;
+/** Initialise the produce counter. */
+private int car;
+/** Initialise the car counter. */
+private int public_transportation;
+/** Initialise the public counter. */
+private int bike;
+/** Initialise the bike counter. */
+private int temperature;
+/** Initialise the temperature counter. */
+private int solar;
+/** Initialise the solar counter. */
+private int total_saved;
+/** Initialise the total saved counter. */
+private int total_used;
+/** Initialise the total used counter. */
+private int total;
+/** Initialise the total counter. */
+private List<Friend> friendlist;
 
 
     /**

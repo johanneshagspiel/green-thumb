@@ -40,7 +40,7 @@ public class UpdatingLabelsTest {
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 100;
@@ -53,7 +53,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel, imgMotivation,imgAchievementSaved,imgAchievement, "Car");
 
 		// Checking the method
@@ -85,7 +85,7 @@ public class UpdatingLabelsTest {
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 100;
@@ -95,7 +95,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Public Transportation");
 
 		// Checking the method
@@ -127,7 +127,7 @@ public class UpdatingLabelsTest {
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 100;
@@ -137,7 +137,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Bike");
 
 		// Checking the method
@@ -166,7 +166,7 @@ public class UpdatingLabelsTest {
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 100;
@@ -179,7 +179,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Temperature");
 
 		// Checking the method
@@ -208,7 +208,7 @@ public class UpdatingLabelsTest {
 		final double entry = 10;
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 100;
@@ -221,7 +221,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingTextField(userIn,
 				clientIn, entry,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Solar");
 
 		// Checking the method
@@ -249,7 +249,7 @@ public class UpdatingLabelsTest {
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 60;
@@ -262,7 +262,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Vegetarian");
 
 		// Checking the method
@@ -290,7 +290,7 @@ public class UpdatingLabelsTest {
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 0;
@@ -303,7 +303,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel, imgMotivation,imgAchievement, imgAchievementSaved,"Carnivore");
 
 		// Checking the method
@@ -331,7 +331,7 @@ public class UpdatingLabelsTest {
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 9;
@@ -344,7 +344,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Local Produce");
 
 		// Checking the method
@@ -372,7 +372,7 @@ public class UpdatingLabelsTest {
 		// Adding some user information
 		JLabel lblTotalCO2 = new JLabel("");
 		JLabel lblCO2Saved = new JLabel("");
-		JLabel lblLeaderboardContent = new JLabel("");
+		JLabel lblleaderBoardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
 		final int resultTotal = 0;
@@ -385,7 +385,7 @@ public class UpdatingLabelsTest {
 		UpdatingLabels.updateEverythingDuo(userIn,
 				clientIn,
 				lblTotalCO2, lblCO2Saved,
-				lblLeaderboardContent,
+				lblleaderBoardContent,
 				lblMotivation, lblLevel,imgMotivation,imgAchievement, imgAchievementSaved, "Global Produce");
 
 		// Checking the method

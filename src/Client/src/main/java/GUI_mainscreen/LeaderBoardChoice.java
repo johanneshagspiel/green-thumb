@@ -3,7 +3,7 @@ package GUI_mainscreen;
 
 import entity.LeaderBoardEntry;
 import entity.User;
-import service.UserServiceImpl;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,29 +21,29 @@ public class LeaderBoardChoice {
 
     /**
      * The Leaderboard.
-     * @param lblLeaderboardContent the content
+     * @param lblleaderBoardContent the content
      * @param lblLeaderboard the leaderboard
      * @param userIn the user
      */
-    private LeaderBoardChoice(final JLabel lblLeaderboardContent,
+    private LeaderBoardChoice(final JLabel lblleaderBoardContent,
                               final JLabel lblLeaderboard, final User userIn) {
-        initialize(lblLeaderboardContent, lblLeaderboard, userIn);
+        initialize(lblleaderBoardContent, lblLeaderboard, userIn);
     }
 
     /**
      * The application.
-     * @param lblLeaderboardContent the content
+     * @param lblleaderBoardContent the content
      * @param lblLeaderboard the leaderboard
      * @param userIn the user
      */
-    public static void application(final JLabel lblLeaderboardContent,
+    public static void application(final JLabel lblleaderBoardContent,
                                    final JLabel lblLeaderboard,
                                    final User userIn) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
                     LeaderBoardChoice window
-                            = new LeaderBoardChoice(lblLeaderboardContent,
+                            = new LeaderBoardChoice(lblleaderBoardContent,
                             lblLeaderboard, userIn);
                     LeaderBoardChoice.frame2.setVisible(true);
                 } catch (Exception e) {
@@ -55,11 +55,11 @@ public class LeaderBoardChoice {
 
     /**
      * Initialising.
-     * @param lblLeaderboardContent the content
+     * @param lblleaderBoardContent the content
      * @param lblLeaderboard the leaderboard
      * @param userIn the user
      */
-    public static void initialize(final JLabel lblLeaderboardContent,
+    public static void initialize(final JLabel lblleaderBoardContent,
                                   final JLabel lblLeaderboard,
                                   final User userIn) {
         final int twosixsix = 266;
@@ -115,7 +115,7 @@ public class LeaderBoardChoice {
                 String label
                         = lblVegetarian.getText();
                 setLabel(label);
-                lblLeaderboardContent.
+                lblleaderBoardContent.
                         setText(LeaderBoardEntry.
                                 createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Vegetarian Score");
@@ -134,7 +134,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblProduce.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Produce Score");
                 frame2.setVisible(false);
@@ -152,7 +152,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblCar.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Car Score");
                 frame2.setVisible(false);
@@ -174,7 +174,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblPublic_transportation.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Top 10 Public Transportation Score");
                 frame2.setVisible(false);
@@ -192,7 +192,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblBike.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Bike Score");
                 frame2.setVisible(false);
@@ -210,7 +210,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblTemperature.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Temperature Score");
                 frame2.setVisible(false);
@@ -228,7 +228,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblSolar.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 Solar Score");
                 frame2.setVisible(false);
@@ -246,7 +246,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblSaved.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 CO2 Saved Score");
                 frame2.setVisible(false);
@@ -264,7 +264,7 @@ public class LeaderBoardChoice {
             public void actionPerformed(final ActionEvent arg0) {
                 String label = lblOverall.getText();
                 setLabel(label);
-                lblLeaderboardContent.setText(LeaderBoardEntry.
+                lblleaderBoardContent.setText(LeaderBoardEntry.
                         createLeaderboard(userIn, label));
                 lblLeaderboard.setText("Leaderboard Top 10 CO2 Used");
                 frame2.setVisible(false);

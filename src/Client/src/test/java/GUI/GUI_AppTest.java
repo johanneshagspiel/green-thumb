@@ -7,18 +7,18 @@ import org.junit.Test;
 import service.UserServiceImpl;
 
 /**
- * The type Gui app test.
+ * The type GUI app test.
  */
 public class GUI_AppTest {
 
-    private GUI_App gui_appUnderTest;
+    private GUI_App GUI_appUnderTest;
 
     /**
      * Sets up.
      */
     @Before
     public void setUp() {
-        gui_appUnderTest = null /* TODO: construct the instance */;
+        GUI_appUnderTest = null /* TODO: construct the instance */;
     }
 
     /**

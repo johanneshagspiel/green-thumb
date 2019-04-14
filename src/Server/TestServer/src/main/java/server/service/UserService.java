@@ -1,8 +1,8 @@
-package Server.service;
+package server.service;
 
 import java.util.List;
 
-import Server.entity.User;
+import server.entity.User;
 
 /**
  * The interface User service.
@@ -14,7 +14,7 @@ public interface UserService {
      *
      * @return the users
      */
-    public List<User> getUsers();
+    List<User> getUsers();
 
     /**
      * Save user user.
@@ -22,7 +22,7 @@ public interface UserService {
      * @param theUser the the user
      * @return the user
      */
-    public User saveUser(User theUser);
+    User saveUser(User theUser);
 
     /**
      * Gets user.
@@ -30,7 +30,7 @@ public interface UserService {
      * @param theId the the id
      * @return the user
      */
-    public User getUser(int theId);
+    User getUser(int theId);
 
     /**
      * Delete user int.
@@ -38,24 +38,24 @@ public interface UserService {
      * @param theId the the id
      * @return the int
      */
-    public int deleteUser(int theId);
+    int deleteUser(int theId);
 
     /**
      * Gets user 2.
      *
-     * @param user_name the user name
+     * @param userName the user name
      * @param password  the password
      * @return the user 2
      */
-    public User getUser2(String user_name, String password);
+    User getUser2(String userName, String password);
 
     /**
      * Gets user 3.
      *
-     * @param user_name the user name
+     * @param userName the user name
      * @return the user 3
      */
-    public User getUser3(String user_name);
+    User getUser3(String userName);
 
     /**
      * Gets user safe.
@@ -63,5 +63,5 @@ public interface UserService {
      * @param theUser the the user
      * @return the user safe
      */
-    public User getUserSafe(User theUser);
+    User getUserSafe(User theUser);
 }

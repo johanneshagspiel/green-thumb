@@ -1,7 +1,7 @@
-package Server.dao;
+package server.dao;
 
 import java.util.List;
-import Server.entity.User;
+import server.entity.User;
 
 /**
  * The interface User dao.
@@ -18,6 +18,7 @@ public interface UserDAO {
     /**
      * Save user.
      *
+     * @return something
      * @param theUser the the user
      */
      User saveUser(User theUser);
@@ -33,6 +34,7 @@ public interface UserDAO {
     /**
      * Delete user.
      *
+     * @return something
      * @param theId the the id
      */
      int deleteUser(int theId);
@@ -40,19 +42,19 @@ public interface UserDAO {
     /**
      * Gets user 2.
      *
-     * @param user_name the user name
+     * @param userName the user name
      * @param password  the password
      * @return the user 2
      */
-     User getUser2(String user_name, String password);
+     User getUser2(String userName, String password);
 
     /**
      * Gets user 3.
      *
-     * @param user_name the user name
+     * @param userName the user name
      * @return the user 3
      */
-     User getUser3(String user_name);
+     User getUser3(String userName);
 
     /**
      * Gets user 3.

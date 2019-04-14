@@ -1,10 +1,7 @@
 package dao;
 
-import Server.dao.FriendDAOImpl;
-import Server.entity.Friend;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+import server.dao.FriendDAOImpl;
+import server.entity.Friend;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -42,12 +38,12 @@ public class FriendDAOImplTest {
         test1 = new Friend();
         test2 = new Friend();
 
-        test1.setFriend_name("Test1111");
-        test1.setUser_name_entry("Test2222");
+        test1.setFriendName("Test1111");
+        test1.setUserNameEntry("Test2222");
         test1.setId(111);
 
-        test2.setFriend_name("Test3333");
-        test2.setUser_name_entry("Test2222");
+        test2.setFriendName("Test3333");
+        test2.setUserNameEntry("Test2222");
         test2.setId(112);
 
         initMocks(this);
