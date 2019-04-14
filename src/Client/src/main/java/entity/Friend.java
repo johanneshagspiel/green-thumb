@@ -80,8 +80,8 @@ public class Friend implements Serializable {
 
         @Override
         public final String toString() {
-            return "Friend [id=" + id + ", userNameEntry=" + userNameEntry
-                    + ", friendName=" + friendName + "]";
+            return "Friend [id=" + id + ", user_name_entry=" + userNameEntry
+                    + ", friend_name=" + friendName + "]";
         }
 
     }
