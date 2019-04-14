@@ -132,7 +132,8 @@ public class LeaderBoardEntry {
                     userIn.getVegetarian());
             return user;
         } else if (label.equals("Leaderboard Top 10 CO2 Used")
-                || label.equals("Overall Score")) {
+                || label.equals("Overall Score")
+                || label.equals("Global Chat")) {
             LeaderBoardEntry user = new LeaderBoardEntry("You",
                     userIn.getTotal());
             return user;
@@ -182,7 +183,8 @@ public class LeaderBoardEntry {
         if (label.equals("Vegetarian Score")) {
             points = friend.getVegetarian();
         } else if (label.equals("Leaderboard Top 10 CO2 Used")
-                || label.equals("Overall Score")) {
+                || label.equals("Overall Score")
+                || label.equals("Global Chat")) {
             points = friend.getTotal();
         } else if (label.equals("Produce Score")) {
             points = friend.getProduce();
