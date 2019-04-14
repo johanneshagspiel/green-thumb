@@ -359,7 +359,7 @@ public final class GUI_App extends Login_S {
         // Motivation image
         JLabel imgMotivation =
                 new JLabel(new ImageIcon(
-                        CreateMotivationImage.createIcon()));
+                        CreateMotivationImage.createIcon(getLevel())));
         imgMotivation.setBounds(threezerozero,
                 fivezerozero, twofivezero, threezerozero);
         imgMotivation.setHorizontalAlignment(SwingConstants.CENTER);

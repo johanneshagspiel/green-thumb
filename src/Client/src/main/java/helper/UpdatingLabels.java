@@ -157,7 +157,7 @@ public class UpdatingLabels {
             lblMotivation.setText(motivation);
             lblLevel.setText("Your Level is " + getLevel());
             imgMotivation.setIcon(
-                    new ImageIcon(CreateMotivationImage.createIcon()));
+                    new ImageIcon(CreateMotivationImage.createIcon(getLevel())));
             imgAchievement.setIcon(
                     new ImageIcon(UpdateAchievements.
                             updateAchievements(method, userIn)));
@@ -326,7 +326,7 @@ public class UpdatingLabels {
                 lblMotivation.setText(motivation);
                 lblLevel.setText("Your Level is " + level);
                 imgMotivation.setIcon(
-                        new ImageIcon(CreateMotivationImage.createIcon()));
+                        new ImageIcon(CreateMotivationImage.createIcon(getLevel())));
                 imgAchievement.setIcon(
                         new ImageIcon(UpdateAchievements.
                                 updateAchievements(method, userIn)));

@@ -23,9 +23,8 @@ public class CreateMotivationImage {
      * The image.
      * @return the image
      */
-    public static BufferedImage createIcon() {
+    public static BufferedImage createIcon(int level) {
 
-        int level = getLevel();
 
         try {
             BufferedImage myPicture = null;
