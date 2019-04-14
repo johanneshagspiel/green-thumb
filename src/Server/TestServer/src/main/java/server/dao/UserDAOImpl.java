@@ -63,7 +63,7 @@ public final class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User getUser2(String userName, String password) {
+    public User getUser2(final String userName, final String password) {
         Session currentSession = sessionFactory.getCurrentSession();
         Query query = currentSession.createSQLQuery(
                 "select * from user where"

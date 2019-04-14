@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class FriendRestController {
 
+    /** Javadoc comment. */
     @Autowired
     private FriendService friendService;
 
@@ -31,7 +32,7 @@ public class FriendRestController {
      * @return the friends
      */
     @GetMapping("/friend/{userNameEntry}")
-    public List<Friend> getFriends(@PathVariable String userNameEntry) {
+    public List<Friend> getFriends(@PathVariable final String userNameEntry) {
         return friendService.getFriends(userNameEntry);
     }
 
@@ -52,7 +53,7 @@ public class FriendRestController {
      * @return the friend
      */
     @PostMapping("/friends")
-    public Friend addFriend(@RequestBody Friend theFriend) {
+    public Friend addFriend(@RequestBody final Friend theFriend) {
         theFriend.setId(0);
         friendService.saveFriend(theFriend);
         return theFriend;
@@ -65,7 +66,7 @@ public class FriendRestController {
      * @return the friend
      */
     @PutMapping("/friends")
-    public Friend updateFriend(@RequestBody Friend theFriend) {
+    public Friend updateFriend(@RequestBody final Friend theFriend) {
         friendService.saveFriend(theFriend);
         return theFriend;
     }
@@ -77,7 +78,7 @@ public class FriendRestController {
      * @return the string
      */
     @DeleteMapping("/friends/{userId}")
-    public String deleteFriend(@PathVariable int userId) {
+    public String deleteFriend(@PathVariable final int userId) {
         friendService.deleteFriend(userId);
         return "Deleted user id - " + userId;
     }
