@@ -55,7 +55,7 @@ public class FriendTest {
 		Test.setId(12);
 		Test.setFriend_name("Ardy");
 		Test.setUser_name_entry("Nick");
-		assertEquals(Test.toString(), "Friend [id=12, user_name_entry=Nick, friend_name=Ardy]");
+		assertEquals(Test.toString(), "Friend [id=12, userNameEntry=Nick, friend_name=Ardy]");
 	}
 
 }

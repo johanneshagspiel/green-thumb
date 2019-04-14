@@ -12,10 +12,10 @@ public interface FriendService {
     /**
      * Gets friends.
      *
-     * @param user_name_entry the user name entry
+     * @param userNameEntry the user name entry
      * @return the friends
      */
-    public List<Friend> getFriends(String user_name_entry);
+    public List<Friend> getFriends(String userNameEntry);
 
     /**
      * Gets friends.

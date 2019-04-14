@@ -18,8 +18,8 @@ public class Friend implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @Column(name = "user_name_entry")
-    private String user_name_entry;
+    @Column(name = "userNameEntry")
+    private String userNameEntry;
     @Column(name = "friend_name")
     private String friend_name;
 
@@ -55,16 +55,16 @@ public class Friend implements Serializable {
      * @return the user name entry
      */
     public String getUser_name_entry() {
-        return user_name_entry;
+        return userNameEntry;
     }
 
     /**
      * Sets user name entry.
      *
-     * @param user_name_entry the user name entry
+     * @param userNameEntry the user name entry
      */
-    public void setUser_name_entry(final String user_name_entry) {
-        this.user_name_entry = user_name_entry;
+    public void setUser_name_entry(final String userNameEntry) {
+        this.userNameEntry = userNameEntry;
     }
 
     /**
@@ -87,8 +87,8 @@ public class Friend implements Serializable {
 
     @Override
     public String toString() {
-        return "Friend [id=" + id + ", user_name_entry="
-                + user_name_entry + ", friend_name="
+        return "Friend [id=" + id + ", userNameEntry="
+                + userNameEntry + ", friend_name="
                 + friend_name + "]";
     }
 

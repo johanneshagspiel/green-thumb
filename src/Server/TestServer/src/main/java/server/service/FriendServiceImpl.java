@@ -19,8 +19,8 @@ public class FriendServiceImpl implements FriendService {
 
     @Override
     @Transactional
-    public List<Friend> getFriends(String user_name_entry) {
-        return friendDAO.getFriends(user_name_entry);
+    public List<Friend> getFriends(String userNameEntry) {
+        return friendDAO.getFriends(userNameEntry);
     }
 
     @Override

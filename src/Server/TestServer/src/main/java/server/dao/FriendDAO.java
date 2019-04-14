@@ -13,10 +13,10 @@ public interface FriendDAO {
     /**
      * Gets friends.
      *
-     * @param user_name_entry the user name entry
+     * @param userNameEntry the user name entry
      * @return the friends
      */
-    List<Friend> getFriends(String user_name_entry);
+    List<Friend> getFriends(String userNameEntry);
 
     /**
      * Gets friends.

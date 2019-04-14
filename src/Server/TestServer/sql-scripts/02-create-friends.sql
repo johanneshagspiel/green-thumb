@@ -3,7 +3,7 @@ USE `testdatabase`;
 
 CREATE TABLE `friend` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name_entry` varchar(45) DEFAULT NULL,
+  `userNameEntry` varchar(45) DEFAULT NULL,
   `friend_name` varchar(45) DEFAULT NULL,
 
 

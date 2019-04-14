@@ -27,12 +27,12 @@ public class FriendRestController {
     /**
      * Gets friends.
      *
-     * @param user_name_entry the user name entry
+     * @param userNameEntry the user name entry
      * @return the friends
      */
-    @GetMapping("/friend/{user_name_entry}")
-    public List<Friend> getFriends(@PathVariable String user_name_entry) {
-        return friendService.getFriends(user_name_entry);
+    @GetMapping("/friend/{userNameEntry}")
+    public List<Friend> getFriends(@PathVariable String userNameEntry) {
+        return friendService.getFriends(userNameEntry);
     }
 
     /**
