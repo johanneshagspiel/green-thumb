@@ -25,24 +25,24 @@ import java.util.Timer;
 
 
 /**
- * The type Gui app.
+ * The type GUI app.
  */
 public final class GUI_App extends Login_S {
-    /** Initialises the app. */
+    /** Initializes the app. */
     private static JFrame frame;
-    /** Initialises the frame. */
+    /** Initializes the frame. */
     private static String username;
-    /** Initialises the username .*/
+    /** Initializes the username.*/
     private static int points;
-    /** Initialises the points. */
+    /** Initializes the points. */
     private static int pointsSaved;
-    /** Initialises the pointsSaved. */
+    /** Initializes the pointsSaved. */
     private static int level;
-    /** Initialises the level. */
+    /** Initializes the level. */
     private static int pointsmissing;
-    /** Initialises the pointsmissing. */
+    /** Initializes the pointsmissing. */
     private static String label;
-    /** Initialises the label. */
+    /** Initializes the label. */
 
     /**
      * Launch the application.
