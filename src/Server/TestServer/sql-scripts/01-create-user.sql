@@ -8,12 +8,12 @@ CREATE TABLE `user` (
   `vegetarian` int(11) DEFAULT NULL,
   `produce` int(11) DEFAULT NULL,
   `car` int(11) DEFAULT NULL,
-  `public_transportation` int(11) DEFAULT NULL,
+  `publicTransportation` int(11) DEFAULT NULL,
   `bike` int(11) DEFAULT NULL,
   `temperature` int(11) DEFAULT NULL,
   `solar` int(11) DEFAULT NULL,
-  `total_saved` int(11) DEFAULT NULL,
-  `total_used` int(11) DEFAULT NULL,
+  `totalSaved` int(11) DEFAULT NULL,
+  `toalUsed` int(11) DEFAULT NULL,
   `total` int(11) DEFAULT NULL,
 
   PRIMARY KEY (`id`)
