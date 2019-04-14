@@ -123,7 +123,7 @@ public class LeaderBoardEntry {
      * The leaderboard entry.
      * @param userIn the user in
      * @param label the label
-     *              
+     *
      * @return leaderboard
      */
     public static LeaderBoardEntry userSupplyEntry(final User userIn,
