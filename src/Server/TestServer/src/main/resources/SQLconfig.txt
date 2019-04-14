@@ -34,3 +34,4 @@ CREATE TABLE `friend` (
 INSERT INTO `user`(id, user_name, password, vegetarian, produce, car, public_transportation, bike, temperature, solar, total_saved, total_used, total) VALUES (999, "Global Chat", "Global Chat: Be the first to post in the chat!SplitHereer", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 INSERT INTO testdatabase.user VALUES(1029, "Test5", "pwd", 1, 2, 3, 4, 5, 6, 7, 8, 9,10)
 INSERT INTO testdatabase.user VALUES(998, "Test", "pwd", 0, 0, 0, 0, 0, 0, 0, 69, 0, 1179)
+INSERT INTO testdatabase.friend VALUES(1, "Test", "Test5")
