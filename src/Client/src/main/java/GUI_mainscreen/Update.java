@@ -202,7 +202,7 @@ public class Update {
                                     for (int i = 0; i < friends.size(); i++) {
                                         Friend temp = friends.get(i);
                                         test.deleteUser(temp.getId());
-                                        temp.setUser_name_entry(entry1);
+                                        temp.setuserNameEntry(entry1);
                                         test.createFriend(temp);
                                     }
 

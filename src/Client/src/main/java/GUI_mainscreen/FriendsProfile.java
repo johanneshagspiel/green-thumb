@@ -98,11 +98,11 @@ public class FriendsProfile {
                 // the information and than moves on to the next one
 				//TODO
 				String test = userIn.getFriendlist()
-                        .get(count).getFriend_name();
+                        .get(count).getfriendName();
 				User friendUser
                         = clientIn.
                         getUser2(userIn.getFriendlist().
-                        get(count).getFriend_name());
+                        get(count).getfriendName());
 				//Making every label
 				JButton Friend = new JButton(test);
                 Friend.setBounds((onezero + i * onefourtwo),

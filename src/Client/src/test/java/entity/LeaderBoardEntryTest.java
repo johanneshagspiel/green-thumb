@@ -50,8 +50,8 @@ public class LeaderBoardEntryTest {
 
 
         karelFriend.setId(1);
-        karelFriend.setUser_name_entry("karel");
-        karelFriend.setFriend_name("lukas");
+        karelFriend.setuserNameEntry("karel");
+        karelFriend.setfriendName("lukas");
 
 
         lukas.setVegetarian(100);
