@@ -44,54 +44,54 @@ public class FriendTest {
 	@Test
 	public void testUsername_Get() {
 		Friend Test = new Friend();
-		assertEquals(Test.getuserNameEntry(), null);
+		assertEquals(Test.getUser_name_entry(), null);
 	}
 	
 	@Test
 	public void testUsername_SetGet() {
 		Friend Test = new Friend();
-		Test.setuserNameEntry(Ardy);
-		assertEquals(Test.getuserNameEntry(), Ardy);
+		Test.setUser_name_entry(Ardy);
+		assertEquals(Test.getUser_name_entry(), Ardy);
 	}
 	
 	@Test
 	public void testUsername_SetGetSetGet() {
 		Friend Test = new Friend();
-		Test.setuserNameEntry(Ardy);
-		assertEquals(Test.getuserNameEntry(), Ardy);
-		Test.setuserNameEntry(Nick);
-		assertEquals(Test.getuserNameEntry(), Nick);
+		Test.setUser_name_entry(Ardy);
+		assertEquals(Test.getUser_name_entry(), Ardy);
+		Test.setUser_name_entry(Nick);
+		assertEquals(Test.getUser_name_entry(), Nick);
 	}
 	
 	@Test
 	public void testFriendname_Get() {
 		Friend Test = new Friend();
-		assertEquals(Test.getfriendName(), null);
+		assertEquals(Test.getFriend_name(), null);
 	}
 	
 	@Test
 	public void testFriendname_SetGet() {
 		Friend Test = new Friend();
-		Test.setfriendName(Ardy);
-		assertEquals(Test.getfriendName(), Ardy);
+		Test.setFriend_name(Ardy);
+		assertEquals(Test.getFriend_name(), Ardy);
 	}
 	
 	@Test
 	public void testFriendname_SetGetSetGet() {
 		Friend Test = new Friend();
-		Test.setfriendName(Ardy);
-		assertEquals(Test.getfriendName(), Ardy);
-		Test.setfriendName(Nick);
-		assertEquals(Test.getfriendName(), Nick);
+		Test.setFriend_name(Ardy);
+		assertEquals(Test.getFriend_name(), Ardy);
+		Test.setFriend_name(Nick);
+		assertEquals(Test.getFriend_name(), Nick);
 	}
 	
 	@Test
 	public void testFriend_toString() {
 		Friend Test = new Friend();
 		Test.setId(twelf);
-		Test.setfriendName(Ardy);
-		Test.setuserNameEntry(Nick);
-		assertEquals(Test.toString(), "Friend [id=12, userNameEntry=Nick, friendName=Ardy]");
+		Test.setFriend_name(Ardy);
+		Test.setUser_name_entry(Nick);
+		assertEquals(Test.toString(), "Friend [id=12, user_name_entry=Nick, friend_name=Ardy]");
 	}
 	
 	

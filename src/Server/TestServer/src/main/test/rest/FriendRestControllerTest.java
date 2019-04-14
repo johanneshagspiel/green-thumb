@@ -1,7 +1,7 @@
 package rest;
-import server.entity.Friend;
-import server.rest.FriendRestController;
-import server.service.FriendService;
+import Server.entity.Friend;
+import Server.rest.FriendRestController;
+import Server.service.FriendService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,12 +37,12 @@ public class FriendRestControllerTest {
         test1 = new Friend();
         test2 = new Friend();
 
-        test1.setFriendName("Test1111");
-        test1.setUserNameEntry("Test2222");
+        test1.setFriend_name("Test1111");
+        test1.setUser_name_entry("Test2222");
         test1.setId(111);
 
-        test2.setFriendName("Test3333");
-        test2.setUserNameEntry("Test2222");
+        test2.setFriend_name("Test3333");
+        test2.setUser_name_entry("Test2222");
         test2.setId(112);
 
         initMocks(this);

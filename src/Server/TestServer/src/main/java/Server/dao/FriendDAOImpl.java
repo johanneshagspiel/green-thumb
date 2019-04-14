@@ -1,8 +1,8 @@
-package server.dao;
+package Server.dao;
 
 import java.util.List;
 
-import server.entity.Friend;
+import Server.entity.Friend;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * The type Friend dao.
  */
 @Repository
-public final class FriendDAOImpl implements FriendDAO {
+public class FriendDAOImpl implements FriendDAO {
 
     /**
      * The Session factory.
@@ -23,15 +23,15 @@ public final class FriendDAOImpl implements FriendDAO {
 
 
     @Override
-    public List<Friend> getFriends(final String userNameEntry) {
+    public List<Friend> getFriends(final String user_name_entry) {
 
         Session currentSession = sessionFactory.getCurrentSession();
 
         Query query = currentSession.createSQLQuery(
                 "select * from friend "
-                       + "where userNameEntry=:userNameEntry")
+                       + "where user_name_entry=:user_name_entry")
                 .addEntity(Friend.class).setParameter(
-                        "userNameEntry", userNameEntry);
+                        "user_name_entry", user_name_entry);
 
         List<Friend> friends = query.getResultList();
 

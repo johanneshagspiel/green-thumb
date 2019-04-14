@@ -40,15 +40,15 @@ public class FriendServiceImpl  {
     /**
      * Gets friends.
      *
-     * @param userNameEntry the user name entry
+     * @param user_name_entry the user name entry
      * @return the friends
      */
-    public List<Friend> getFriends(final String userNameEntry) {
+    public List<Friend> getFriends(final String user_name_entry) {
         try {
             RestTemplate restTemplate = new RestTemplate();
             String getResourceUrl =
                     ServerConfig.getFriendpageURL()
-                            + userNameEntry;
+                            + user_name_entry;
 
             ResponseEntity<List<Friend>> response
                     = restTemplate.exchange(

@@ -2,18 +2,20 @@ package entity;
 
 
 /** Gives the CO2 count to the GUI. **/
-public class Co2Supplier {
-
-   // /**THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE FEATURES FOLDER
-   //  *   OR ../../../../../../doc/features
-   //  *(compared to the directory of this file**/
-
+public class CO2_Supplier {
+	
+	public CO2_Supplier() {
+		
+	}
+	
+    /**THE SOURCE OF ANY OF THESE NUMBERS CAN BE FOUND IN THE FEATURES FOLDER
+     *   OR ../../../../../../doc/features
+     *(compared to the directory of this file**/
     /**
      *
      * @param km    The amount of kilometers traveled.
      * @return  the amount of co2 it cost to drive x kilometers by bike.
      */
-
     public static double bike(final int km) {
         final double a = 0.016;
         if (km < 0) {
@@ -81,8 +83,8 @@ public class Co2Supplier {
 
     /**
      *
-     * @param vegetarian    Whether your meal was vegetarian.
-     * @param localProduce  Whether your meal was locally grown or produced.
+     * @param vegetarian    Wheter your meal was vegetarian.
+     * @param localProduce  Wheter your meal was locally grown or produced.
      * @return  The amount of co2 it cost to produce your meal.
      */
     public static double meal(final boolean vegetarian,
@@ -192,6 +194,7 @@ public class Co2Supplier {
             kwh *= a;
         }
         double co2 = kwh * b;
+        ;
         return co2;
     }
 

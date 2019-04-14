@@ -1,8 +1,8 @@
 package service;
 
-import server.dao.FriendDAO;
-import server.entity.Friend;
-import server.service.FriendServiceImpl;
+import Server.dao.FriendDAO;
+import Server.entity.Friend;
+import Server.service.FriendServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,12 +40,12 @@ public class FriendServiceImplTest {
         test1 = new Friend();
         test2 = new Friend();
 
-        test1.setFriendName("Test1111");
-        test1.setUserNameEntry("Test2222");
+        test1.setFriend_name("Test1111");
+        test1.setUser_name_entry("Test2222");
         test1.setId(111);
 
-        test2.setFriendName("Test3333");
-        test2.setUserNameEntry("Test2222");
+        test2.setFriend_name("Test3333");
+        test2.setUser_name_entry("Test2222");
         test2.setId(112);
 
         initMocks(this);

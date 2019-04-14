@@ -1,6 +1,6 @@
 package config;
 
-import server.config.MySpringMvcDispatcherServletInitializer;
+import Server.config.MySpringMvcDispatcherServletInitializer;
 import org.junit.Before;
 import org.junit.Test;
 

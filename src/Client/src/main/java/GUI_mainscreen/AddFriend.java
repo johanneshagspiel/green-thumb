@@ -6,6 +6,7 @@ import helper.SortLength;
 import helper.SortUsername;
 import entity.Friend;
 
+import entity.LeaderBoardEntry;
 import helper.UpdateAchievements;
 
 import service.FriendServiceImpl;
@@ -230,10 +231,10 @@ public class AddFriend {
                                     size(); j++) {
                                 if (lookup.equals(
                                         friendList.get(j).
-                                                getfriendName())) {
+                                                getFriend_name())) {
                                     noFriend =
                                             friendList.get(j).
-                                                    getfriendName();
+                                                    getFriend_name();
                                     System.out.
                                             println(noFriend);
                                 }
@@ -371,9 +372,9 @@ public class AddFriend {
                     final ActionEvent arg0) {
                 // Create a new friend
                 Friend temp = new Friend();
-                temp.setuserNameEntry(
+                temp.setUser_name_entry(
                         userIn.getUser_name());
-                temp.setfriendName(
+                temp.setFriend_name(
                         labelAdd1.getText());
                 FriendServiceImpl client
                         = new FriendServiceImpl();
@@ -425,9 +426,9 @@ public class AddFriend {
                     final ActionEvent arg0) {
                 // Create a new friend
                 Friend temp = new Friend();
-                temp.setuserNameEntry(userIn.
+                temp.setUser_name_entry(userIn.
                         getUser_name());
-                temp.setfriendName(labelAdd2.
+                temp.setFriend_name(labelAdd2.
                         getText());
                 FriendServiceImpl client
                         = new FriendServiceImpl();
@@ -481,9 +482,9 @@ public class AddFriend {
                     final ActionEvent arg0) {
                 // Create a new friend
                 Friend temp = new Friend();
-                temp.setuserNameEntry(
+                temp.setUser_name_entry(
                         userIn.getUser_name());
-                temp.setfriendName(
+                temp.setFriend_name(
                         labelAdd3.getText());
                 FriendServiceImpl client
                         = new FriendServiceImpl();

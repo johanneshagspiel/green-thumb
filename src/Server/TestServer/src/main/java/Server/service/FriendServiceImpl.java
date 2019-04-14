@@ -1,9 +1,9 @@
-package server.service;
+package Server.service;
 
 import java.util.List;
 
-import server.dao.FriendDAO;
-import server.entity.Friend;
+import Server.dao.FriendDAO;
+import Server.entity.Friend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,16 +12,15 @@ import org.springframework.transaction.annotation.Transactional;
  * The type Friend service.
  */
 @Service
-public final class FriendServiceImpl implements FriendService {
+public class FriendServiceImpl implements FriendService {
 
-    /**Javadoc comment.*/
     @Autowired
     private FriendDAO friendDAO;
 
     @Override
     @Transactional
-    public List<Friend> getFriends(final String userNameEntry) {
-        return friendDAO.getFriends(userNameEntry);
+    public List<Friend> getFriends(String user_name_entry) {
+        return friendDAO.getFriends(user_name_entry);
     }
 
     @Override
@@ -32,14 +31,14 @@ public final class FriendServiceImpl implements FriendService {
 
     @Override
     @Transactional
-    public Friend saveFriend(final Friend theFriend) {
+    public Friend saveFriend(Friend theFriend) {
         friendDAO.saveFriend(theFriend);
         return theFriend;
     }
 
     @Override
     @Transactional
-    public int deleteFriend(final int theId) {
+    public int deleteFriend(int theId) {
         friendDAO.deleteFriend(theId);
         return theId;
     }
