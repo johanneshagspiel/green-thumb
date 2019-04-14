@@ -24,7 +24,7 @@ public class UpdatingLabelsTest {
 
 		// Getting the user
 		UserServiceImpl clientIn = new UserServiceImpl();
-		User userIn = new User();
+		User userIn = clientIn.getUser2("Test");
 		userIn.setBike(0);
 		userIn.setCar(0);
 		userIn.setProduce(0);
