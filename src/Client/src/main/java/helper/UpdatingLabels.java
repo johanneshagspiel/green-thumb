@@ -139,9 +139,9 @@ public class UpdatingLabels {
             setPointsSaved(userIn.getTotal_saved());
 
             lblTotalCO2.setText("The total amount of CO2 "
-                    + "you have used up so far is " + getPoints() + "decagrams");
+                    + "you have used up so far is " + getPoints() + " decagrams");
             lblCO2Saved.setText("The amount of CO2 you have saved so far is "
-                    + getPointsSaved() + "decagrams");
+                    + getPointsSaved() + " decagrams");
             lblLeaderboardContent.setText(
                     LeaderBoardEntry.createLeaderboard(userIn, getLabel()));
             setPointsmissing(PointsMissing.determiningPoints(getPoints()));
@@ -309,10 +309,10 @@ public class UpdatingLabels {
 
                 lblTotalCO2.setText(
                         "The total amount of CO2 you have used up so far is "
-                                + pointsFinal + "decagrams");
+                                + pointsFinal + " decagrams");
                 lblCO2Saved.setText(
                         "The amount of CO2 you have saved so far is "
-                                + pointsSavedFinal + "decagrams");
+                                + pointsSavedFinal + " decagrams");
                 lblLeaderboardContent.setText(
                         LeaderBoardEntry.createLeaderboard(userIn,
                                 getLabel()));
