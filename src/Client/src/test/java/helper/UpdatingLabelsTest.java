@@ -43,7 +43,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 100;
+		final int resultTotal = 2;
 		GUI_App.setLabel("Car Score");
 		JLabel imgMotivation = new JLabel("");
 		JLabel imgAchievementSaved = new JLabel("");
@@ -88,7 +88,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 100;
+		final int resultTotal = 170;
 		GUI_App.setLabel("Public Transportation Score");
 
 		// Updating the label
@@ -130,7 +130,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 100;
+		final int resultTotal = 254;
 		GUI_App.setLabel("Bike Score");
 
 		// Updating the label
@@ -169,7 +169,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 100;
+		final int resultTotal = 155;
 		GUI_App.setLabel("Temperature Score");
 		JLabel imgMotivation = new JLabel("");
 		JLabel imgAchievementSaved = new JLabel("");
@@ -211,7 +211,7 @@ public class UpdatingLabelsTest {
 		JLabel lblLeaderboardContent = new JLabel("");
 		JLabel lblLevel = new JLabel("");
 		JLabel lblMotivation = new JLabel("");
-		final int resultTotal = 100;
+		final int resultTotal = 753;
 		GUI_App.setLabel("Solar Score");
 		JLabel imgMotivation = new JLabel("");
 		JLabel imgAchievementSaved = new JLabel("");
