@@ -20,7 +20,7 @@ public final class User implements Serializable {
     @Column(name = "id")
     private int id;
     /** Javadoc comment. */
-    @Column(name = "user_name")
+    @Column(name = "userName")
     private String userName;
     /** Javadoc comment. */
     @Column(name = "password")
@@ -35,7 +35,7 @@ public final class User implements Serializable {
     @Column(name = "car")
     private int car;
     /** Javadoc comment. */
-    @Column(name = "public_transportation")
+    @Column(name = "publicTransportation")
     private int publicTransportation;
     /** Javadoc comment. */
     @Column(name = "bike")
@@ -47,11 +47,11 @@ public final class User implements Serializable {
     @Column(name = "solar")
     private int solar;
     /** Javadoc comment. */
-    @Column(name = "total_saved")
+    @Column(name = "totalSaved")
     private int totalSaved;
     /** Javadoc comment. */
-    @Column(name = "total_used")
-    private int totalUsed;
+    @Column(name = "toalUsed")
+    private int toalUsed;
     /** Javadoc comment. */
     @Column(name = "total")
     private int total;
@@ -230,16 +230,16 @@ public final class User implements Serializable {
      * @return the total used
      */
     public int getTotalUsed() {
-        return totalUsed;
+        return toalUsed;
     }
 
     /**
      * Sets total used.
      *
-     * @param totalUsed the total used
+     * @param toalUsed the total used
      */
-    public void setTotalUsed(final int totalUsed) {
-        this.totalUsed = totalUsed;
+    public void setTotalUsed(final int toalUsed) {
+        this.toalUsed = toalUsed;
     }
 
     /**
@@ -298,20 +298,17 @@ public final class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User [id=" + id
-                + ", user_name=" + userName
-                + ", password=" + password
-                + ", vegetarian=" + vegetarian
-                + ", produce=" + produce
-                + ", car=" + car
-                + ", public_transportation=" + publicTransportation
-                + ", bike=" + bike
-                + ", temperature=" + temperature
-                + ", solar =" + solar
-                + ", total_saved=" + totalSaved
-                + ", total_used=" + totalUsed
-                + ", total=" + total
-                + "]";
+        return "User [id=" + id + ", userName="
+                + userName + ", password="
+                + password + ", vegetarian="
+                + vegetarian + ", produce="
+                + produce + ", car=" + car
+                + ", publicTransportation="
+                + publicTransportation + ", bike="
+                + bike + ", temperature=" + temperature
+                + ", solar =" + solar + ", totalSaved="
+                + totalSaved + ", toalUsed="
+                + toalUsed + ", total=" + total + "]";
     }
 }
 
