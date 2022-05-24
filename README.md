@@ -1,9 +1,9 @@
-<img src=img/green_thumb_logo.png alt="The Greene Thumb Logo" width="377" height="323">
+<img src=img/green_thumb_logo.png alt="The Green Thumb Logo" width="252" height="216">
 
 --------------------------------------------------------------------------------
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-# The Greene Thumb
+# The Green Thumb
 
 "The Green Thumb" is a CRUD application written in Java that allows the user to keep track of their CO2 consumption. It was implemented in the [Client](src/client)-[server](src/server) model, between which the communication occurs via a REST API. The server is based on the [SPRING framework](https://spring.io/) and uses [Hibernate](https://hibernate.org/) to map the requests to the [MYSQL database](https://www.mysql.com/). The codebase for both the client and the server was thorhoughly tested using testing frameworks such as [Mockito](https://site.mockito.org/)
 
