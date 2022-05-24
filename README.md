@@ -2,8 +2,8 @@
 
 --------------------------------------------------------------------------------
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/johanneshagspiel/green-thumb/LICENSE)
-[![Top Language](https://img.shields.io/github/languages/top/johanneshagspiel/green-thumb)](https://github.com/johanneshagspiel/green-thumb)
-[![Latest Release](https://img.shields.io/github/v/release/johanneshagspiel/green-thumb)](https://github.com/johanneshagspiel/green-thumb/releases/)
+[![Top Language](https://img.shields.io/github/languages/top/johanneshagspiel/the-green-thumb)](https://github.com/johanneshagspiel/green-thumb)
+[![Latest Release](https://img.shields.io/github/v/release/johanneshagspiel/the-green-thumb)](https://github.com/johanneshagspiel/green-thumb/releases/)
 
 # The Green Thumb
 
