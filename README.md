@@ -7,7 +7,7 @@
 
 # The Green Thumb
 
-"The Green Thumb" is a CRUD application written in Java that allows the user to keep track of their CO2 consumption. It was implemented in the [Client](src/client)-[server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/server/TestServer) model, between which the communication occurs via a REST API. The server is based on the [SPRING framework](https://spring.io/) and uses [Hibernate](https://hibernate.org/) to map the requests to the [MYSQL database](https://www.mysql.com/). The codebase for both the client and the server was thorhoughly tested using testing frameworks such as [Mockito](https://site.mockito.org/)
+"The Green Thumb" is a CRUD application written in Java that allows the user to keep track of their CO2 consumption. It was implemented in the [Client](src/client)-[server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) model, between which the communication occurs via a REST API. The server is based on the [SPRING framework](https://spring.io/) and uses [Hibernate](https://hibernate.org/) to map the requests to the [MYSQL database](https://www.mysql.com/). The codebase for both the client and the server was thorhoughly tested using testing frameworks such as [Mockito](https://site.mockito.org/)
 
 ## Features
 
@@ -19,7 +19,7 @@ With "The Green Thumb", the user:
 
 ## Installation Process
 
-To run "The Green Thumb", first a local instance of the [server](src/server/TestServer) has to be initialized. It is assumed that both Java and an IDE such as IntelliJ are installed.
+To run "The Green Thumb", first a local instance of the [server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) has to be initialized. It is assumed that both Java and an IDE such as IntelliJ are installed.
 
 - Download and install the latest version of [MYSQL](https://dev.mysql.com/downloads/) and of [Apache Tomcat](https://tomcat.apache.org/).
 - Make sure that a MYSQL connection is created using the hostname "localhost" and the port "3306".
