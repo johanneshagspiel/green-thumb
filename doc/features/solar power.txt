@@ -1,5 +1,0 @@
-https://www.theecoexperts.co.uk/solar-panels/electricity-power-output
-on average 300 watts per hour of sunlight, meaning the output depends on the amount of hours of sunlight and the amount of solar panels
-and on an average day that is 4-5 hours
-
-4.5 * amountOfSolarPanels * 0.300 * 0.558
