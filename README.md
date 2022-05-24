@@ -1,11 +1,13 @@
 <img src=img/green_thumb_logo.png alt="The Green Thumb Logo" width="252" height="216">
 
 --------------------------------------------------------------------------------
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/johanneshagspiel/green-thumb/LICENSE)
+[![Top Language](https://img.shields.io/github/languages/top/johanneshagspiel/green-thumb)](https://github.com/johanneshagspiel/green-thumb)
+[![Latest Release](https://img.shields.io/github/v/release/johanneshagspiel/green-thumb)](https://github.com/johanneshagspiel/green-thumb/releases/)
 
 # The Green Thumb
 
-"The Green Thumb" is a CRUD application written in Java that allows the user to keep track of their CO2 consumption. It was implemented in the [Client](src/client)-[server](src/server) model, between which the communication occurs via a REST API. The server is based on the [SPRING framework](https://spring.io/) and uses [Hibernate](https://hibernate.org/) to map the requests to the [MYSQL database](https://www.mysql.com/). The codebase for both the client and the server was thorhoughly tested using testing frameworks such as [Mockito](https://site.mockito.org/)
+"The Green Thumb" is a CRUD application written in Java that allows the user to keep track of their CO2 consumption. It was implemented in the [Client](src/client)-[server](src/server/TestServer) model, between which the communication occurs via a REST API. The server is based on the [SPRING framework](https://spring.io/) and uses [Hibernate](https://hibernate.org/) to map the requests to the [MYSQL database](https://www.mysql.com/). The codebase for both the client and the server was thorhoughly tested using testing frameworks such as [Mockito](https://site.mockito.org/)
 
 ## Features
 
@@ -17,7 +19,7 @@ With "The Green Thumb", the user:
 
 ## Installation Process
 
-To run "The Green Thumb", first a local instance of the [server](src/server) has to be initialized.
+To run "The Green Thumb", first a local instance of the [server](src/server/TestServer) has to be initialized. It is assumed that both Java and an IDE such as IntelliJ are installed.
 
 - Download and install the latest version of [MYSQL](https://dev.mysql.com/downloads/) and of [Apache Tomcat](https://tomcat.apache.org/).
 - Make sure that a MYSQL connection is created using the hostname "localhost" and the port "3306".
@@ -29,7 +31,7 @@ To run "The Green Thumb", first a local instance of the [server](src/server) has
 Now, the client can be started.
 
 - Import the [client](src/client) as a Maven project and resolve all dependencies.
-- Run the [client](src/client/src/main/java/gui/Application.java).
+- Run the client by executing the main method in the [Application class](src/client/src/main/java/gui/Application.java).
 
 ## Contributors
 
