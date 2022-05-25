@@ -23,6 +23,7 @@ With "The Green Thumb", the user:
 |-----------------------------|---------------------------------------------------------------------------|
 | Programming language        | [Java](https://openjdk.org/)                                              |
 | Dependency manager          | [Maven](https://maven.apache.org/)                                        |
+| Version control system | [Git](https://git-scm.com/)          |
 | Testing frameworks          | [JUnit](https://junit.org/junit5/), [Mockito](https://site.mockito.org/)  |
 | Server framework            | [SPRING](https://spring.io/)                                              |
 | Database                    | [MYSQL](https://www.mysql.com/)                                           |
