@@ -7,7 +7,7 @@
 
 # The Green Thumb
 
-"The Green Thumb" is a CRUD application written in Java that allows the user to keep track of their CO2 consumption. It was implemented in the [Client](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/client)-[server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) model, between which the communication occurs via a REST API. The server is based on the [SPRING framework](https://spring.io/) and uses [Hibernate](https://hibernate.org/) to map the requests to the [MYSQL database](https://www.mysql.com/). The codebase for both the client and the server was thorhoughly tested using testing frameworks such as [Mockito](https://site.mockito.org/).
+"The Green Thumb" is a CRUD application written in Java that incentivizes behavior that leads to less CO2 consumption. It was implemented in the [Client](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/client) - [Server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) model, of which both parts can be found in this repository.
 
 ## Features
 
@@ -16,6 +16,19 @@ With "The Green Thumb", the user:
 - gains or loses points depending on the actions they take such as the kind of meal they eat, what kind of produce they buy or by which means of transportation they travel.
 - can connect with friends and communicate with them via the chat.
 - is incentivized to improve their behavior via the leaderboard as well as the various achievements they can obtain for certain repeated actions such as buy multiple solar panels. 
+
+## Tools
+
+| Purpose                     | Name                                                                      |
+|-----------------------------|---------------------------------------------------------------------------|
+| Programming language        | [Java](https://openjdk.org/)                                              |
+| Dependency manager          | [Maven](https://maven.apache.org/)                                        |
+| Testing frameworks          | [JUnit](https://junit.org/junit5/), [Mockito](https://site.mockito.org/)  |
+| Server framework            | [SPRING](https://spring.io/)                                              |
+| Database                    | [MYSQL](https://www.mysql.com/)                                           |
+| Database interaction        | [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity)     |
+| Object–relational mapping   | [Hibernate](https://hibernate.org/)                                       |
+| Client-server communication | [REST-API](https://en.wikipedia.org/wiki/Representational_state_transfer) |
 
 ## Installation Process
 
@@ -26,7 +39,7 @@ To run "The Green Thumb", first a local instance of the [server](https://github.
 - Run the entire [startup script](https://github.com/johanneshagspiel/the-green-thumb/blob/main/src/Server/TestServer/sql-script/startup_script.sql) in MYSQL.
 - Import the [server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) as a Maven project and resolve all dependencies.
 - Run the maven lifecycle command "package" with the "Skip Tests" mode toggled on. This should create a new folder called "target" with, among other things, a file called "spring-crm-rest.war". 
-- Deploy the new "spring-crm-rest.war" file in the Tomcat server i.e. by moving it into the Tomcat Webapp folder. Make sure that the Tomcat server runs on port "8082".
+- Exploded deploy the new "spring-crm-rest.war" file in the Tomcat server i.e. by moving it into the Tomcat Webapp folder. Make sure that the Tomcat server runs on port "8082".
 
 Now, the client can be started.
 
