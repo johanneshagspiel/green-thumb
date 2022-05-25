@@ -33,7 +33,7 @@ With "The Green Thumb", the user:
 
 ## Installation Process
 
-To run "The Green Thumb", first a local instance of the [server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) has to be initialized. It is assumed that both Java and an IDE such as IntelliJ are installed.
+To run "The Green Thumb", first a local instance of the [server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) has to be initialized. It is assumed that both a [Java JDK](https://openjdk.org/) and an IDE such as [IntelliJ](https://www.jetbrains.com/idea/) or [Eclipse](https://www.eclipse.org/ide/) are installed.
 
 - Download and install the latest version of [MYSQL](https://dev.mysql.com/downloads/) and of [Apache Tomcat](https://tomcat.apache.org/).
 - Make sure that a MYSQL connection is created using the hostname "localhost" and the port "3306".
