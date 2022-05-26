@@ -7,7 +7,7 @@
 
 # The Green Thumb
 
-"The Green Thumb" is a CRUD application written in Java that incentivizes behavior that leads to less CO2 consumption. It was implemented in the [Client](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/client) - [Server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) model, of which both parts can be found in this repository.
+"The Green Thumb" is a CRUD application written in Java that incentivizes behavior that leads to less CO2 consumption. It was implemented in the Client-Server model, of which both parts can be found in this repository.
 
 ## Features
 
@@ -33,7 +33,7 @@ With "The Green Thumb", the user:
 
 ## Installation Process
 
-To run "The Green Thumb", first a local instance of the [server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) has to be initialized. It is assumed that both a [Java JDK](https://openjdk.org/) and an IDE such as [IntelliJ](https://www.jetbrains.com/idea/) or [Eclipse](https://www.eclipse.org/ide/) are installed.
+To run "The Green Thumb", first a local instance of the [server](https://github.com/johanneshagspiel/the-green-thumb/tree/main/src/Server/TestServer) has to be initialized. It is assumed that both a [Java JDK](https://openjdk.org/) and an IDE such as [IntelliJ](https://www.jetbrains.com/idea/) or [Eclipse](https://www.eclipse.org/ide/) are installed and that the users operating system is Windows.
 
 - Download and install the latest version of [MYSQL](https://dev.mysql.com/downloads/) and of [Apache Tomcat](https://tomcat.apache.org/).
 - Make sure that a MYSQL connection is created using the hostname "localhost" and the port "3306".
@@ -59,4 +59,4 @@ This app was developed using the [SCRUM methodology](https://www.scrum.org/resou
 
 ## Licence
 
-"The Green Thumb" is published under the MIT licence, which can be found in the [LICENSE](LICENSE) file.
+"The Green Thumb" is published under the MIT licence, which can be found in the [LICENSE](LICENSE) file. For this repository, the terms laid out there shall not apply to any individual that is currently enrolled at a higher education institution as a student. Those individuals shall not interact with any other part of this repository besides this README in any way by, for example cloning it or looking at its source code or have someone else interact with this repository in any way.
