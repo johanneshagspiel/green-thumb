@@ -1,4 +1,4 @@
-<img src=img/green_thumb_logo.png alt="The Green Thumb Logo" width="252" height="216">
+<img src=img/green_thumb_logo.png alt="The Green Thumb Logo" width="157" height="135">
 
 --------------------------------------------------------------------------------
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/johanneshagspiel/green-thumb/LICENSE)
